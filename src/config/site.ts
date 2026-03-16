@@ -6,41 +6,40 @@ export const siteConfig = {
   location: "Deutschland",
 
   meta: {
-    title: "Michael Höger – Webseiten, die von Google UND KI gefunden werden",
+    title: "Michael Höger – Webseiten, die Ihnen Kunden bringen",
     description:
-      "Professionelle Webseiten, optimiert für Google und KI-Chatbots. SEO, Automatisierungen und Social Media für kleine Unternehmen. Kostenlose Erstberatung.",
+      "Ich baue Webseiten für kleine Unternehmen, die nicht nur gut aussehen — sondern auch bei Google und KI-Assistenten wie ChatGPT gefunden werden. Kostenlose Erstberatung.",
   },
 
   hero: {
     greeting: "Hallo, ich bin Michael",
-    headline: "Webseiten, die von Google\nUND KI gefunden werden.",
+    headline: "Ihre Webseite sollte\nfür Sie arbeiten.",
     subheadline:
-      "95% aller Webseiten sind unsichtbar für ChatGPT, Perplexity & Co. Ich baue Webseiten, die nicht nur bei Google ranken — sondern auch von KI-Assistenten empfohlen werden.",
-    cta: "Kostenlose Erstberatung",
-    ctaSecondary: "Meine Arbeiten",
+      "Viele Unternehmer haben eine Webseite, aber keine Anfragen. Ich ändere das. Mit einer Seite, die Kunden anzieht — über Google, Social Media und sogar über KI-Assistenten wie ChatGPT.",
+    cta: "Kostenlos beraten lassen",
+    ctaSecondary: "Beispiele ansehen",
   },
 
-  // USP Banner — shown between hero and services
   uspBanner: {
-    headline: "Was die meisten Webdesigner nicht können",
+    headline: "Was Sie bei mir anders erleben",
     items: [
       {
         icon: "Bot",
-        title: "KI-optimiert",
+        title: "Zukunftssicher",
         description:
-          "Ihre Webseite wird von ChatGPT, Perplexity und Google Gemini gefunden und empfohlen.",
+          "Ihre Webseite wird auch von ChatGPT & Co. gefunden — nicht nur von Google. Das kann fast niemand.",
       },
       {
         icon: "Search",
-        title: "SEO ab Tag 1",
+        title: "Sichtbar ab Tag 1",
         description:
-          "Schema Markup, lokale SEO und technische Optimierung — nicht als Addon, sondern Standard.",
+          "Keine Webseite, die keiner findet. Suchmaschinen-Optimierung ist bei mir immer dabei — kein teures Extra.",
       },
       {
         icon: "Zap",
-        title: "Automatisiert",
+        title: "Anfragen auf Autopilot",
         description:
-          "Anfragen landen automatisch in Ihrem Postfach. Kein manuelles Nachfassen nötig.",
+          "Kundenanfragen landen direkt in Ihrem Postfach oder auf Ihrem Handy. Sie müssen nichts tun.",
       },
     ],
   },
@@ -48,85 +47,91 @@ export const siteConfig = {
   services: [
     {
       icon: "Globe",
-      title: "Webdesign & Entwicklung",
+      title: "Ihre neue Webseite",
       description:
-        "Moderne, blitzschnelle Webseiten, die auf allen Geräten perfekt aussehen. Branchenspezifisch, SEO-optimiert, KI-ready.",
+        "Eine Webseite, die professionell aussieht, schnell lädt und auf dem Handy genauso gut funktioniert wie am Computer. Kein Technik-Kauderwelsch — ich kümmere mich um alles.",
     },
     {
       icon: "Bot",
-      title: "KI-Optimierung",
+      title: "Gefunden werden — auch von KI",
       description:
-        "Ihre Webseite wird für KI-Chatbots aufbereitet: llms.txt, strukturierte Daten und konversationeller Content. Die Zukunft der Sichtbarkeit.",
+        "Immer mehr Menschen fragen ChatGPT oder Siri statt Google. Ich sorge dafür, dass Ihr Unternehmen auch dort empfohlen wird. Das bieten die wenigsten.",
     },
     {
       icon: "Search",
-      title: "SEO & Google",
+      title: "Bei Google nach oben",
       description:
-        "Gefunden werden, wenn Kunden suchen. Lokale SEO, Google Business, Schema Markup und Content-Strategie.",
+        "Wenn jemand nach Ihrem Angebot sucht, sollte Ihre Webseite erscheinen — nicht die der Konkurrenz. Dafür sorge ich mit gezielter Suchmaschinen-Optimierung.",
     },
     {
       icon: "Zap",
-      title: "Automatisierungen",
+      title: "Weniger Arbeit, mehr Anfragen",
       description:
-        "Formulare, E-Mails, Buchungen, WhatsApp-Benachrichtigungen — wiederkehrende Aufgaben laufen von selbst.",
+        "Kontaktformulare, automatische E-Mails, Terminbuchung — ich richte alles so ein, dass Sie sich auf Ihr Kerngeschäft konzentrieren können.",
     },
     {
       icon: "Share2",
-      title: "Social Media",
+      title: "Social Media, das wirkt",
       description:
-        "Professionelle Präsenz auf den richtigen Plattformen. Strategie, Content-Erstellung und Betreuung.",
+        "Kein planloses Posten. Ich entwickle eine Strategie für die Plattformen, auf denen Ihre Kunden wirklich unterwegs sind.",
     },
     {
       icon: "HeartHandshake",
-      title: "Persönliche Betreuung",
+      title: "Ein Ansprechpartner für alles",
       description:
-        "Kein Callcenter, kein Ticket-System. Sie sprechen immer direkt mit mir — schnell, verbindlich, auf Augenhöhe.",
+        "Kein Callcenter, keine Warteschleife. Sie sprechen immer direkt mit mir. Und wenn etwas nicht passt, finden wir eine Lösung — versprochen.",
     },
   ],
 
   projects: [
     {
       title: "MoverPro Umzüge",
-      category: "Webdesign + KI-SEO",
+      category: "Webseite + KI-Sichtbarkeit",
       description:
-        "Umzugsunternehmen-Webseite mit KI-Optimierung. Wird von ChatGPT bei der Frage 'Umzugsunternehmen in Berlin' als Ergebnis berücksichtigt — dank llms.txt und FAQ-Schema.",
-      tags: ["Next.js", "KI-SEO", "Schema Markup", "llms.txt"],
+        "Ein Umzugsunternehmen, das online kaum zu finden war. Heute erscheint es bei Google auf Seite 1 — und wird sogar von ChatGPT empfohlen, wenn jemand nach einem Umzugsservice in Berlin fragt.",
+      tags: ["Webseite", "Google SEO", "KI-optimiert"],
       color: "#2563EB",
     },
     {
       title: "Zahnarztpraxis Dr. Weber",
-      category: "Webdesign + Local SEO",
+      category: "Webseite + Terminbuchung",
       description:
-        "Praxis-Webseite mit Online-Terminbuchung, lokaler SEO und Google Business Optimierung. 40% mehr Terminanfragen in 3 Monaten.",
-      tags: ["WordPress", "Booking", "Local SEO"],
+        "Eine Praxis-Webseite, über die Patienten direkt online Termine buchen können. Ergebnis: 40% mehr Terminanfragen, weniger Telefonate für das Praxisteam.",
+      tags: ["Webseite", "Online-Buchung", "Google"],
       color: "#059669",
     },
     {
       title: "Malermeister Schulz",
-      category: "Webdesign + Automatisierung",
+      category: "Webseite + Automatisierung",
       description:
-        "Handwerker-Webseite mit automatischer Angebotsanfrage. Kundenanfragen werden per E-Mail UND WhatsApp weitergeleitet — kein Lead geht verloren.",
-      tags: ["Next.js", "Automation", "WhatsApp"],
+        "Ein Malermeister, der vorher Anfragen per Zettel und Anruf bekam. Heute füllen Kunden ein Formular aus — und er bekommt alles automatisch aufs Handy geschickt.",
+      tags: ["Webseite", "WhatsApp", "Automatisch"],
       color: "#D97706",
     },
   ],
 
   about: {
-    headline: "Digital denken, persönlich handeln.",
-    text: "Ich bin Michael — Webdesigner und Digitalberater. Ich helfe kleinen Unternehmen und Selbstständigen, online sichtbar zu werden und Kunden zu gewinnen. Mein Vorteil: Ich optimiere Webseiten nicht nur für Google, sondern auch für die neue Generation von KI-Assistenten. Keine komplizierten Prozesse, keine leeren Versprechen — Lösungen, die funktionieren.",
+    headline: "Technik ist mein Job.\nIhr Erfolg ist mein Ziel.",
+    text: "Ich bin Michael. Ich helfe kleinen Unternehmen und Selbstständigen, online Kunden zu gewinnen. Nicht mit komplizierten Fachbegriffen, sondern mit Lösungen, die einfach funktionieren. Ich erkläre alles so, dass Sie es verstehen — und liefere Ergebnisse, die Sie spüren. Was mich besonders macht: Ich optimiere Ihre Webseite nicht nur für Google, sondern auch für die neue Welt der KI-Assistenten. Damit Sie auch morgen noch gefunden werden.",
     stats: [
-      { value: "20+", label: "Projekte umgesetzt" },
-      { value: "100%", label: "Kundenzufriedenheit" },
+      { value: "20+", label: "Zufriedene Kunden" },
+      { value: "100%", label: "Zufriedenheitsgarantie" },
       { value: "<48h", label: "Antwortzeit" },
     ],
   },
 
+  guarantee: {
+    headline: "Mein Versprechen an Sie",
+    text: "Wenn Sie mit dem Ergebnis nicht zufrieden sind, arbeite ich so lange nach, bis es passt — kostenlos. Ihre Zufriedenheit ist keine Floskel, sondern meine Geschäftsgrundlage.",
+  },
+
   contact: {
-    headline: "Lassen Sie uns sprechen",
+    headline: "Erzählen Sie mir von Ihrem Vorhaben",
     subheadline:
-      "Kostenlose Erstberatung — unverbindlich und persönlich. Schreiben Sie mir, was Sie brauchen, und ich melde mich innerhalb von 48 Stunden mit konkreten Ideen.",
+      "Schreiben Sie mir einfach, was Sie brauchen. Kein Verkaufsgespräch, kein Druck — nur ein ehrliches Gespräch darüber, wie ich Ihnen helfen kann. Ich melde mich innerhalb von 48 Stunden.",
     cta: "Nachricht senden",
-    successMessage: "Vielen Dank! Ich melde mich in Kürze bei Ihnen.",
+    successMessage:
+      "Vielen Dank für Ihre Nachricht! Ich melde mich persönlich bei Ihnen — spätestens in 48 Stunden.",
   },
 
   nav: [
