@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import UspBanner from "@/components/UspBanner";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <UspBanner />
         <Services />
         <Projects />
         <About />

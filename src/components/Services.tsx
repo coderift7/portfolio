@@ -1,6 +1,6 @@
 "use client";
 
-import { Globe, Zap, Search, Share2 } from "lucide-react";
+import { Globe, Zap, Search, Share2, Bot, HeartHandshake } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Reveal, StaggerContainer, StaggerItem } from "./Motion";
@@ -10,6 +10,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Zap,
   Search,
   Share2,
+  Bot,
+  HeartHandshake,
 };
 
 export default function Services() {
@@ -32,7 +34,7 @@ export default function Services() {
         </Reveal>
 
         <StaggerContainer
-          className="mt-14 grid gap-5 sm:grid-cols-2"
+          className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
           staggerDelay={0.1}
         >
           {siteConfig.services.map((service, i) => {
