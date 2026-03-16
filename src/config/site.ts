@@ -115,7 +115,7 @@ export const siteConfig = {
     text: "Ich bin Michael. Ich helfe kleinen Unternehmen und Selbstständigen, online Kunden zu gewinnen. Nicht mit komplizierten Fachbegriffen, sondern mit Lösungen, die einfach funktionieren. Ich erkläre alles so, dass Sie es verstehen — und liefere Ergebnisse, die Sie spüren. Was mich besonders macht: Ich optimiere Ihre Webseite nicht nur für Google, sondern auch für die neue Welt der KI-Assistenten. Damit Sie auch morgen noch gefunden werden.",
     stats: [
       { value: "20+", label: "Zufriedene Kunden" },
-      { value: "100%", label: "Zufriedenheitsgarantie" },
+      { value: "100%", label: "Zufrieden oder Geld zurück" },
       { value: "<48h", label: "Antwortzeit" },
     ],
   },

@@ -45,7 +45,7 @@ export default function About() {
                   <div className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
                     {stat.value}
                   </div>
-                  <div className="mt-1 text-sm text-muted-foreground">
+                  <div className="mt-1 text-sm text-muted-foreground break-words hyphens-auto" lang="de">
                     {stat.label}
                   </div>
                 </motion.div>
