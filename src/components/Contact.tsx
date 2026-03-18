@@ -38,7 +38,7 @@ export default function Contact() {
                 <img
                   src={`${basePath}/images/michael-casual.png`}
                   alt="Michael Höger"
-                  className="h-52 w-full object-cover object-top sm:h-60"
+                  className="w-full rounded-2xl object-contain"
                 />
               </div>
 
