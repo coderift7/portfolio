@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
@@ -27,9 +28,15 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:h-[72px]">
-        <a href="#" className="text-lg font-bold tracking-tight text-primary">
-          {siteConfig.name.split(" ")[0]}
-          <span className="text-accent">.</span>
+        <a href="#" className="flex items-center">
+          <Image
+            src="/logo-full.svg"
+            alt={siteConfig.name}
+            width={200}
+            height={45}
+            className="h-9 w-auto sm:h-10"
+            priority
+          />
         </a>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -37,14 +44,14 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-primary"
+              className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground"
             >
               {item.label}
             </a>
           ))}
           <a
             href="#kontakt"
-            className="ml-3 cursor-pointer rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all duration-150 hover:bg-primary/90"
+            className="btn-brand ml-3 cursor-pointer rounded-xl px-5 py-2.5 text-sm font-semibold"
           >
             Kontakt
           </a>
@@ -52,7 +59,7 @@ export default function Header() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="cursor-pointer rounded-lg p-2 text-primary lg:hidden"
+          className="cursor-pointer rounded-lg p-2 text-foreground lg:hidden"
           aria-label="Menü"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -74,7 +81,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-lg px-3 py-2.5 text-primary"
+                  className="rounded-lg px-3 py-2.5 text-foreground"
                 >
                   {item.label}
                 </a>
@@ -82,7 +89,7 @@ export default function Header() {
               <a
                 href="#kontakt"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 rounded-lg bg-primary px-5 py-3 text-center text-sm font-semibold text-primary-foreground"
+                className="btn-brand mt-2 rounded-xl px-5 py-3 text-center text-sm font-semibold"
               >
                 Kontakt
               </a>

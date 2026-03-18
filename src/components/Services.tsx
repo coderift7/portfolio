@@ -20,10 +20,10 @@ export default function Services() {
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <Reveal>
           <div className="max-w-xl">
-            <span className="text-sm font-semibold uppercase tracking-widest text-accent">
+            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
               Leistungen
             </span>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Was ich für Sie tun kann
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
@@ -46,10 +46,10 @@ export default function Services() {
                   transition={{ duration: 0.2 }}
                   className="group rounded-2xl border border-border bg-white p-7 transition-shadow duration-200 hover:shadow-md"
                 >
-                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-accent/[0.07]">
-                    <Icon className="h-5 w-5 text-accent" />
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/[0.07]">
+                    <Icon className="h-5 w-5 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold text-primary">
+                  <h3 className="text-lg font-semibold text-foreground">
                     {service.title}
                   </h3>
                   <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">

@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Reveal, StaggerContainer, StaggerItem } from "./Motion";
@@ -11,10 +10,10 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <Reveal>
           <div className="max-w-xl">
-            <span className="text-sm font-semibold uppercase tracking-widest text-accent">
+            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
               Portfolio
             </span>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Ausgewählte Projekte
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
@@ -42,7 +41,7 @@ export default function Projects() {
                   <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     {project.category}
                   </span>
-                  <h3 className="mt-2 text-xl font-bold text-primary">
+                  <h3 className="mt-2 text-xl font-bold text-foreground">
                     {project.title}
                   </h3>
                   <p className="mt-3 flex-1 text-[15px] leading-relaxed text-muted-foreground">
@@ -54,7 +53,7 @@ export default function Projects() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
+                        className="rounded-full bg-primary/[0.06] px-3 py-1 text-xs font-medium text-primary"
                       >
                         {tag}
                       </span>

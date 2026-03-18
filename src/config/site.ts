@@ -90,7 +90,7 @@ export const siteConfig = {
       description:
         "Ein Umzugsunternehmen, das online kaum zu finden war. Heute erscheint es bei Google auf Seite 1 — und wird sogar von ChatGPT empfohlen, wenn jemand nach einem Umzugsservice in Berlin fragt.",
       tags: ["Webseite", "Google SEO", "KI-optimiert"],
-      color: "#2563EB",
+      color: "#0D9488",
     },
     {
       title: "Zahnarztpraxis Dr. Weber",
@@ -98,7 +98,7 @@ export const siteConfig = {
       description:
         "Eine Praxis-Webseite, über die Patienten direkt online Termine buchen können. Ergebnis: 40% mehr Terminanfragen, weniger Telefonate für das Praxisteam.",
       tags: ["Webseite", "Online-Buchung", "Google"],
-      color: "#059669",
+      color: "#0891B2",
     },
     {
       title: "Malermeister Schulz",
@@ -106,7 +106,7 @@ export const siteConfig = {
       description:
         "Ein Malermeister, der vorher Anfragen per Zettel und Anruf bekam. Heute füllen Kunden ein Formular aus — und er bekommt alles automatisch aufs Handy geschickt.",
       tags: ["Webseite", "WhatsApp", "Automatisch"],
-      color: "#D97706",
+      color: "#F97316",
     },
   ],
 

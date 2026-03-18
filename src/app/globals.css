@@ -1,24 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #1E293B;
+  /* CI — Primary: Teal */
+  --primary: #0D9488;
   --primary-foreground: #FFFFFF;
-  --accent: #2563EB;
+
+  /* CI — Secondary: Cyan */
+  --secondary: #0891B2;
+  --secondary-foreground: #FFFFFF;
+
+  /* CI — Accent: Orange (sparsam) */
+  --accent: #F97316;
   --accent-foreground: #FFFFFF;
+
+  /* Neutral / Slate */
   --background: #FFFFFF;
-  --foreground: #1E293B;
+  --foreground: #0F172A;
   --card: #F8FAFC;
   --card-foreground: #1E293B;
   --muted: #F1F5F9;
   --muted-foreground: #64748B;
   --border: #E2E8F0;
-  --ring: #2563EB;
-  --radius: 0.875rem;
+  --ring: #0D9488;
+  --radius: 0.75rem;
+
+  /* CI Brand Gradient */
+  --gradient-brand: linear-gradient(135deg, #0D9488, #0891B2);
+
+  /* CI Shadows */
+  --shadow-glow: 0 0 20px rgba(13, 148, 136, 0.15);
 }
 
 @theme inline {
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-background: var(--background);
@@ -29,7 +46,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --font-sans: var(--font-jakarta);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
 }
 
 body {
@@ -41,11 +59,32 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 700;
   letter-spacing: -0.03em;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* CI Brand Gradient Button */
+.btn-brand {
+  background: var(--gradient-brand);
+  color: white;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-brand:hover {
+  box-shadow: var(--shadow-glow), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  filter: brightness(1.05);
+}
+
+/* CI Gradient Text */
+.text-gradient-brand {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media (prefers-reduced-motion: reduce) {

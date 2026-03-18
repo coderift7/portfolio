@@ -14,10 +14,10 @@ export default function About() {
           {/* Text */}
           <Reveal variants={slideFromLeft}>
             <div>
-              <span className="text-sm font-semibold uppercase tracking-widest text-accent">
+              <span className="text-sm font-semibold uppercase tracking-widest text-primary">
                 Über mich
               </span>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 {about.headline}
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
@@ -42,7 +42,7 @@ export default function About() {
                   }}
                   className="rounded-2xl border border-border bg-white p-5 text-center"
                 >
-                  <div className="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+                  <div className="font-mono text-2xl font-bold tracking-tight text-primary sm:text-3xl">
                     {stat.value}
                   </div>
                   <div className="mt-1 text-sm text-muted-foreground break-words hyphens-auto" lang="de">
