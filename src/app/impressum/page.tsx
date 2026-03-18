@@ -10,18 +10,50 @@ export default function Impressum() {
   return (
     <div className="min-h-screen bg-white">
       <div className="mx-auto max-w-3xl px-5 py-24">
-        <a href="/" className="mb-8 inline-flex items-center gap-2 text-sm text-accent hover:underline">
+        <a href="/" className="mb-8 inline-flex items-center gap-2 text-sm text-primary hover:underline">
           <ArrowLeft className="h-4 w-4" /> Zurück
         </a>
-        <h1 className="text-3xl font-bold text-primary">Impressum</h1>
+        <h1 className="text-3xl font-bold text-foreground">Impressum</h1>
         <div className="mt-8 space-y-6 text-muted-foreground">
           <div>
-            <h2 className="text-lg font-semibold text-primary">Angaben gemäß § 5 TMG</h2>
-            <p className="mt-2">{siteConfig.name}<br />{siteConfig.email}</p>
+            <h2 className="text-lg font-semibold text-foreground">Angaben gemäß § 5 TMG</h2>
+            <p className="mt-2">
+              Michael Höger<br />
+              Johann-Boppe-Str. 19<br />
+              65549 Limburg an der Lahn
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground/60">
-            Dies ist eine Demo-Webseite. Angaben sind Platzhalter.
-          </p>
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">Kontakt</h2>
+            <p className="mt-2">
+              E-Mail: <a href="mailto:michael@hoeger.dev" className="text-primary hover:underline">michael@hoeger.dev</a>
+            </p>
+          </div>
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <p className="mt-2">
+              Michael Höger<br />
+              Johann-Boppe-Str. 19<br />
+              65549 Limburg an der Lahn
+            </p>
+          </div>
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">Haftungsausschluss</h2>
+            <h3 className="mt-2 font-medium text-foreground">Haftung für Inhalte</h3>
+            <p className="mt-1 text-sm">
+              Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine Gewähr übernehmen. Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+            </p>
+            <h3 className="mt-4 font-medium text-foreground">Haftung für Links</h3>
+            <p className="mt-1 text-sm">
+              Diese Webseite enthält Links zu externen Webseiten Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">Urheberrecht</h2>
+            <p className="mt-2 text-sm">
+              Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+            </p>
+          </div>
         </div>
       </div>
     </div>

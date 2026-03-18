@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Michael Höger",
   role: "Webdesign & Digitale Lösungen",
-  email: "hallo@michaelhoeger.de",
+  email: "michael@hoeger.dev",
   phone: "+49 123 456 789",
   location: "Deutschland",
 
