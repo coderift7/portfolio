@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
+import Logo from "./Logo";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -29,14 +29,7 @@ export default function Header() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:h-[72px]">
         <a href="#" className="flex items-center">
-          <Image
-            src="/logo-full.svg"
-            alt={siteConfig.name}
-            width={200}
-            height={45}
-            className="h-9 w-auto sm:h-10"
-            priority
-          />
+          <Logo className="h-9 w-auto sm:h-10" />
         </a>
 
         <nav className="hidden items-center gap-1 lg:flex">
