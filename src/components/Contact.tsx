@@ -36,8 +36,8 @@ export default function Contact() {
               <div className="mt-8 mb-8 overflow-hidden rounded-2xl">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`${basePath}/images/michael-casual.png`}
-                  alt="Michael Höger"
+                  src={`${basePath}/images/michael-casual.webp`}
+                  alt="Michael Höger – persönlicher Ansprechpartner für Webdesign-Projekte"
                   className="w-full rounded-2xl object-contain"
                 />
               </div>

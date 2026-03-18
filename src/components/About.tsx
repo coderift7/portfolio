@@ -35,8 +35,8 @@ export default function About() {
               <div className="overflow-hidden rounded-2xl">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`${basePath}/images/michael-working.png`}
-                  alt="Michael Höger bei der Arbeit"
+                  src={`${basePath}/images/michael-working.webp`}
+                  alt="Michael Höger bei der Webentwicklung am Schreibtisch in seinem Büro"
                   className="h-56 w-full object-cover sm:h-64"
                 />
               </div>

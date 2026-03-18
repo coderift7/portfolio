@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: `Impressum – ${siteConfig.name}`,
+  description: "Impressum und Angaben gemäß § 5 TMG von Michael Höger – Webdesign & Digitale Lösungen.",
 };
 
 export default function Impressum() {

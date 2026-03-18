@@ -97,8 +97,8 @@ export default function Hero() {
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`${basePath}/images/michael-hero.png`}
-                alt="Michael Höger"
+                src={`${basePath}/images/michael-hero.webp`}
+                alt="Michael Höger – Freelancer für Webdesign und digitale Lösungen"
                 className="relative h-[420px] w-[320px] rounded-2xl object-cover object-top shadow-lg"
               />
             </div>
