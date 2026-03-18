@@ -7,6 +7,8 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Reveal, slideFromLeft, slideFromRight } from "./Motion";
 
+const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
+
 const inputClasses =
   "w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-all duration-150 focus:border-primary focus:ring-2 focus:ring-primary/15";
 
@@ -30,7 +32,17 @@ export default function Contact() {
                 {siteConfig.contact.subheadline}
               </p>
 
-              <div className="mt-8 space-y-4">
+              {/* Casual photo */}
+              <div className="mt-8 mb-8 overflow-hidden rounded-2xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${basePath}/images/michael-casual.png`}
+                  alt="Michael Höger"
+                  className="h-52 w-full object-cover object-top sm:h-60"
+                />
+              </div>
+
+              <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/[0.07]">
                     <Mail className="h-4 w-4 text-primary" />

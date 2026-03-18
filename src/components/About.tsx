@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Reveal, slideFromLeft, slideFromRight } from "./Motion";
 
+const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
+
 export default function About() {
   const { about } = siteConfig;
 
@@ -26,30 +28,42 @@ export default function About() {
             </div>
           </Reveal>
 
-          {/* Stats */}
+          {/* Photo + Stats */}
           <Reveal variants={slideFromRight} delay={0.1}>
-            <div className="grid grid-cols-3 gap-4">
-              {about.stats.map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: 0.2 + i * 0.1,
-                    duration: 0.5,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className="rounded-2xl border border-border bg-white p-5 text-center"
-                >
-                  <div className="font-mono text-2xl font-bold tracking-tight text-primary sm:text-3xl">
-                    {stat.value}
-                  </div>
-                  <div className="mt-1 text-sm text-muted-foreground break-words hyphens-auto" lang="de">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
+            <div className="space-y-6">
+              {/* Working photo */}
+              <div className="overflow-hidden rounded-2xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${basePath}/images/michael-working.png`}
+                  alt="Michael Höger bei der Arbeit"
+                  className="h-56 w-full object-cover sm:h-64"
+                />
+              </div>
+
+              <div className="grid grid-cols-3 gap-4">
+                {about.stats.map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: 0.2 + i * 0.1,
+                      duration: 0.5,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="rounded-2xl border border-border bg-white p-5 text-center"
+                  >
+                    <div className="font-mono text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+                      {stat.value}
+                    </div>
+                    <div className="mt-1 text-sm text-muted-foreground break-words hyphens-auto" lang="de">
+                      {stat.label}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
