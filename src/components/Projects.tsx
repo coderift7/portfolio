@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Reveal, StaggerContainer, StaggerItem } from "./Motion";
@@ -17,11 +18,11 @@ export default function Projects() {
               Portfolio
             </span>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Ausgewählte Projekte
+              So könnte Ihre Webseite aussehen
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Ein Auszug meiner Arbeiten. Jedes Projekt ist individuell auf den
-              Kunden zugeschnitten.
+              Diese Demo-Projekte zeigen, was ich für Sie umsetzen kann —
+              individuell auf Ihre Branche zugeschnitten.
             </p>
           </div>
         </Reveal>
@@ -29,6 +30,12 @@ export default function Projects() {
         <StaggerContainer className="mt-14 grid gap-5 lg:grid-cols-3" staggerDelay={0.12}>
           {siteConfig.projects.map((project, i) => {
             const Mockup = mockups[i];
+            const hasUrl = project.url && project.url.length > 0;
+            const Wrapper = hasUrl ? "a" : "div";
+            const wrapperProps = hasUrl
+              ? { href: project.url, target: "_blank", rel: "noopener noreferrer" }
+              : {};
+
             return (
               <StaggerItem key={i}>
                 <motion.div
@@ -37,14 +44,19 @@ export default function Projects() {
                   className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white transition-shadow duration-200 hover:shadow-lg"
                 >
                   {/* Browser Mockup */}
-                  <div className="p-4 pb-0">
+                  <Wrapper {...wrapperProps} className={hasUrl ? "block p-4 pb-0" : "p-4 pb-0"}>
                     {Mockup && <Mockup />}
-                  </div>
+                  </Wrapper>
 
                   <div className="flex flex-1 flex-col p-6">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      {project.category}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="rounded-full bg-accent/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent">
+                        Demo
+                      </span>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        {project.category.replace("Demo-Projekt · ", "")}
+                      </span>
+                    </div>
                     <h3 className="mt-2 text-xl font-bold text-foreground">
                       {project.title}
                     </h3>
@@ -52,8 +64,8 @@ export default function Projects() {
                       {project.description}
                     </p>
 
-                    {/* Tags */}
-                    <div className="mt-5 flex flex-wrap gap-2">
+                    {/* Tags + Link */}
+                    <div className="mt-5 flex flex-wrap items-center gap-2">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
@@ -62,6 +74,16 @@ export default function Projects() {
                           {tag}
                         </span>
                       ))}
+                      {hasUrl && (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ml-auto inline-flex items-center gap-1 text-xs font-semibold text-primary transition-colors hover:text-secondary"
+                        >
+                          Live ansehen <ArrowUpRight className="h-3.5 w-3.5" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </motion.div>

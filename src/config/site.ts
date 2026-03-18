@@ -86,27 +86,30 @@ export const siteConfig = {
   projects: [
     {
       title: "MoverPro Umzüge",
-      category: "Webseite + KI-Sichtbarkeit",
+      category: "Demo-Projekt · Webseite + KI-Sichtbarkeit",
       description:
-        "Ein Umzugsunternehmen, das online kaum zu finden war. Heute erscheint es bei Google auf Seite 1 — und wird sogar von ChatGPT empfohlen, wenn jemand nach einem Umzugsservice in Berlin fragt.",
+        "So könnte die Webseite eines Umzugsunternehmens aussehen: Bei Google auf Seite 1 — und sogar von ChatGPT empfohlen, wenn jemand nach einem Umzugsservice in Berlin fragt.",
       tags: ["Webseite", "Google SEO", "KI-optimiert"],
       color: "#0D9488",
+      url: "https://coderift7.github.io/umzug-demo/",
     },
     {
       title: "Zahnarztpraxis Dr. Weber",
-      category: "Webseite + Terminbuchung",
+      category: "Demo-Projekt · Webseite + Terminbuchung",
       description:
-        "Eine Praxis-Webseite, über die Patienten direkt online Termine buchen können. Ergebnis: 40% mehr Terminanfragen, weniger Telefonate für das Praxisteam.",
+        "So könnte eine Praxis-Webseite aussehen, über die Patienten direkt online Termine buchen können — weniger Telefonate, mehr Übersicht für das Praxisteam.",
       tags: ["Webseite", "Online-Buchung", "Google"],
       color: "#0891B2",
+      url: "",
     },
     {
       title: "Malermeister Schulz",
-      category: "Webseite + Automatisierung",
+      category: "Demo-Projekt · Webseite + Automatisierung",
       description:
-        "Ein Malermeister, der vorher Anfragen per Zettel und Anruf bekam. Heute füllen Kunden ein Formular aus — und er bekommt alles automatisch aufs Handy geschickt.",
+        "So könnte die Webseite eines Handwerksbetriebs aussehen: Kunden füllen ein Formular aus — und der Meister bekommt alles automatisch aufs Handy geschickt.",
       tags: ["Webseite", "WhatsApp", "Automatisch"],
       color: "#F97316",
+      url: "",
     },
   ],
 
@@ -114,7 +117,7 @@ export const siteConfig = {
     headline: "Technik ist mein Job.\nIhr Erfolg ist mein Ziel.",
     text: "Ich bin Michael. Ich helfe kleinen Unternehmen und Selbstständigen, online Kunden zu gewinnen. Nicht mit komplizierten Fachbegriffen, sondern mit Lösungen, die einfach funktionieren. Ich erkläre alles so, dass Sie es verstehen — und liefere Ergebnisse, die Sie spüren. Was mich besonders macht: Ich optimiere Ihre Webseite nicht nur für Google, sondern auch für die neue Welt der KI-Assistenten. Damit Sie auch morgen noch gefunden werden.",
     stats: [
-      { value: "20+", label: "Zufriedene Kunden" },
+      { value: "20%", label: "Rabatt für die ersten 20 Kunden" },
       { value: "100%", label: "Zufrieden oder Geld zurück" },
       { value: "<48h", label: "Antwortzeit" },
     ],
