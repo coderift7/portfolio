@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Send, CheckCircle2, Mail, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Reveal, slideFromLeft, slideFromRight } from "./Motion";
 
@@ -121,9 +122,9 @@ export default function Contact() {
                       <input type="checkbox" required className="mt-1 rounded border-border" />
                       <span className="text-xs text-muted-foreground">
                         Ich stimme der{" "}
-                        <a href="/datenschutz" className="text-primary underline">
+                        <Link href="/datenschutz" className="text-primary underline">
                           Datenschutzerklärung
-                        </a>{" "}
+                        </Link>{" "}
                         zu. *
                       </span>
                     </label>

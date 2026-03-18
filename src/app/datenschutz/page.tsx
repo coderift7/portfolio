@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
@@ -10,9 +11,9 @@ export default function Datenschutz() {
   return (
     <div className="min-h-screen bg-white">
       <div className="mx-auto max-w-3xl px-5 py-24">
-        <a href="/" className="mb-8 inline-flex items-center gap-2 text-sm text-accent hover:underline">
+        <Link href="/" className="mb-8 inline-flex items-center gap-2 text-sm text-primary hover:underline">
           <ArrowLeft className="h-4 w-4" /> Zurück
-        </a>
+        </Link>
         <h1 className="text-3xl font-bold text-primary">Datenschutzerklärung</h1>
         <div className="mt-8 space-y-6 text-muted-foreground">
           <div>

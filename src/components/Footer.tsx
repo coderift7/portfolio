@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 export default function Footer() {
@@ -9,15 +10,15 @@ export default function Footer() {
           vorbehalten.
         </div>
         <div className="flex gap-6 text-sm text-muted-foreground">
-          <a href="/impressum" className="transition-colors hover:text-primary">
+          <Link href="/impressum" className="transition-colors hover:text-primary">
             Impressum
-          </a>
-          <a
+          </Link>
+          <Link
             href="/datenschutz"
             className="transition-colors hover:text-primary"
           >
             Datenschutz
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
