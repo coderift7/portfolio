@@ -44,8 +44,10 @@ export default function Services() {
                 <motion.div
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.2 }}
-                  className="group rounded-2xl border border-border bg-white p-7 transition-shadow duration-200 hover:shadow-md"
+                  className="group relative overflow-hidden rounded-2xl border border-border bg-white p-7 transition-shadow duration-200 hover:shadow-md"
                 >
+                  {/* Animated top border */}
+                  <div className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-primary to-secondary transition-transform duration-300 ease-out group-hover:scale-x-100" />
                   <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/[0.07]">
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
