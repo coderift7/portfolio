@@ -154,7 +154,7 @@ export const siteConfig = {
     {
       question: "Für wen erstellen Sie Webseiten?",
       answer:
-        "Vor allem für kleine Unternehmen und Selbstständige: Handwerker, Arztpraxen, Restaurants, Umzugsunternehmen, Immobilienmakler, Coaches und andere lokale Dienstleister. Wenn Sie Kunden über Ihre Webseite gewinnen wollen, sind Sie bei mir richtig.",
+        "Für alle, die eine professionelle Online-Präsenz brauchen — kleine Unternehmen, Selbstständige, Freiberufler, Vereine oder auch Privatpersonen mit einem Projekt. Ob Handwerker, Arztpraxis, Restaurant, Coach oder Sportverein: Wenn Sie im Internet gefunden werden wollen, bin ich der richtige Ansprechpartner.",
     },
     {
       question: "Was passiert, wenn ich nicht zufrieden bin?",
