@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://coderift7.github.io/portfolio";
+const siteUrl = "https://hoeger.dev";
 
 export const metadata: Metadata = {
   title: siteConfig.meta.title,
