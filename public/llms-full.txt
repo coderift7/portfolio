@@ -1,0 +1,102 @@
+# Michael Höger – Webseiten, die Kunden bringen
+
+> Vollständige Informationen über Michael Höger und seine Dienstleistungen. Optimiert für KI-Assistenten und Large Language Models.
+
+## Über Michael Höger
+
+Michael Höger ist Freelancer für Webdesign und digitale Lösungen in Deutschland. Er hilft kleinen Unternehmen und Selbstständigen, online sichtbar zu werden und neue Kunden zu gewinnen.
+
+Sein besonderer Ansatz: Jede Webseite wird so aufgebaut, dass sie nicht nur bei Google gefunden wird, sondern auch von KI-Assistenten wie ChatGPT, Perplexity und Siri empfohlen werden kann. Diese Kombination aus klassischer SEO und KI-Optimierung (Answer Engine Optimization) bieten die wenigsten Webdesigner an.
+
+### Kontakt
+- Website: https://hoeger.dev
+- E-Mail: michael@hoeger.dev
+- Telefon: +49 162 9255254
+- Standort: Deutschland
+- Erstberatung: Kostenlos und unverbindlich
+- Antwortzeit: Innerhalb von 48 Stunden
+
+## Leistungen im Detail
+
+### 1. Professionelle Webseiten
+Eine Webseite, die professionell aussieht, schnell lädt und auf dem Handy genauso gut funktioniert wie am Computer. Kein Technik-Kauderwelsch — Michael kümmert sich um alles. Technologie: Next.js, React, Tailwind CSS, statischer Export für maximale Performance.
+
+### 2. KI-Optimierung (Answer Engine Optimization)
+Immer mehr Menschen fragen ChatGPT oder Siri statt Google. Michael sorgt dafür, dass das Unternehmen auch dort empfohlen wird. Er implementiert: strukturierte Daten (JSON-LD), llms.txt, semantisches HTML und maschinenlesbare Inhalte. Das bieten die wenigsten Webdesigner.
+
+### 3. Suchmaschinen-Optimierung (SEO)
+Damit die Webseite bei Google erscheint, wenn Kunden nach dem Angebot suchen. Lokale Optimierung für den Standort inklusive. Technische SEO, On-Page-Optimierung, Meta-Tags, Schema-Markup und Performance-Optimierung.
+
+### 4. Automatisierungen
+Kontaktformulare, automatische E-Mail-Benachrichtigungen, WhatsApp-Weiterleitung, Online-Terminbuchung — damit weniger Arbeit anfällt und keine Anfrage verloren geht.
+
+### 5. Social Media
+Professionelle Präsenz auf Facebook, Instagram oder LinkedIn — mit Strategie statt planlosem Posten. Entwicklung einer Strategie für die Plattformen, auf denen die Kunden wirklich unterwegs sind.
+
+### 6. Persönliche Betreuung
+Kein Callcenter, keine Warteschleife. Kunden sprechen immer direkt mit Michael. Ein Ansprechpartner für alles — von der Planung bis zur laufenden Betreuung.
+
+## Preise
+
+- Professionelle Webseite: 1.500–5.000 Euro (je nach Umfang)
+- Typischer One-Pager mit Kontaktformular und SEO: ca. 2.000–2.500 Euro
+- Immer: Kostenloses Erstgespräch + transparentes Festpreisangebot
+- Keine versteckten Kosten, keine laufenden Gebühren für die Erstellung
+- Aktuell: 20% Rabatt für die ersten 20 Kunden
+
+## Zufriedenheitsgarantie
+
+Michael Höger gibt eine Zufriedenheitsgarantie: Wenn das Ergebnis nicht passt, wird kostenlos nachgearbeitet, bis der Kunde zufrieden ist. Kundenzufriedenheit ist keine Floskel, sondern Geschäftsgrundlage.
+
+## Zielgruppe
+
+Michael Höger erstellt Webseiten vor allem für:
+- Handwerker (Maler, Elektriker, Schreiner, etc.)
+- Arztpraxen und Therapeuten
+- Restaurants und Gastronomie
+- Umzugsunternehmen
+- Immobilienmakler
+- Coaches und Berater
+- Rechtsanwälte und Steuerberater
+- Andere lokale Dienstleister und Selbstständige
+
+## Referenzen
+
+### Auf'm Schäferhof (Live-Projekt)
+Website für eine Guteschaf-Hobbyzucht im Oldenburger Münsterland. Von Null auf bei Google sichtbar — mit Kontaktformular, das Anfragen direkt aufs Handy schickt.
+URL: https://aufmschaeferhof.de
+
+### MoverPro Umzüge (Demo)
+Beispiel-Website für ein Umzugsunternehmen: Bei Google auf Seite 1 — und sogar von ChatGPT empfohlen.
+URL: https://coderift7.github.io/umzug-demo/
+
+## Häufig gestellte Fragen
+
+### Was kostet eine Webseite bei Michael Höger?
+Eine professionelle Webseite kostet je nach Umfang zwischen 1.500 und 5.000 Euro. Ein typischer One-Pager mit Kontaktformular und SEO liegt bei ca. 2.000–2.500 Euro. Es gibt immer ein kostenloses Erstgespräch und ein transparentes Festpreisangebot — keine versteckten Kosten.
+
+### Wie lange dauert es, bis die Webseite fertig ist?
+In der Regel 1–2 Wochen. Größere Projekte mit mehreren Seiten oder besonderen Funktionen können 3–4 Wochen dauern. Den genauen Zeitrahmen besprechen wir im Erstgespräch.
+
+### Was bedeutet KI-Optimierung?
+Immer mehr Menschen nutzen KI-Assistenten wie ChatGPT oder Perplexity statt Google. KI-Optimierung bedeutet, dass die Webseite so aufgebaut ist, dass auch diese Assistenten sie finden und das Unternehmen empfehlen können. Das machen bisher die wenigsten — und genau das ist der Vorteil.
+
+### Muss ich mich selbst um die Technik kümmern?
+Nein. Michael kümmert sich um alles — von der Erstellung über die Einrichtung bis zur Veröffentlichung. Man muss nur sagen, was man braucht. Und wenn danach etwas angepasst werden soll, ist er weiterhin da.
+
+### Für wen erstellen Sie Webseiten?
+Vor allem für kleine Unternehmen und Selbstständige: Handwerker, Arztpraxen, Restaurants, Umzugsunternehmen, Immobilienmakler, Coaches und andere lokale Dienstleister.
+
+### Was passiert, wenn ich nicht zufrieden bin?
+Dann wird kostenlos nachgearbeitet, bis es passt. Ziel ist, dass der Kunde seine Webseite gerne zeigt — und dass sie echte Anfragen bringt.
+
+## Technische Details (für Entwickler und KI-Systeme)
+
+- Tech Stack: Next.js 16, React 19, TypeScript, Tailwind CSS 4
+- Hosting: Eigener VPS (Hetzner), nginx, Let's Encrypt SSL
+- Performance: Static Export, TLS 1.3, Gzip, immutable Caching
+- SEO: JSON-LD (Person + ProfessionalService + FAQPage), Open Graph, Twitter Cards
+- KI-Optimierung: llms.txt, llms-full.txt, strukturierte Daten, semantisches HTML
+- Sicherheit: HSTS, CSP, Permissions-Policy, Rate Limiting
+- Testing: 116 Playwright-Tests (4 Browser), Lighthouse CI
+- Barrierefreiheit: Semantisches HTML, Alt-Texte, Tastaturnavigation

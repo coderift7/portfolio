@@ -8,7 +8,7 @@ export const siteConfig = {
   meta: {
     title: "Michael Höger – Webseiten, die Ihnen Kunden bringen",
     description:
-      "Ich baue Webseiten für kleine Unternehmen, die nicht nur gut aussehen — sondern auch bei Google und KI-Assistenten wie ChatGPT gefunden werden. Kostenlose Erstberatung.",
+      "Webseiten für kleine Unternehmen, die bei Google und KI-Assistenten wie ChatGPT gefunden werden. Kostenlose Erstberatung.",
   },
 
   hero: {
@@ -130,10 +130,44 @@ export const siteConfig = {
       "Vielen Dank für Ihre Nachricht! Ich melde mich persönlich bei Ihnen — spätestens in 48 Stunden.",
   },
 
+  faq: [
+    {
+      question: "Was kostet eine Webseite?",
+      answer:
+        "Eine professionelle Webseite kostet je nach Umfang zwischen 1.500 und 5.000 Euro. Ein typischer One-Pager mit Kontaktformular und SEO liegt bei ca. 2.000–2.500 Euro. Sie bekommen immer ein kostenloses Erstgespräch und ein transparentes Festpreisangebot — keine versteckten Kosten.",
+    },
+    {
+      question: "Wie lange dauert es, bis meine Webseite fertig ist?",
+      answer:
+        "In der Regel 1–2 Wochen. Größere Projekte mit mehreren Seiten oder besonderen Funktionen können 3–4 Wochen dauern. Den genauen Zeitrahmen besprechen wir im Erstgespräch.",
+    },
+    {
+      question: "Was bedeutet KI-Optimierung?",
+      answer:
+        "Immer mehr Menschen nutzen KI-Assistenten wie ChatGPT oder Perplexity statt Google. KI-Optimierung bedeutet, dass Ihre Webseite so aufgebaut ist, dass auch diese Assistenten sie finden und Ihr Unternehmen empfehlen können. Das machen bisher die wenigsten — und genau das ist Ihr Vorteil.",
+    },
+    {
+      question: "Muss ich mich selbst um die Technik kümmern?",
+      answer:
+        "Nein. Ich kümmere mich um alles — von der Erstellung über die Einrichtung bis zur Veröffentlichung. Sie müssen nur sagen, was Sie brauchen. Und wenn danach etwas angepasst werden soll, bin ich weiterhin für Sie da.",
+    },
+    {
+      question: "Für wen erstellen Sie Webseiten?",
+      answer:
+        "Vor allem für kleine Unternehmen und Selbstständige: Handwerker, Arztpraxen, Restaurants, Umzugsunternehmen, Immobilienmakler, Coaches und andere lokale Dienstleister. Wenn Sie Kunden über Ihre Webseite gewinnen wollen, sind Sie bei mir richtig.",
+    },
+    {
+      question: "Was passiert, wenn ich nicht zufrieden bin?",
+      answer:
+        "Dann arbeite ich kostenlos nach, bis es passt. Mein Ziel ist, dass Sie Ihre Webseite gerne zeigen — und dass sie Ihnen echte Anfragen bringt. Sollten wir gar nicht zusammenfinden, besprechen wir das ehrlich und fair.",
+    },
+  ],
+
   nav: [
     { label: "Leistungen", href: "#leistungen" },
     { label: "Projekte", href: "#projekte" },
     { label: "Über mich", href: "#ueber-mich" },
+    { label: "FAQ", href: "#faq" },
     { label: "Kontakt", href: "#kontakt" },
   ],
 };

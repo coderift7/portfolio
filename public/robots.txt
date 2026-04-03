@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://hoeger.dev/sitemap.xml
+
+# AI/LLM content
+# See https://hoeger.dev/llms.txt (summary)
+# See https://hoeger.dev/llms-full.txt (detailed)

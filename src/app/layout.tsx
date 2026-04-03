@@ -143,6 +143,24 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* FAQPage Schema — Google Rich Results + AI Bots */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: siteConfig.faq.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.answer,
+                },
+              })),
+            }),
+          }}
+        />
       </head>
       <body className="antialiased">{children}</body>
     </html>
