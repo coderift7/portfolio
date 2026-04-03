@@ -91,7 +91,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3, ease }}
-            className="hidden lg:block"
+            className="flex justify-center lg:block"
           >
             <div className="relative">
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl" />
@@ -99,7 +99,7 @@ export default function Hero() {
               <img
                 src={`${basePath}/images/michael-hero.webp`}
                 alt="Michael Höger – Freelancer für Webdesign und digitale Lösungen"
-                className="relative h-[420px] w-[320px] rounded-2xl object-cover object-top shadow-lg"
+                className="relative h-[280px] w-[210px] rounded-2xl object-cover object-top shadow-lg sm:h-[340px] sm:w-[260px] lg:h-[420px] lg:w-[320px]"
               />
             </div>
           </motion.div>
