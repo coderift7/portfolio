@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Datenschutz() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-3xl px-5 py-24">
         <Link href="/" className="mb-8 inline-flex items-center gap-2 text-sm text-primary hover:underline">
           <ArrowLeft className="h-4 w-4" /> Zurück
