@@ -44,6 +44,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Michael Höger – Webseiten, die Ihnen Kunden bringen",
+        type: "image/png",
       },
     ],
   },
@@ -53,6 +54,18 @@ export const metadata: Metadata = {
     description: siteConfig.meta.description,
     images: [`${siteUrl}/images/og-image.png`],
   },
+  keywords: [
+    "Webdesign",
+    "Webentwicklung",
+    "SEO",
+    "KI-Optimierung",
+    "Webseite erstellen lassen",
+    "Freelancer Webdesign",
+    "kleine Unternehmen",
+    "Limburg",
+    "ChatGPT Optimierung",
+  ],
+  manifest: "/manifest.json",
   other: {
     "theme-color": "#0D9488",
   },
@@ -118,6 +131,19 @@ export default function RootLayout({
               telephone: siteConfig.phone,
               image: `${siteUrl}/images/og-image.png`,
               priceRange: "€€",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Johann-Boppe-Str. 19",
+                addressLocality: "Limburg an der Lahn",
+                postalCode: "65549",
+                addressRegion: "Hessen",
+                addressCountry: "DE",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 50.3877,
+                longitude: 8.0622,
+              },
               serviceType: [
                 "Webdesign",
                 "Webentwicklung",
@@ -139,6 +165,25 @@ export default function RootLayout({
                   },
                   position: i + 1,
                 })),
+              },
+            }),
+          }}
+        />
+        {/* WebSite Schema — Sitelinks Search Box */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Michael Höger – Webdesign & Digitale Lösungen",
+              url: siteUrl,
+              description: siteConfig.meta.description,
+              inLanguage: "de-DE",
+              publisher: {
+                "@type": "Person",
+                name: "Michael Höger",
+                url: siteUrl,
               },
             }),
           }}

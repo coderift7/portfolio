@@ -9,9 +9,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/impressum/" },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Startseite", item: "https://hoeger.dev/" },
+    { "@type": "ListItem", position: 2, name: "Impressum" },
+  ],
+};
+
 export default function Impressum() {
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="mx-auto max-w-3xl px-5 py-24">
         <Link href="/" className="mb-8 inline-flex items-center gap-2 text-sm text-primary hover:underline">
           <ArrowLeft className="h-4 w-4" /> Zurück
