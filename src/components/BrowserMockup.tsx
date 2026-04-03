@@ -20,7 +20,7 @@ function BrowserFrame({
           <div className="h-2.5 w-2.5 rounded-full bg-yellow-300" />
           <div className="h-2.5 w-2.5 rounded-full bg-green-300" />
         </div>
-        <div className="flex-1 rounded-md bg-white px-3 py-1 text-[10px] text-muted-foreground">
+        <div className="flex-1 rounded-md bg-white dark:bg-slate-700/50 px-3 py-1 text-[10px] text-muted-foreground">
           {url}
         </div>
       </div>

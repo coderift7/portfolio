@@ -27,7 +27,7 @@ export default function UspBanner() {
               const Icon = iconMap[item.icon] || Bot;
               return (
                 <StaggerItem key={i}>
-                  <div className="glass rounded-2xl p-6 shadow-depth glow-hover">
+                  <div className="glass rounded-2xl p-6 shadow-depth glow-hover text-center">
                     <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 shadow-[0_0_15px_rgba(13,148,136,0.1)]">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
