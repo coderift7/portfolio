@@ -10,13 +10,13 @@ import { Reveal, slideFromLeft, slideFromRight } from "./Motion";
 const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
 
 const inputClasses =
-  "w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-all duration-150 focus:border-primary focus:ring-2 focus:ring-primary/15";
+  "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-all duration-150 focus:border-primary focus:ring-2 focus:ring-primary/15";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section id="kontakt" className="bg-white py-24 lg:py-32">
+    <section id="kontakt" className="bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <div className="grid items-start gap-14 lg:grid-cols-2">
           {/* Left */}

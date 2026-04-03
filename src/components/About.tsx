@@ -53,7 +53,7 @@ export default function About() {
                       duration: 0.5,
                       ease: [0.22, 1, 0.36, 1],
                     }}
-                    className="rounded-2xl border border-border bg-white p-5 text-center"
+                    className="rounded-2xl border border-border bg-background p-5 text-center"
                   >
                     <div className="font-mono text-2xl font-bold tracking-tight text-primary sm:text-3xl">
                       {stat.value}

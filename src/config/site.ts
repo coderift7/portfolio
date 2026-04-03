@@ -85,13 +85,24 @@ export const siteConfig = {
 
   projects: [
     {
+      title: "Auf'm Schäferhof",
+      category: "Kundenprojekt · Webseite + SEO",
+      description:
+        "Eine Webseite für eine Guteschaf-Hobbyzucht im Oldenburger Münsterland. Von Null auf bei Google sichtbar — mit Kontaktformular, das Anfragen direkt aufs Handy schickt.",
+      tags: ["Webseite", "Google SEO", "Kontaktformular"],
+      color: "#3B2618",
+      url: "https://aufmschaeferhof.de",
+      isReal: true,
+    },
+    {
       title: "MoverPro Umzüge",
       category: "Demo-Projekt · Webseite + KI-Sichtbarkeit",
       description:
-        "So könnte die Webseite eines Umzugsunternehmens aussehen: Bei Google auf Seite 1 — und sogar von ChatGPT empfohlen, wenn jemand nach einem Umzugsservice in Berlin fragt.",
+        "So könnte die Webseite eines Umzugsunternehmens aussehen: Bei Google auf Seite 1 — und sogar von ChatGPT empfohlen, wenn jemand nach einem Umzugsservice fragt.",
       tags: ["Webseite", "Google SEO", "KI-optimiert"],
       color: "#0D9488",
       url: "https://coderift7.github.io/umzug-demo/",
+      isReal: false,
     },
     {
       title: "Zahnarztpraxis Dr. Weber",
@@ -101,6 +112,7 @@ export const siteConfig = {
       tags: ["Webseite", "Online-Buchung", "Google"],
       color: "#0891B2",
       url: "",
+      isReal: false,
     },
     {
       title: "Malermeister Schulz",
@@ -110,6 +122,7 @@ export const siteConfig = {
       tags: ["Webseite", "WhatsApp", "Automatisch"],
       color: "#F97316",
       url: "",
+      isReal: false,
     },
   ],
 

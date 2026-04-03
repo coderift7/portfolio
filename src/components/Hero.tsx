@@ -12,13 +12,13 @@ export default function Hero() {
   const { hero } = siteConfig;
 
   return (
-    <section className="relative flex min-h-[100dvh] items-center overflow-hidden bg-white">
+    <section className="relative flex min-h-[100dvh] items-center overflow-hidden bg-background">
       {/* Subtle background dots */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, #0F172A 1px, transparent 1px)",
+            "radial-gradient(circle at 1px 1px, var(--foreground) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
         }}
       />

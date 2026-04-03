@@ -31,6 +31,26 @@
   --shadow-glow: 0 0 20px rgba(13, 148, 136, 0.15);
 }
 
+/* Dark Mode — CI-defined colors */
+.dark {
+  --primary: #2DD4BF;
+  --primary-foreground: #0F172A;
+  --secondary: #22D3EE;
+  --secondary-foreground: #0F172A;
+  --accent: #FB923C;
+  --accent-foreground: #0F172A;
+  --background: #0F172A;
+  --foreground: #F8FAFC;
+  --card: #1E293B;
+  --card-foreground: #F1F5F9;
+  --muted: #334155;
+  --muted-foreground: #94A3B8;
+  --border: #334155;
+  --ring: #2DD4BF;
+  --gradient-brand: linear-gradient(135deg, #2DD4BF, #22D3EE);
+  --shadow-glow: 0 0 20px rgba(45, 212, 191, 0.2);
+}
+
 @theme inline {
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);

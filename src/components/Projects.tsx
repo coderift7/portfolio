@@ -4,13 +4,13 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Reveal, StaggerContainer, StaggerItem } from "./Motion";
-import { MoverProMockup, ZahnarztMockup, MalerMockup } from "./BrowserMockup";
+import { SchaeferhofMockup, MoverProMockup, ZahnarztMockup, MalerMockup } from "./BrowserMockup";
 
-const mockups = [MoverProMockup, ZahnarztMockup, MalerMockup];
+const mockups = [SchaeferhofMockup, MoverProMockup, ZahnarztMockup, MalerMockup];
 
 export default function Projects() {
   return (
-    <section id="projekte" className="bg-white py-24 lg:py-32">
+    <section id="projekte" className="bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <Reveal>
           <div className="max-w-xl">
@@ -18,16 +18,16 @@ export default function Projects() {
               Portfolio
             </span>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              So könnte Ihre Webseite aussehen
+              Projekte, die Ergebnisse liefern
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Diese Demo-Projekte zeigen, was ich für Sie umsetzen kann —
-              individuell auf Ihre Branche zugeschnitten.
+              Echte Kundenprojekte und Demos — individuell auf die jeweilige
+              Branche zugeschnitten.
             </p>
           </div>
         </Reveal>
 
-        <StaggerContainer className="mt-14 grid gap-5 lg:grid-cols-3" staggerDelay={0.12}>
+        <StaggerContainer className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-2" staggerDelay={0.12}>
           {siteConfig.projects.map((project, i) => {
             const Mockup = mockups[i];
             const hasUrl = project.url && project.url.length > 0;
@@ -41,7 +41,7 @@ export default function Projects() {
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.2 }}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white transition-shadow duration-200 hover:shadow-lg"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-background transition-shadow duration-200 hover:shadow-lg"
                 >
                   {/* Browser Mockup */}
                   <Wrapper {...wrapperProps} className={hasUrl ? "block p-4 pb-0" : "p-4 pb-0"}>
@@ -50,11 +50,15 @@ export default function Projects() {
 
                   <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-center gap-2">
-                      <span className="rounded-full bg-accent/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent">
-                        Demo
+                      <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${
+                        project.isReal
+                          ? "bg-primary/10 text-primary"
+                          : "bg-accent/10 text-accent"
+                      }`}>
+                        {project.isReal ? "Live" : "Demo"}
                       </span>
                       <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                        {project.category.replace("Demo-Projekt · ", "")}
+                        {project.category.replace(/^(Kundenprojekt|Demo-Projekt) · /, "")}
                       </span>
                     </div>
                     <h3 className="mt-2 text-xl font-bold text-foreground">

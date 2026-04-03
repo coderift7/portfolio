@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +24,7 @@ export default function Header() {
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl shadow-[0_1px_2px_rgba(0,0,0,0.05)]"
+          ? "bg-background/80 backdrop-blur-xl shadow-[0_1px_2px_rgba(0,0,0,0.05)]"
           : "bg-transparent"
       }`}
     >
@@ -42,6 +43,7 @@ export default function Header() {
               {item.label}
             </a>
           ))}
+          <ThemeToggle />
           <a
             href="#kontakt"
             className="btn-brand ml-3 cursor-pointer rounded-xl px-5 py-2.5 text-sm font-semibold"
@@ -50,13 +52,16 @@ export default function Header() {
           </a>
         </nav>
 
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="cursor-pointer rounded-lg p-2 text-foreground lg:hidden"
-          aria-label="Menü"
-        >
+        <div className="flex items-center gap-1 lg:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="cursor-pointer rounded-lg p-2 text-foreground"
+            aria-label="Menü"
+          >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -66,7 +71,7 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-t border-border bg-white lg:hidden"
+            className="overflow-hidden border-t border-border bg-background lg:hidden"
           >
             <nav className="flex flex-col gap-1 px-5 py-4">
               {siteConfig.nav.map((item) => (

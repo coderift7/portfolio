@@ -2,6 +2,8 @@
 
 import { Globe, Calendar, MessageSquare } from "lucide-react";
 
+const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
+
 function BrowserFrame({
   color,
   url,
@@ -29,6 +31,19 @@ function BrowserFrame({
         {children}
       </div>
     </div>
+  );
+}
+
+export function SchaeferhofMockup() {
+  return (
+    <BrowserFrame color="#3B2618" url="aufmschaeferhof.de">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`${basePath}/images/schaeferhof-preview.png`}
+        alt="Vorschau der Webseite aufmschaeferhof.de"
+        className="h-full w-full object-cover object-top"
+      />
+    </BrowserFrame>
   );
 }
 

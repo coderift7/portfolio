@@ -9,7 +9,7 @@ export default function Guarantee() {
   const { guarantee } = siteConfig;
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-background py-16">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <Reveal>
           <div className="mx-auto max-w-2xl rounded-2xl border border-primary/15 bg-primary/[0.03] p-8 text-center sm:p-10">
