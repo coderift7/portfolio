@@ -40,14 +40,14 @@ export default function Services() {
           {siteConfig.services.map((service, i) => {
             const Icon = iconMap[service.icon] || Globe;
             return (
-              <StaggerItem key={i}>
+              <StaggerItem key={i} className="h-full">
                 <motion.div
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.2 }}
-                  className="group relative overflow-hidden rounded-2xl border border-border bg-background p-7 transition-shadow duration-200 hover:shadow-md"
+                  className="group relative h-full overflow-hidden rounded-2xl border border-border glass shadow-depth glow-hover bg-background p-7 transition-all duration-300"
                 >
                   {/* Animated top border */}
-                  <div className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-primary to-secondary transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                  <div className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-100 opacity-0 bg-gradient-to-r from-primary to-secondary transition-opacity duration-300 ease-out group-hover:opacity-100" />
                   <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/[0.07]">
                     <Icon className="h-5 w-5 text-primary" />
                   </div>

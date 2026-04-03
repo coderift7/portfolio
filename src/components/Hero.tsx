@@ -35,7 +35,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1, ease }}
-              className="mb-6 inline-flex items-center rounded-full bg-primary/[0.07] px-4 py-1.5"
+              className="mb-6 inline-flex items-center rounded-full bg-primary/[0.07] glass shadow-depth px-4 py-1.5"
             >
               <span className="mr-2 h-2 w-2 rounded-full bg-primary" />
               <span className="text-sm font-medium text-primary">
@@ -79,7 +79,7 @@ export default function Hero() {
               </a>
               <a
                 href="#projekte"
-                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-semibold text-foreground transition-all duration-150 hover:bg-muted"
+                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl glass shadow-depth glow-hover px-7 py-3.5 text-sm font-semibold text-foreground transition-all duration-150 hover:bg-muted"
               >
                 {hero.ctaSecondary}
               </a>
@@ -94,7 +94,7 @@ export default function Hero() {
             className="flex justify-center lg:block"
           >
             <div className="relative">
-              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl" />
+              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/30 to-secondary/30 blur-3xl" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${basePath}/images/michael-hero.webp`}
@@ -118,8 +118,10 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="relative"
         >
-          <ArrowDown className="h-5 w-5" />
+          <div className="absolute -inset-2 animate-pulse rounded-full bg-primary/15 blur-md" />
+          <ArrowDown className="relative h-5 w-5" />
         </motion.div>
       </motion.a>
     </section>

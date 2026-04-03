@@ -41,7 +41,7 @@ export default function Projects() {
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.2 }}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-background transition-shadow duration-200 hover:shadow-lg"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl glass shadow-depth glow-hover border-white/20 dark:border-white/5 transition-all duration-300"
                 >
                   {/* Browser Mockup */}
                   <Wrapper {...wrapperProps} className={hasUrl ? "block p-4 pb-0" : "p-4 pb-0"}>

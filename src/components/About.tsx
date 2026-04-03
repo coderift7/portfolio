@@ -32,7 +32,7 @@ export default function About() {
           <Reveal variants={slideFromRight} delay={0.1}>
             <div className="space-y-6">
               {/* Working photo */}
-              <div className="overflow-hidden rounded-2xl">
+              <div className="overflow-hidden rounded-2xl shadow-depth">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`${basePath}/images/michael-working.webp`}
@@ -53,9 +53,9 @@ export default function About() {
                       duration: 0.5,
                       ease: [0.22, 1, 0.36, 1],
                     }}
-                    className="rounded-2xl border border-border bg-background p-5 text-center"
+                    className="rounded-2xl glass shadow-depth glow-hover border-white/20 dark:border-white/5 p-5 text-center"
                   >
-                    <div className="font-mono text-2xl font-bold tracking-tight text-primary sm:text-3xl">
+                    <div className="font-mono text-2xl font-bold tracking-tight text-gradient-brand sm:text-3xl">
                       {stat.value}
                     </div>
                     <div className="mt-1 text-sm text-muted-foreground break-words hyphens-auto" lang="de">

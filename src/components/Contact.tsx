@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle2, Mail, MapPin } from "lucide-react";
+import { Send, CheckCircle2, Mail, MapPin, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
@@ -10,7 +10,7 @@ import { Reveal, slideFromLeft, slideFromRight } from "./Motion";
 const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
 
 const inputClasses =
-  "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-all duration-150 focus:border-primary focus:ring-2 focus:ring-primary/15";
+  "w-full rounded-xl border border-border/50 bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm px-4 py-3 text-sm text-foreground outline-none transition-all duration-150 focus:border-primary focus:ring-2 focus:ring-primary/15 focus:shadow-[0_0_15px_rgba(13,148,136,0.1)]";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -68,7 +68,7 @@ export default function Contact() {
               </p>
 
               {/* Casual photo */}
-              <div className="mt-8 mb-8 overflow-hidden rounded-2xl">
+              <div className="mt-8 mb-8 overflow-hidden rounded-2xl shadow-depth">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`${basePath}/images/michael-casual.webp`}
@@ -88,6 +88,14 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/[0.07]">
+                    <Phone className="h-4 w-4 text-primary" />
+                  </div>
+                  <a href={`tel:${siteConfig.phone}`} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                    {siteConfig.phone}
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/[0.07]">
                     <MapPin className="h-4 w-4 text-primary" />
                   </div>
                   <span className="text-sm text-muted-foreground">
@@ -100,7 +108,7 @@ export default function Contact() {
 
           {/* Right — Form */}
           <Reveal variants={slideFromRight} delay={0.1}>
-            <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+            <div className="rounded-2xl glass shadow-depth border-white/20 dark:border-white/5 p-6 sm:p-8">
               <AnimatePresence mode="wait">
                 {submitted ? (
                   <motion.div

@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-card">
+    <footer className="border-t border-border/50 bg-card/80 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row sm:px-6">
         <div className="text-sm text-muted-foreground">
           © {new Date().getFullYear()} {siteConfig.name}. Alle Rechte

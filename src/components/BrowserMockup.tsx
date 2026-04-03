@@ -12,13 +12,13 @@ function BrowserFrame({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-white shadow-sm">
+    <div className="overflow-hidden rounded-xl glass shadow-depth">
       {/* Browser chrome */}
-      <div className="flex items-center gap-2 border-b border-border bg-muted/50 px-3 py-2">
+      <div className="flex items-center gap-2 border-b border-border bg-white/50 dark:bg-slate-800/50 px-3 py-2">
         <div className="flex gap-1.5">
-          <div className="h-2.5 w-2.5 rounded-full bg-border" />
-          <div className="h-2.5 w-2.5 rounded-full bg-border" />
-          <div className="h-2.5 w-2.5 rounded-full bg-border" />
+          <div className="h-2.5 w-2.5 rounded-full bg-red-300" />
+          <div className="h-2.5 w-2.5 rounded-full bg-yellow-300" />
+          <div className="h-2.5 w-2.5 rounded-full bg-green-300" />
         </div>
         <div className="flex-1 rounded-md bg-white px-3 py-1 text-[10px] text-muted-foreground">
           {url}

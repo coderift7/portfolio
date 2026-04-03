@@ -41,7 +41,7 @@ export default function Logo({ className }: { className?: string }) {
       <LogoIcon className="h-10 w-10 shrink-0" />
       <div className="flex flex-col">
         <div className="flex items-baseline gap-1 text-xl leading-tight tracking-tight">
-          <span className="font-light text-neutral-700">Michael</span>
+          <span className="font-light text-neutral-700 dark:text-neutral-300">Michael</span>
           <span className="font-extrabold text-gradient-brand">Höger</span>
         </div>
         <div className="text-[9px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
