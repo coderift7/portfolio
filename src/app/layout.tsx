@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: "/favicon-32.png",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     type: "website",
@@ -88,7 +88,7 @@ export default function RootLayout({
               email: siteConfig.email,
               telephone: siteConfig.phone,
               image: `${siteUrl}/images/michael-hero.webp`,
-              sameAs: [],
+              sameAs: ["https://hoeger.dev"],
               knowsAbout: [
                 "Webdesign",
                 "Webentwicklung",
@@ -117,7 +117,7 @@ export default function RootLayout({
               email: siteConfig.email,
               telephone: siteConfig.phone,
               image: `${siteUrl}/images/og-image.png`,
-              priceRange: "€",
+              priceRange: "€€",
               serviceType: [
                 "Webdesign",
                 "Webentwicklung",

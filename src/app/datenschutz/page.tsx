@@ -6,6 +6,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: `Datenschutz – ${siteConfig.name}`,
   description: "Datenschutzerklärung von Michael Höger – Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO.",
+  alternates: { canonical: "/datenschutz/" },
 };
 
 export default function Datenschutz() {

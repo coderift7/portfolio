@@ -121,15 +121,18 @@ export function StaggerItem({
     setIndex(siblings.indexOf(el));
   }, []);
 
-  // Check if parent StaggerContainer is visible
+  // Check if ancestor StaggerContainer is visible (walks up to find data-visible)
   const parentRef = useRef<Element | null>(null);
   const [parentVisible, setParentVisible] = useState(false);
 
   useEffect(() => {
-    const el = ref.current?.parentElement;
+    let el = ref.current?.parentElement;
+    while (el && !("visible" in (el as HTMLElement).dataset)) {
+      el = el.parentElement;
+    }
     if (!el) return;
     parentRef.current = el;
-    const check = () => setParentVisible(el.dataset.visible === "true");
+    const check = () => setParentVisible((el as HTMLElement).dataset.visible === "true");
     check();
     const observer = new MutationObserver(check);
     observer.observe(el, { attributes: true, attributeFilter: ["data-visible"] });
