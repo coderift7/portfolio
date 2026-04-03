@@ -117,7 +117,7 @@ export default function RootLayout({
               email: siteConfig.email,
               telephone: siteConfig.phone,
               image: `${siteUrl}/images/og-image.png`,
-              priceRange: "€€",
+              priceRange: "€",
               serviceType: [
                 "Webdesign",
                 "Webentwicklung",

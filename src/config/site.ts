@@ -134,7 +134,7 @@ export const siteConfig = {
     {
       question: "Was kostet eine Webseite?",
       answer:
-        "Eine professionelle Webseite kostet je nach Umfang zwischen 1.500 und 5.000 Euro. Ein typischer One-Pager mit Kontaktformular und SEO liegt bei ca. 2.000–2.500 Euro. Sie bekommen immer ein kostenloses Erstgespräch und ein transparentes Festpreisangebot — keine versteckten Kosten.",
+        "Ein individueller Webauftritt für kleine Unternehmen beginnt ab ca. 500 Euro. Umfangreichere Projekte mit Galerie, Buchungsfunktion oder mehrsprachigen Inhalten ab ca. 800 Euro. Sie bekommen immer ein kostenloses Erstgespräch und ein transparentes Festpreisangebot — keine versteckten Kosten. Alle Preise sind Endpreise (Kleinunternehmer gem. §19 UStG).",
     },
     {
       question: "Wie lange dauert es, bis meine Webseite fertig ist?",
