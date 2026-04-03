@@ -82,9 +82,9 @@ export default function Contact() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/[0.07]">
                     <Mail className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="text-sm text-muted-foreground">
+                  <a href={`mailto:${siteConfig.email}`} className="text-sm text-muted-foreground transition-colors hover:text-primary">
                     {siteConfig.email}
-                  </span>
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/[0.07]">
@@ -143,20 +143,20 @@ export default function Contact() {
                         <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-foreground">
                           Name *
                         </label>
-                        <input type="text" id="name" required placeholder="Ihr Name" className={inputClasses} />
+                        <input type="text" id="name" name="name" required placeholder="Ihr Name" className={inputClasses} />
                       </div>
                       <div>
                         <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">
                           E-Mail *
                         </label>
-                        <input type="email" id="email" required placeholder="ihre@email.de" className={inputClasses} />
+                        <input type="email" id="email" name="email" required placeholder="ihre@email.de" className={inputClasses} />
                       </div>
                     </div>
                     <div>
                       <label htmlFor="subject" className="mb-1.5 block text-sm font-medium text-foreground">
                         Betreff
                       </label>
-                      <input type="text" id="subject" placeholder="Worum geht es?" className={inputClasses} />
+                      <input type="text" id="subject" name="subject" placeholder="Worum geht es?" className={inputClasses} />
                     </div>
                     <div>
                       <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-foreground">
@@ -164,6 +164,7 @@ export default function Contact() {
                       </label>
                       <textarea
                         id="message"
+                        name="message"
                         required
                         rows={4}
                         placeholder="Erzählen Sie mir von Ihrem Projekt..."
