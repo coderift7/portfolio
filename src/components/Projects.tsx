@@ -4,9 +4,9 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Reveal, StaggerContainer, StaggerItem } from "./Motion";
-import { SchaeferhofMockup, MoverProMockup, ZahnarztMockup, MalerMockup } from "./BrowserMockup";
+import { SchaeferhofMockup, MoverProMockup } from "./BrowserMockup";
 
-const mockups = [SchaeferhofMockup, MoverProMockup, ZahnarztMockup, MalerMockup];
+const mockups = [SchaeferhofMockup, MoverProMockup];
 
 export default function Projects() {
   return (

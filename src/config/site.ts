@@ -104,26 +104,6 @@ export const siteConfig = {
       url: "https://coderift7.github.io/umzug-demo/",
       isReal: false,
     },
-    {
-      title: "Zahnarztpraxis Dr. Weber",
-      category: "Demo-Projekt · Webseite + Terminbuchung",
-      description:
-        "So könnte eine Praxis-Webseite aussehen, über die Patienten direkt online Termine buchen können — weniger Telefonate, mehr Übersicht für das Praxisteam.",
-      tags: ["Webseite", "Online-Buchung", "Google"],
-      color: "#0891B2",
-      url: "",
-      isReal: false,
-    },
-    {
-      title: "Malermeister Schulz",
-      category: "Demo-Projekt · Webseite + Automatisierung",
-      description:
-        "So könnte die Webseite eines Handwerksbetriebs aussehen: Kunden füllen ein Formular aus — und der Meister bekommt alles automatisch aufs Handy geschickt.",
-      tags: ["Webseite", "WhatsApp", "Automatisch"],
-      color: "#F97316",
-      url: "",
-      isReal: false,
-    },
   ],
 
   about: {
