@@ -1,9 +1,10 @@
-export function LogoIcon({ className }: { className?: string }) {
+export function LogoIcon({ className, style }: { className?: string; style?: React.CSSProperties }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 48 48"
       className={className}
+      style={style}
       aria-hidden="true"
     >
       <defs>
@@ -35,10 +36,13 @@ export function LogoIcon({ className }: { className?: string }) {
   );
 }
 
-export default function Logo({ className }: { className?: string }) {
+export default function Logo({ className, iconRotation = 0 }: { className?: string; iconRotation?: number }) {
   return (
     <div className={`flex items-center gap-3 ${className ?? ""}`}>
-      <LogoIcon className="h-10 w-10 shrink-0" />
+      <LogoIcon
+        className="h-10 w-10 shrink-0"
+        style={{ transform: `rotate(${iconRotation}deg)`, transition: 'transform 0.1s linear' }}
+      />
       <div className="flex flex-col">
         <div className="flex items-baseline gap-1 text-xl leading-tight tracking-tight">
           <span className="font-light text-neutral-700 dark:font-normal dark:text-white">Michael</span>

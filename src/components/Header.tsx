@@ -9,9 +9,13 @@ import ThemeToggle from "./ThemeToggle";
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [logoRotation, setLogoRotation] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      setLogoRotation(window.scrollY * 0.15);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -26,7 +30,7 @@ export default function Header() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:h-[72px]">
         <a href="#" className="flex items-center">
-          <Logo className="h-9 w-auto sm:h-10" />
+          <Logo className="h-9 w-auto sm:h-10" iconRotation={logoRotation} />
         </a>
 
         <nav className="hidden items-center gap-1 lg:flex">
