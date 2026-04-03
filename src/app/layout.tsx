@@ -24,7 +24,13 @@ export const metadata: Metadata = {
   description: siteConfig.meta.description,
   metadataBase: new URL(siteUrl),
   alternates: { canonical: "/" },
-  icons: { icon: `${siteUrl}/icon.svg` },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/favicon-32.png",
+  },
   openGraph: {
     type: "website",
     locale: "de_DE",

@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, useInView, type Variants } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState, type CSSProperties } from "react";
+import { motion, type Variants } from "framer-motion";
 
+// Keep variant exports for type compat — but animations are now CSS-driven
 export const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0 },
@@ -18,6 +19,40 @@ export const slideFromRight: Variants = {
   visible: { opacity: 1, x: 0 },
 };
 
+// CSS-based IntersectionObserver hook (no Framer Motion)
+function useIntersect(margin = "-80px") {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: margin }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [margin]);
+
+  return { ref, visible };
+}
+
+// Animation direction from variants
+function getTransform(variants: Variants, visible: boolean): CSSProperties {
+  if (visible) return { opacity: 1, transform: "translate(0, 0)" };
+
+  const hidden = variants.hidden as Record<string, number> | undefined;
+  const x = hidden?.x ?? 0;
+  const y = hidden?.y ?? 28;
+  return { opacity: 0, transform: `translate(${x}px, ${y}px)` };
+}
+
 export function Reveal({
   children,
   variants = fadeUp,
@@ -29,20 +64,19 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const { ref, visible } = useIntersect("-80px");
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={variants}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      style={{
+        ...getTransform(variants, visible),
+        transition: `opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s`,
+      }}
       className={className}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -55,19 +89,17 @@ export function StaggerContainer({
   className?: string;
   staggerDelay?: number;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const { ref, visible } = useIntersect("-60px");
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={{ visible: { transition: { staggerChildren: staggerDelay } } }}
       className={className}
+      data-visible={visible}
+      style={{ "--stagger-delay": `${staggerDelay}s` } as CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -78,14 +110,46 @@ export function StaggerItem({
   children: React.ReactNode;
   className?: string;
 }) {
+  // Find own index among siblings for stagger calc
+  const ref = useRef<HTMLDivElement>(null);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el?.parentElement) return;
+    const siblings = Array.from(el.parentElement.children);
+    setIndex(siblings.indexOf(el));
+  }, []);
+
+  // Check if parent StaggerContainer is visible
+  const parentRef = useRef<Element | null>(null);
+  const [parentVisible, setParentVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current?.parentElement;
+    if (!el) return;
+    parentRef.current = el;
+    const check = () => setParentVisible(el.dataset.visible === "true");
+    check();
+    const observer = new MutationObserver(check);
+    observer.observe(el, { attributes: true, attributeFilter: ["data-visible"] });
+    return () => observer.disconnect();
+  }, []);
+
+  const delay = parentVisible ? index * 0.08 : 0;
+
   return (
-    <motion.div
-      variants={fadeUp}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+    <div
+      ref={ref}
+      style={{
+        opacity: parentVisible ? 1 : 0,
+        transform: parentVisible ? "translateY(0)" : "translateY(28px)",
+        transition: `opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s`,
+      }}
       className={className}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
