@@ -1,0 +1,70 @@
+local_backend: true
+
+backend:
+  name: github
+  repo: coderift7/portfolio
+  branch: main
+  base_url: https://cms-auth.hoeger.dev
+
+media_folder: public/images/blog
+public_folder: /images/blog
+
+locale: de
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  # --- Blog ---
+  - name: blog
+    label: "Blog"
+    label_singular: "Beitrag"
+    folder: content/blog
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: ["date", "title"]
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Datum", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false }
+      - { label: "Kurzbeschreibung", name: excerpt, widget: text }
+      - { label: "Beitragsbild", name: image, widget: image, required: false }
+      - { label: "Autor", name: author, widget: string, default: "Michael Höger" }
+      - { label: "Tags", name: tags, widget: list, allow_add: true }
+      - { label: "Inhalt", name: body, widget: markdown }
+
+  # --- Projekte ---
+  - name: projects
+    label: "Projekte"
+    files:
+      - label: "Projektliste"
+        name: project_list
+        file: content/projects.json
+        fields:
+          - label: "Projekte"
+            name: items
+            widget: list
+            fields:
+              - { label: "Titel", name: title, widget: string }
+              - { label: "Kategorie", name: category, widget: string, hint: "z.B. Kundenprojekt · Webseite + SEO" }
+              - { label: "Beschreibung", name: description, widget: text }
+              - { label: "Tags", name: tags, widget: list, allow_add: true }
+              - { label: "Farbe", name: color, widget: color, default: "#0D9488" }
+              - { label: "URL", name: url, widget: string, required: false }
+              - { label: "Echtes Projekt?", name: isReal, widget: boolean, default: true }
+
+  # --- FAQ ---
+  - name: faq
+    label: "FAQ"
+    files:
+      - label: "Häufige Fragen"
+        name: faq_list
+        file: content/faq.json
+        fields:
+          - label: "Fragen"
+            name: items
+            widget: list
+            fields:
+              - { label: "Frage", name: question, widget: string }
+              - { label: "Antwort", name: answer, widget: text }

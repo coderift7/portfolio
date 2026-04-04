@@ -1,3 +1,6 @@
+import projectsData from "../../content/projects.json";
+import faqData from "../../content/faq.json";
+
 export const siteConfig = {
   name: "Michael Höger",
   role: "Webdesign & Digitale Lösungen",
@@ -83,28 +86,7 @@ export const siteConfig = {
     },
   ],
 
-  projects: [
-    {
-      title: "Auf'm Schäferhof",
-      category: "Kundenprojekt · Webseite + SEO",
-      description:
-        "Eine Webseite für eine Guteschaf-Hobbyzucht im Oldenburger Münsterland. Von Null auf bei Google sichtbar — mit Kontaktformular, das Anfragen direkt aufs Handy schickt.",
-      tags: ["Webseite", "Google SEO", "Kontaktformular"],
-      color: "#3B2618",
-      url: "https://aufmschaeferhof.de",
-      isReal: true,
-    },
-    {
-      title: "MoverPro Umzüge",
-      category: "Demo-Projekt · Webseite + KI-Sichtbarkeit",
-      description:
-        "So könnte die Webseite eines Umzugsunternehmens aussehen: Bei Google auf Seite 1 — und sogar von ChatGPT empfohlen, wenn jemand nach einem Umzugsservice fragt.",
-      tags: ["Webseite", "Google SEO", "KI-optimiert"],
-      color: "#0D9488",
-      url: "https://coderift7.github.io/umzug-demo/",
-      isReal: false,
-    },
-  ],
+  projects: projectsData.items,
 
   about: {
     headline: "Kein Agentur-Sprech.\nKeine Warteschleife.",
@@ -130,49 +112,14 @@ export const siteConfig = {
       "Vielen Dank für Ihre Nachricht! Ich melde mich persönlich bei Ihnen — spätestens in 48 Stunden.",
   },
 
-  faq: [
-    {
-      question: "Was kostet eine Webseite?",
-      answer:
-        "Das hängt davon ab, was Sie brauchen — deshalb gibt es bei mir immer ein kostenloses Erstgespräch. Als Orientierung: Eine professionelle Webseite mit Google-Optimierung und Kontaktformular liegt typischerweise zwischen 800 und 2.500 Euro. Sie bekommen immer ein transparentes Festpreisangebot vorab — keine Überraschungen. Alle Preise sind Endpreise (Kleinunternehmer gem. §19 UStG).",
-    },
-    {
-      question: "Wie lange dauert es, bis meine Webseite fertig ist?",
-      answer:
-        "In der Regel 1–2 Wochen. Größere Projekte mit mehreren Seiten oder besonderen Funktionen können 3–4 Wochen dauern. Den genauen Zeitrahmen besprechen wir im Erstgespräch.",
-    },
-    {
-      question: "Was bedeutet KI-Optimierung?",
-      answer:
-        "Immer mehr Menschen nutzen KI-Assistenten wie ChatGPT oder Perplexity statt Google. KI-Optimierung bedeutet, dass Ihre Webseite so aufgebaut ist, dass auch diese Assistenten sie finden und Ihr Unternehmen empfehlen können. Das machen bisher die wenigsten — und genau das ist Ihr Vorteil.",
-    },
-    {
-      question: "Muss ich mich selbst um die Technik kümmern?",
-      answer:
-        "Nein. Ich kümmere mich um alles — von der Erstellung über die Einrichtung bis zur Veröffentlichung. Sie müssen nur sagen, was Sie brauchen. Und wenn danach etwas angepasst werden soll, bin ich weiterhin für Sie da.",
-    },
-    {
-      question: "Für wen erstellen Sie Webseiten?",
-      answer:
-        "Für alle, die eine professionelle Online-Präsenz brauchen — kleine Unternehmen, Selbstständige, Freiberufler, Vereine oder auch Privatpersonen mit einem Projekt. Ob Handwerker, Arztpraxis, Restaurant, Coach oder Sportverein: Wenn Sie im Internet gefunden werden wollen, bin ich der richtige Ansprechpartner.",
-    },
-    {
-      question: "Ist Barrierefreiheit Pflicht für meine Webseite?",
-      answer:
-        "Seit Juni 2025 schreibt das Barrierefreiheitsstärkungsgesetz (BFSG) für viele digitale Angebote Barrierefreiheit vor. Kleinstunternehmen unter 10 Mitarbeitenden und 2 Mio. Euro Umsatz sind oft ausgenommen — aber unabhängig von der Pflicht: Eine barrierefreie Webseite erreicht mehr Menschen und wird von Google besser bewertet. Ich setze das bei jedem Projekt von Anfang an um.",
-    },
-    {
-      question: "Was passiert, wenn ich nicht zufrieden bin?",
-      answer:
-        "Dann arbeite ich kostenlos nach, bis es passt. Mein Ziel ist, dass Sie Ihre Webseite gerne zeigen — und dass sie Ihnen echte Anfragen bringt. Sollten wir gar nicht zusammenfinden, besprechen wir das ehrlich und fair.",
-    },
-  ],
+  faq: faqData.items,
 
   nav: [
     { label: "Leistungen", href: "#leistungen" },
     { label: "Projekte", href: "#projekte" },
     { label: "Über mich", href: "#ueber-mich" },
     { label: "FAQ", href: "#faq" },
+    { label: "Blog", href: "/blog/" },
     { label: "Kontakt", href: "#kontakt" },
   ],
 };
