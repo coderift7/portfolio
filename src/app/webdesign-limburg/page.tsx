@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArrowRight, MapPin, Clock, Shield, Star, CheckCircle2, Phone, Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { SchaeferhofMockup } from "@/components/BrowserMockup";
 import { siteConfig } from "@/config/site";
 
@@ -356,6 +357,7 @@ export default function WebdesignLimburg() {
         </section>
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
