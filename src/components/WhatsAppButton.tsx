@@ -9,7 +9,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Über WhatsApp chatten"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full bg-[#25D366] pl-4 pr-2 py-2 shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl"
+      className="fixed bottom-8 right-5 z-50 flex items-center gap-3 rounded-full bg-[#25D366] pl-4 pr-2 py-2 shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl sm:bottom-6 sm:right-6"
     >
       {/* Text */}
       <div className="hidden sm:block">
