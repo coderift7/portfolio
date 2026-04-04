@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import Logo from "./Logo";
@@ -10,6 +11,9 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [logoRotation, setLogoRotation] = useState(0);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const prefix = isHome ? "" : "/";
 
   useEffect(() => {
     const onScroll = () => {
@@ -45,7 +49,7 @@ export default function Header() {
           {siteConfig.nav.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={item.href.startsWith("#") ? `${prefix}${item.href}` : item.href}
               className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground"
             >
               {item.label}
@@ -53,7 +57,7 @@ export default function Header() {
           ))}
           <ThemeToggle />
           <a
-            href="#kontakt"
+            href={`${prefix}#kontakt`}
             className="btn-brand ml-3 cursor-pointer rounded-xl px-5 py-2.5 text-sm font-semibold"
           >
             Kontakt
@@ -83,7 +87,7 @@ export default function Header() {
             {siteConfig.nav.map((item) => (
               <a
                 key={item.href}
-                href={item.href}
+                href={item.href.startsWith("#") ? `${prefix}${item.href}` : item.href}
                 onClick={() => setMobileOpen(false)}
                 className="rounded-lg px-3 py-2.5 text-foreground active:bg-muted"
               >
@@ -91,7 +95,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#kontakt"
+              href={`${prefix}#kontakt`}
               onClick={() => setMobileOpen(false)}
               className="btn-brand mt-2 rounded-xl px-5 py-3 text-center text-sm font-semibold"
             >
