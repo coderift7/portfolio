@@ -18,9 +18,9 @@ export default function UspBanner() {
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>
-            <p className="mb-10 text-center text-sm font-semibold uppercase tracking-widest text-primary">
+            <h2 className="mb-10 text-center text-sm font-semibold uppercase tracking-widest text-primary">
               {uspBanner.headline}
-            </p>
+            </h2>
           </StaggerItem>
           <div className="grid gap-8 sm:grid-cols-3">
             {uspBanner.items.map((item, i) => {

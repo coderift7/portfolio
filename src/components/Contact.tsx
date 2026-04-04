@@ -172,7 +172,7 @@ export default function Contact() {
                       />
                     </div>
                     {/* Honeypot — hidden from users, catches bots */}
-                    <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="absolute -left-[9999px] h-0 w-0 opacity-0" />
+                    <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" aria-label="Nicht ausfüllen" className="absolute -left-[9999px] h-0 w-0 opacity-0" />
                     <label className="flex cursor-pointer items-start gap-2">
                       <input type="checkbox" required className="mt-1 rounded border-border" />
                       <span className="text-xs text-muted-foreground">
