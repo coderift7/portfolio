@@ -75,7 +75,7 @@ test('footer contains legal links', async ({ page }) => {
 for (const img of expectedImages) {
   test(`image loaded: ${img.description}`, async ({ page }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
-    const imgEl = page.locator(`img[src*="${img.pattern.source.replace(/\\/g, '')}"]`);
+    const imgEl = page.locator(`img[src*="${img.pattern.source.replace(/\\/g, '')}"]`).first();
     await expect(imgEl).toBeAttached();
 
     // Verify image actually loaded (naturalWidth > 0)
