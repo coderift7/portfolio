@@ -13,15 +13,15 @@ export const siteConfig = {
 
   hero: {
     greeting: "Hallo, ich bin Michael",
-    headline: "Ihre Webseite sollte\nfür Sie arbeiten.",
+    headline: "Ihre nächsten Kunden\nsuchen Sie gerade.",
     subheadline:
-      "Viele Unternehmer haben eine Webseite, aber keine Anfragen. Ich ändere das. Mit einer Seite, die Kunden anzieht — über Google, Social Media und sogar über KI-Assistenten wie ChatGPT.",
+      "Die Frage ist nur: Finden sie Sie — oder Ihre Konkurrenz? Ich baue Webseiten, die bei Google und sogar bei ChatGPT gefunden werden. Damit Anfragen kommen, ohne dass Sie etwas dafür tun müssen.",
     cta: "Kostenlos beraten lassen",
     ctaSecondary: "Beispiele ansehen",
   },
 
   uspBanner: {
-    headline: "Was Sie bei mir anders erleben",
+    headline: "Darum bringt Ihre Webseite Ergebnisse",
     items: [
       {
         icon: "Bot",
@@ -107,12 +107,12 @@ export const siteConfig = {
   ],
 
   about: {
-    headline: "Technik ist mein Job.\nIhr Erfolg ist mein Ziel.",
-    text: "Ich bin Michael. Ich helfe kleinen Unternehmen und Selbstständigen, online Kunden zu gewinnen. Nicht mit komplizierten Fachbegriffen, sondern mit Lösungen, die einfach funktionieren. Ich erkläre alles so, dass Sie es verstehen — und liefere Ergebnisse, die Sie spüren. Was mich besonders macht: Ich optimiere Ihre Webseite nicht nur für Google, sondern auch für die neue Welt der KI-Assistenten. Damit Sie auch morgen noch gefunden werden.",
+    headline: "Kein Agentur-Sprech.\nKeine Warteschleife.",
+    text: "Ich bin Michael — Ihr persönlicher Ansprechpartner für alles Digitale. Wenn Sie eine Frage haben, schreiben Sie mir. Wenn etwas geändert werden soll, erledige ich das. Keine Tickets, keine Abteilungen, kein Warten. Und das Beste: Ich sorge dafür, dass Ihre Webseite nicht nur bei Google gefunden wird, sondern auch von KI-Assistenten wie ChatGPT empfohlen wird. Das bieten die wenigsten — und genau das ist Ihr Vorsprung.",
     stats: [
-      { value: "20%", label: "Rabatt für die ersten 20 Kunden" },
-      { value: "100%", label: "Zufrieden oder Geld zurück" },
-      { value: "<48h", label: "Antwortzeit" },
+      { value: "14", label: "Tage bis Ihre Seite online ist" },
+      { value: "100%", label: "Festpreis — keine versteckten Kosten" },
+      { value: "<48h", label: "Antwortzeit — persönlich" },
     ],
   },
 
@@ -122,9 +122,9 @@ export const siteConfig = {
   },
 
   contact: {
-    headline: "Erzählen Sie mir von Ihrem Vorhaben",
+    headline: "In 10 Minuten wissen Sie mehr",
     subheadline:
-      "Schreiben Sie mir einfach, was Sie brauchen. Kein Verkaufsgespräch, kein Druck — nur ein ehrliches Gespräch darüber, wie ich Ihnen helfen kann. Ich melde mich innerhalb von 48 Stunden.",
+      "Schreiben Sie mir, was Sie vorhaben. Kein Verkaufsgespräch, kein Druck — ich sage Ihnen ehrlich, ob und wie eine Webseite Ihnen helfen kann. Innerhalb von 48 Stunden melde ich mich persönlich.",
     cta: "Nachricht senden",
     successMessage:
       "Vielen Dank für Ihre Nachricht! Ich melde mich persönlich bei Ihnen — spätestens in 48 Stunden.",
@@ -134,7 +134,7 @@ export const siteConfig = {
     {
       question: "Was kostet eine Webseite?",
       answer:
-        "Ein individueller Webauftritt für kleine Unternehmen beginnt ab ca. 500 Euro. Umfangreichere Projekte mit Galerie, Buchungsfunktion oder mehrsprachigen Inhalten ab ca. 800 Euro. Sie bekommen immer ein kostenloses Erstgespräch und ein transparentes Festpreisangebot — keine versteckten Kosten. Alle Preise sind Endpreise (Kleinunternehmer gem. §19 UStG).",
+        "Das hängt davon ab, was Sie brauchen — deshalb gibt es bei mir immer ein kostenloses Erstgespräch. Als Orientierung: Eine professionelle Webseite mit Google-Optimierung und Kontaktformular liegt typischerweise zwischen 800 und 2.500 Euro. Sie bekommen immer ein transparentes Festpreisangebot vorab — keine Überraschungen. Alle Preise sind Endpreise (Kleinunternehmer gem. §19 UStG).",
     },
     {
       question: "Wie lange dauert es, bis meine Webseite fertig ist?",

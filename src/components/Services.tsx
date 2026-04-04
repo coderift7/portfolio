@@ -24,11 +24,11 @@ export default function Services() {
               Leistungen
             </span>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Was ich für Sie tun kann
+              So werden Sie online gefunden
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Von der Webseite bis zur Automatisierung — digitale Lösungen, die
-              Ergebnisse liefern.
+              Alles aus einer Hand — von der Webseite bis zur ersten
+              Kundenanfrage.
             </p>
           </div>
         </Reveal>
