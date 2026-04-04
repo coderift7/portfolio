@@ -2,31 +2,53 @@
 
 const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
 
-function BrowserFrame({
-  color,
-  url,
-  children,
+function DeviceMockup({
+  desktopSrc,
+  mobileSrc,
+  desktopAlt,
+  mobileAlt,
 }: {
-  color: string;
-  url: string;
-  children: React.ReactNode;
+  desktopSrc: string;
+  mobileSrc: string;
+  desktopAlt: string;
+  mobileAlt: string;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl glass shadow-depth">
-      {/* Browser chrome */}
-      <div className="flex items-center gap-2 border-b border-border bg-white/50 dark:bg-slate-800/50 px-3 py-2">
-        <div className="flex gap-1.5">
-          <div className="h-2.5 w-2.5 rounded-full bg-red-300" />
-          <div className="h-2.5 w-2.5 rounded-full bg-yellow-300" />
-          <div className="h-2.5 w-2.5 rounded-full bg-green-300" />
+    <div className="relative flex items-end gap-3 px-2 pt-4 pb-2">
+      {/* Laptop */}
+      <div className="flex-1">
+        {/* Screen */}
+        <div className="overflow-hidden rounded-t-lg border-2 border-slate-600 dark:border-slate-500 bg-black">
+          <div className="aspect-[16/10] overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${basePath}${desktopSrc}`}
+              alt={desktopAlt}
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
         </div>
-        <div className="flex-1 rounded-md bg-white dark:bg-slate-700/50 px-3 py-1 text-[10px] text-muted-foreground">
-          {url}
+        {/* Base */}
+        <div className="mx-[-4%] h-3 rounded-b-lg bg-gradient-to-b from-slate-500 to-slate-600 dark:from-slate-500 dark:to-slate-600">
+          <div className="mx-auto h-1.5 w-16 rounded-b bg-slate-400/50" />
         </div>
       </div>
-      {/* Content */}
-      <div className="relative aspect-[16/10] overflow-hidden">
-        {children}
+
+      {/* Phone */}
+      <div className="w-[22%] shrink-0">
+        <div className="overflow-hidden rounded-xl border-2 border-slate-600 dark:border-slate-500 bg-black p-0.5">
+          {/* Notch */}
+          <div className="mx-auto mb-0.5 h-1 w-8 rounded-full bg-slate-600 dark:bg-slate-500" />
+          {/* Screen */}
+          <div className="aspect-[9/19.5] overflow-hidden rounded-lg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${basePath}${mobileSrc}`}
+              alt={mobileAlt}
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -34,27 +56,22 @@ function BrowserFrame({
 
 export function SchaeferhofMockup() {
   return (
-    <BrowserFrame color="#3B2618" url="aufmschaeferhof.de">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={`${basePath}/images/schaeferhof-preview.png`}
-        alt="Vorschau der Webseite aufmschaeferhof.de"
-        className="h-full w-full object-cover object-top"
-      />
-    </BrowserFrame>
+    <DeviceMockup
+      desktopSrc="/images/schaeferhof-desktop.png"
+      mobileSrc="/images/schaeferhof-mobile.png"
+      desktopAlt="Auf'm Schäferhof — Desktop-Ansicht"
+      mobileAlt="Auf'm Schäferhof — Mobile-Ansicht"
+    />
   );
 }
 
 export function MoverProMockup() {
   return (
-    <BrowserFrame color="#0D9488" url="moverpro-umzuege.de">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={`${basePath}/images/moverpro-preview.png`}
-        alt="Vorschau der MoverPro Demo-Webseite"
-        className="h-full w-full object-cover object-top"
-      />
-    </BrowserFrame>
+    <DeviceMockup
+      desktopSrc="/images/moverpro-desktop.png"
+      mobileSrc="/images/moverpro-mobile.png"
+      desktopAlt="MoverPro Umzüge — Desktop-Ansicht"
+      mobileAlt="MoverPro Umzüge — Mobile-Ansicht"
+    />
   );
 }
-
