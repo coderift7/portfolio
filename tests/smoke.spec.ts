@@ -94,7 +94,7 @@ test('hero portrait is visible on mobile', async ({ page, browserName }) => {
   test.skip(browserName === 'webkit' && test.info().project.name === 'desktop-safari', 'mobile-only test');
 
   await page.goto('/', { waitUntil: 'networkidle' });
-  const heroImg = page.locator('img[src*="michael-hero"]');
+  const heroImg = page.locator('img[src*="michael-hero"]').first();
   await expect(heroImg).toBeVisible();
 });
 
