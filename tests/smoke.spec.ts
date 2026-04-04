@@ -9,8 +9,8 @@ const sections = ['leistungen', 'projekte', 'ueber-mich', 'kontakt'];
 // All images expected on homepage with their src patterns
 const expectedImages = [
   { pattern: /michael-hero\.webp/, description: 'Hero portrait' },
-  { pattern: /schaeferhof-preview\.png/, description: 'Schäferhof mockup' },
-  { pattern: /moverpro-preview\.png/, description: 'MoverPro mockup' },
+  { pattern: /schaeferhof-desktop\.png/, description: 'Schäferhof mockup' },
+  { pattern: /moverpro-desktop\.png/, description: 'MoverPro mockup' },
   { pattern: /michael-working\.webp/, description: 'About photo' },
   { pattern: /michael-casual\.webp/, description: 'Contact photo' },
 ];
@@ -257,8 +257,10 @@ test('homepage loads within 5 seconds', async ({ page }) => {
 test('all image URLs return 200', async ({ page }) => {
   const imagePaths = [
     '/images/michael-hero.webp',
-    '/images/schaeferhof-preview.png',
-    '/images/moverpro-preview.png',
+    '/images/schaeferhof-desktop.png',
+    '/images/schaeferhof-mobile.png',
+    '/images/moverpro-desktop.png',
+    '/images/moverpro-mobile.png',
     '/images/michael-working.webp',
     '/images/michael-casual.webp',
     '/images/og-image.png',
