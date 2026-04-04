@@ -120,7 +120,7 @@ export default function WebdesignLimburg() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main">
         {/* JSON-LD */}
         <script
           type="application/ld+json"

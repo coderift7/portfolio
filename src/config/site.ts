@@ -70,10 +70,10 @@ export const siteConfig = {
         "Kontaktformulare, automatische E-Mails, Terminbuchung — ich richte alles so ein, dass Sie sich auf Ihr Kerngeschäft konzentrieren können.",
     },
     {
-      icon: "Share2",
-      title: "Social Media, das wirkt",
+      icon: "ShieldCheck",
+      title: "Barrierefrei & DSGVO-konform",
       description:
-        "Kein planloses Posten. Ich entwickle eine Strategie für die Plattformen, auf denen Ihre Kunden wirklich unterwegs sind.",
+        "Seit 2025 ist Barrierefreiheit für viele Webseiten Pflicht (BFSG). Ich setze das von Anfang an um — sauber im Code, nicht als Overlay nachgerüstet. DSGVO und SSL sind selbstverständlich.",
     },
     {
       icon: "HeartHandshake",
@@ -155,6 +155,11 @@ export const siteConfig = {
       question: "Für wen erstellen Sie Webseiten?",
       answer:
         "Für alle, die eine professionelle Online-Präsenz brauchen — kleine Unternehmen, Selbstständige, Freiberufler, Vereine oder auch Privatpersonen mit einem Projekt. Ob Handwerker, Arztpraxis, Restaurant, Coach oder Sportverein: Wenn Sie im Internet gefunden werden wollen, bin ich der richtige Ansprechpartner.",
+    },
+    {
+      question: "Ist Barrierefreiheit Pflicht für meine Webseite?",
+      answer:
+        "Seit Juni 2025 schreibt das Barrierefreiheitsstärkungsgesetz (BFSG) für viele digitale Angebote Barrierefreiheit vor. Kleinstunternehmen unter 10 Mitarbeitenden und 2 Mio. Euro Umsatz sind oft ausgenommen — aber unabhängig von der Pflicht: Eine barrierefreie Webseite erreicht mehr Menschen und wird von Google besser bewertet. Ich setze das bei jedem Projekt von Anfang an um.",
     },
     {
       question: "Was passiert, wenn ich nicht zufrieden bin?",

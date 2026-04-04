@@ -1,6 +1,6 @@
 "use client";
 
-import { Globe, Zap, Search, Share2, Bot, HeartHandshake } from "lucide-react";
+import { Globe, Zap, Search, Share2, ShieldCheck, Bot, HeartHandshake } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Reveal, StaggerContainer, StaggerItem } from "./Motion";
@@ -10,6 +10,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Zap,
   Search,
   Share2,
+  ShieldCheck,
   Bot,
   HeartHandshake,
 };
