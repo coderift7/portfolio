@@ -4,6 +4,8 @@ import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { siteConfig } from "@/config/site";
 import { notFound } from "next/navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const siteUrl = "https://hoeger.dev";
 
@@ -98,7 +100,9 @@ export default async function BlogPostPage({
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <Header />
+      <main id="main" className="min-h-screen bg-background pt-24 pb-24 lg:pt-32">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -111,7 +115,7 @@ export default async function BlogPostPage({
           __html: JSON.stringify(articleSchema),
         }}
       />
-      <div className="mx-auto max-w-3xl px-5 py-24">
+      <div className="mx-auto max-w-3xl px-5 sm:px-6">
         <Link
           href="/blog/"
           className="mb-8 inline-flex items-center gap-2 text-sm text-primary hover:underline"
@@ -150,7 +154,7 @@ export default async function BlogPostPage({
           </header>
 
           <div
-            className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl"
+            className="blog-content max-w-none text-[15px] leading-relaxed text-muted-foreground [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-foreground [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:mb-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:mb-1 [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-secondary [&_strong]:text-foreground [&_strong]:font-semibold [&_blockquote]:border-l-4 [&_blockquote]:border-primary/30 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-muted-foreground [&_img]:rounded-xl [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:border-border [&_th]:bg-muted [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_th]:font-semibold [&_th]:text-foreground [&_td]:border [&_td]:border-border [&_td]:px-3 [&_td]:py-2"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
@@ -164,6 +168,8 @@ export default async function BlogPostPage({
           </Link>
         </div>
       </div>
-    </div>
+      </main>
+      <Footer />
+    </>
   );
 }
