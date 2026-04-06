@@ -94,7 +94,7 @@ export const siteConfig = {
     stats: [
       { value: "14", label: "Tage bis Ihre Seite online ist" },
       { value: "100%", label: "Festpreis — keine versteckten Kosten" },
-      { value: "<48h", label: "Antwortzeit — persönlich" },
+      { value: "<24h", label: "Antwortzeit — persönlich" },
     ],
   },
 
@@ -106,10 +106,10 @@ export const siteConfig = {
   contact: {
     headline: "In 10 Minuten wissen Sie mehr",
     subheadline:
-      "Schreiben Sie mir, was Sie vorhaben. Kein Verkaufsgespräch, kein Druck — ich sage Ihnen ehrlich, ob und wie eine Webseite Ihnen helfen kann. Innerhalb von 48 Stunden melde ich mich persönlich.",
+      "Schreiben Sie mir, was Sie vorhaben. Kein Verkaufsgespräch, kein Druck — ich sage Ihnen ehrlich, ob und wie eine Webseite Ihnen helfen kann. Innerhalb von 24 Stunden melde ich mich persönlich.",
     cta: "Nachricht senden",
     successMessage:
-      "Vielen Dank für Ihre Nachricht! Ich melde mich persönlich bei Ihnen — spätestens in 48 Stunden.",
+      "Vielen Dank für Ihre Nachricht! Ich melde mich persönlich bei Ihnen — spätestens in 24 Stunden.",
   },
 
   faq: faqData.items,

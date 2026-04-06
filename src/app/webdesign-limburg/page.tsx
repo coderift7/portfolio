@@ -330,7 +330,7 @@ export default function WebdesignLimburg() {
                 <a href="/#kontakt" className="text-primary underline">
                   Kontaktformular
                 </a>{" "}
-                auf meiner Hauptseite. Ich melde mich innerhalb von 48 Stunden
+                auf meiner Hauptseite. Ich melde mich innerhalb von 24 Stunden
                 persönlich.
               </p>
             </div>
