@@ -120,6 +120,7 @@ export default function WebsiteCheckForm() {
         <label className="flex cursor-pointer items-start gap-2">
           <input
             type="checkbox"
+            id="privacy"
             required
             className="mt-1 rounded border-border"
           />
