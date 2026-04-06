@@ -133,15 +133,54 @@ export default function Datenschutz() {
 
           {/* 7. Cookies */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">7. Cookies und Tracking</h2>
+            <h2 className="text-lg font-semibold text-foreground">7. Cookies</h2>
             <p className="mt-2">
-              Diese Webseite verwendet <strong className="text-foreground">keine Cookies</strong> und <strong className="text-foreground">keine Tracking-Tools</strong>. Es werden keine Analyse-Dienste (wie Google Analytics), Werbepixel oder Social-Media-Plugins eingesetzt. Es findet keine Profilbildung statt.
+              Diese Webseite verwendet ein technisch notwendiges Cookie (<code className="text-xs">cookie_consent</code>) zur Speicherung Ihrer Cookie-Einstellungen. Dieses Cookie wird ausschließlich lokal in Ihrem Browser gespeichert (localStorage) und nicht an Server übermittelt.
+            </p>
+            <p className="mt-2">
+              Darüber hinaus wird das Meta Pixel (siehe Abschnitt 8) <strong className="text-foreground">nur nach Ihrer ausdrücklichen Einwilligung</strong> geladen. Ohne Ihre Zustimmung werden keine Tracking-Cookies gesetzt.
             </p>
           </div>
 
-          {/* 8. Betroffenenrechte */}
+          {/* 8. Meta Pixel */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">8. Ihre Rechte als betroffene Person</h2>
+            <h2 className="text-lg font-semibold text-foreground">8. Meta Pixel (nur mit Einwilligung)</h2>
+            <p className="mt-2">
+              Nach Ihrer ausdrücklichen Einwilligung setzen wir das <strong className="text-foreground">Meta Pixel</strong> ein, einen Analysedienst der Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland.
+            </p>
+
+            <p className="mt-2 text-sm">
+              <strong className="text-foreground">Zweck:</strong> Messung der Wirksamkeit unserer Werbeanzeigen auf Meta-Plattformen (Facebook, Instagram). Das Pixel erfasst, ob Besucher über eine Anzeige auf unsere Webseite gelangen und bestimmte Aktionen durchführen (z.&thinsp;B. Absenden des Website-Check-Formulars).
+            </p>
+
+            <p className="mt-2 text-sm">
+              <strong className="text-foreground">Verarbeitete Daten:</strong> IP-Adresse (gekürzt), Seitenaufrufe, Conversion-Events, Browserinformationen, Zeitstempel.
+            </p>
+
+            <p className="mt-2 text-sm">
+              <strong className="text-foreground">Cookie:</strong> <code className="text-xs">_fbp</code> (gesetzt von Meta, Laufzeit 90 Tage). Wird nur nach Einwilligung gesetzt.
+            </p>
+
+            <p className="mt-2 text-sm">
+              <strong className="text-foreground">Rechtsgrundlage:</strong> Ihre Einwilligung (Art. 6 Abs. 1 S. 1 lit. a DSGVO), erteilt über den Cookie-Banner beim ersten Besuch der Webseite.
+            </p>
+
+            <p className="mt-2 text-sm">
+              <strong className="text-foreground">Widerruf:</strong> Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie im Footer auf „Cookie-Einstellungen" klicken und die Einwilligung zurücksetzen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt unberührt.
+            </p>
+
+            <p className="mt-2 text-sm">
+              <strong className="text-foreground">Drittlandtransfer:</strong> Meta Platforms Ireland Limited kann Daten an Meta Platforms Inc. in den USA übermitteln. Die Übermittlung erfolgt auf Grundlage des EU-U.S. Data Privacy Framework (Angemessenheitsbeschluss der EU-Kommission gem. Art. 45 DSGVO).
+            </p>
+
+            <p className="mt-2 text-sm">
+              Weitere Informationen: <a href="https://www.facebook.com/privacy/policy/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Meta Datenschutzrichtlinie</a> · <a href="https://www.facebook.com/adpreferences" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Meta Werbepräferenzen (Opt-out)</a>
+            </p>
+          </div>
+
+          {/* 9. Betroffenenrechte */}
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">9. Ihre Rechte als betroffene Person</h2>
             <p className="mt-2">Ihnen stehen nach der DSGVO folgende Rechte zu:</p>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
               <li><strong className="text-foreground">Auskunftsrecht</strong> (Art. 15 DSGVO) — Sie können Auskunft über Ihre verarbeiteten personenbezogenen Daten verlangen.</li>
@@ -157,9 +196,9 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 9. Website-Check / Website-Analyse */}
+          {/* 10. Website-Check / Website-Analyse */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">9. Website-Check (Website-Analyse)</h2>
+            <h2 className="text-lg font-semibold text-foreground">10. Website-Check (Website-Analyse)</h2>
             <p className="mt-2">
               Wir bieten einen kostenlosen Website-Check an, bei dem Ihre Webseite automatisiert auf Performance, SEO, Sicherheit und Barrierefreiheit geprüft wird. Ein PDF-Report wird erstellt und Ihnen per E-Mail zugesendet.
             </p>
@@ -183,9 +222,9 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 10. Beschwerderecht */}
+          {/* 11. Beschwerderecht */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">10. Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)</h2>
+            <h2 className="text-lg font-semibold text-foreground">11. Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)</h2>
             <p className="mt-2">
               Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt, haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren — insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.
             </p>
@@ -199,11 +238,11 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 11. Aktualität */}
+          {/* 12. Aktualität */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">11. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
+            <h2 className="text-lg font-semibold text-foreground">12. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
             <p className="mt-2 text-sm">
-              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand März 2026. Durch die Weiterentwicklung der Webseite oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen. Die jeweils aktuelle Fassung kann jederzeit auf dieser Seite abgerufen werden.
+              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand April 2026. Durch die Weiterentwicklung der Webseite oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen. Die jeweils aktuelle Fassung kann jederzeit auf dieser Seite abgerufen werden.
             </p>
           </div>
 
