@@ -39,7 +39,7 @@ export default function WebsiteCheckForm() {
         body: JSON.stringify(data),
       });
       const json = await res.json();
-      if (res.ok && json.success) {
+      if (res.ok && (json.success || json.status === "queued")) {
         router.push("/website-check/danke");
       } else {
         setError(
