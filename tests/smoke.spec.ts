@@ -1,5 +1,10 @@
 import { test, expect } from '@playwright/test';
 
+// Dismiss cookie banner for all smoke tests so it doesn't overlay page elements
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem("cookie_consent", "denied"));
+});
+
 // All routes that must load without errors
 const routes = ['/', '/datenschutz/', '/impressum/'];
 
