@@ -45,9 +45,9 @@ export default function Hero() {
 
             {/* Headline */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25, ease }}
+              transition={{ duration: 0.4, delay: 0.1, ease }}
               className="text-[2.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground whitespace-pre-line sm:text-5xl md:text-6xl lg:text-[4.25rem]"
             >
               {hero.headline}
@@ -55,9 +55,9 @@ export default function Hero() {
 
             {/* Subheadline */}
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0.7, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4, ease }}
+              transition={{ duration: 0.4, delay: 0.15, ease }}
               className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground"
             >
               {hero.subheadline}
@@ -88,9 +88,9 @@ export default function Hero() {
 
           {/* Hero portrait */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 1, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.3, ease }}
+            transition={{ duration: 0.5, delay: 0.1, ease }}
             className="flex justify-center lg:block"
           >
             <div className="relative">
@@ -100,6 +100,7 @@ export default function Hero() {
                 src={`${basePath}/images/michael-hero.webp`}
                 alt="Michael Höger – Freelancer für Webdesign und digitale Lösungen"
                 className="relative h-[280px] w-[210px] rounded-2xl object-cover object-top shadow-lg sm:h-[340px] sm:w-[260px] lg:h-[420px] lg:w-[320px]"
+                fetchPriority="high"
               />
             </div>
           </motion.div>
