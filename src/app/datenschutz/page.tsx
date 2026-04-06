@@ -157,9 +157,35 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 9. Beschwerderecht */}
+          {/* 9. Website-Check / Website-Analyse */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">9. Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)</h2>
+            <h2 className="text-lg font-semibold text-foreground">9. Website-Check (Website-Analyse)</h2>
+            <p className="mt-2">
+              Wir bieten einen kostenlosen Website-Check an, bei dem Ihre Webseite automatisiert auf Performance, SEO, Sicherheit und Barrierefreiheit geprüft wird. Ein PDF-Report wird erstellt und Ihnen per E-Mail zugesendet.
+            </p>
+            <p className="mt-2 text-sm">
+              <strong>Verarbeitete Daten:</strong> URL der zu prüfenden Webseite, E-Mail-Adresse, optional Ihr Name.
+            </p>
+            <p className="mt-2 text-sm">
+              <strong>Zweck:</strong> Durchführung der Website-Analyse und Zusendung des Ergebnis-Reports.
+            </p>
+            <p className="mt-2 text-sm">
+              <strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie durch Absenden des Formulars und Bestätigung der Datenschutz-Checkbox erteilen.
+            </p>
+            <p className="mt-2 text-sm">
+              <strong>Speicherdauer:</strong> Ihre Daten werden ausschließlich für die Erstellung und Zustellung des Reports verwendet. Der generierte Report wird nach der Zustellung gelöscht. Ihre E-Mail-Adresse und die eingegebene URL werden nicht dauerhaft gespeichert.
+            </p>
+            <p className="mt-2 text-sm">
+              <strong>E-Mail-Versand:</strong> Der Report wird über den Dienst Brevo (Sendinblue SAS, Paris, Frankreich) versendet. Brevo verarbeitet Ihre E-Mail-Adresse als Auftragsverarbeiter. Weitere Informationen: <a href="https://www.brevo.com/de/legal/privacypolicy/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Brevo Datenschutzerklärung</a>.
+            </p>
+            <p className="mt-2 text-sm">
+              Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie uns unter <a href="mailto:michael@hoeger.dev" className="text-primary hover:underline">michael@hoeger.dev</a> kontaktieren.
+            </p>
+          </div>
+
+          {/* 10. Beschwerderecht */}
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">10. Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)</h2>
             <p className="mt-2">
               Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt, haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren — insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.
             </p>
@@ -173,9 +199,9 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 10. Aktualität */}
+          {/* 11. Aktualität */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">10. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
+            <h2 className="text-lg font-semibold text-foreground">11. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
             <p className="mt-2 text-sm">
               Diese Datenschutzerklärung ist aktuell gültig und hat den Stand März 2026. Durch die Weiterentwicklung der Webseite oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen. Die jeweils aktuelle Fassung kann jederzeit auf dieser Seite abgerufen werden.
             </p>
