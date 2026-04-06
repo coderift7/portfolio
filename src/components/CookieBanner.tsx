@@ -34,8 +34,8 @@ export default function CookieBanner() {
           transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
           className="fixed inset-x-0 bottom-0 z-50 border-t border-border/30 bg-slate-900/95 p-4 backdrop-blur-md sm:p-5"
         >
-          <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 sm:flex-row sm:justify-between">
-            <p className="text-center text-sm text-slate-200 sm:text-left">
+          <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-slate-200 sm:text-left">
               Wir nutzen Meta Pixel zur Messung unserer Werbeanzeigen.{" "}
               <Link
                 href="/datenschutz"
