@@ -44,7 +44,7 @@ export default function CookieBanner() {
                 Mehr erfahren
               </Link>
             </p>
-            <div className="flex shrink-0 gap-3">
+            <div className="relative z-10 flex shrink-0 gap-3">
               <button
                 onClick={handleDecline}
                 className="rounded-lg border border-slate-600 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-slate-400 hover:text-white"
