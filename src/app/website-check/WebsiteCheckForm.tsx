@@ -19,8 +19,13 @@ export default function WebsiteCheckForm() {
     setSending(true);
 
     const form = e.currentTarget;
+    let rawUrl = (form.elements.namedItem("url") as HTMLInputElement).value.trim();
+    if (rawUrl && !/^https?:\/\//i.test(rawUrl)) {
+      rawUrl = `https://${rawUrl}`;
+    }
+
     const data = {
-      url: (form.elements.namedItem("url") as HTMLInputElement).value,
+      url: rawUrl,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       tier: "b",
@@ -64,7 +69,7 @@ export default function WebsiteCheckForm() {
             Website-URL *
           </label>
           <input
-            type="url"
+            type="text"
             id="url"
             name="url"
             required
