@@ -24,6 +24,10 @@ function DeviceMockup({
             <img
               src={`${basePath}${desktopSrc}`}
               alt={desktopAlt}
+              width={1280}
+              height={800}
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover object-top"
             />
           </div>
@@ -45,6 +49,10 @@ function DeviceMockup({
             <img
               src={`${basePath}${mobileSrc}`}
               alt={mobileAlt}
+              width={390}
+              height={844}
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover object-top"
             />
           </div>
@@ -57,8 +65,8 @@ function DeviceMockup({
 export function SchaeferhofMockup() {
   return (
     <DeviceMockup
-      desktopSrc="/images/schaeferhof-desktop.png"
-      mobileSrc="/images/schaeferhof-mobile.png"
+      desktopSrc="/images/schaeferhof-desktop.webp"
+      mobileSrc="/images/schaeferhof-mobile.webp"
       desktopAlt="Auf'm Schäferhof — Desktop-Ansicht"
       mobileAlt="Auf'm Schäferhof — Mobile-Ansicht"
     />
@@ -68,8 +76,8 @@ export function SchaeferhofMockup() {
 export function MoverProMockup() {
   return (
     <DeviceMockup
-      desktopSrc="/images/moverpro-desktop.png"
-      mobileSrc="/images/moverpro-mobile.png"
+      desktopSrc="/images/moverpro-desktop.webp"
+      mobileSrc="/images/moverpro-mobile.webp"
       desktopAlt="MoverPro Umzüge — Desktop-Ansicht"
       mobileAlt="MoverPro Umzüge — Mobile-Ansicht"
     />

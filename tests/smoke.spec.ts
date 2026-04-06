@@ -14,8 +14,8 @@ const sections = ['leistungen', 'projekte', 'ueber-mich', 'kontakt'];
 // All images expected on homepage with their src patterns
 const expectedImages = [
   { pattern: /michael-hero\.webp/, description: 'Hero portrait' },
-  { pattern: /schaeferhof-desktop\.png/, description: 'Schäferhof mockup' },
-  { pattern: /moverpro-desktop\.png/, description: 'MoverPro mockup' },
+  { pattern: /schaeferhof-desktop\.webp/, description: 'Schäferhof mockup' },
+  { pattern: /moverpro-desktop\.webp/, description: 'MoverPro mockup' },
   { pattern: /michael-working\.webp/, description: 'About photo' },
   { pattern: /michael-casual\.webp/, description: 'Contact photo' },
 ];
@@ -82,6 +82,10 @@ for (const img of expectedImages) {
     await page.goto('/', { waitUntil: 'networkidle' });
     const imgEl = page.locator(`img[src*="${img.pattern.source.replace(/\\/g, '')}"]`).first();
     await expect(imgEl).toBeAttached();
+
+    // Scroll into view to trigger lazy loading
+    await imgEl.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(500);
 
     // Verify image actually loaded (naturalWidth > 0)
     const loaded = await imgEl.evaluate(
@@ -262,10 +266,10 @@ test('homepage loads within 5 seconds', async ({ page }) => {
 test('all image URLs return 200', async ({ page }) => {
   const imagePaths = [
     '/images/michael-hero.webp',
-    '/images/schaeferhof-desktop.png',
-    '/images/schaeferhof-mobile.png',
-    '/images/moverpro-desktop.png',
-    '/images/moverpro-mobile.png',
+    '/images/schaeferhof-desktop.webp',
+    '/images/schaeferhof-mobile.webp',
+    '/images/moverpro-desktop.webp',
+    '/images/moverpro-mobile.webp',
     '/images/michael-working.webp',
     '/images/michael-casual.webp',
     '/images/og-image.png',
