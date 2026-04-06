@@ -23,6 +23,8 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps
       - run: npm run build
+        env:
+          NEXT_PUBLIC_META_PIXEL_ID: ${{ secrets.NEXT_PUBLIC_META_PIXEL_ID }}
       - run: npm test
 
       - name: Deploy to VPS
