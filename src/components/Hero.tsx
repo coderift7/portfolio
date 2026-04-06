@@ -32,7 +32,7 @@ export default function Hero() {
           <div className="max-w-2xl">
             {/* Greeting pill */}
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 1, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1, ease }}
               className="mb-6 inline-flex items-center rounded-full bg-primary/[0.07] glass shadow-depth px-4 py-1.5"
@@ -55,7 +55,7 @@ export default function Hero() {
 
             {/* Subheadline */}
             <motion.p
-              initial={{ opacity: 0.7, y: 8 }}
+              initial={{ opacity: 1, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.15, ease }}
               className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground"
@@ -65,9 +65,9 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 1, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.55, ease }}
+              transition={{ duration: 0.5, delay: 0.2, ease }}
               className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
             >
               <a

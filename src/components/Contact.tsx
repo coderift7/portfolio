@@ -73,6 +73,10 @@ export default function Contact() {
                 <img
                   src={`${basePath}/images/michael-casual.webp`}
                   alt="Michael Höger – persönlicher Ansprechpartner für Webdesign-Projekte"
+                  width={597}
+                  height={760}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full rounded-2xl object-contain"
                 />
               </div>

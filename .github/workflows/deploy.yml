@@ -39,3 +39,37 @@ jobs:
             -e "ssh -i ~/.ssh/deploy_key" \
             out/ michael@65.108.211.21:/var/www/hoeger.dev/
           rm ~/.ssh/deploy_key
+
+      - name: Lighthouse audit
+        run: |
+          npm install -g @lhci/cli
+          mkdir -p lighthouse-reports
+          lhci collect \
+            --url=https://hoeger.dev/ \
+            --numberOfRuns=3 \
+            --settings.preset=desktop
+          lhci collect \
+            --url=https://hoeger.dev/ \
+            --numberOfRuns=3 \
+            --settings.preset=perf \
+            --settings.emulatedFormFactor=mobile
+          cp -r .lighthouseci/*.html lighthouse-reports/ 2>/dev/null || true
+          cp -r .lighthouseci/*.json lighthouse-reports/ 2>/dev/null || true
+
+      - name: Lighthouse budget assertions
+        if: always()
+        run: |
+          lhci assert \
+            --preset=lighthouse:recommended \
+            --assert.performance=0.85 \
+            --assert.accessibility=0.9 \
+            --assert.best-practices=0.9 \
+            --assert.seo=0.9 || true
+
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports-${{ github.sha }}
+          path: lighthouse-reports/
+          retention-days: 90
