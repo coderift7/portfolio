@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 
 const Process = dynamic(() => import("@/components/Process"));
 const Projects = dynamic(() => import("@/components/Projects"));
+const WebsiteCheckTeaser = dynamic(() => import("@/components/WebsiteCheckTeaser"));
 const About = dynamic(() => import("@/components/About"));
 const Guarantee = dynamic(() => import("@/components/Guarantee"));
 const Faq = dynamic(() => import("@/components/Faq"));
@@ -23,6 +24,7 @@ export default function Home() {
         <Services />
         <Process />
         <Projects />
+        <WebsiteCheckTeaser />
         <About />
         <Guarantee />
         <Faq />

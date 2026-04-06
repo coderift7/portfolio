@@ -40,6 +40,9 @@ export default function Footer() {
           </a>
         </div>
         <div className="flex gap-6 text-sm text-muted-foreground">
+          <Link href="/website-check/" className="transition-colors hover:text-primary">
+            Website-Check
+          </Link>
           <Link href="/impressum" className="transition-colors hover:text-primary">
             Impressum
           </Link>
