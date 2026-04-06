@@ -1,12 +1,7 @@
-"use client";
-
 import { ArrowRight, ArrowDown } from "lucide-react";
-import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 
 const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
-
-const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function Hero() {
   const { hero } = siteConfig;
@@ -31,45 +26,25 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
           <div className="max-w-2xl">
             {/* Greeting pill */}
-            <motion.div
-              initial={{ opacity: 1, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1, ease }}
-              className="mb-6 inline-flex items-center rounded-full bg-primary/[0.07] glass shadow-depth px-4 py-1.5"
-            >
+            <div className="mb-6 inline-flex items-center rounded-full bg-primary/[0.07] glass shadow-depth px-4 py-1.5 animate-fade-in-up">
               <span className="mr-2 h-2 w-2 rounded-full bg-primary" />
               <span className="text-sm font-medium text-primary">
                 {hero.greeting}
               </span>
-            </motion.div>
+            </div>
 
             {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 1, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1, ease }}
-              className="text-[2.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground whitespace-pre-line sm:text-5xl md:text-6xl lg:text-[4.25rem]"
-            >
+            <h1 className="text-[2.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground whitespace-pre-line sm:text-5xl md:text-6xl lg:text-[4.25rem] animate-fade-in-up animation-delay-100">
               {hero.headline}
-            </motion.h1>
+            </h1>
 
             {/* Subheadline */}
-            <motion.p
-              initial={{ opacity: 1, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.15, ease }}
-              className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground"
-            >
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground animate-fade-in-up animation-delay-200">
               {hero.subheadline}
-            </motion.p>
+            </p>
 
             {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 1, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2, ease }}
-              className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-            >
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center animate-fade-in-up animation-delay-300">
               <a
                 href="#kontakt"
                 className="btn-brand group inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold"
@@ -83,16 +58,11 @@ export default function Hero() {
               >
                 {hero.ctaSecondary}
               </a>
-            </motion.div>
+            </div>
           </div>
 
           {/* Hero portrait */}
-          <motion.div
-            initial={{ opacity: 1, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1, ease }}
-            className="flex justify-center lg:block"
-          >
+          <div className="flex justify-center lg:block animate-fade-in-up animation-delay-150">
             <div className="relative">
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/30 to-secondary/30 blur-3xl" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -103,28 +73,21 @@ export default function Hero() {
                 fetchPriority="high"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Scroll hint */}
-      <motion.a
+      <a
         href="#leistungen"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground/40 transition-colors hover:text-muted-foreground"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground/40 transition-colors hover:text-muted-foreground animate-fade-in animation-delay-500"
         aria-label="Weiter scrollen"
       >
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="relative"
-        >
+        <div className="relative animate-bounce-slow">
           <div className="absolute -inset-2 animate-pulse rounded-full bg-primary/15 blur-md" />
           <ArrowDown className="relative h-5 w-5" />
-        </motion.div>
-      </motion.a>
+        </div>
+      </a>
     </section>
   );
 }
