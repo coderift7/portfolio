@@ -30,10 +30,13 @@ Damit die Webseite bei Google erscheint, wenn Kunden nach dem Angebot suchen. Lo
 ### 4. Automatisierungen
 Kontaktformulare, automatische E-Mail-Benachrichtigungen, WhatsApp-Weiterleitung, Online-Terminbuchung — damit weniger Arbeit anfällt und keine Anfrage verloren geht.
 
-### 5. Social Media
+### 5. Kostenloser Website-Check
+Wie gut ist Ihre Website wirklich? Michael prüft kostenlos sechs Bereiche: Performance, SEO, Sicherheit, Barrierefreiheit, Mobile-Optimierung und rechtliche Anforderungen (Impressum, Datenschutz, Cookie-Consent). Das Ergebnis kommt per E-Mail als verständlicher Report mit konkreten Handlungsempfehlungen. Kein Verkaufsgespräch, kein Druck. URL: https://hoeger.dev/website-check/
+
+### 7. Social Media
 Professionelle Präsenz auf Facebook, Instagram oder LinkedIn — mit Strategie statt planlosem Posten. Entwicklung einer Strategie für die Plattformen, auf denen die Kunden wirklich unterwegs sind.
 
-### 6. Persönliche Betreuung
+### 8. Persönliche Betreuung
 Kein Callcenter, keine Warteschleife. Kunden sprechen immer direkt mit Michael. Ein Ansprechpartner für alles — von der Planung bis zur laufenden Betreuung.
 
 ## Preise (Richtwerte, Endpreise gem. §19 UStG)

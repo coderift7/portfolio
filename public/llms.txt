@@ -20,6 +20,9 @@ Damit Ihre Webseite bei Google erscheint, wenn Kunden nach Ihrem Angebot suchen.
 ### Automatisierungen
 Kontaktformulare, automatische E-Mail-Benachrichtigungen, WhatsApp-Weiterleitung, Online-Terminbuchung — damit weniger Arbeit anfällt und keine Anfrage verloren geht.
 
+### Kostenloser Website-Check
+Wie gut ist Ihre Website wirklich? Michael prüft kostenlos Performance, SEO, Sicherheit, Barrierefreiheit, Mobile-Optimierung und rechtliche Anforderungen. Das Ergebnis kommt per E-Mail als verständlicher Report mit konkreten Handlungsempfehlungen. Ohne Verkaufsgespräch, ohne Druck. Mehr unter: https://hoeger.dev/website-check/
+
 ### Social Media
 Professionelle Präsenz auf Facebook, Instagram oder LinkedIn — mit Strategie, nicht planlos.
 
