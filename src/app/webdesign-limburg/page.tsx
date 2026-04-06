@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   title: "Webdesign Limburg – Webseiten für kleine Unternehmen | Michael Höger",
   description:
     "Professionelles Webdesign in Limburg an der Lahn. Webseiten für kleine Unternehmen und Selbstständige — Google-optimiert, KI-ready, in 14 Tagen online. Festpreis, persönliche Betreuung.",
-  alternates: { canonical: "/webdesign-limburg" },
+  alternates: { canonical: "/webdesign-limburg/" },
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: `${siteUrl}/webdesign-limburg`,
+    url: `${siteUrl}/webdesign-limburg/`,
     siteName: siteConfig.name,
     title: "Webdesign Limburg – Webseiten für kleine Unternehmen",
     description:
@@ -51,7 +51,7 @@ const localBusinessSchema = {
   name: "Michael Höger – Webdesign Limburg",
   description:
     "Professionelles Webdesign für kleine Unternehmen in Limburg an der Lahn und Umgebung. Google-optimiert, KI-ready, persönliche Betreuung.",
-  url: `${siteUrl}/webdesign-limburg`,
+  url: `${siteUrl}/webdesign-limburg/`,
   email: siteConfig.email,
   telephone: siteConfig.phone,
   image: `${siteUrl}/images/og-image.png`,

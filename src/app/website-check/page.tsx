@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   title: "Kostenloser Website-Check | Michael Höger",
   description:
     "Wie gut ist Ihre Website wirklich? Kostenloser Check für Performance, SEO, Sicherheit, Barrierefreiheit und mehr. Ergebnis per E-Mail in wenigen Minuten.",
-  alternates: { canonical: "/website-check" },
+  alternates: { canonical: "/website-check/" },
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: `${siteUrl}/website-check`,
+    url: `${siteUrl}/website-check/`,
     siteName: siteConfig.name,
     title: "Kostenloser Website-Check",
     description:
@@ -48,7 +48,7 @@ const webAppSchema = {
   name: "Kostenloser Website-Check",
   description:
     "Kostenloser Website-Check für Performance, SEO, Sicherheit, Barrierefreiheit, Mobile-Optimierung und rechtliche Anforderungen.",
-  url: `${siteUrl}/website-check`,
+  url: `${siteUrl}/website-check/`,
   applicationCategory: "UtilityApplication",
   operatingSystem: "All",
   offers: {
