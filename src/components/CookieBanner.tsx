@@ -32,10 +32,10 @@ export default function CookieBanner() {
           animate={{ y: 0 }}
           exit={{ y: "100%" }}
           transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
-          className="fixed inset-x-0 bottom-0 z-50 border-t border-border/30 bg-slate-900/95 p-4 backdrop-blur-md sm:p-5"
+          className="fixed inset-x-0 bottom-0 z-50 border-t border-border/30 bg-slate-900/95 px-4 py-3 backdrop-blur-md sm:p-5"
         >
-          <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-slate-200 sm:text-left">
+          <div className="mx-auto flex max-w-5xl flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-xs text-slate-300 sm:text-sm sm:text-slate-200">
               Wir nutzen Meta Pixel zur Messung unserer Werbeanzeigen.{" "}
               <Link
                 href="/datenschutz"

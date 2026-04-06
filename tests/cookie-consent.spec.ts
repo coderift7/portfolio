@@ -52,7 +52,8 @@ test.describe("Cookie Consent Banner", () => {
     await expect(banner).not.toBeVisible();
 
     // Click footer link — page reloads, banner should appear
-    await page.getByRole("button", { name: "Cookie-Einstellungen" }).click();
+    // force: true needed because WhatsApp FAB overlaps footer on mobile Chrome emulation
+    await page.getByRole("button", { name: "Cookie-Einstellungen" }).click({ force: true });
     await page.waitForLoadState("networkidle");
     await expect(page.getByRole("dialog", { name: "Cookie-Einstellungen" })).toBeVisible();
   });
@@ -60,7 +61,8 @@ test.describe("Cookie Consent Banner", () => {
   test("datenschutz link in banner navigates to privacy page", async ({ page }) => {
     await page.goto("/");
     const banner = page.getByRole("dialog", { name: "Cookie-Einstellungen" });
-    await banner.getByRole("link", { name: "Mehr erfahren" }).click();
+    // force: true needed because flex-col-reverse on mobile puts buttons above text
+    await banner.getByRole("link", { name: "Mehr erfahren" }).click({ force: true });
     await expect(page).toHaveURL(/\/datenschutz/);
   });
 });
