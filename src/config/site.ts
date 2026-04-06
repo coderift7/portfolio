@@ -117,12 +117,12 @@ export const siteConfig = {
   faq: faqData.items,
 
   nav: [
-    { label: "Leistungen", href: "#leistungen" },
-    { label: "Projekte", href: "#projekte" },
-    { label: "Über mich", href: "#ueber-mich" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Leistungen", href: "/#leistungen" },
+    { label: "Projekte", href: "/#projekte" },
+    { label: "Über mich", href: "/#ueber-mich" },
+    { label: "FAQ", href: "/#faq" },
     { label: "Blog", href: "/blog/" },
     { label: "Website-Check", href: "/website-check/" },
-    { label: "Kontakt", href: "#kontakt" },
+    { label: "Kontakt", href: "/#kontakt" },
   ],
 };
