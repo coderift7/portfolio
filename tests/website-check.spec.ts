@@ -40,9 +40,9 @@ test.describe('/website-check', () => {
 
   test('shows check categories', async ({ page }) => {
     await page.goto('/website-check');
-    await expect(page.locator('text=Performance')).toBeVisible();
-    await expect(page.locator('text=SEO')).toBeVisible();
-    await expect(page.locator('text=Sicherheit')).toBeVisible();
+    await expect(page.locator('h3:has-text("Performance")').first()).toBeVisible();
+    await expect(page.locator('h3:has-text("SEO")').first()).toBeVisible();
+    await expect(page.locator('h3:has-text("Sicherheit")').first()).toBeVisible();
   });
 });
 
