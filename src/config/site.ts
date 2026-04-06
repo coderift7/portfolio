@@ -8,6 +8,7 @@ export const siteConfig = {
   phone: "+49 162 9255254",
   location: "Deutschland",
   facebook: "https://www.facebook.com/profile.php?id=61575586966779",
+  instagram: "https://www.instagram.com/hoeger_dev/",
 
   meta: {
     title: "Michael Höger – Webseiten, die Ihnen Kunden bringen",

@@ -103,7 +103,7 @@ export default function RootLayout({
               email: siteConfig.email,
               telephone: siteConfig.phone,
               image: `${siteUrl}/images/michael-hero.webp`,
-              sameAs: ["https://hoeger.dev", siteConfig.facebook],
+              sameAs: ["https://hoeger.dev", siteConfig.facebook, siteConfig.instagram],
               knowsAbout: [
                 "Webdesign",
                 "Webentwicklung",
