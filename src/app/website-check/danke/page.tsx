@@ -3,6 +3,7 @@ import { CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LeadEvent from "./LeadEvent";
 
 export const metadata: Metadata = {
   title: "Vielen Dank! | Website-Check",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function WebsiteCheckDanke() {
   return (
     <>
+      <LeadEvent />
       <Header />
       <main
         id="main"
