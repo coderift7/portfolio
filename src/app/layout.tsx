@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import CookieBanner from "@/components/CookieBanner";
 import MetaPixel from "@/components/MetaPixel";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -210,6 +211,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <AnnouncementBanner />
         {children}
         <CookieBanner />
         <MetaPixel />

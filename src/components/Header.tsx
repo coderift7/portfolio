@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
+import { useAnnouncementVisible } from "./AnnouncementBanner";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,6 +15,7 @@ export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const prefix = isHome ? "" : "/";
+  const bannerVisible = useAnnouncementVisible();
 
   useEffect(() => {
     const onScroll = () => {
@@ -34,7 +36,9 @@ export default function Header() {
         Zum Inhalt springen
       </a>
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 animate-[slideDown_0.5s_ease-out] ${
+      className={`fixed left-0 right-0 z-50 transition-all duration-500 animate-[slideDown_0.5s_ease-out] ${
+        bannerVisible ? "top-10" : "top-0"
+      } ${
         scrolled
           ? "bg-background/70 backdrop-blur-xl shadow-depth border-b border-white/10"
           : "bg-transparent"
