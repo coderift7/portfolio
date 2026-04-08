@@ -10,7 +10,7 @@ import { Reveal, slideFromLeft, slideFromRight } from "./Motion";
 const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
 
 const inputClasses =
-  "w-full rounded-xl border border-border bg-white dark:bg-slate-800 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-all duration-150 focus:border-primary focus:ring-2 focus:ring-primary/15";
+  "w-full rounded-xl border border-border bg-white dark:bg-slate-900/80 dark:border-slate-600 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-all duration-150 focus:border-primary focus:ring-2 focus:ring-primary/15";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
