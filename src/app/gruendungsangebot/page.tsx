@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { HeroCountdown, StickyCountdown } from "./Countdown";
 
 const siteUrl = "https://hoeger.dev";
-const mailto = (subject: string, paket?: string) =>
-  `mailto:michael@hoeger.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-    `Hallo Michael,\n\nich interessiere mich für das Gründungsangebot${paket ? ` (${paket})` : ""}.\n\nMein Unternehmen: \nBranche: \n${paket ? "Website-Wünsche: \n" : ""}\nViele Grüße`
-  )}`;
+const kontaktLink = "https://hoeger.dev/#kontakt";
 
 export const metadata: Metadata = {
   title: "Gründungsangebot – Ihre Website zum halben Preis | Michael Höger",
@@ -177,7 +174,7 @@ export default function Gruendungsangebot() {
 
               <div className="px-6 pb-6 pt-4">
                 <a
-                  href={mailto(`Gründungsangebot ${p.name}`, `${p.name} – ${p.title}`)}
+                  href={kontaktLink}
                   className={`block w-full py-3 text-center rounded-lg text-sm font-semibold transition-all duration-200 ${
                     p.featured
                       ? "bg-gradient-to-r from-teal-600 to-cyan-600 text-white hover:-translate-y-0.5 hover:shadow-md"
@@ -236,7 +233,7 @@ export default function Gruendungsangebot() {
           <h2 className="text-white text-2xl font-bold mb-2">Bereit? Sichern Sie sich Ihren Platz.</h2>
           <p className="text-slate-400 text-sm mb-6">10 Minuten Gespräch — kostet nichts, bringt Klarheit.</p>
           <a
-            href={mailto("Gründungsangebot – Interesse")}
+            href={kontaktLink}
             className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-9 py-3.5 rounded-lg text-[15px] font-semibold hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
           >
             Unverbindlich anfragen
@@ -247,7 +244,7 @@ export default function Gruendungsangebot() {
       {/* ── Footer ── */}
       <div className="text-center py-6 pb-20 text-[11px] text-slate-400">
         Michael Höger · IT-Beratung &amp; Webgestaltung ·{" "}
-        <a href="mailto:michael@hoeger.dev" className="text-teal-600 no-underline">michael@hoeger.dev</a>
+        <a href="https://hoeger.dev/#kontakt" className="text-teal-600 no-underline">michael@hoeger.dev</a>
         <br />
         Alle Preise sind Endpreise (§19 UStG). Kosten für Hosting und Domains nicht enthalten.
       </div>
@@ -260,7 +257,7 @@ export default function Gruendungsangebot() {
         </span>
         <StickyCountdown />
         <a
-          href={mailto("Gründungsangebot – Interesse")}
+          href={kontaktLink}
           className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-6 py-2.5 rounded-lg text-[13px] font-semibold hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
         >
           Jetzt Platz sichern
