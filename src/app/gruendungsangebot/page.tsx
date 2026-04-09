@@ -7,7 +7,7 @@ const kontaktLink = "https://hoeger.dev/#kontakt";
 export const metadata: Metadata = {
   title: "Gründungsangebot – Ihre Website zum halben Preis | Michael Höger",
   description:
-    "Nur im April: Professionelle Website zum Gründungspreis — 50% Rabatt für die ersten 5 Kunden. Persönliche Betreuung, bei Google gefunden werden, Datenschutz inklusive.",
+    "Nur im April: Professionelle Website zum Gründungspreis — 50% Rabatt für die ersten 5 Kunden. Nur noch 4 Plätze frei! Persönliche Betreuung, bei Google gefunden werden, Datenschutz inklusive.",
   alternates: { canonical: "/gruendungsangebot/" },
   openGraph: {
     type: "website",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: `${siteUrl}/gruendungsangebot/`,
     title: "Ihre neue Website — zum halben Preis",
     description:
-      "Gründungsangebot April 2026: Professionelle Website ab 495 €. Nur 5 Plätze.",
+      "Gründungsangebot April 2026: Professionelle Website ab 495 €. Nur noch 4 Plätze!",
     images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
   },
   robots: { index: true, follow: true },
@@ -102,7 +102,7 @@ export default function Gruendungsangebot() {
           </span>
         </h1>
         <p className="text-slate-400 text-base max-w-[500px] mx-auto mb-7 leading-relaxed">
-          Ich starte mein Webdesign-Business und suche 5 Gründungskunden,
+          Ich starte mein Webdesign-Business und suche Gründungskunden,
           die von professioneller Qualität zum Einstiegspreis profitieren möchten.
         </p>
 
@@ -110,7 +110,7 @@ export default function Gruendungsangebot() {
         <div className="bg-gradient-to-br from-red-500/15 to-red-500/5 border-2 border-red-500/40 rounded-2xl p-6 max-w-[540px] mx-auto shadow-[0_0_40px_rgba(239,68,68,0.12),inset_0_0_20px_rgba(239,68,68,0.03)]">
           <div className="flex items-center justify-center gap-2.5 text-[17px] font-bold text-white mb-4">
             <span className="w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
-            Noch <span className="font-mono text-[22px] text-red-300">5</span> von 5 Plätzen verfügbar
+            Noch <span className="font-mono text-[22px] text-red-300">4</span> von 5 Plätzen verfügbar
           </div>
           <div className="text-[11px] text-slate-400 tracking-wide mb-2.5">Angebot endet in:</div>
           <HeroCountdown />
@@ -253,7 +253,7 @@ export default function Gruendungsangebot() {
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-900 to-slate-800 border-t-2 border-teal-600 py-3 px-6 flex items-center justify-center gap-4 shadow-[0_-4px_20px_rgba(0,0,0,0.2)]">
         <span className="text-white text-sm font-semibold flex items-center gap-2">
           <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-          5 Plätze · endet in
+          4 Plätze · endet in
         </span>
         <StickyCountdown />
         <a
