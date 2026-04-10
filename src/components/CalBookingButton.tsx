@@ -36,7 +36,7 @@ export default function CalBookingButton() {
           p(cal, ar);
         };
       })(window, "${CAL_ORIGIN}/embed/embed.js", "init");
-      Cal("init", {origin: "${CAL_ORIGIN}"});
+      Cal("init", {origin: "${CAL_ORIGIN}", calLink: "michael/kennenlernen"});
       Cal("ui", {
         styles: {branding: {brandColor: "#0D9488"}},
         hideEventTypeDetails: false,
@@ -53,7 +53,7 @@ export default function CalBookingButton() {
       </p>
       <button
         data-cal-link="michael/kennenlernen"
-        data-cal-config='{"layout":"month_view"}'
+        data-cal-config='{"layout":"month_view","locale":"de"}'
         className="btn-brand group flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold"
       >
         <Calendar className="h-4 w-4" />
