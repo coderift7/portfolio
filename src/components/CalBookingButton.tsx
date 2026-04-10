@@ -3,25 +3,47 @@
 import { useEffect } from "react";
 import { Calendar } from "lucide-react";
 
+const CAL_ORIGIN = "https://cal.hoeger.dev";
+
 export default function CalBookingButton() {
   useEffect(() => {
-    if (document.querySelector('script[src*="cal.hoeger.dev/embed"]')) return;
+    if (document.querySelector("#cal-embed-loader")) return;
 
-    const script = document.createElement("script");
-    script.src = "https://cal.hoeger.dev/embed/embed.js";
-    script.async = true;
-    script.onload = () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const Cal = (window as any).Cal;
-      if (!Cal) return;
-      Cal("init", { origin: "https://cal.hoeger.dev" });
+    // Inject the official Cal.com embed loader as inline script
+    const loader = document.createElement("script");
+    loader.id = "cal-embed-loader";
+    loader.textContent = `
+      (function (C, A, L) {
+        var p = function (a, ar) { a.q.push(ar); };
+        var d = C.document;
+        C.Cal = C.Cal || function () {
+          var cal = C.Cal;
+          var ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            d.head.appendChild(d.createElement("script")).src = A;
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            var api = function () { p(api, arguments); };
+            var namespace = ar[1];
+            api.q = api.q || [];
+            if (typeof namespace === "string") { cal.ns[namespace] = api; p(api, ar); }
+            else { p(cal, ar); }
+            return;
+          }
+          p(cal, ar);
+        };
+      })(window, "${CAL_ORIGIN}/embed/embed.js", "init");
+      Cal("init", {origin: "${CAL_ORIGIN}"});
       Cal("ui", {
-        styles: { branding: { brandColor: "#0D9488" } },
+        styles: {branding: {brandColor: "#0D9488"}},
         hideEventTypeDetails: false,
-        layout: "month_view",
+        layout: "month_view"
       });
-    };
-    document.head.appendChild(script);
+    `;
+    document.head.appendChild(loader);
   }, []);
 
   return (
