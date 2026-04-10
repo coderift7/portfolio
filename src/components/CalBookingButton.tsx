@@ -2,18 +2,26 @@
 
 import { useEffect } from "react";
 import { Calendar } from "lucide-react";
-import { getCalApi } from "@calcom/embed-react";
 
 export default function CalBookingButton() {
   useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({ embedJsUrl: "https://cal.hoeger.dev/embed/embed.js" });
-      cal("ui", {
+    if (document.querySelector('script[src*="cal.hoeger.dev/embed"]')) return;
+
+    const script = document.createElement("script");
+    script.src = "https://cal.hoeger.dev/embed/embed.js";
+    script.async = true;
+    script.onload = () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const Cal = (window as any).Cal;
+      if (!Cal) return;
+      Cal("init", { origin: "https://cal.hoeger.dev" });
+      Cal("ui", {
         styles: { branding: { brandColor: "#0D9488" } },
         hideEventTypeDetails: false,
         layout: "month_view",
       });
-    })();
+    };
+    document.head.appendChild(script);
   }, []);
 
   return (
