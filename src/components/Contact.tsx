@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Reveal, slideFromLeft, slideFromRight } from "./Motion";
+import CalBookingButton from "./CalBookingButton";
 
 const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
 
@@ -107,6 +108,8 @@ export default function Contact() {
                   </span>
                 </div>
               </div>
+
+              <CalBookingButton />
             </div>
           </Reveal>
 
