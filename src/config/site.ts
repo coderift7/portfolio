@@ -118,6 +118,7 @@ export const siteConfig = {
 
   nav: [
     { label: "Leistungen", href: "/#leistungen" },
+    { label: "Preise", href: "/preise/" },
     { label: "Projekte", href: "/#projekte" },
     { label: "Über mich", href: "/#ueber-mich" },
     { label: "FAQ", href: "/#faq" },
