@@ -50,6 +50,7 @@ const pakete = [
       "Alles aus Paket 1",
       "Bis zu 8 Seiten",
       "Design nach Ihrem Erscheinungsbild",
+      "Logo-Redesign inklusive",
       "Bildergalerie / Portfolio",
       "Blog- oder News-Bereich",
       "Bessere Auffindbarkeit bei Google",
@@ -69,6 +70,7 @@ const pakete = [
     sub: "oder ab 990 € mit Betreuung",
     features: [
       "Alles aus Paket 2",
+      "Logo-Neuerstellung inklusive",
       "Bis zu 12 Seiten",
       "KI-Chatbot für Kundenanfragen",
       "Terminbuchung + Kalender",
@@ -143,6 +145,8 @@ const betreuung = [
 ];
 
 const addons = [
+  { name: "Logo-Redesign", desc: "Modernisierung Ihres bestehenden Logos. Mehrere Entwürfe, finale Dateien in allen Formaten. Ab Paket 2 inklusive.", price: "200 €", unit: "pauschal" },
+  { name: "Logo-Neuerstellung", desc: "Komplett neues Logo nach Ihren Wünschen. Konzept, mehrere Stilrichtungen, alle Formate. Ab Paket 3 inklusive.", price: "350 €", unit: "pauschal" },
   { name: "Chatbot-Entwicklung", desc: "KI-gestützter Assistent für Kundenanfragen — einzeln buchbar.", price: "ab 500 €", unit: "Ersteinrichtung" },
   { name: "Prozessautomatisierung", desc: "Wiederkehrende Abläufe automatisieren — E-Mail-Verarbeitung, Benachrichtigungen, Datenübernahme.", price: "ab 300 €", unit: "je nach Aufwand" },
   { name: "Zusätzliche Sprache", desc: "Übersetzung und Einrichtung einer weiteren Sprachversion Ihrer Website.", price: "200 €", unit: "pro Sprache" },
