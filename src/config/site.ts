@@ -117,8 +117,7 @@ export const siteConfig = {
   faq: faqData.items,
 
   nav: [
-    { label: "Leistungen", href: "/#leistungen" },
-    { label: "Preise", href: "/preise/" },
+    { label: "Leistungen & Preise", href: "/preise/" },
     { label: "Projekte", href: "/#projekte" },
     { label: "Über mich", href: "/#ueber-mich" },
     { label: "FAQ", href: "/#faq" },
