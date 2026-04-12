@@ -130,6 +130,5 @@ export const siteConfig = {
     { label: "Über mich", href: "/#ueber-mich" },
     { label: "FAQ", href: "/#faq" },
     { label: "Blog", href: "/blog/" },
-    { label: "Kontakt", href: "/#kontakt" },
   ],
 };
