@@ -150,6 +150,7 @@ const addons = [
   { name: "Chatbot-Entwicklung", desc: "KI-gestützter Assistent für Kundenanfragen — einzeln buchbar.", price: "ab 500 €", unit: "Ersteinrichtung" },
   { name: "Prozessautomatisierung", desc: "Wiederkehrende Abläufe automatisieren — E-Mail-Verarbeitung, Benachrichtigungen, Datenübernahme.", price: "ab 300 €", unit: "je nach Aufwand" },
   { name: "Zusätzliche Sprache", desc: "Übersetzung und Einrichtung einer weiteren Sprachversion Ihrer Website.", price: "200 €", unit: "pro Sprache" },
+  { name: "Texterstellung", desc: "Professionelle Webtexte, die aus Besuchern Kunden machen. 3 Pakete für jede Unternehmensgröße.", price: "ab 350 €", unit: "pauschal", href: "/texterstellung/" },
   { name: "Stundensatz", desc: "Beratung, Schulung oder individuelle Aufgaben. Auch für Leistungen über den Retainer hinaus.", price: "75 €", unit: "pro Stunde" },
 ];
 
@@ -350,21 +351,29 @@ export default function PreisePage() {
         </p>
 
         <div className="space-y-3 mb-16">
-          {addons.map((a) => (
-            <div
-              key={a.name}
-              className="flex justify-between items-center py-4 px-6 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl"
-            >
-              <div>
-                <h3 className="font-semibold text-slate-900 dark:text-white text-[14px]">{a.name}</h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">{a.desc}</p>
-              </div>
-              <div className="text-right shrink-0">
-                <span className="font-mono text-lg font-bold text-slate-900 dark:text-white">{a.price}</span>
-                <span className="block text-[10px] text-slate-400 tracking-wide">{a.unit}</span>
-              </div>
-            </div>
-          ))}
+          {addons.map((a) => {
+            const Wrapper = a.href ? "a" : "div";
+            const wrapperProps = a.href ? { href: a.href } : {};
+            return (
+              <Wrapper
+                key={a.name}
+                {...wrapperProps}
+                className={`flex justify-between items-center py-4 px-6 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl${a.href ? " hover:border-teal-500 hover:shadow-md transition-all duration-200 group" : ""}`}
+              >
+                <div>
+                  <h3 className="font-semibold text-slate-900 dark:text-white text-[14px]">
+                    {a.name}
+                    {a.href && <span className="ml-2 text-teal-600 text-xs font-normal group-hover:underline">Details →</span>}
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">{a.desc}</p>
+                </div>
+                <div className="text-right shrink-0">
+                  <span className="font-mono text-lg font-bold text-slate-900 dark:text-white">{a.price}</span>
+                  <span className="block text-[10px] text-slate-400 tracking-wide">{a.unit}</span>
+                </div>
+              </Wrapper>
+            );
+          })}
         </div>
 
         {/* ── Hinweise ── */}

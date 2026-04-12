@@ -123,6 +123,7 @@ export const siteConfig = {
     { label: "FAQ", href: "/#faq" },
     { label: "Blog", href: "/blog/" },
     { label: "Website-Check", href: "/website-check/" },
+    { label: "Texterstellung", href: "/texterstellung/" },
     { label: "Kontakt", href: "/#kontakt" },
   ],
 };
