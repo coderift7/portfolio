@@ -117,13 +117,19 @@ export const siteConfig = {
   faq: faqData.items,
 
   nav: [
-    { label: "Leistungen & Preise", href: "/preise/" },
+    {
+      label: "Leistungen",
+      href: "/preise/",
+      children: [
+        { label: "Leistungen & Preise", href: "/preise/" },
+        { label: "Website-Check", href: "/website-check/" },
+        { label: "Texterstellung", href: "/texterstellung/" },
+      ],
+    },
     { label: "Projekte", href: "/#projekte" },
     { label: "Über mich", href: "/#ueber-mich" },
     { label: "FAQ", href: "/#faq" },
     { label: "Blog", href: "/blog/" },
-    { label: "Website-Check", href: "/website-check/" },
-    { label: "Texterstellung", href: "/texterstellung/" },
     { label: "Kontakt", href: "/#kontakt" },
   ],
 };

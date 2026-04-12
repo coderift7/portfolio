@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
@@ -12,10 +12,13 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [logoRotation, setLogoRotation] = useState(0);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const isHome = pathname === "/";
   const prefix = isHome ? "" : "/";
   const bannerVisible = useAnnouncementVisible();
+  const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [desktopDropdown, setDesktopDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -25,6 +28,15 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const openDropdown = (label: string) => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    setDesktopDropdown(label);
+  };
+
+  const closeDropdown = () => {
+    dropdownTimeout.current = setTimeout(() => setDesktopDropdown(null), 150);
+  };
 
   return (
     <>
@@ -49,16 +61,55 @@ export default function Header() {
           <Logo className="h-9 w-auto sm:h-10" iconRotation={logoRotation} />
         </a>
 
+        {/* ── Desktop Nav ── */}
         <nav className="hidden items-center gap-1 lg:flex">
-          {siteConfig.nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href.startsWith("#") ? `${prefix}${item.href}` : item.href}
-              className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground"
-            >
-              {item.label}
-            </a>
-          ))}
+          {siteConfig.nav.map((item) =>
+            item.children ? (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => openDropdown(item.label)}
+                onMouseLeave={closeDropdown}
+              >
+                <button
+                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground cursor-pointer"
+                  aria-expanded={desktopDropdown === item.label}
+                  aria-haspopup="true"
+                >
+                  {item.label}
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${desktopDropdown === item.label ? "rotate-180" : ""}`} />
+                </button>
+
+                <div
+                  className={`absolute left-1/2 -translate-x-1/2 top-full pt-2 transition-all duration-200 ${
+                    desktopDropdown === item.label
+                      ? "opacity-100 translate-y-0 pointer-events-auto"
+                      : "opacity-0 -translate-y-1 pointer-events-none"
+                  }`}
+                >
+                  <div className="min-w-[220px] rounded-xl border border-white/10 bg-background/95 backdrop-blur-xl shadow-lg p-1.5">
+                    {item.children.map((child) => (
+                      <a
+                        key={child.href}
+                        href={child.href}
+                        className="block rounded-lg px-4 py-2.5 text-sm text-muted-foreground transition-colors duration-150 hover:text-foreground hover:bg-muted/50"
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href.startsWith("#") ? `${prefix}${item.href}` : item.href}
+                className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground"
+              >
+                {item.label}
+              </a>
+            )
+          )}
           <ThemeToggle />
           <a
             href={`${prefix}#kontakt`}
@@ -88,16 +139,49 @@ export default function Header() {
       >
         <div className="overflow-hidden">
           <nav className="flex flex-col gap-1 px-5 py-4">
-            {siteConfig.nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href.startsWith("#") ? `${prefix}${item.href}` : item.href}
-                onClick={() => setMobileOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-foreground active:bg-muted"
-              >
-                {item.label}
-              </a>
-            ))}
+            {siteConfig.nav.map((item) =>
+              item.children ? (
+                <div key={item.label}>
+                  <button
+                    onClick={() => setMobileDropdown(mobileDropdown === item.label ? null : item.label)}
+                    className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-foreground cursor-pointer"
+                    aria-expanded={mobileDropdown === item.label}
+                  >
+                    {item.label}
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileDropdown === item.label ? "rotate-180" : ""}`} />
+                  </button>
+                  <div
+                    className={`grid transition-all duration-200 ease-out ${
+                      mobileDropdown === item.label ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="flex flex-col gap-0.5 pl-4 pb-1">
+                        {item.children.map((child) => (
+                          <a
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="rounded-lg px-3 py-2 text-sm text-muted-foreground active:bg-muted"
+                          >
+                            {child.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href.startsWith("#") ? `${prefix}${item.href}` : item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-lg px-3 py-2.5 text-foreground active:bg-muted"
+                >
+                  {item.label}
+                </a>
+              )
+            )}
             <a
               href={`${prefix}#kontakt`}
               onClick={() => setMobileOpen(false)}
