@@ -264,51 +264,56 @@ export default function PreisePage() {
             </p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-slate-50 dark:bg-slate-800">
-                  <th className="text-left font-semibold text-slate-600 dark:text-slate-300 px-6 py-4 text-xs uppercase tracking-wider">
-                    Website-Paket
-                  </th>
-                  {matrix.headers.map((h) => (
-                    <th key={h} className="text-center font-semibold text-slate-600 dark:text-slate-300 px-4 py-4 text-xs uppercase tracking-wider">
-                      {h}
+          <div className="relative">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-slate-50 dark:bg-slate-800">
+                    <th className="text-left font-semibold text-slate-600 dark:text-slate-300 px-6 py-4 text-xs uppercase tracking-wider">
+                      Website-Paket
                     </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="bg-white dark:bg-slate-900">
-                {matrix.rows.map((row) => (
-                  <tr key={row.paket} className="border-t border-slate-100 dark:border-slate-800">
-                    <td className="px-6 py-5 font-semibold text-slate-900 dark:text-white text-[13px]">
-                      {row.paket}
-                    </td>
-                    {row.cells.map((cell, i) => (
-                      <td key={i} className="px-4 py-5 text-center">
-                        {cell.free ? (
-                          <span className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg">
-                            0 € inklusive
-                          </span>
-                        ) : (
-                          <div>
-                            {cell.original && (
-                              <span className="block text-slate-400 text-xs line-through font-mono">{cell.original}</span>
-                            )}
-                            <span className={`font-mono font-bold text-[14px] ${cell.original ? "text-teal-600" : "text-slate-900 dark:text-white"}`}>
-                              {cell.price}
-                            </span>
-                            {cell.badge && (
-                              <span className="block text-teal-600 text-[10px] font-semibold mt-0.5">{cell.badge}</span>
-                            )}
-                          </div>
-                        )}
-                      </td>
+                    {matrix.headers.map((h) => (
+                      <th key={h} className="text-center font-semibold text-slate-600 dark:text-slate-300 px-4 py-4 text-xs uppercase tracking-wider">
+                        {h}
+                      </th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="bg-white dark:bg-slate-900">
+                  {matrix.rows.map((row) => (
+                    <tr key={row.paket} className="border-t border-slate-100 dark:border-slate-800">
+                      <td className="px-6 py-5 font-semibold text-slate-900 dark:text-white text-[13px]">
+                        {row.paket}
+                      </td>
+                      {row.cells.map((cell, i) => (
+                        <td key={i} className="px-4 py-5 text-center">
+                          {cell.free ? (
+                            <span className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg">
+                              0 € inklusive
+                            </span>
+                          ) : (
+                            <div>
+                              {cell.original && (
+                                <span className="block text-slate-400 text-xs line-through font-mono">{cell.original}</span>
+                              )}
+                              <span className={`font-mono font-bold text-[14px] ${cell.original ? "text-teal-600" : "text-slate-900 dark:text-white"}`}>
+                                {cell.price}
+                              </span>
+                              {cell.badge && (
+                                <span className="block text-teal-600 text-[10px] font-semibold mt-0.5">{cell.badge}</span>
+                              )}
+                            </div>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {/* Scroll-Hinweis: Fade + Text, nur auf Mobile */}
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white dark:from-slate-900 to-transparent pointer-events-none md:hidden" />
+            <p className="text-center text-xs text-slate-400 mt-2 md:hidden">Tabelle wischen →</p>
           </div>
 
           <div className="bg-teal-50 dark:bg-teal-900/20 px-8 py-4 text-center">
