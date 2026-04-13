@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { siteUrl } from "@/config/site";
 
-const siteUrl = "https://hoeger.dev";
 const kontaktLink = "https://hoeger.dev/#kontakt";
 
 export const metadata: Metadata = {
@@ -135,9 +135,9 @@ const faqs = [
 
 export default function TexterstellungPage() {
   return (
-    <>
+    <main id="main">
       {/* ── Hero ── */}
-      <div className="bg-gradient-to-br from-slate-900 to-slate-800 px-6 pt-16 pb-14 text-center">
+      <div className="bg-gradient-to-br from-slate-900 to-slate-800 px-6 pt-28 pb-14 text-center">
         <span className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-[11px] font-bold uppercase tracking-[2px] px-4 py-1.5 rounded-full mb-6">
           Texterstellung
         </span>
@@ -269,15 +269,15 @@ export default function TexterstellungPage() {
         {/* ── Für wen ── */}
         <div className="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-8 mb-16 text-center">
           <h2 className="text-xl font-bold tracking-tight mb-3 text-slate-900 dark:text-white">
-            F&uuml;r wen ist das?
+            Für wen ist das?
           </h2>
           <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-[600px] mx-auto mb-5">
-            F&uuml;r alle Selbst&auml;ndigen, die wissen was sie k&ouml;nnen &mdash; aber keine
-            Zeit haben, das &uuml;berzeugend aufzuschreiben.
+            Für alle Selbständigen, die wissen was sie können — aber keine
+            Zeit haben, das überzeugend aufzuschreiben.
           </p>
           <div className="flex flex-wrap justify-center gap-2">
-            {["Personal Trainer", "Handwerker", "Berater", "Coaches", "&Auml;rzte & Therapeuten", "Agenturen", "Gastronomen"].map((b) => (
-              <span key={b} className="bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 text-xs font-medium px-3.5 py-1.5 rounded-full" dangerouslySetInnerHTML={{ __html: b }} />
+            {["Personal Trainer", "Handwerker", "Berater", "Coaches", "Ärzte & Therapeuten", "Agenturen", "Gastronomen"].map((b) => (
+              <span key={b} className="bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 text-xs font-medium px-3.5 py-1.5 rounded-full">{b}</span>
             ))}
           </div>
         </div>
@@ -397,6 +397,6 @@ export default function TexterstellungPage() {
           </a>
         </div>
       </div>
-    </>
+    </main>
   );
 }

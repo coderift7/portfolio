@@ -1,9 +1,12 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
-import html from "remark-html";
+import remarkRehype from "remark-rehype";
+import rehypeSanitize from "rehype-sanitize";
+import rehypeStringify from "rehype-stringify";
 
 const blogDir = path.join(process.cwd(), "content/blog");
 
@@ -47,7 +50,13 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content: markdown } = matter(raw);
 
-  const result = await remark().use(remarkGfm).use(html).process(markdown);
+  const result = await unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype)
+    .use(rehypeSanitize)
+    .use(rehypeStringify)
+    .process(markdown);
 
   return {
     slug,

@@ -180,18 +180,18 @@ export default function Contact() {
                     </div>
                     {/* Honeypot — hidden from users, catches bots */}
                     <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" aria-label="Nicht ausfüllen" className="absolute -left-[9999px] h-0 w-0 opacity-0" />
-                    <label className="flex cursor-pointer items-start gap-2">
-                      <input type="checkbox" required className="mt-1 rounded border-border" />
-                      <span className="text-xs text-muted-foreground">
+                    <div className="flex cursor-pointer items-start gap-2">
+                      <input type="checkbox" id="privacy-contact" required className="mt-1 rounded border-border" />
+                      <label htmlFor="privacy-contact" className="text-xs text-muted-foreground">
                         Ich stimme der{" "}
                         <Link href="/datenschutz" className="text-primary underline">
                           Datenschutzerklärung
                         </Link>{" "}
                         zu. *
-                      </span>
-                    </label>
+                      </label>
+                    </div>
                     {error && (
-                      <p className="rounded-lg bg-red-50 px-4 py-2 text-sm text-red-600 dark:bg-red-950/30 dark:text-red-400">
+                      <p role="alert" className="rounded-lg bg-red-50 px-4 py-2 text-sm text-red-600 dark:bg-red-950/30 dark:text-red-400">
                         {error}
                       </p>
                     )}

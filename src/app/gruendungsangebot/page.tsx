@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { HeroCountdown, StickyCountdown } from "./Countdown";
+import { siteUrl } from "@/config/site";
 
-const siteUrl = "https://hoeger.dev";
 const kontaktLink = "https://hoeger.dev/#kontakt";
 
 export const metadata: Metadata = {
@@ -89,9 +89,9 @@ const pakete = [
 
 export default function Gruendungsangebot() {
   return (
-    <>
+    <main id="main">
       {/* ── Hero ── */}
-      <div className="bg-gradient-to-br from-slate-900 to-slate-800 px-6 pt-16 pb-12 text-center">
+      <div className="bg-gradient-to-br from-slate-900 to-slate-800 px-6 pt-28 pb-12 text-center">
         <span className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-[11px] font-bold uppercase tracking-[2px] px-4 py-1.5 rounded-full mb-6">
           Gründungsangebot · April 2026
         </span>
@@ -263,6 +263,6 @@ export default function Gruendungsangebot() {
           Jetzt Platz sichern
         </a>
       </div>
-    </>
+    </main>
   );
 }

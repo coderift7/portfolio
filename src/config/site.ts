@@ -1,8 +1,11 @@
 import projectsData from "../../content/projects.json";
 import faqData from "../../content/faq.json";
 
+export const siteUrl = "https://hoeger.dev";
+
 export const siteConfig = {
   name: "Michael Höger",
+  url: siteUrl,
   role: "Webdesign & Digitale Lösungen",
   email: "michael@hoeger.dev",
   phone: "+49 162 9255254",
@@ -118,12 +121,12 @@ export const siteConfig = {
 
   nav: [
     {
-      label: "Leistungen",
+      label: "Leistungen & Preise",
       href: "/preise/",
       children: [
-        { label: "Leistungen & Preise", href: "/preise/" },
         { label: "Website-Check", href: "/website-check/" },
         { label: "Texterstellung", href: "/texterstellung/" },
+        { label: "Gründungsangebot", href: "/gruendungsangebot/" },
       ],
     },
     { label: "Projekte", href: "/#projekte" },

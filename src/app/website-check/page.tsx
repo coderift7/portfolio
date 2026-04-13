@@ -8,13 +8,10 @@ import {
   Scale,
   CheckCircle2,
 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { siteConfig } from "@/config/site";
+import { siteConfig, siteUrl } from "@/config/site";
 import WebsiteCheckForm from "./WebsiteCheckForm";
 
-const siteUrl = "https://hoeger.dev";
 
 export const metadata: Metadata = {
   title: "Kostenloser Website-Check | Michael Höger",
@@ -107,7 +104,6 @@ const trustPoints = [
 export default function WebsiteCheck() {
   return (
     <>
-      <Header />
       <main id="main">
         {/* JSON-LD */}
         <script
@@ -233,7 +229,6 @@ export default function WebsiteCheck() {
           </div>
         </section>
       </main>
-      <Footer />
       <WhatsAppButton />
     </>
   );

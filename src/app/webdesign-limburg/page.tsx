@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { ArrowRight, MapPin, Clock, Shield, Star, CheckCircle2, Phone, Mail } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { SchaeferhofMockup } from "@/components/BrowserMockup";
-import { siteConfig } from "@/config/site";
+import { siteConfig, siteUrl } from "@/config/site";
 
-const siteUrl = "https://hoeger.dev";
 
 export const metadata: Metadata = {
   title: "Webdesign Limburg – Webseiten für kleine Unternehmen | Michael Höger",
@@ -119,7 +116,6 @@ const targetGroups = [
 export default function WebdesignLimburg() {
   return (
     <>
-      <Header />
       <main id="main">
         {/* JSON-LD */}
         <script
@@ -356,7 +352,6 @@ export default function WebdesignLimburg() {
           </div>
         </section>
       </main>
-      <Footer />
       <WhatsAppButton />
     </>
   );

@@ -71,14 +71,15 @@ export default function Header() {
                 onMouseEnter={() => openDropdown(item.label)}
                 onMouseLeave={closeDropdown}
               >
-                <button
+                <a
+                  href={item.href}
                   className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground cursor-pointer"
                   aria-expanded={desktopDropdown === item.label}
                   aria-haspopup="true"
                 >
                   {item.label}
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${desktopDropdown === item.label ? "rotate-180" : ""}`} />
-                </button>
+                </a>
 
                 <div
                   className={`absolute left-1/2 -translate-x-1/2 top-full pt-2 transition-all duration-200 ${
@@ -142,14 +143,23 @@ export default function Header() {
             {siteConfig.nav.map((item) =>
               item.children ? (
                 <div key={item.label}>
-                  <button
-                    onClick={() => setMobileDropdown(mobileDropdown === item.label ? null : item.label)}
-                    className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-foreground cursor-pointer"
-                    aria-expanded={mobileDropdown === item.label}
-                  >
-                    {item.label}
-                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileDropdown === item.label ? "rotate-180" : ""}`} />
-                  </button>
+                  <div className="flex w-full items-center rounded-lg px-3 py-2.5 text-foreground">
+                    <a
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="flex-1 cursor-pointer"
+                    >
+                      {item.label}
+                    </a>
+                    <button
+                      onClick={() => setMobileDropdown(mobileDropdown === item.label ? null : item.label)}
+                      className="cursor-pointer p-1"
+                      aria-expanded={mobileDropdown === item.label}
+                      aria-label="Untermenü öffnen"
+                    >
+                      <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileDropdown === item.label ? "rotate-180" : ""}`} />
+                    </button>
+                  </div>
                   <div
                     className={`grid transition-all duration-200 ease-out ${
                       mobileDropdown === item.label ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"

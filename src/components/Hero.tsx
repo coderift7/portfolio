@@ -69,6 +69,8 @@ export default function Hero() {
               <img
                 src={`${basePath}/images/michael-hero.webp`}
                 alt="Michael Höger – Freelancer für Webdesign und digitale Lösungen"
+                width={320}
+                height={420}
                 className="relative h-[280px] w-[210px] rounded-2xl object-cover object-top shadow-lg sm:h-[340px] sm:w-[260px] lg:h-[420px] lg:w-[320px]"
                 fetchPriority="high"
               />

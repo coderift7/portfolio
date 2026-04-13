@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
-import { siteConfig } from "@/config/site";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { siteConfig, siteUrl } from "@/config/site";
 
-const siteUrl = "https://hoeger.dev";
+
 
 export const metadata: Metadata = {
   title: `Blog – ${siteConfig.name}`,
@@ -50,7 +48,6 @@ export default function BlogPage() {
 
   return (
     <>
-      <Header />
       <main id="main" className="min-h-screen bg-background pt-24 pb-24 lg:pt-32">
         <script
           type="application/ld+json"
@@ -133,7 +130,6 @@ export default function BlogPage() {
           )}
         </div>
       </main>
-      <Footer />
     </>
   );
 }

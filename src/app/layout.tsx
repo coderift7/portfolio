@@ -6,6 +6,9 @@ import { siteConfig } from "@/config/site";
 import CookieBanner from "@/components/CookieBanner";
 import MetaPixel from "@/components/MetaPixel";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { siteUrl } from "@/config/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,7 +24,6 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://hoeger.dev";
 
 export const metadata: Metadata = {
   title: siteConfig.meta.title,
@@ -213,7 +215,9 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <AnnouncementBanner />
+        <Header />
         {children}
+        <Footer />
         <CookieBanner />
         <MetaPixel />
         <Script

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { siteUrl } from "@/config/site";
 
-const siteUrl = "https://hoeger.dev";
 const kontaktLink = "https://hoeger.dev/#kontakt";
 
 export const metadata: Metadata = {
@@ -156,9 +156,9 @@ const addons = [
 
 export default function PreisePage() {
   return (
-    <>
+    <main id="main">
       {/* ── Hero ── */}
-      <div className="bg-gradient-to-br from-slate-900 to-slate-800 px-6 pt-16 pb-14 text-center">
+      <div className="bg-gradient-to-br from-slate-900 to-slate-800 px-6 pt-28 pb-14 text-center">
         <span className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-[11px] font-bold uppercase tracking-[2px] px-4 py-1.5 rounded-full mb-6">
           Leistungen &amp; Preise
         </span>
@@ -417,6 +417,6 @@ export default function PreisePage() {
       <div className="text-center py-8 text-[11px] text-slate-400">
         Stand: April 2026. Preisanpassungen vorbehalten — laufende Vereinbarungen bleiben unberührt.
       </div>
-    </>
+    </main>
   );
 }

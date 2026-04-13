@@ -20,9 +20,9 @@ const breadcrumbSchema = {
 
 export default function Impressum() {
   return (
-    <div className="min-h-screen bg-background">
+    <main id="main" className="min-h-screen bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <div className="mx-auto max-w-3xl px-5 py-24">
+      <div className="mx-auto max-w-3xl px-5 pt-28 pb-24">
         <Link href="/" className="mb-8 inline-flex items-center gap-2 text-sm text-primary hover:underline">
           <ArrowLeft className="h-4 w-4" /> Zurück
         </Link>
@@ -69,6 +69,6 @@ export default function Impressum() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

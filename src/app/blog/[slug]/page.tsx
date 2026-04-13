@@ -4,10 +4,8 @@ import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { siteConfig } from "@/config/site";
 import { notFound } from "next/navigation";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { siteUrl } from "@/config/site";
 
-const siteUrl = "https://hoeger.dev";
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -101,7 +99,6 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <Header />
       <main id="main" className="min-h-screen bg-background pt-24 pb-24 lg:pt-32">
       <script
         type="application/ld+json"
@@ -169,7 +166,6 @@ export default async function BlogPostPage({
         </div>
       </div>
       </main>
-      <Footer />
     </>
   );
 }
