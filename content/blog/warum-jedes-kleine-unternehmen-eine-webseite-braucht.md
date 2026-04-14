@@ -15,9 +15,13 @@ tags: ["Webdesign", "Kleine Unternehmen"]
 
 ## Was eine Webseite wirklich kostet
 
-Viele denken bei "Webseite" an fünfstellige Beträge. Die Realität: Eine professionelle Webseite für ein kleines Unternehmen liegt zwischen 800 und 2.500 Euro — einmalig. Das ist weniger als eine halbe Seite Zeitungswerbung, die am nächsten Tag im Altpapier liegt.
+Viele denken bei "Webseite" an fünfstellige Beträge. Die Realität ist bodenständiger — und Sie haben die Wahl, wie Sie zahlen.
 
-Dazu kommen laufende Kosten für Hosting und Domain — typischerweise 10-20 Euro pro Monat. Das war's.
+**Der einfachste Weg: Webseite + laufende Betreuung.** Sie bekommen die Erstellung besonders günstig, teils sogar kostenlos. Dafür übernehme ich dauerhaft Hosting, Sicherheit, Aktualisierungen und kleine Änderungen. Die Betreuung kostet zwischen 20 und 149 Euro pro Monat — je nachdem, wie viel Sie abgeben möchten.
+
+**Der klassische Weg: einmalig zahlen, selbst weitermachen.** Je nach Umfang liegt die Erstellung zwischen 990 und 3.490 Euro. Für Hosting und Domain müssen Sie sich danach selbst kümmern oder jemanden damit beauftragen.
+
+Was sich für Sie lohnt, besprechen wir im Erstgespräch — kostenlos, ohne Verpflichtung.
 
 ## Was eine gute Webseite mitbringen muss
 
