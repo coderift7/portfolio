@@ -66,7 +66,7 @@ const pakete = [
   },
   {
     name: "Paket 3",
-    title: "Dein digitaler Mitarbeiter",
+    title: "Ihr digitaler Mitarbeiter",
     claim: "24/7 für Sie da — für weniger als ein Minijobber.",
     regular: "3.490 €",
     founding: "1.745 €",

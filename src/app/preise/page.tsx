@@ -64,7 +64,7 @@ const pakete = [
   },
   {
     name: "Paket 3",
-    title: "Dein digitaler Mitarbeiter",
+    title: "Ihr digitaler Mitarbeiter",
     claim: "24/7 für Sie da — für weniger als ein Minijobber.",
     price: "3.490",
     sub: "oder ab 990 € mit Betreuung",
@@ -106,7 +106,7 @@ const matrix = {
       ],
     },
     {
-      paket: "Dein digitaler Mitarbeiter",
+      paket: "Ihr digitaler Mitarbeiter",
       cells: [
         { price: "3.490 €", original: null, badge: null, free: false },
         { price: "2.990 €", original: "3.490 €", badge: "-15 %", free: false },
