@@ -32,8 +32,12 @@ const pakete = [
     features: [
       "Bis zu 6 Seiten",
       "Optimiert für alle Geräte",
+      "Farben und Schriften nach Ihrer Zielgruppe",
+      "Eigene Bildsprache statt Stockfotos",
       "Kontaktformular",
       "Bei Google gefunden werden",
+      "Auch bei ChatGPT & Co. gefunden werden",
+      "Barrierefrei nutzbar für alle",
       "Google Unternehmensprofil",
       "Datenschutz (Cookie-Banner, Impressum)",
       "Sichere Verbindung (Verschlüsselung)",
@@ -53,12 +57,15 @@ const pakete = [
       "Alles aus Paket 1",
       "Bis zu 8 Seiten",
       "Design nach Ihrem Erscheinungsbild",
+      "Farbpsychologie-Beratung",
       "Bildergalerie / Portfolio",
       "Blog- oder News-Bereich",
       "Bessere Auffindbarkeit bei Google",
+      "Sichtbarkeits-Check in ChatGPT & Co.",
       "Terminbuchung / Angebotsformular",
       "Social-Media-Einbindung",
       "Performance-Optimierung",
+      "Vorher-Nachher-Vergleich (Ladezeit, Ranking)",
       "2 Korrekturschleifen",
       "Lieferzeit ca. 3 Wochen",
     ],
@@ -74,11 +81,13 @@ const pakete = [
     features: [
       "Alles aus Paket 2",
       "Bis zu 12 Seiten",
-      "KI-Chatbot für Kundenanfragen",
+      "KI-Assistent für autonome Kundenbetreuung",
       "Terminbuchung + Kalender",
       "Mehrsprachigkeit (2 Sprachen)",
       "Top-Platzierung bei Google + Werbeberatung",
-      "Barrierefreiheit (für alle nutzbar)",
+      "KI-Sichtbarkeit: fortlaufend optimiert",
+      "Branchen-Analyse: wie Ihre Kunden wirklich kommunizieren",
+      "Komplettes Gestaltungs-Handbuch",
       "3 Korrekturschleifen",
       "1 Monat Betreuung inklusive",
       "Lieferzeit ca. 4–5 Wochen",
@@ -129,7 +138,25 @@ export default function Gruendungsangebot() {
       {/* ── Pakete ── */}
       <div className="max-w-[960px] mx-auto px-6 py-12">
         <h2 className="text-center text-2xl font-bold tracking-tight mb-2">Drei Pakete. Ein Ziel: Ihr Erfolg.</h2>
-        <p className="text-center text-sm text-slate-500 mb-10">Regulärpreise durchgestrichen — Sie zahlen nur den Gründungspreis.</p>
+        <p className="text-center text-sm text-slate-500 mb-6">Regulärpreise durchgestrichen — Sie zahlen nur den Gründungspreis.</p>
+
+        {/* ── In allen Paketen enthalten ── */}
+        <div className="bg-slate-50 border border-slate-200 rounded-xl px-6 py-4 mb-10 max-w-[720px] mx-auto">
+          <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2 text-center">In jedem Paket enthalten</div>
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-1.5">
+            {[
+              "Individuelles Farb- und Schriftkonzept",
+              "Eigene Bildsprache",
+              "Barrierefreiheit",
+              "Qualitätsprüfung vor Launch",
+              "Handover mit allen Zugängen",
+            ].map((t) => (
+              <span key={t} className="text-[12.5px] text-slate-700 flex items-center gap-1.5">
+                <span className="text-teal-600 font-bold">✓</span> {t}
+              </span>
+            ))}
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
           {pakete.map((p) => (
