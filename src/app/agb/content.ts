@@ -1,6 +1,6 @@
 export const agbMeta = {
-  stand: "12.04.2026",
-  version: "2.0",
+  stand: "18.04.2026",
+  version: "2.1",
 };
 
 export type Paragraph = {
@@ -96,8 +96,8 @@ export const agb: Paragraph[] = [
     title: "Projektablauf und Abnahme",
     legal: [
       "Der Auftragnehmer stellt dem Kunden Zwischenstände zur Abstimmung bereit.",
-      "Der Kunde hat je Projektphase Anspruch auf bis zu zwei Korrekturschleifen, die im Projektpreis enthalten sind. Weitere Korrekturen werden nach Aufwand berechnet.",
-      "Nach Fertigstellung wird der Kunde zur Abnahme aufgefordert. Die Abnahme gilt als erfolgt, wenn der Kunde nicht innerhalb von 14 Kalendertagen nach Aufforderung schriftlich konkrete Mängel benennt.",
+      "Die Anzahl der je Projektphase im Projektpreis enthaltenen Korrekturschleifen ergibt sich aus dem jeweiligen Angebot. Weitere Korrekturen werden nach Aufwand berechnet.",
+      "Nach Fertigstellung wird der Kunde zur Abnahme aufgefordert. Die Abnahme gilt als erfolgt, wenn der Kunde nicht innerhalb von 14 Kalendertagen nach Aufforderung nachvollziehbare Mängel in Textform benennt. Der Kunde wird mit der Aufforderung zur Abnahme ausdrücklich auf die Bedeutung dieser Frist und die Folgen seines Schweigens (konkludente Abnahme) hingewiesen.",
       "Die Abnahme gilt ebenfalls als erteilt, wenn der Kunde die Leistung im produktiven Betrieb nutzt (z. B. Veröffentlichung der Website, Nutzung gegenüber Dritten) — unabhängig davon, ob eine ausdrückliche Abnahmeerklärung vorliegt.",
       "Geringfügige Abweichungen, die die Funktionalität nicht beeinträchtigen, berechtigen nicht zur Verweigerung der Abnahme.",
     ],
@@ -115,7 +115,8 @@ export const agb: Paragraph[] = [
     title: "Nutzungsrechte",
     legal: [
       "Mit vollständiger Bezahlung erhält der Kunde ein einfaches, zeitlich und räumlich unbeschränktes Nutzungsrecht an den erstellten Werken für den im Vertrag definierten Zweck. Ein ausschließliches (exklusives) Nutzungsrecht wird nur bei ausdrücklicher schriftlicher Vereinbarung eingeräumt.",
-      "Das Nutzungsrecht umfasst die Verwendung, Veröffentlichung und Darstellung der Werke im vereinbarten Rahmen. Eine Bearbeitung oder Weiterentwicklung durch den Kunden oder Dritte ist zulässig, sofern der Auftragnehmer nicht als Urheber der veränderten Version genannt wird.",
+      "Der Auftragnehmer ist berechtigt, zugrundeliegende generische Bausteine (eigene Code-Komponenten, Vorlagen, wiederverwendbare Module), die nicht individuell für den Kunden gestaltet wurden, auch in anderen Projekten einzusetzen.",
+      "Das Nutzungsrecht umfasst die Verwendung, Veröffentlichung und Darstellung der Werke im vereinbarten Rahmen. Eine Bearbeitung oder Weiterentwicklung durch den Kunden oder Dritte ist zulässig; bei wesentlichen Änderungen darf der Auftragnehmer nicht mehr als Urheber der bearbeiteten Version genannt werden.",
       "Die Weitergabe der Nutzungsrechte an Dritte bedarf der vorherigen schriftlichen Zustimmung des Auftragnehmers, es sei denn, die Weitergabe erfolgt im Rahmen eines Unternehmensverkaufs oder einer Rechtsnachfolge.",
       "Der Auftragnehmer behält das Recht, die erstellten Arbeiten in seinem Portfolio und zu Referenzzwecken zu verwenden, sofern der Kunde nicht ausdrücklich schriftlich widerspricht.",
       "Verwendete Open-Source-Komponenten und Drittanbieter-Lizenzen unterliegen deren jeweiligen Lizenzbedingungen. Der Auftragnehmer informiert den Kunden hierüber.",
@@ -136,16 +137,16 @@ export const agb: Paragraph[] = [
     title: "Gewährleistung",
     legal: [
       "Der Auftragnehmer gewährleistet, dass die erbrachten Leistungen dem vereinbarten Leistungsumfang entsprechen.",
-      "Mängel sind unverzüglich, spätestens innerhalb von 14 Tagen nach Entdeckung, schriftlich zu melden.",
-      "Bei berechtigten Mängeln hat der Auftragnehmer das Recht zur Nachbesserung innerhalb einer angemessenen Frist.",
+      "Mängel sind unverzüglich, spätestens innerhalb von 14 Tagen nach Entdeckung, in Textform (E-Mail genügt) zu melden.",
+      "Bei berechtigten Mängeln hat der Auftragnehmer das Recht zur Nachbesserung innerhalb einer angemessenen Frist. Gelingt die Nachbesserung nach zwei Versuchen nicht, kann der Kunde die Vergütung mindern oder vom Vertrag zurücktreten.",
       "Die Gewährleistungsfrist beträgt 12 Monate ab Abnahme.",
-      "Von der Gewährleistung ausgenommen sind Mängel, die durch nachträgliche Änderungen des Kunden oder Dritter, durch unsachgemäße Nutzung oder durch Änderungen der technischen Umgebung (Browser-Updates, Hosting-Änderungen etc.) entstehen.",
+      "Von der Gewährleistung ausgenommen sind Mängel, die durch nachträgliche Änderungen des Kunden oder Dritter, durch unsachgemäße Nutzung oder durch Änderungen der technischen Umgebung (z. B. Browser-Updates, Betriebssystem-Updates, Hosting-Wechsel) entstehen. Für die laufende Anpassung an solche Veränderungen bietet der Auftragnehmer separate Wartungsverträge an.",
     ],
     plainTitle: "Was, wenn etwas nicht passt?",
     plain: [
       "Ich garantiere Ihnen, dass Sie das bekommen, was im Angebot vereinbart war.",
       "Wenn Sie einen Fehler entdecken, melden Sie ihn mir bitte innerhalb von 14 Tagen per E-Mail.",
-      "Wenn der Fehler berechtigt ist, bessere ich ihn in einer fairen Frist nach — kostenlos.",
+      "Wenn der Fehler berechtigt ist, bessere ich ihn in einer fairen Frist nach — kostenlos. Klappt das zweimal nicht, können Sie den Preis mindern oder vom Vertrag zurücktreten.",
       "Die Gewährleistung läuft 12 Monate ab Abnahme. In dieser Zeit bessere ich Fehler, die aus meiner ursprünglichen Arbeit stammen, kostenlos nach — zum Beispiel wenn das Kontaktformular keine E-Mails verschickt, obwohl es das laut Vereinbarung sollte.",
       "Nicht abgedeckt sind Probleme, die nach der Abnahme entstehen: nachträgliche Änderungen durch Sie oder Dritte, falsche Nutzung, oder Änderungen an der Technik drumherum (Browser-Update, neuer Hosting-Anbieter, neue Handy-Betriebssystem-Version). Das ist keine Gewährleistungssache, sondern fällt unter Wartung — dafür können Sie einen Wartungsvertrag buchen, damit Ihre Webseite über die Jahre kompatibel und sicher bleibt. Neue Features oder Umbauten am Bestehenden sind wieder etwas anderes: Das beauftragen Sie bei Bedarf als neues Projekt.",
     ],
@@ -157,7 +158,7 @@ export const agb: Paragraph[] = [
       "Der Auftragnehmer haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie bei Verletzung von Leben, Körper und Gesundheit.",
       "Bei leichter Fahrlässigkeit haftet der Auftragnehmer nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Die Haftung ist in diesem Fall auf den vorhersehbaren, vertragstypischen Schaden begrenzt.",
       "Die Haftung ist bei Einzelprojekten auf die Höhe der vereinbarten Vergütung begrenzt. Bei laufenden Verträgen (Wartung, Retainer) ist die Haftung auf die Summe der in den letzten 12 Monaten gezahlten Vergütung begrenzt.",
-      "Die Haftung für entgangenen Gewinn, Datenverlust und mittelbare Schäden ist bei leichter Fahrlässigkeit ausgeschlossen. Für Datenverlust haftet der Auftragnehmer nur insoweit, als der Kunde eine angemessene Datensicherung unterlassen hat.",
+      "Die Haftung für entgangenen Gewinn, Datenverlust und mittelbare Schäden ist bei leichter Fahrlässigkeit ausgeschlossen. Soweit der Auftragnehmer Hosting oder eine laufende Wartung übernommen hat, führt er regelmäßige Datensicherungen nach einem dokumentierten Backup-Konzept durch (tägliche Sicherung, mehrstufige Aufbewahrung, Offsite-Ablage bei einem zweiten Anbieter). In allen anderen Fällen obliegt die Datensicherung dem Kunden; bei unterlassener angemessener Datensicherung haftet der Auftragnehmer für Datenverluste nicht.",
       "Der Auftragnehmer haftet nicht für Störungen, Ausfälle oder Sicherheitsvorfälle, die durch Drittanbieter-Dienste verursacht werden (z. B. Hosting-Provider, Domain-Registrar, externe APIs, Content-Delivery-Netzwerke). Gleiches gilt für Schäden durch höhere Gewalt.",
     ],
     plainTitle: "Wer haftet wofür?",
