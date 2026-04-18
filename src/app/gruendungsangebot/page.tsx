@@ -96,9 +96,63 @@ const pakete = [
   },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Startseite", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Gründungsangebot" },
+  ],
+};
+
+const offerCatalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  name: "Gründungsangebot Webdesign-Pakete April 2026",
+  url: `${siteUrl}/gruendungsangebot/`,
+  itemListElement: pakete.map((p, i) => ({
+    "@type": "Offer",
+    position: i + 1,
+    name: `${p.name} – ${p.title}`,
+    description: p.claim,
+    price: p.founding.replace(/[^\d]/g, ""),
+    priceCurrency: "EUR",
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      price: p.founding.replace(/[^\d]/g, ""),
+      priceCurrency: "EUR",
+      valueAddedTaxIncluded: false,
+      description: `Gründungspreis (regulär ${p.regular})`,
+    },
+    availability: "https://schema.org/LimitedAvailability",
+    validFrom: "2026-04-01",
+    validThrough: "2026-04-30",
+    seller: {
+      "@type": "Person",
+      name: "Michael Höger",
+      url: siteUrl,
+    },
+    itemOffered: {
+      "@type": "Service",
+      name: `Webdesign ${p.name}: ${p.title}`,
+      description: p.claim,
+      provider: { "@type": "Person", name: "Michael Höger", url: siteUrl },
+      areaServed: { "@type": "Country", name: "DE" },
+    },
+  })),
+};
+
 export default function Gruendungsangebot() {
   return (
     <main id="main">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogSchema) }}
+      />
       {/* ── Hero ── */}
       <div className="bg-gradient-to-br from-slate-900 to-slate-800 px-6 pt-28 pb-12 text-center">
         <span className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-[11px] font-bold uppercase tracking-[2px] px-4 py-1.5 rounded-full mb-6">
