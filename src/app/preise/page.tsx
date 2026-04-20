@@ -57,6 +57,7 @@ const pakete = [
       "Alles aus Paket 1",
       "Bis zu 8 Seiten",
       "Design nach Ihrem Erscheinungsbild",
+      { label: "Farbpsychologie-Beratung für Ihre Zielgruppe", href: "/farbpsychologie/" },
       "Logo-Redesign inklusive",
       "Bildergalerie / Portfolio",
       "Blog- oder News-Bereich",
@@ -280,11 +281,21 @@ export default function PreisePage() {
 
               <div className="px-6 py-5 border-t border-slate-100 dark:border-slate-700 flex-1">
                 <ul className="space-y-1.5">
-                  {p.features.map((f) => (
-                    <li key={f} className="text-[12.5px] text-slate-700 dark:text-slate-300 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold before:text-xs">
-                      {f}
-                    </li>
-                  ))}
+                  {p.features.map((f) => {
+                    const isLink = typeof f === "object";
+                    const label = isLink ? f.label : f;
+                    return (
+                      <li key={label} className="text-[12.5px] text-slate-700 dark:text-slate-300 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold before:text-xs">
+                        {isLink ? (
+                          <a href={f.href} className="underline underline-offset-2 decoration-teal-600/40 hover:decoration-teal-600 hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
+                            {label}
+                          </a>
+                        ) : (
+                          label
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
 
