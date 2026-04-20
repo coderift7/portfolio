@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { siteConfig } from "@/config/site";
@@ -57,9 +58,9 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:h-[72px]">
-        <a href="/" className="flex items-center" aria-label="Zur Startseite">
+        <Link href="/" className="flex items-center" aria-label="Zur Startseite">
           <Logo className="h-9 w-auto sm:h-10" iconRotation={logoRotation} />
-        </a>
+        </Link>
 
         {/* ── Desktop Nav ── */}
         <nav className="hidden items-center gap-1 lg:flex">

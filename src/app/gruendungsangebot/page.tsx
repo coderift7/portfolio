@@ -18,6 +18,13 @@ export const metadata: Metadata = {
       "Gründungsangebot April 2026: Professionelle Website ab 495 €. Nur noch 4 Plätze!",
     images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ihre neue Website — zum halben Preis",
+    description:
+      "Gründungsangebot April 2026: Professionelle Website ab 495 €. Nur noch 4 Plätze!",
+    images: [`${siteUrl}/images/og-image.png`],
+  },
   robots: { index: true, follow: true },
 };
 

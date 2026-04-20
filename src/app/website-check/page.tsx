@@ -36,6 +36,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kostenloser Website-Check",
+    description:
+      "Wie gut ist Ihre Website wirklich? Kostenloser Check für Performance, SEO, Sicherheit und mehr.",
+    images: [`${siteUrl}/images/og-image.png`],
+  },
   robots: { index: true, follow: true },
 };
 

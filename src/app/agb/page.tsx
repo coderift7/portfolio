@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, FileText } from "lucide-react";
-import { siteConfig } from "@/config/site";
+import { siteConfig, siteUrl } from "@/config/site";
 import { agb, agbMeta } from "./content";
 import AgbMobileToggle from "./AgbMobileToggle";
 
@@ -13,17 +13,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: `${siteConfig.url}/agb/`,
+    url: `${siteUrl}/agb/`,
     siteName: siteConfig.name,
     title: `AGB – ${siteConfig.name}`,
     description:
       "Allgemeine Geschäftsbedingungen von Michael Höger – rechtsverbindliche Fassung und Klartext-Version nebeneinander.",
+    images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `AGB – ${siteConfig.name}`,
     description:
       "Allgemeine Geschäftsbedingungen von Michael Höger – rechtsverbindliche Fassung und Klartext-Version.",
+    images: [`${siteUrl}/images/og-image.png`],
   },
   robots: { index: true, follow: true },
 };

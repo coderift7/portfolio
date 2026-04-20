@@ -28,6 +28,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Webdesign Limburg – Webseiten für kleine Unternehmen",
+    description:
+      "Professionelles Webdesign in Limburg an der Lahn. Google-optimiert, in 14 Tagen online.",
+    images: [`${siteUrl}/images/og-image.png`],
+  },
   keywords: [
     "Webdesign Limburg",
     "Webdesigner Limburg",

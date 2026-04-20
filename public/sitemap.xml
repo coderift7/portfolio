@@ -31,6 +31,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://hoeger.dev/blog/was-passiert-wenn-ihre-webseite-morgen-weg-ist/</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://hoeger.dev/website-check/</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
