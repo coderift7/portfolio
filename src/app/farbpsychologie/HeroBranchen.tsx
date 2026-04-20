@@ -86,7 +86,7 @@ export default function HeroBranchen() {
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <a href="#lead-magnet" className="fp-btn-primary" style={{ background: current.accent }}>
+          <a href="#lead-magnet" className="fp-btn-primary">
             Color-Briefing gratis laden →
           </a>
           <a href="https://hoeger.dev/#kontakt" className="fp-btn-secondary">

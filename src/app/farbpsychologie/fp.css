@@ -17,7 +17,7 @@
   /* Typo */
   --fp-font-display: var(--font-fraunces), ui-serif, Georgia, serif;
   --fp-font-body: var(--font-instrument-sans), system-ui, -apple-system, sans-serif;
-  --fp-font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --fp-font-mono: var(--font-fp-mono), var(--font-jetbrains), ui-monospace, monospace;
 
   background: var(--fp-bone);
   color: var(--fp-ink);
@@ -205,14 +205,17 @@
   animation: fpFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Reduced motion respect */
+/* Reduced motion respect — global scope for fp-root */
 @media (prefers-reduced-motion: reduce) {
-  .fp-fade-in,
-  .fp-btn-primary,
-  .fp-btn-secondary,
-  .fp-chip {
-    animation: none !important;
-    transition: none !important;
+  .fp-root,
+  .fp-root *,
+  .fp-root *::before,
+  .fp-root *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

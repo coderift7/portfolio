@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Instrument_Sans } from "next/font/google";
+import { Fraunces, Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import { siteUrl } from "@/config/site";
 import HeroBranchen from "./HeroBranchen";
 import "./fp.css";
@@ -15,6 +15,13 @@ const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-instrument-sans",
+  display: "swap",
+});
+
+const jetbrainsMonoFp = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-fp-mono",
   display: "swap",
 });
 
@@ -141,7 +148,7 @@ const faq = [
 
 export default function FarbpsychologiePage() {
   return (
-    <main className={`fp-root ${fraunces.variable} ${instrumentSans.variable}`}>
+    <main className={`fp-root ${fraunces.variable} ${instrumentSans.variable} ${jetbrainsMonoFp.variable}`}>
       {/* JSON-LD Service Schema */}
       <script
         type="application/ld+json"
