@@ -57,7 +57,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:h-[72px]">
-        <a href="#" className="flex items-center">
+        <a href="/" className="flex items-center" aria-label="Zur Startseite">
           <Logo className="h-9 w-auto sm:h-10" iconRotation={logoRotation} />
         </a>
 

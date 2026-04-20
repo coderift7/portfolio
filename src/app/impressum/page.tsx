@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   title: `Impressum – ${siteConfig.name}`,
   description: "Impressum und Angaben gemäß § 5 TMG von Michael Höger – Webdesign & Digitale Lösungen.",
   alternates: { canonical: "/impressum/" },
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    url: `${siteConfig.url}/impressum/`,
+    siteName: siteConfig.name,
+    title: `Impressum – ${siteConfig.name}`,
+    description: "Impressum und Angaben gemäß § 5 TMG von Michael Höger.",
+  },
+  twitter: { card: "summary", title: `Impressum – ${siteConfig.name}`, description: "Angaben gemäß § 5 TMG." },
+  robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {

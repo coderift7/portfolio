@@ -10,6 +10,22 @@ export const metadata: Metadata = {
   description:
     "Allgemeine Geschäftsbedingungen von Michael Höger – rechtsverbindliche Fassung und Klartext-Version nebeneinander.",
   alternates: { canonical: "/agb/" },
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    url: `${siteConfig.url}/agb/`,
+    siteName: siteConfig.name,
+    title: `AGB – ${siteConfig.name}`,
+    description:
+      "Allgemeine Geschäftsbedingungen von Michael Höger – rechtsverbindliche Fassung und Klartext-Version nebeneinander.",
+  },
+  twitter: {
+    card: "summary",
+    title: `AGB – ${siteConfig.name}`,
+    description:
+      "Allgemeine Geschäftsbedingungen von Michael Höger – rechtsverbindliche Fassung und Klartext-Version.",
+  },
+  robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {

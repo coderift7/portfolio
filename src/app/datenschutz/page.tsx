@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   title: `Datenschutz – ${siteConfig.name}`,
   description: "Datenschutzerklärung von Michael Höger – Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO.",
   alternates: { canonical: "/datenschutz/" },
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    url: `${siteConfig.url}/datenschutz/`,
+    siteName: siteConfig.name,
+    title: `Datenschutz – ${siteConfig.name}`,
+    description: "Datenschutzerklärung gemäß DSGVO.",
+  },
+  twitter: { card: "summary", title: `Datenschutz – ${siteConfig.name}`, description: "DSGVO-Informationen zur Datenverarbeitung." },
+  robots: { index: true, follow: true },
 };
 
 const breadcrumbSchema = {
