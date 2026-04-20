@@ -249,3 +249,111 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── Legal-Dokument-Modus ──────────────────────────────────
+   Anwendbar auf AGB, Impressum, Datenschutz. Ziel: dokumentarischer
+   Charakter — reduzierte Marketing-Ästhetik, ruhigere Typografie,
+   engere Zeilenbreite. Keine Glow/Glass/Gradient-Effekte. */
+
+.legal-doc {
+  --legal-max-width: 68ch;
+  --legal-line-height: 1.75;
+  font-family: Charter, "Source Serif 4", "Iowan Old Style", Georgia, ui-serif, serif;
+}
+
+.legal-doc .legal-container {
+  max-width: var(--legal-max-width);
+  margin-inline: auto;
+}
+
+.legal-doc h1 {
+  font-family: Charter, "Source Serif 4", Georgia, ui-serif, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.15;
+}
+
+.legal-doc h2 {
+  font-family: Charter, "Source Serif 4", Georgia, ui-serif, serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: 0;
+  margin-top: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-doc h3 {
+  font-family: Charter, "Source Serif 4", Georgia, ui-serif, serif;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.legal-doc p,
+.legal-doc li {
+  font-size: 1rem;
+  line-height: var(--legal-line-height);
+  color: var(--muted-foreground);
+}
+
+.legal-doc p strong,
+.legal-doc li strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.legal-doc a {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--foreground) 35%, transparent);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.legal-doc a:hover {
+  text-decoration-color: var(--foreground);
+}
+
+.legal-doc .legal-meta {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--muted-foreground);
+  margin-top: 0.5rem;
+}
+
+.legal-doc .legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+
+.legal-doc .legal-back:hover {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+.legal-doc .legal-notice {
+  border: 1px solid var(--border);
+  background: transparent;
+  padding: 1rem 1.25rem;
+  margin-top: 1.5rem;
+  border-radius: 2px;
+}
+
+.legal-doc .legal-notice h2 {
+  font-size: 0.78rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  margin: 0 0 0.4rem;
+}

@@ -12,6 +12,8 @@ export default function AnnouncementBanner() {
 
   useEffect(() => {
     if (pathname === "/gruendungsangebot" || pathname === "/gruendungsangebot/") return;
+    // Legal pages: no marketing banner
+    if (/^\/(agb|impressum|datenschutz)(\/.*)?$/.test(pathname)) return;
     const dismissed = localStorage.getItem(STORAGE_KEY);
     if (!dismissed) setVisible(true);
   }, [pathname]);
@@ -51,12 +53,14 @@ export function useAnnouncementVisible() {
 
   useEffect(() => {
     if (pathname === "/gruendungsangebot" || pathname === "/gruendungsangebot/") return;
+    // Legal pages: no marketing banner
+    if (/^\/(agb|impressum|datenschutz)(\/.*)?$/.test(pathname)) return;
     const dismissed = localStorage.getItem(STORAGE_KEY);
     if (!dismissed) setVisible(true);
 
     const check = () => {
       const d = localStorage.getItem(STORAGE_KEY);
-      setVisible(!d && pathname !== "/gruendungsangebot" && pathname !== "/gruendungsangebot/");
+      setVisible(!d && pathname !== "/gruendungsangebot" && pathname !== "/gruendungsangebot/" && !/^\/(agb|impressum|datenschutz)(\/.*)?$/.test(pathname));
     };
     window.addEventListener("storage", check);
     return () => window.removeEventListener("storage", check);

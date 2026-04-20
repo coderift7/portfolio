@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, FileText, Sparkles } from "lucide-react";
+import { ArrowLeft, FileText } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { agb, agbMeta } from "./content";
 import AgbMobileToggle from "./AgbMobileToggle";
@@ -39,7 +39,7 @@ const breadcrumbSchema = {
 
 export default function AGB() {
   return (
-    <main id="main" className="min-h-screen bg-background">
+    <main id="main" className="legal-doc min-h-screen bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -47,7 +47,7 @@ export default function AGB() {
       <div className="mx-auto max-w-6xl px-5 pt-28 pb-24">
         <Link
           href="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-primary hover:underline"
+          className="mb-8 inline-flex items-center gap-2 text-sm underline"
         >
           <ArrowLeft className="h-4 w-4" /> Zurück
         </Link>
@@ -60,9 +60,9 @@ export default function AGB() {
         </p>
 
         {/* Disclaimer */}
-        <div className="mt-8 rounded-lg border border-primary/30 bg-primary/5 p-5">
+        <div className="mt-8 rounded-lg border border-border bg-card p-5">
           <h2 className="flex items-center gap-2 text-sm font-semibold text-foreground">
-            <Sparkles className="h-4 w-4 text-primary" aria-hidden="true" />
+            
             Zwei Spalten, ein Vertrag
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
@@ -83,8 +83,8 @@ export default function AGB() {
             <FileText className="h-4 w-4" aria-hidden="true" />
             Rechtsverbindliche Fassung
           </div>
-          <div className="flex items-center gap-2 border-b-2 border-primary/40 pb-3 text-xs font-semibold uppercase tracking-wider text-primary">
-            <Sparkles className="h-4 w-4" aria-hidden="true" />
+          <div className="flex items-center gap-2 border-b-2 border-border pb-3 text-xs font-semibold uppercase tracking-wider text-foreground">
+            
             Klartext — zum Drüberlesen
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function AGB() {
                   id={`agb-${p.num.replace(/\W/g, "")}`}
                   className="text-lg font-semibold text-foreground"
                 >
-                  <span className="mr-2 font-mono text-sm text-primary">{p.num}</span>
+                  <span className="mr-2 font-mono text-sm text-foreground">{p.num}</span>
                   {p.title}
                 </h3>
                 <ol className="space-y-2 text-sm text-muted-foreground">
@@ -127,7 +127,7 @@ export default function AGB() {
                 className="space-y-3 rounded-lg bg-card/50 p-4 md:bg-transparent md:p-0"
               >
                 <h3 className="text-lg font-semibold text-foreground">
-                  <span className="mr-2 font-mono text-sm text-primary/70">{p.num}</span>
+                  <span className="mr-2 font-mono text-sm text-foreground/70">{p.num}</span>
                   {p.plainTitle}
                 </h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -152,7 +152,7 @@ export default function AGB() {
             Fragen zu einzelnen Punkten? Schreiben Sie mir eine kurze Nachricht an{" "}
             <a
               href={`mailto:${siteConfig.email}`}
-              className="text-primary hover:underline"
+              className="underline"
             >
               {siteConfig.email}
             </a>

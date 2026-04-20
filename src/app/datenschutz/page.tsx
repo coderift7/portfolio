@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -30,14 +29,13 @@ const breadcrumbSchema = {
 
 export default function Datenschutz() {
   return (
-    <main id="main" className="min-h-screen bg-background">
+    <main id="main" className="legal-doc min-h-screen bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <div className="mx-auto max-w-3xl px-5 pt-28 pb-24">
-        <Link href="/" className="mb-8 inline-flex items-center gap-2 text-sm text-primary hover:underline">
-          <ArrowLeft className="h-4 w-4" /> Zurück
-        </Link>
-        <h1 className="text-3xl font-bold text-foreground">Datenschutzerklärung</h1>
-        <div className="mt-8 space-y-8 text-muted-foreground">
+      <div className="legal-container px-5 pt-28 pb-24">
+        <Link href="/" className="legal-back">← Zurück zur Startseite</Link>
+        <h1>Datenschutzerklärung</h1>
+        <p className="legal-meta">Stand: April 2026</p>
+        <div className="mt-6 space-y-8">
 
           {/* 1. Verantwortlicher */}
           <div>
@@ -46,7 +44,7 @@ export default function Datenschutz() {
               Michael Höger<br />
               Johann-Boppe-Str. 19<br />
               65549 Limburg an der Lahn<br />
-              E-Mail: <a href="mailto:michael@hoeger.dev" className="text-primary hover:underline">michael@hoeger.dev</a>
+              E-Mail: <a href="mailto:michael@hoeger.dev">michael@hoeger.dev</a>
             </p>
           </div>
 
@@ -85,7 +83,7 @@ export default function Datenschutz() {
                 <strong className="text-foreground">Berechtigte Interessen</strong> (Art. 6 Abs. 1 S. 1 lit. f DSGVO) — Die Verarbeitung technischer Daten beim Seitenaufruf erfolgt auf Basis meines berechtigten Interesses an der technisch fehlerfreien und sicheren Bereitstellung dieser Webseite. Mein Interesse besteht konkret darin, die Erreichbarkeit der Seite sicherzustellen, Fehler zu erkennen und Missbrauch zu verhindern. Eine Auswertung dieser Daten zu Marketingzwecken findet nicht statt. Die Interessen der Besucher werden gewahrt, da keine Profilbildung oder Weitergabe an Dritte zu Werbezwecken erfolgt.
               </li>
               <li>
-                <strong className="text-foreground">Einwilligung</strong> (Art. 6 Abs. 1 S. 1 lit. a DSGVO) — Sofern Sie in die Verarbeitung einwilligen (z.&thinsp;B. Checkbox im Kontaktformular). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie mir eine E-Mail an <a href="mailto:michael@hoeger.dev" className="text-primary hover:underline">michael@hoeger.dev</a> senden.
+                <strong className="text-foreground">Einwilligung</strong> (Art. 6 Abs. 1 S. 1 lit. a DSGVO) — Sofern Sie in die Verarbeitung einwilligen (z.&thinsp;B. Checkbox im Kontaktformular). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie mir eine E-Mail an <a href="mailto:michael@hoeger.dev">michael@hoeger.dev</a> senden.
               </li>
             </ul>
           </div>
@@ -105,7 +103,7 @@ export default function Datenschutz() {
               Da GitHub Inc. ihren Sitz in den USA hat, werden Ihre Daten in ein Drittland außerhalb der EU/des EWR übermittelt. Die Übermittlung erfolgt auf Grundlage des <strong className="text-foreground">EU-U.S. Data Privacy Framework</strong> (Angemessenheitsbeschluss der EU-Kommission gemäß Art. 45 DSGVO vom 10. Juli 2023). GitHub Inc. / Microsoft Corporation ist unter dem Data Privacy Framework zertifiziert. Zusätzlich hat GitHub <strong className="text-foreground">Standardvertragsklauseln (SCCs)</strong> gemäß Art. 46 Abs. 2 lit. c DSGVO als ergänzende Schutzmaßnahme implementiert.
             </p>
             <p className="mt-2 text-sm">
-              Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>
+              Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>
             </p>
             <p className="mt-2 text-sm">
               Rechtsgrundlage: Berechtigtes Interesse (Art. 6 Abs. 1 S. 1 lit. f DSGVO) an der technisch sicheren, stabilen und performanten Bereitstellung dieser Webseite über einen zuverlässigen Hosting-Dienst.
@@ -184,7 +182,7 @@ export default function Datenschutz() {
             </p>
 
             <p className="mt-2 text-sm">
-              Weitere Informationen: <a href="https://www.facebook.com/privacy/policy/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Meta Datenschutzrichtlinie</a> · <a href="https://www.facebook.com/adpreferences" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Meta Werbepräferenzen (Opt-out)</a>
+              Weitere Informationen: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Datenschutzrichtlinie</a> · <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener noreferrer">Meta Werbepräferenzen (Opt-out)</a>
             </p>
           </div>
 
@@ -202,7 +200,7 @@ export default function Datenschutz() {
               <li><strong className="text-foreground">Widerrufsrecht bei Einwilligung</strong> (Art. 7 Abs. 3 DSGVO) — Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung wird dadurch nicht berührt.</li>
             </ul>
             <p className="mt-3 text-sm">
-              Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an: <a href="mailto:michael@hoeger.dev" className="text-primary hover:underline">michael@hoeger.dev</a>
+              Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an: <a href="mailto:michael@hoeger.dev">michael@hoeger.dev</a>
             </p>
           </div>
 
@@ -225,10 +223,10 @@ export default function Datenschutz() {
               <strong>Speicherdauer:</strong> Ihre Daten werden ausschließlich für die Erstellung und Zustellung des Reports verwendet. Der generierte Report wird nach der Zustellung gelöscht. Ihre E-Mail-Adresse und die eingegebene URL werden nicht dauerhaft gespeichert.
             </p>
             <p className="mt-2 text-sm">
-              <strong>E-Mail-Versand:</strong> Der Report wird über den Dienst Brevo (Sendinblue SAS, Paris, Frankreich) versendet. Brevo verarbeitet Ihre E-Mail-Adresse als Auftragsverarbeiter. Weitere Informationen: <a href="https://www.brevo.com/de/legal/privacypolicy/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Brevo Datenschutzerklärung</a>.
+              <strong>E-Mail-Versand:</strong> Der Report wird über den Dienst Brevo (Sendinblue SAS, Paris, Frankreich) versendet. Brevo verarbeitet Ihre E-Mail-Adresse als Auftragsverarbeiter. Weitere Informationen: <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">Brevo Datenschutzerklärung</a>.
             </p>
             <p className="mt-2 text-sm">
-              Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie uns unter <a href="mailto:michael@hoeger.dev" className="text-primary hover:underline">michael@hoeger.dev</a> kontaktieren.
+              Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie uns unter <a href="mailto:michael@hoeger.dev">michael@hoeger.dev</a> kontaktieren.
             </p>
           </div>
 
@@ -244,7 +242,7 @@ export default function Datenschutz() {
               Gustav-Stresemann-Ring 1, 65189 Wiesbaden<br />
               Telefon: +49 611 1408-0<br />
               E-Mail: poststelle@datenschutz.hessen.de<br />
-              Web: <a href="https://datenschutz.hessen.de" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">datenschutz.hessen.de</a>
+              Web: <a href="https://datenschutz.hessen.de" target="_blank" rel="noopener noreferrer">datenschutz.hessen.de</a>
             </p>
           </div>
 
