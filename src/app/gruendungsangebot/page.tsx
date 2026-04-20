@@ -167,6 +167,7 @@ export default function Gruendungsangebot() {
         <p className="text-slate-400 text-base max-w-[500px] mx-auto mb-7 leading-relaxed">
           Ich starte mein Webdesign-Business und suche Gründungskunden,
           die von professioneller Qualität zum Einstiegspreis profitieren möchten.
+          Auch als Webdesign im Abo (Website-as-a-Service) verfügbar.
         </p>
 
         {/* Urgency Box */}

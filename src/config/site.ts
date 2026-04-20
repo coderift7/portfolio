@@ -23,7 +23,7 @@ export const siteConfig = {
     greeting: "Hallo, ich bin Michael",
     headline: "Ihre nächsten Kunden\nsuchen Sie gerade.",
     subheadline:
-      "Die Frage ist nur: Finden sie Sie — oder Ihre Konkurrenz? Ich baue Webseiten, die bei Google und sogar bei ChatGPT gefunden werden. Damit Anfragen kommen, ohne dass Sie etwas dafür tun müssen.",
+      "Die Frage ist nur: Finden sie Sie — oder Ihre Konkurrenz? Ich baue Webseiten, die bei Google und sogar bei ChatGPT gefunden werden — als Webdesign im Abo, ohne Überraschungen. Damit Anfragen kommen, ohne dass Sie etwas dafür tun müssen.",
     cta: "Kostenlos beraten lassen",
     ctaSecondary: "Beispiele ansehen",
   },
