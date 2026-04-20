@@ -81,6 +81,6 @@ Ehrlich gesagt: Von außen kann niemand sehen, ob Ihr Hoster tatsächlich ein g�
 
 Keine Verkaufsshow, keine Vertragsfalle. Sie verlassen das Gespräch mit Klartext — und wissen, ob bei Ihrem aktuellen Anbieter alles in Ordnung ist oder ob Sie handeln sollten.
 
-**[👉 Kostenlosen Backup-Check anfordern](/kontakt)**
+**[👉 Kostenlosen Backup-Check anfordern](/#kontakt)**
 
 Eine gute Webseite ist nicht nur die, die schön aussieht. Es ist die, die auch dann noch da ist, wenn andere längst offline sind.
