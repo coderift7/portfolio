@@ -1,0 +1,235 @@
+/* Scoped styles for /farbpsychologie — eigenständige Palette, scoped via .fp-root */
+
+.fp-root {
+  /* 60-30-10 Palette — siehe docs/farbpsychologie/color-briefing.md */
+  --fp-bone: #F4EFE6;
+  --fp-bone-soft: #EAE2D4;
+  --fp-ink: #1C1F26;
+  --fp-ink-soft: #3A3F4B;
+  --fp-vermilion: #B8412A;
+  --fp-vermilion-deep: #8F3120;
+
+  /* Branchen-Demo-Töne (alle ≥4.5:1 auf Bone) */
+  --fp-sage: #4F6B4E;
+  --fp-ochre: #A26F12;
+  --fp-inkblue: #2F4B7A;
+
+  /* Typo */
+  --fp-font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --fp-font-body: var(--font-instrument-sans), system-ui, -apple-system, sans-serif;
+  --fp-font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  background: var(--fp-bone);
+  color: var(--fp-ink);
+  font-family: var(--fp-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.fp-root h1,
+.fp-root h2,
+.fp-root h3 {
+  font-family: var(--fp-font-display);
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+/* Display-Headlines: Fraunces mit opsz-Max für Hero */
+.fp-display {
+  font-family: var(--fp-font-display);
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.fp-eyebrow {
+  font-family: var(--fp-font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fp-ink-soft);
+}
+
+/* Hex-Werte-Callouts */
+.fp-hex {
+  font-family: var(--fp-font-mono);
+  font-size: 0.72em;
+  font-weight: 500;
+  color: var(--fp-ink-soft);
+}
+
+/* Inverted Sektion */
+.fp-inverted {
+  background: var(--fp-ink);
+  color: var(--fp-bone);
+}
+
+.fp-inverted .fp-eyebrow {
+  color: color-mix(in srgb, var(--fp-bone) 70%, transparent);
+}
+
+.fp-inverted .fp-hex {
+  color: color-mix(in srgb, var(--fp-bone) 70%, transparent);
+}
+
+/* Primary CTA — Vermilion auf Deep-Ink-Sektion */
+.fp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.65rem;
+  background: var(--fp-vermilion);
+  color: var(--fp-bone);
+  font-family: var(--fp-font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.22s ease;
+  text-decoration: none;
+}
+
+.fp-btn-primary:hover {
+  background: var(--fp-vermilion-deep);
+  transform: translateY(-1px);
+}
+
+.fp-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary CTA — Outline auf Bone */
+.fp-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.65rem;
+  background: transparent;
+  color: var(--fp-ink);
+  border: 1px solid var(--fp-ink);
+  font-family: var(--fp-font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 0;
+  cursor: pointer;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), background 0.22s ease, color 0.22s ease;
+  text-decoration: none;
+}
+
+.fp-btn-secondary:hover {
+  background: var(--fp-ink);
+  color: var(--fp-bone);
+  transform: translateY(-1px);
+}
+
+/* Branchen-Chip (inaktiv) */
+.fp-chip {
+  font-family: var(--fp-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--fp-ink) 30%, transparent);
+  background: transparent;
+  color: var(--fp-ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.fp-chip:hover {
+  border-color: var(--fp-ink);
+}
+
+.fp-chip[aria-pressed="true"] {
+  background: var(--fp-ink);
+  color: var(--fp-bone);
+  border-color: var(--fp-ink);
+}
+
+/* Editorial-Rule (dezenter Trenner) */
+.fp-rule {
+  border: none;
+  height: 1px;
+  background: color-mix(in srgb, var(--fp-ink) 15%, transparent);
+  margin: 0;
+}
+
+/* Hero grid — fix for Tailwind 4 arbitrary-cols not applying */
+.fp-hero-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .fp-hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+  }
+}
+
+/* Generic 2-col with breakpoint */
+.fp-2col {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 900px) {
+  .fp-2col {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
+
+/* Swatch */
+.fp-swatch {
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  aspect-ratio: 4 / 3;
+  color: var(--fp-bone);
+  font-family: var(--fp-font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+/* Animation — sanft editorial */
+@keyframes fpFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fp-fade-in {
+  animation: fpFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .fp-fade-in,
+  .fp-btn-primary,
+  .fp-btn-secondary,
+  .fp-chip {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Hand-drawn farbkreis wobble */
+.fp-wheel path,
+.fp-wheel circle {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Focus-visible für Tastatur-Nutzer */
+.fp-root button:focus-visible,
+.fp-root a:focus-visible {
+  outline: 2px solid var(--fp-vermilion);
+  outline-offset: 3px;
+}
+
+.fp-inverted button:focus-visible,
+.fp-inverted a:focus-visible {
+  outline-color: var(--fp-bone);
+}

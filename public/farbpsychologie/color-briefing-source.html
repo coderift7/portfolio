@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Color-Briefing — Vorlage</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 18mm 16mm 22mm 16mm; }
+  :root{
+    --bone:#F4EFE6; --bone-soft:#EAE2D4;
+    --ink:#1C1F26; --ink-soft:#3A3F4B;
+    --vermilion:#B8412A;
+    --f-display:'Fraunces',serif;
+    --f-body:'Instrument Sans',-apple-system,system-ui,sans-serif;
+    --f-mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:var(--f-body);color:var(--ink);background:var(--bone);font-size:10.5pt;line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cover{padding:22mm 0 10mm;border-bottom:1px solid color-mix(in srgb,var(--ink) 15%,transparent);margin-bottom:10mm;page-break-after:always;min-height:240mm;display:flex;flex-direction:column;justify-content:space-between}
+  .cover-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12mm}
+  .eyebrow{font-family:var(--f-mono);font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  h1{font-family:var(--f-display);font-variation-settings:"opsz" 144,"SOFT" 100;font-weight:500;font-size:42pt;line-height:1.02;letter-spacing:-.03em;margin:12mm 0 8mm}
+  h2{font-family:var(--f-display);font-weight:500;font-size:18pt;letter-spacing:-.02em;margin:14mm 0 4mm}
+  h3{font-family:var(--f-display);font-weight:500;font-size:13pt;letter-spacing:-.01em;margin:8mm 0 3mm}
+  p{margin:0 0 3mm}
+  .lede{font-size:13pt;line-height:1.5;max-width:125mm;color:var(--ink-soft)}
+  .meta{font-family:var(--f-mono);font-size:8pt;color:var(--ink-soft);letter-spacing:.04em}
+  .rule{border:none;height:1px;background:color-mix(in srgb,var(--ink) 14%,transparent);margin:6mm 0}
+  .swatches{display:grid;grid-template-columns:6fr 3fr 1fr;gap:1mm;height:26mm;margin:6mm 0 2mm}
+  .sw{display:flex;align-items:flex-end;padding:2.5mm;font-family:var(--f-mono);font-size:7pt}
+  .sw b{display:block;font-weight:500;margin-bottom:.8mm}
+  .ctx{display:flex;gap:6mm;font-family:var(--f-mono);font-size:7.5pt;color:var(--ink-soft);margin-top:1mm}
+  .q{padding:4mm 0;border-top:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+  .q:first-of-type{border-top:none}
+  .q-num{font-family:var(--f-mono);font-size:7.5pt;letter-spacing:.1em;color:var(--vermilion);text-transform:uppercase;margin-bottom:1.5mm}
+  .q-title{font-family:var(--f-display);font-weight:500;font-size:14pt;letter-spacing:-.01em;margin:0 0 1.5mm}
+  .q-hint{color:var(--ink-soft);font-size:9.5pt;margin-bottom:2.5mm}
+  .field{border-bottom:1px solid color-mix(in srgb,var(--ink) 22%,transparent);min-height:7mm;margin-bottom:2mm}
+  .field.tall{min-height:18mm}
+  .tip{background:var(--bone-soft);padding:2.5mm 3.5mm;font-size:8.5pt;color:var(--ink-soft);margin:2mm 0 0}
+  .tip b{color:var(--ink);font-weight:500}
+  .checklist{display:grid;grid-template-columns:1fr 1fr;gap:2mm 6mm;margin:4mm 0 0;font-size:9pt}
+  .check{display:flex;gap:2mm;align-items:flex-start}
+  .check .box{flex-shrink:0;width:3.5mm;height:3.5mm;border:1px solid var(--ink);margin-top:.7mm}
+  table{width:100%;border-collapse:collapse;font-size:9pt;margin:3mm 0}
+  th,td{text-align:left;padding:2mm 2.5mm;border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+  th{font-family:var(--f-mono);font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+  td{vertical-align:top}
+  .footer-note{font-family:var(--f-mono);font-size:7pt;color:var(--ink-soft);margin-top:10mm;padding-top:4mm;border-top:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}
+  .cta-block{background:var(--ink);color:var(--bone);padding:8mm 10mm;margin:6mm 0 0;page-break-inside:avoid}
+  .cta-block h3{color:var(--bone);margin-top:0;font-size:16pt}
+  .cta-block p{color:color-mix(in srgb,var(--bone) 80%,transparent);font-size:10pt;margin:0}
+  .cta-block a{color:var(--vermilion);font-weight:500;text-decoration:none;border-bottom:1px solid var(--vermilion)}
+  .break{page-break-before:always}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+</style>
+</head>
+<body>
+
+<!-- ── Cover ─────────────────────────────────────────────── -->
+<section class="cover">
+  <div>
+    <div class="cover-top">
+      <div class="eyebrow">Color-Briefing · Vorlage · V1 · 2026-04</div>
+      <div class="eyebrow">hoeger.dev / farbpsychologie</div>
+    </div>
+    <h1>Farbe ist Strategie.<br/>Kein Geschmack.</h1>
+    <p class="lede">Eine Palette ist eine Entscheidung mit Folgen. Diese Vorlage führt Sie in 30 Minuten durch zehn Fragen, die Designer:innen vor dem ersten Layout beantworten — mit Wirkungszielen, Ausschluss-Kriterien, Branchen-Codes und WCAG-Check.</p>
+  </div>
+  <div>
+    <div class="swatches">
+      <div class="sw" style="background:var(--bone);color:var(--ink);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent)"><div><b>60 % Dominante</b>Bone · #F4EFE6</div></div>
+      <div class="sw" style="background:var(--ink);color:var(--bone)"><div><b>30 % Sekundäre</b>Ink · #1C1F26</div></div>
+      <div class="sw" style="background:var(--vermilion);color:var(--bone);font-size:6pt"><div><b>10 %</b>#B8412A</div></div>
+    </div>
+    <div class="ctx"><span>60-30-10-Regel</span><span>·</span><span>Itten, 1961</span><span>·</span><span>WCAG 2.2 AA</span></div>
+    <div class="footer-note">
+      Michael Höger · Webdesign & Digitale Lösungen · hoeger.dev · michael@hoeger.dev<br/>
+      Diese Vorlage darf frei verwendet und weitergegeben werden. Kein Newsletter-Zwang, keine E-Mail-Pflicht.
+    </div>
+  </div>
+</section>
+
+<!-- ── Warum ──────────────────────────────────────────────── -->
+<section>
+  <div class="q-num">00 — Warum dieser Prozess</div>
+  <h2 style="margin-top:0">Dreißig Minuten Vorarbeit. Drei Iterationen gespart.</h2>
+  <p>Fast jede zweite Design-Diskussion dreht sich im Nachhinein um Farben — obwohl die meisten Konflikte mit diesen zehn Fragen im Voraus lösbar gewesen wären. Das Briefing ersetzt kein Gespräch, aber es macht es produktiv.</p>
+  <p style="color:var(--ink-soft)">Füllen Sie die Felder in Ruhe aus. Bei Stichwortlisten reichen Stichworte. Bei Hex-Feldern reichen Hex-Codes. Was am Ende zählt, ist nicht die Schönheit Ihrer Handschrift, sondern dass Sie es ausgesprochen haben.</p>
+</section>
+
+<hr class="rule" />
+
+<!-- ── 1 Wirkungsziel ────────────────────────────────────── -->
+<section class="q">
+  <div class="q-num">01 — Wirkungsziel</div>
+  <h3 class="q-title">Drei Adjektive. Konkret.</h3>
+  <p class="q-hint">Wie soll die Seite wirken? Keine Platzhalter wie „modern“ oder „professionell“ — das sagt nichts aus.</p>
+  <div class="field"></div>
+  <div class="field"></div>
+  <div class="field"></div>
+  <div class="tip"><b>Beispiele:</b> Body Process &bdquo;kraftvoll · bodenständig · entschlossen&ldquo; · Schäferhof &bdquo;verwurzelt · warm · echt&ldquo; · Finanz-Coach &bdquo;seriös · klar · nahbar&ldquo;.</div>
+</section>
+
+<!-- ── 2 Zielgruppe ──────────────────────────────────────── -->
+<section class="q">
+  <div class="q-num">02 — Zielgruppe</div>
+  <h3 class="q-title">Wer entscheidet, ob Ihre Seite überzeugt?</h3>
+  <p class="q-hint">Nicht Sie. Ihre Kund:innen. Beschreiben Sie sie so, dass Außenstehende sich ein Bild machen können.</p>
+  <table>
+    <tr><th>Alter</th><td><div class="field" style="min-height:6mm;border-bottom:1px solid color-mix(in srgb,var(--ink) 22%,transparent)"></div></td></tr>
+    <tr><th>Werte</th><td><div class="field" style="min-height:12mm;border-bottom:1px solid color-mix(in srgb,var(--ink) 22%,transparent)"></div></td></tr>
+    <tr><th>Ablehnung</th><td><div class="field" style="min-height:12mm;border-bottom:1px solid color-mix(in srgb,var(--ink) 22%,transparent)"></div></td></tr>
+    <tr><th>Wo informieren sie sich sonst</th><td><div class="field" style="min-height:12mm;border-bottom:1px solid color-mix(in srgb,var(--ink) 22%,transparent)"></div></td></tr>
+  </table>
+</section>
+
+<!-- ── 3 Ausschluss ──────────────────────────────────────── -->
+<section class="q">
+  <div class="q-num">03 — Ausschlusskriterien</div>
+  <h3 class="q-title">Was darf die Seite auf keinen Fall sein?</h3>
+  <p class="q-hint">Oft wichtiger als das, was sie sein soll. Engt den Farbraum produktiv ein.</p>
+  <div class="field"></div>
+  <div class="field"></div>
+  <div class="field"></div>
+</section>
+
+<!-- Pagebreak 1 -->
+<div class="break"></div>
+
+<!-- ── 4 Branchen-Codes ──────────────────────────────────── -->
+<section class="q" style="border-top:none">
+  <div class="q-num">04 — Branchen-Codes</div>
+  <h3 class="q-title">Was erwartet die Branche — und was brechen Sie bewusst?</h3>
+  <p class="q-hint">Vertrauen entsteht durch Erkennbarkeit. Differenzierung durch gezielte Abweichung.</p>
+  <table>
+    <tr><th style="width:38%">Erwartete Branchenfarben</th><td><div class="field tall"></div></td></tr>
+    <tr><th>Davon übernehmen wir</th><td><div class="field tall"></div></td></tr>
+    <tr><th>Bewusst abweichend</th><td><div class="field tall"></div></td></tr>
+  </table>
+</section>
+
+<!-- ── 5 Palette ─────────────────────────────────────────── -->
+<section class="q">
+  <div class="q-num">05 — Palette 60·30·10</div>
+  <h3 class="q-title">Drei Farben. Mehr braucht es meistens nicht.</h3>
+  <p class="q-hint">Eine 4. Farbe nur für Systemfeedback (Warning, Error, Success) — nicht als Design-Element.</p>
+  <table>
+    <tr><th style="width:22%">Dominante 60 %</th><th style="width:14%">Hex</th><th>Wirkung / Begründung</th></tr>
+    <tr><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none;font-family:var(--f-mono)"></div></td><td><div class="field tall" style="border-bottom:none"></div></td></tr>
+    <tr><th>Sekundäre 30 %</th><th>Hex</th><th>Wirkung</th></tr>
+    <tr><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none;font-family:var(--f-mono)"></div></td><td><div class="field tall" style="border-bottom:none"></div></td></tr>
+    <tr><th>Akzent 10 %</th><th>Hex</th><th>Komplementär? Wirkung</th></tr>
+    <tr><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none;font-family:var(--f-mono)"></div></td><td><div class="field tall" style="border-bottom:none"></div></td></tr>
+  </table>
+  <div class="tip"><b>Ittens Regel:</b> Der Akzent liegt im Farbkreis gegenüber der Dominanten. Rot-Grün, Blau-Orange, Gelb-Violett. Das Auge registriert Komplementärpaare physisch — CTAs springen dadurch heraus.</div>
+</section>
+
+<!-- ── 6 WCAG-Check ──────────────────────────────────────── -->
+<section class="q">
+  <div class="q-num">06 — WCAG-Kontrast-Check</div>
+  <h3 class="q-title">Rechnen Sie nach. Keine Ausnahmen.</h3>
+  <p class="q-hint">BFSG ist seit Juni 2025 Pflicht für viele Websites. Barrierefreiheit fängt bei Kontrasten an. Tool: webaim.org/resources/contrastchecker/</p>
+  <table>
+    <tr><th>Kombination</th><th>Mindest-Ratio</th><th>Gemessen</th><th>OK?</th></tr>
+    <tr><td>Body-Text auf Dominanter</td><td>4.5 : 1</td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none;width:12mm"></div></td></tr>
+    <tr><td>CTA-Text auf Akzent</td><td>4.5 : 1</td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none;width:12mm"></div></td></tr>
+    <tr><td>Sekundär auf Dominant</td><td>3 : 1</td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none;width:12mm"></div></td></tr>
+    <tr><td>Große Schrift auf Akzent</td><td>3 : 1</td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none;width:12mm"></div></td></tr>
+  </table>
+</section>
+
+<!-- Pagebreak 2 -->
+<div class="break"></div>
+
+<!-- ── 7 Sektions-Mapping ────────────────────────────────── -->
+<section class="q" style="border-top:none">
+  <div class="q-num">07 — Sektions-Mapping</div>
+  <h3 class="q-title">Wo dominiert welche Farbe — und warum?</h3>
+  <p class="q-hint">Farbwechsel zwischen Sektionen schaffen Hierarchie. Nicht jede Sektion braucht den gleichen Look.</p>
+  <table>
+    <tr><th style="width:26%">Sektion</th><th style="width:18%">Dominante</th><th style="width:16%">Akzent</th><th>Begründung</th></tr>
+    <tr><td>Hero</td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td></tr>
+    <tr><td>Value Props</td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td></tr>
+    <tr><td>Social Proof</td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td></tr>
+    <tr><td>Angebot / Preise</td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td></tr>
+    <tr><td>CTA-Bereich</td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td></tr>
+    <tr><td>FAQ</td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td></tr>
+    <tr><td>Footer</td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td><td><div class="field" style="border:none"></div></td></tr>
+  </table>
+</section>
+
+<!-- ── 8 CTA-Strategie ───────────────────────────────────── -->
+<section class="q">
+  <div class="q-num">08 — CTA-Strategie</div>
+  <h3 class="q-title">Wo gewinnt der Klick?</h3>
+  <table>
+    <tr><th style="width:32%">Primärer CTA — Farbe</th><td><div class="field"></div></td></tr>
+    <tr><th>Sekundärer CTA — Unterscheidung</th><td><div class="field"></div></td></tr>
+    <tr><th>Dominante Platzierung im Layout</th><td><div class="field tall"></div></td></tr>
+    <tr><th>Hover/Active State — wie wird der Klick belohnt?</th><td><div class="field tall"></div></td></tr>
+  </table>
+</section>
+
+<!-- Pagebreak 3 -->
+<div class="break"></div>
+
+<!-- ── 9 Typografie ──────────────────────────────────────── -->
+<section class="q" style="border-top:none">
+  <div class="q-num">09 — Typografie-Paarung</div>
+  <h3 class="q-title">Schrift ist halbe Farbe.</h3>
+  <p class="q-hint">Nicht Teil der Palette, aber untrennbar. <b>Regel:</b> NICHT Inter, Poppins oder Manrope als Standard — zu generisch. Kandidaten mit Charakter: Fraunces, Recursive, Söhne, GT Walsheim, Instrument Sans, Tiempos.</p>
+  <table>
+    <tr><th>Display / Headline</th><td><div class="field"></div></td></tr>
+    <tr><th>Body</th><td><div class="field"></div></td></tr>
+    <tr><th>Mono / Sonder</th><td><div class="field"></div></td></tr>
+  </table>
+</section>
+
+<!-- ── 10 Mood-Board ─────────────────────────────────────── -->
+<section class="q">
+  <div class="q-num">10 — Mood-Board</div>
+  <h3 class="q-title">5–10 Nicht-KI-Referenzen.</h3>
+  <p class="q-hint">Quellen: siiimple.com · awwwards.com · lapa.ninja · godly.website · land-book.com · httpster.net · Fachmagazine · Printwerbung. KEIN Dribbble-Generic-Look.</p>
+  <div class="grid-2">
+    <div><div class="field tall"></div><div class="field tall"></div><div class="field tall"></div><div class="field tall"></div><div class="field tall"></div></div>
+    <div><div class="field tall"></div><div class="field tall"></div><div class="field tall"></div><div class="field tall"></div><div class="field tall"></div></div>
+  </div>
+</section>
+
+<!-- ── Checklist ─────────────────────────────────────────── -->
+<section class="q">
+  <div class="q-num">✓ — Checkliste vor Coding</div>
+  <h3 class="q-title">Alles geklärt?</h3>
+  <div class="checklist">
+    <div class="check"><div class="box"></div><div>Wirkungsziel (3 Adjektive)</div></div>
+    <div class="check"><div class="box"></div><div>Zielgruppe beschrieben</div></div>
+    <div class="check"><div class="box"></div><div>Ausschluss-Kriterien notiert</div></div>
+    <div class="check"><div class="box"></div><div>Branchen-Codes geklärt</div></div>
+    <div class="check"><div class="box"></div><div>Palette finalisiert (3 Hex)</div></div>
+    <div class="check"><div class="box"></div><div>WCAG 4.5:1 geprüft</div></div>
+    <div class="check"><div class="box"></div><div>Sektions-Mapping steht</div></div>
+    <div class="check"><div class="box"></div><div>CTA-Komplementär gewählt</div></div>
+    <div class="check"><div class="box"></div><div>Typografie außerhalb Generic</div></div>
+    <div class="check"><div class="box"></div><div>Mood-Board mit 5+ Refs</div></div>
+  </div>
+</section>
+
+<!-- ── CTA-Block ─────────────────────────────────────────── -->
+<section class="cta-block">
+  <h3>Unsicher bei einer Frage?</h3>
+  <p>Eine kostenlose Erstberatung dauert 30 Minuten und klärt genau das. Kein Verkaufsgespräch, keine Vorbereitung nötig — bringen Sie das Briefing mit, soweit Sie gekommen sind.</p>
+  <p style="margin-top:4mm"><a href="https://hoeger.dev/#kontakt">hoeger.dev/#kontakt</a> &nbsp;·&nbsp; michael@hoeger.dev &nbsp;·&nbsp; +49 162 9255254</p>
+</section>
+
+<div class="footer-note" style="margin-top:8mm">
+  Vorlage nach Johannes Itten, &bdquo;Kunst der Farbe&ldquo; (1961) · WCAG 2.2 AA · Michael Höger, Limburg an der Lahn · Stand 2026-04
+</div>
+
+</body>
+</html>
