@@ -7,15 +7,21 @@ import { X } from "lucide-react";
 const STORAGE_KEY = "announcement-dismissed";
 
 export default function AnnouncementBanner() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname === "/gruendungsangebot" || pathname === "/gruendungsangebot/") return;
+    if (pathname === "/gruendungsangebot" || pathname === "/gruendungsangebot/") {
+      setVisible(false);
+      return;
+    }
     // Legal pages: no marketing banner
-    if (/^\/(agb|impressum|datenschutz)(\/.*)?$/.test(pathname)) return;
+    if (/^\/(agb|impressum|datenschutz)(\/.*)?$/.test(pathname)) {
+      setVisible(false);
+      return;
+    }
     const dismissed = localStorage.getItem(STORAGE_KEY);
-    if (!dismissed) setVisible(true);
+    setVisible(!dismissed);
   }, [pathname]);
 
   if (!visible) return null;
@@ -32,8 +38,8 @@ export default function AnnouncementBanner() {
         className="flex items-center gap-2 hover:underline underline-offset-2"
       >
         <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
-        <span className="hidden sm:inline">Gründungsangebot: Website zum halben Preis — nur 5 Plätze im April</span>
-        <span className="sm:hidden">Website zum halben Preis — nur 5 Plätze</span>
+        <span className="hidden sm:inline">Gründungsangebot: Website zum halben Preis — noch 4 von 5 Plätzen im April</span>
+        <span className="sm:hidden">Website zum halben Preis — noch 4 Plätze</span>
         <span className="font-bold">→ Mehr erfahren</span>
       </a>
       <button
@@ -48,19 +54,25 @@ export default function AnnouncementBanner() {
 }
 
 export function useAnnouncementVisible() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname === "/gruendungsangebot" || pathname === "/gruendungsangebot/") return;
-    // Legal pages: no marketing banner
-    if (/^\/(agb|impressum|datenschutz)(\/.*)?$/.test(pathname)) return;
+    const isExcludedPage =
+      pathname === "/gruendungsangebot" ||
+      pathname === "/gruendungsangebot/" ||
+      /^\/(agb|impressum|datenschutz)(\/.*)?$/.test(pathname);
+
+    if (isExcludedPage) {
+      setVisible(false);
+      return;
+    }
     const dismissed = localStorage.getItem(STORAGE_KEY);
-    if (!dismissed) setVisible(true);
+    setVisible(!dismissed);
 
     const check = () => {
       const d = localStorage.getItem(STORAGE_KEY);
-      setVisible(!d && pathname !== "/gruendungsangebot" && pathname !== "/gruendungsangebot/" && !/^\/(agb|impressum|datenschutz)(\/.*)?$/.test(pathname));
+      setVisible(!d);
     };
     window.addEventListener("storage", check);
     return () => window.removeEventListener("storage", check);

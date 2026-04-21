@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { HeroCountdown, StickyCountdown } from "./Countdown";
 import { siteUrl } from "@/config/site";
 
-const kontaktLink = "https://hoeger.dev/#kontakt";
+const kontaktLink = "/#kontakt";
 
 export const metadata: Metadata = {
   title: "Gründungsangebot – Ihre Website zum halben Preis | Michael Höger",
@@ -171,7 +171,7 @@ export default function Gruendungsangebot() {
             zum halben Preis.
           </span>
         </h1>
-        <p className="text-slate-400 text-base max-w-[500px] mx-auto mb-7 leading-relaxed">
+        <p className="text-slate-300 text-base max-w-[500px] mx-auto mb-7 leading-relaxed">
           Ich starte mein Webdesign-Business und suche Gründungskunden,
           die von professioneller Qualität zum Einstiegspreis profitieren möchten.
           Auch als Webdesign im Abo (Website-as-a-Service) verfügbar.
@@ -183,28 +183,28 @@ export default function Gruendungsangebot() {
             <span className="w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
             Noch <span className="font-mono text-[22px] text-red-300">4</span> von 5 Plätzen verfügbar
           </div>
-          <div className="text-[11px] text-slate-400 tracking-wide mb-2.5">Angebot endet in:</div>
+          <div className="text-xs text-slate-300 tracking-wide mb-2.5">Angebot endet in:</div>
           <HeroCountdown />
         </div>
       </div>
 
       {/* ── Trust Bar ── */}
-      <div className="bg-white border-b border-slate-200 py-4 px-6 flex justify-center gap-10 flex-wrap">
+      <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 py-4 px-6 flex justify-center gap-10 flex-wrap">
         {["Persönliche Betreuung", "Optimiert für alle Geräte", "Bei Google gefunden werden", "Datenschutz inklusive", "Keine versteckten Kosten"].map((t) => (
-          <span key={t} className="text-xs text-slate-500 flex items-center gap-1.5">
-            <span className="text-teal-600 font-bold">✓</span> {t}
+          <span key={t} className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+            <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span> {t}
           </span>
         ))}
       </div>
 
       {/* ── Pakete ── */}
       <div className="max-w-[960px] mx-auto px-6 py-12">
-        <h2 className="text-center text-2xl font-bold tracking-tight mb-2">Drei Pakete. Ein Ziel: Ihr Erfolg.</h2>
-        <p className="text-center text-sm text-slate-500 mb-6">Regulärpreise durchgestrichen — Sie zahlen nur den Gründungspreis.</p>
+        <h2 className="text-center text-2xl font-bold tracking-tight mb-2 text-slate-900 dark:text-slate-100">Drei Pakete. Ein Ziel: Ihr Erfolg.</h2>
+        <p className="text-center text-sm text-slate-500 dark:text-slate-400 mb-6">Regulärpreise durchgestrichen — Sie zahlen nur den Gründungspreis.</p>
 
         {/* ── In allen Paketen enthalten ── */}
-        <div className="bg-slate-50 border border-slate-200 rounded-xl px-6 py-4 mb-10 max-w-[720px] mx-auto">
-          <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2 text-center">In jedem Paket enthalten</div>
+        <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-6 py-4 mb-10 max-w-[720px] mx-auto">
+          <div className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 text-center">In jedem Paket enthalten</div>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-1.5">
             {[
               "Individuelles Farb- und Schriftkonzept",
@@ -213,8 +213,8 @@ export default function Gruendungsangebot() {
               "Qualitätsprüfung vor Launch",
               "Handover mit allen Zugängen",
             ].map((t) => (
-              <span key={t} className="text-[12.5px] text-slate-700 flex items-center gap-1.5">
-                <span className="text-teal-600 font-bold">✓</span> {t}
+              <span key={t} className="text-[12.5px] text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span> {t}
               </span>
             ))}
           </div>
@@ -224,10 +224,10 @@ export default function Gruendungsangebot() {
           {pakete.map((p) => (
             <div
               key={p.name}
-              className={`bg-white rounded-2xl overflow-hidden flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${
+              className={`bg-white dark:bg-slate-800 rounded-2xl overflow-hidden flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${
                 p.featured
                   ? "border-2 border-teal-600 shadow-[0_0_0_1px_#0D9488,0_8px_24px_rgba(13,148,136,0.12)] relative"
-                  : "border border-slate-200"
+                  : "border border-slate-200 dark:border-slate-700"
               }`}
             >
               {p.featured && (
@@ -237,24 +237,24 @@ export default function Gruendungsangebot() {
               )}
 
               <div className="pt-7 pb-5 px-6 text-center">
-                <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">{p.name}</div>
-                <div className="text-xl font-bold text-slate-900 mb-1.5 tracking-tight">{p.title}</div>
-                <div className="text-xs text-slate-500 italic">{p.claim}</div>
+                <div className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">{p.name}</div>
+                <div className="text-xl font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">{p.title}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400 italic">{p.claim}</div>
               </div>
 
               <div className="px-6 pb-5 text-center">
-                <div className="font-mono text-lg text-red-500 line-through font-medium mb-0.5">{p.regular}</div>
-                <div className="font-mono text-[32px] font-bold text-slate-900 tracking-tight leading-none">{p.founding}</div>
-                <span className="inline-block bg-emerald-50 text-emerald-600 text-[11px] font-semibold px-2.5 py-0.5 rounded-full mt-1">
+                <div className="font-mono text-lg text-red-500 dark:text-red-400 line-through font-medium mb-0.5">{p.regular}</div>
+                <div className="font-mono text-[32px] font-bold text-slate-900 dark:text-white tracking-tight leading-none">{p.founding}</div>
+                <span className="inline-block bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-[11px] font-semibold px-2.5 py-0.5 rounded-full mt-1">
                   Sie sparen {p.save}
                 </span>
-                <div className="text-[11px] text-slate-400 mt-1">einmalig · Endpreis</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">einmalig · Endpreis</div>
               </div>
 
-              <div className="px-6 py-5 border-t border-slate-100 flex-1">
+              <div className="px-6 py-5 border-t border-slate-100 dark:border-slate-700 flex-1">
                 <ul className="space-y-1.5">
                   {p.features.map((f) => (
-                    <li key={f} className="text-[12.5px] text-slate-700 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold before:text-xs">
+                    <li key={f} className="text-[12.5px] text-slate-700 dark:text-slate-300 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 dark:before:text-teal-400 before:font-bold before:text-xs">
                       {f}
                     </li>
                   ))}
@@ -267,7 +267,7 @@ export default function Gruendungsangebot() {
                   className={`block w-full py-3 text-center rounded-lg text-sm font-semibold transition-all duration-200 ${
                     p.featured
                       ? "bg-gradient-to-r from-teal-600 to-cyan-600 text-white hover:-translate-y-0.5 hover:shadow-md"
-                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                      : "bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600"
                   }`}
                 >
                   Jetzt anfragen
@@ -278,9 +278,9 @@ export default function Gruendungsangebot() {
         </div>
 
         {/* ── Deal ── */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-9 mb-12 text-center">
-          <h2 className="text-xl font-bold mb-2">Was wir uns von Ihnen wünschen</h2>
-          <p className="text-sm text-slate-500 mb-6">Im Gegenzug zum Gründungspreis bitten wir Sie um drei kleine Dinge:</p>
+        <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-9 mb-12 text-center">
+          <h2 className="text-xl font-bold mb-2 text-slate-900 dark:text-slate-100">Was wir uns von Ihnen wünschen</h2>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Im Gegenzug zum Gründungspreis bitten wir Sie um drei kleine Dinge:</p>
           <div className="flex justify-center gap-8 flex-wrap">
             {[
               { icon: "⭐", title: "Google-Bewertung", desc: "Ein paar ehrliche Worte zu Ihrer Erfahrung mit mir." },
@@ -289,16 +289,16 @@ export default function Gruendungsangebot() {
             ].map((d) => (
               <div key={d.title} className="text-center max-w-[180px]">
                 <div className="text-3xl mb-2">{d.icon}</div>
-                <h3 className="text-sm font-semibold mb-1">{d.title}</h3>
-                <p className="text-xs text-slate-400">{d.desc}</p>
+                <h3 className="text-sm font-semibold mb-1 text-slate-900 dark:text-slate-100">{d.title}</h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400">{d.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* ── Ablauf ── */}
-        <h2 className="text-center text-2xl font-bold tracking-tight mb-2">So läuft es ab</h2>
-        <p className="text-center text-sm text-slate-500 mb-10">Von der Anfrage bis zur fertigen Website — in vier Schritten.</p>
+        <h2 className="text-center text-2xl font-bold tracking-tight mb-2 text-slate-900 dark:text-slate-100">So läuft es ab</h2>
+        <p className="text-center text-sm text-slate-500 dark:text-slate-400 mb-10">Von der Anfrage bis zur fertigen Website — in vier Schritten.</p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-12">
           {[
@@ -311,19 +311,19 @@ export default function Gruendungsangebot() {
               <div className="w-9 h-9 bg-gradient-to-br from-teal-600 to-cyan-600 text-white font-mono text-sm font-semibold rounded-full flex items-center justify-center mx-auto mb-2.5">
                 {s.n}
               </div>
-              <h3 className="text-[13px] font-semibold mb-1">{s.title}</h3>
-              <p className="text-[11px] text-slate-400">{s.desc}</p>
+              <h3 className="text-[13px] font-semibold mb-1 text-slate-900 dark:text-slate-100">{s.title}</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">{s.desc}</p>
             </div>
           ))}
         </div>
 
         {/* ── Final CTA ── */}
-        <div className="text-center py-12 px-6 bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl mb-12">
+        <div className="text-center py-12 px-6 bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 rounded-2xl mb-12">
           <h2 className="text-white text-2xl font-bold mb-2">Bereit? Sichern Sie sich Ihren Platz.</h2>
-          <p className="text-slate-400 text-sm mb-6">10 Minuten Gespräch — kostet nichts, bringt Klarheit.</p>
+          <p className="text-slate-300 text-sm mb-6">10 Minuten Gespräch — kostet nichts, bringt Klarheit.</p>
           <a
             href={kontaktLink}
-            className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-9 py-3.5 rounded-lg text-[15px] font-semibold hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+            className="btn-brand inline-block px-9 py-3.5 rounded-lg text-[15px] font-semibold"
           >
             Unverbindlich anfragen
           </a>
@@ -331,15 +331,15 @@ export default function Gruendungsangebot() {
       </div>
 
       {/* ── Footer ── */}
-      <div className="text-center py-6 pb-20 text-[11px] text-slate-400">
+      <div className="text-center py-6 pb-20 text-xs text-slate-500 dark:text-slate-400">
         Michael Höger · IT-Beratung &amp; Webgestaltung ·{" "}
-        <a href="https://hoeger.dev/#kontakt" className="text-teal-600 no-underline">michael@hoeger.dev</a>
+        <a href="/#kontakt" className="text-teal-600 dark:text-teal-400 no-underline">michael@hoeger.dev</a>
         <br />
         Alle Preise sind Endpreise (§19 UStG). Kosten für Hosting und Domains nicht enthalten.
       </div>
 
       {/* ── Sticky Bar ── */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-900 to-slate-800 border-t-2 border-teal-600 py-3 px-6 flex items-center justify-center gap-4 shadow-[0_-4px_20px_rgba(0,0,0,0.2)]">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 border-t-2 border-teal-600 py-3 px-6 flex items-center justify-center gap-4 shadow-[0_-4px_20px_rgba(0,0,0,0.2)]">
         <span className="text-white text-sm font-semibold flex items-center gap-2">
           <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
           4 Plätze · endet in
@@ -347,7 +347,7 @@ export default function Gruendungsangebot() {
         <StickyCountdown />
         <a
           href={kontaktLink}
-          className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-6 py-2.5 rounded-lg text-[13px] font-semibold hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+          className="btn-brand px-6 py-2.5 rounded-lg text-[13px] font-semibold"
         >
           Jetzt Platz sichern
         </a>

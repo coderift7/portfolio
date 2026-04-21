@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { siteUrl } from "@/config/site";
 
-const kontaktLink = "https://hoeger.dev/#kontakt";
+const kontaktLink = "/#kontakt";
 
 export const metadata: Metadata = {
   title: "Professionelle Webtexte — Texte, die aus Besuchern Kunden machen | Michael Höger",
@@ -208,7 +208,7 @@ export default function TexterstellungPage() {
         </p>
         <a
           href={kontaktLink}
-          className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-sm font-semibold px-8 py-3 rounded-lg hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+          className="btn-brand inline-block text-sm font-semibold px-8 py-3 rounded-lg"
         >
           Unverbindlich anfragen
         </a>
@@ -369,7 +369,7 @@ export default function TexterstellungPage() {
                 <div className="font-mono text-[32px] font-bold text-slate-900 dark:text-white tracking-tight leading-none">
                   {p.price} €
                 </div>
-                <div className="text-[11px] text-slate-400 mt-1">einmalig · Endpreis</div>
+                <div className="text-xs text-slate-400 mt-1">einmalig · Endpreis</div>
               </div>
 
               <div className="px-6 py-5 border-t border-slate-100 dark:border-slate-700 flex-1">
@@ -383,7 +383,7 @@ export default function TexterstellungPage() {
               </div>
 
               <div className="px-6 pb-4 pt-2">
-                <div className="text-[11px] text-slate-400 text-center">Lieferzeit: {p.lieferzeit}</div>
+                <div className="text-xs text-slate-400 text-center">Lieferzeit: {p.lieferzeit}</div>
               </div>
 
               <div className="px-6 pb-6 pt-2">
@@ -446,7 +446,7 @@ export default function TexterstellungPage() {
           </p>
           <a
             href={kontaktLink}
-            className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-sm font-semibold px-8 py-3 rounded-lg hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+            className="btn-brand inline-block text-sm font-semibold px-8 py-3 rounded-lg"
           >
             Unverbindlich anfragen
           </a>

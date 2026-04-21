@@ -156,6 +156,20 @@ const faq = [
 export default function FarbpsychologiePage() {
   return (
     <main className={`fp-root ${fraunces.variable} ${instrumentSans.variable} ${jetbrainsMonoFp.variable}`}>
+      {/* JSON-LD BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Startseite", item: `${siteUrl}/` },
+              { "@type": "ListItem", position: 2, name: "Farbpsychologie", item: `${siteUrl}/farbpsychologie/` },
+            ],
+          }),
+        }}
+      />
       {/* JSON-LD Service Schema */}
       <script
         type="application/ld+json"
@@ -385,7 +399,7 @@ export default function FarbpsychologiePage() {
             <a href="/farbpsychologie/color-briefing.pdf" download className="fp-btn-primary" style={{ background: "var(--fp-vermilion)" }}>
               Color-Briefing gratis laden (PDF)
             </a>
-            <a href="https://hoeger.dev/#kontakt" className="fp-btn-secondary" style={{ borderColor: "var(--fp-bone)", color: "var(--fp-bone)" }}>
+            <a href="/#kontakt" className="fp-btn-secondary" style={{ borderColor: "var(--fp-bone)", color: "var(--fp-bone)" }}>
               Lieber persönlich besprechen
             </a>
           </div>
@@ -430,7 +444,7 @@ export default function FarbpsychologiePage() {
         <p className="text-[1.05rem] leading-relaxed max-w-[50ch] mx-auto mb-8" style={{ color: "var(--fp-ink-soft)" }}>
           Kostenlose Erstberatung · 30 Minuten · unverbindlich. Ich höre zu, Sie entscheiden danach.
         </p>
-        <a href="https://hoeger.dev/#kontakt" className="fp-btn-primary">
+        <a href="/#kontakt" className="fp-btn-primary">
           Kostenlose Erstberatung anfragen →
         </a>
         <p className="fp-hex mt-12" style={{ color: "color-mix(in srgb, var(--fp-ink) 45%, transparent)" }}>

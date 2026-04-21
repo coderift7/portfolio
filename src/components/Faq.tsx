@@ -28,11 +28,16 @@ export default function Faq() {
         <StaggerContainer className="mt-12 space-y-3" staggerDelay={0.08}>
           {siteConfig.faq.map((item, i) => {
             const isOpen = openIndex === i;
+            const triggerId = `faq-trigger-${i}`;
+            const panelId = `faq-panel-${i}`;
             return (
               <StaggerItem key={i}>
                 <div className="glass shadow-depth glow-hover overflow-hidden rounded-2xl transition-all duration-300">
                   <button
+                    id={triggerId}
                     onClick={() => setOpenIndex(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
                     className="flex w-full cursor-pointer items-center justify-between px-6 py-5 text-left"
                   >
                     <span className="pr-4 text-base font-semibold text-foreground">
@@ -42,9 +47,14 @@ export default function Faq() {
                       className={`h-5 w-5 shrink-0 text-primary transition-transform duration-300 ${
                         isOpen ? "rotate-180" : ""
                       }`}
+                      aria-hidden="true"
                     />
                   </button>
                   <div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={triggerId}
+                    hidden={!isOpen}
                     className={`grid transition-all duration-300 ease-out ${
                       isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                     }`}

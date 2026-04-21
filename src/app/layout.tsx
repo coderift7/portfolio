@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import CookieBanner from "@/components/CookieBanner";
 import MetaPixel from "@/components/MetaPixel";
+import Analytics from "@/components/Analytics";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -101,11 +101,7 @@ export default function RootLayout({
         <Footer />
         <CookieBanner />
         <MetaPixel />
-        <Script
-          src="https://analytics.hoeger.dev/script.js"
-          data-website-id="6145f8bb-9bc3-4576-b0f8-b07216762e0b"
-          strategy="afterInteractive"
-        />
+        <Analytics />
       </body>
     </html>
   );

@@ -89,7 +89,7 @@ export default function HeroBranchen() {
           <a href="#lead-magnet" className="fp-btn-primary">
             Color-Briefing gratis laden →
           </a>
-          <a href="https://hoeger.dev/#kontakt" className="fp-btn-secondary">
+          <a href="/#kontakt" className="fp-btn-secondary">
             Kostenlose Erstberatung
           </a>
         </div>

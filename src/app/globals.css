@@ -88,6 +88,24 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Global focus-visible — WCAG 2.4.7 (BFSG) */
+@layer base {
+  *:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.4);
+  }
+}
+
 /* ── Premium Glass Design System ──────────────────────────── */
 
 /* Glassmorphism cards */

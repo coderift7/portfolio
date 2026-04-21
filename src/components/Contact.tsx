@@ -11,7 +11,7 @@ import CalBookingButton from "./CalBookingButton";
 const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
 
 const inputClasses =
-  "w-full rounded-xl border border-border bg-white dark:bg-slate-900/80 dark:border-slate-600 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-all duration-150 focus:border-primary focus:ring-2 focus:ring-primary/15";
+  "w-full rounded-xl border border-border bg-white dark:bg-slate-900/80 dark:border-slate-600 px-4 py-3 text-sm text-foreground placeholder:text-slate-500 dark:placeholder:text-slate-400 outline-none transition-all duration-150 focus:border-primary focus:ring-2 focus:ring-primary/15";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -150,20 +150,20 @@ export default function Contact() {
                         <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-foreground">
                           Name *
                         </label>
-                        <input type="text" id="name" name="name" required placeholder="Ihr Name" className={inputClasses} />
+                        <input type="text" id="name" name="name" required placeholder="Vor- und Nachname" className={inputClasses} />
                       </div>
                       <div>
                         <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">
                           E-Mail *
                         </label>
-                        <input type="email" id="email" name="email" required placeholder="ihre@email.de" className={inputClasses} />
+                        <input type="email" id="email" name="email" required placeholder="name@firma.de" className={inputClasses} />
                       </div>
                     </div>
                     <div>
                       <label htmlFor="subject" className="mb-1.5 block text-sm font-medium text-foreground">
                         Betreff
                       </label>
-                      <input type="text" id="subject" name="subject" placeholder="Worum geht es?" className={inputClasses} />
+                      <input type="text" id="subject" name="subject" placeholder="Neue Website, Relaunch oder Wartung?" className={inputClasses} />
                     </div>
                     <div>
                       <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-foreground">
@@ -174,7 +174,7 @@ export default function Contact() {
                         name="message"
                         required
                         rows={4}
-                        placeholder="Erzählen Sie mir von Ihrem Projekt..."
+                        placeholder="Worum geht's? Beschreiben Sie Ihr Projekt kurz in zwei bis drei Sätzen."
                         className={inputClasses}
                       />
                     </div>
@@ -184,7 +184,7 @@ export default function Contact() {
                       <input type="checkbox" id="privacy-contact" required className="mt-1 rounded border-border" />
                       <label htmlFor="privacy-contact" className="text-xs text-muted-foreground">
                         Ich stimme der{" "}
-                        <Link href="/datenschutz" className="text-primary underline">
+                        <Link href="/datenschutz/" className="text-primary underline">
                           Datenschutzerklärung
                         </Link>{" "}
                         zu. *

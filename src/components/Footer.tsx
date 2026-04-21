@@ -43,14 +43,14 @@ export default function Footer() {
           <Link href="/website-check/" className="transition-colors hover:text-primary">
             Website-Check
           </Link>
-          <Link href="/agb" className="transition-colors hover:text-primary">
+          <Link href="/agb/" className="transition-colors hover:text-primary">
             AGB
           </Link>
-          <Link href="/impressum" className="transition-colors hover:text-primary">
+          <Link href="/impressum/" className="transition-colors hover:text-primary">
             Impressum
           </Link>
           <Link
-            href="/datenschutz"
+            href="/datenschutz/"
             className="transition-colors hover:text-primary"
           >
             Datenschutz

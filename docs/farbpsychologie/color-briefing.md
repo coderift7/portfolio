@@ -128,7 +128,7 @@
 
 Die Page bricht das Standard-Hero-Muster: Statt Headline-Subheadline-CTA-Bild haben wir ein **Live-Experiment als Hero** — ein 60-30-10-Farbblock mit Branchen-Umschalter (Handwerk / Medizin / Finanz / Gastro). Die Proportionen bleiben, die Farben wechseln live. Wer scrollt, versteht das Thema in 3 Sekunden ohne Text.
 
-Zusätzlich: **Anker-Navigation mit Farbpunkten** (links auf Desktop), jeder Abschnitt hat einen einfarbigen Chip — scrollt mit, zeigt Position. Funktioniert als visueller Index und demonstriert gleichzeitig wie Farbe Orientierung gibt.
+**Geplant, nicht umgesetzt (Stand 21.04.):** Anker-Navigation mit Farbpunkten links auf Desktop war im Konzept vorgesehen, wurde zugunsten des natürlichen Scroll-Flows bewusst weggelassen. Kann in einem späteren Iterations-Schritt ergänzt werden, wenn sich zeigt, dass Nutzer:innen die Seite nicht fertig lesen.
 
 ---
 
@@ -136,4 +136,4 @@ Zusätzlich: **Anker-Navigation mit Farbpunkten** (links auf Desktop), jeder Abs
 
 - **Kontrast-Ratio als Fußnote** neben HEX-Werten (z.B. "Vermilion #D14D3A · 4.7:1 auf Bone") — nerdig, beweist Fachlichkeit
 - **Itten-Referenz explizit** im Impressum-artigen Block ("Farbkreis nach Johannes Itten, 1961") — Buchverweis statt Generic-Footer
-- **Handgezeichneter Farbkreis als SVG** (keine KI!) — als Hero-Side-Element. Kleine Ungenauigkeiten bleiben drin.
+- **Handgezeichneter Farbkreis als SVG** — war als Hero-Side-Element geplant, **nicht umgesetzt** (Stand 21.04.). Stattdessen trägt der Branchen-Umschalter die visuelle Arbeit im Hero. Farbkreis-SVG kann als spätere Verdichtung nachgezogen werden.

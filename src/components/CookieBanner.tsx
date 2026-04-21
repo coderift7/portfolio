@@ -38,7 +38,7 @@ export default function CookieBanner() {
             <p className="pointer-events-none text-sm text-slate-200">
               Wir nutzen Meta Pixel zur Messung unserer Werbeanzeigen.{" "}
               <Link
-                href="/datenschutz"
+                href="/datenschutz/"
                 className="pointer-events-auto underline underline-offset-2 transition-colors hover:text-primary"
               >
                 Mehr erfahren

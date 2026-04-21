@@ -58,7 +58,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:h-[72px]">
-        <Link href="/" className="flex items-center" aria-label="Zur Startseite">
+        <Link href="/" className="flex items-center" aria-label="Michael Höger IT-Beratung und Webdesign — zur Startseite">
           <Logo className="h-9 w-auto sm:h-10" iconRotation={logoRotation} />
         </Link>
 
@@ -72,7 +72,7 @@ export default function Header() {
                 onMouseEnter={() => openDropdown(item.label)}
                 onMouseLeave={closeDropdown}
               >
-                <a
+                <Link
                   href={item.href}
                   className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground cursor-pointer"
                   aria-expanded={desktopDropdown === item.label}
@@ -80,7 +80,7 @@ export default function Header() {
                 >
                   {item.label}
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${desktopDropdown === item.label ? "rotate-180" : ""}`} />
-                </a>
+                </Link>
 
                 <div
                   className={`absolute left-1/2 -translate-x-1/2 top-full pt-2 transition-all duration-200 ${
@@ -91,25 +91,25 @@ export default function Header() {
                 >
                   <div className="min-w-[220px] rounded-xl border border-white/10 bg-background/95 backdrop-blur-xl shadow-lg p-1.5">
                     {item.children.map((child) => (
-                      <a
+                      <Link
                         key={child.href}
                         href={child.href}
                         className="block rounded-lg px-4 py-2.5 text-sm text-muted-foreground transition-colors duration-150 hover:text-foreground hover:bg-muted/50"
                       >
                         {child.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
               </div>
             ) : (
-              <a
+              <Link
                 key={item.href}
                 href={item.href.startsWith("#") ? `${prefix}${item.href}` : item.href}
                 className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground"
               >
                 {item.label}
-              </a>
+              </Link>
             )
           )}
           <ThemeToggle />
@@ -145,13 +145,13 @@ export default function Header() {
               item.children ? (
                 <div key={item.label}>
                   <div className="flex w-full items-center rounded-lg px-3 py-2.5 text-foreground">
-                    <a
+                    <Link
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
                       className="flex-1 cursor-pointer"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                     <button
                       onClick={() => setMobileDropdown(mobileDropdown === item.label ? null : item.label)}
                       className="cursor-pointer p-1"
@@ -169,28 +169,28 @@ export default function Header() {
                     <div className="overflow-hidden">
                       <div className="flex flex-col gap-0.5 pl-4 pb-1">
                         {item.children.map((child) => (
-                          <a
+                          <Link
                             key={child.href}
                             href={child.href}
                             onClick={() => setMobileOpen(false)}
                             className="rounded-lg px-3 py-2 text-sm text-muted-foreground active:bg-muted"
                           >
                             {child.label}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
                   </div>
                 </div>
               ) : (
-                <a
+                <Link
                   key={item.href}
                   href={item.href.startsWith("#") ? `${prefix}${item.href}` : item.href}
                   onClick={() => setMobileOpen(false)}
                   className="rounded-lg px-3 py-2.5 text-foreground active:bg-muted"
                 >
                   {item.label}
-                </a>
+                </Link>
               )
             )}
             <a

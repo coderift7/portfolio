@@ -6,7 +6,7 @@ import { Send, Loader2 } from "lucide-react";
 import Link from "next/link";
 
 const inputClasses =
-  "w-full rounded-xl border border-border bg-white dark:bg-slate-800 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 outline-none transition-all duration-150 focus:border-primary focus:ring-2 focus:ring-primary/15";
+  "w-full rounded-xl border border-border bg-white dark:bg-slate-800 px-4 py-3 text-sm text-foreground placeholder:text-slate-500 dark:placeholder:text-slate-400 outline-none transition-all duration-150 focus:border-primary focus:ring-2 focus:ring-primary/15";
 
 export default function WebsiteCheckForm() {
   const router = useRouter();
@@ -131,7 +131,7 @@ export default function WebsiteCheckForm() {
           />
           <span className="text-xs text-muted-foreground">
             Ich stimme der{" "}
-            <Link href="/datenschutz" className="text-primary underline">
+            <Link href="/datenschutz/" className="text-primary underline">
               Datenschutzerklärung
             </Link>{" "}
             zu. *

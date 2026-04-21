@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { siteUrl } from "@/config/site";
 
-const kontaktLink = "https://hoeger.dev/#kontakt";
+const kontaktLink = "/#kontakt";
 
 export const metadata: Metadata = {
   title: "Leistungen & Preise — Website + Betreuung kombinieren | Michael Höger",
@@ -171,6 +171,35 @@ const breadcrumbSchema = {
   ],
 };
 
+const faq = [
+  {
+    q: "Wie funktionieren Ihre Preise?",
+    a: "Alle Beträge sind Endpreise. Gemäß §19 UStG wird keine Umsatzsteuer berechnet. Kosten für externe Dienste (z.B. Google Workspace) sind nicht enthalten.",
+  },
+  {
+    q: "Wo wird meine Website gehostet?",
+    a: "Alle Websites werden auf meiner professionellen Infrastruktur gehostet. So kann ich Sicherheit, Geschwindigkeit und Verfügbarkeit garantieren.",
+  },
+  {
+    q: "Wann bin ich erreichbar bei Fragen?",
+    a: "Erreichbarkeit Mo–Fr 18–21 Uhr, Sa 10–16 Uhr. Reaktionszeit innerhalb von 24 Stunden. Automatische Überwachung rund um die Uhr.",
+  },
+  {
+    q: "Werden die Preise später angepasst?",
+    a: "Die vereinbarten Preise gelten für die ersten 12 Monate. Danach ist eine jährliche Anpassung um maximal 5 % möglich. Anpassungen werden mindestens 4 Wochen vorher schriftlich angekündigt.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const offerCatalogSchema = {
   "@context": "https://schema.org",
   "@type": "OfferCatalog",
@@ -212,6 +241,10 @@ export default function PreisePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {/* ── Hero ── */}
       <div className="bg-gradient-to-br from-slate-900 to-slate-800 px-6 pt-28 pb-14 text-center">
@@ -273,7 +306,7 @@ export default function PreisePage() {
                 <div className="font-mono text-[32px] font-bold text-slate-900 dark:text-white tracking-tight leading-none">
                   {p.price} €
                 </div>
-                <div className="text-[11px] text-slate-400 mt-1">einmalig · Endpreis</div>
+                <div className="text-xs text-slate-400 mt-1">einmalig · Endpreis</div>
                 <span className="inline-block bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 text-[11px] font-semibold px-2.5 py-0.5 rounded-full mt-2">
                   {p.sub}
                 </span>
@@ -281,11 +314,11 @@ export default function PreisePage() {
 
               <div className="px-6 py-5 border-t border-slate-100 dark:border-slate-700 flex-1">
                 <ul className="space-y-1.5">
-                  {p.features.map((f) => {
+                  {p.features.map((f, i) => {
                     const isLink = typeof f === "object";
                     const label = isLink ? f.label : f;
                     return (
-                      <li key={label} className="text-[12.5px] text-slate-700 dark:text-slate-300 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold before:text-xs">
+                      <li key={`${p.name}-${i}`} className="text-[12.5px] text-slate-700 dark:text-slate-300 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold before:text-xs">
                         {isLink ? (
                           <a href={f.href} className="underline underline-offset-2 decoration-teal-600/40 hover:decoration-teal-600 hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
                             {label}
@@ -300,7 +333,7 @@ export default function PreisePage() {
               </div>
 
               <div className="px-6 pb-4 pt-2">
-                <div className="text-[11px] text-slate-400 text-center">Lieferzeit: {p.lieferzeit}</div>
+                <div className="text-xs text-slate-400 text-center">Lieferzeit: {p.lieferzeit}</div>
               </div>
 
               <div className="px-6 pb-6 pt-2">
@@ -409,7 +442,7 @@ export default function PreisePage() {
               </div>
               <div className="text-right shrink-0">
                 <span className="font-mono text-xl font-bold text-slate-900 dark:text-white">{b.price} €</span>
-                <span className="block text-[10px] text-slate-400 tracking-wide">{b.unit}</span>
+                <span className="block text-xs text-slate-400 tracking-wide">{b.unit}</span>
               </div>
             </div>
           ))}
@@ -440,7 +473,7 @@ export default function PreisePage() {
                 </div>
                 <div className="text-right shrink-0">
                   <span className="font-mono text-lg font-bold text-slate-900 dark:text-white">{a.price}</span>
-                  <span className="block text-[10px] text-slate-400 tracking-wide">{a.unit}</span>
+                  <span className="block text-xs text-slate-400 tracking-wide">{a.unit}</span>
                 </div>
               </Wrapper>
             );
@@ -472,7 +505,7 @@ export default function PreisePage() {
           </p>
           <a
             href={kontaktLink}
-            className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-9 py-3.5 rounded-lg text-[15px] font-semibold hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+            className="btn-brand inline-block px-9 py-3.5 rounded-lg text-[15px] font-semibold"
           >
             Unverbindlich anfragen
           </a>
@@ -480,7 +513,7 @@ export default function PreisePage() {
       </div>
 
       {/* ── Footer-Hinweis ── */}
-      <div className="text-center py-8 text-[11px] text-slate-400">
+      <div className="text-center py-8 text-xs text-slate-400">
         Stand: April 2026. Preisanpassungen vorbehalten — laufende Vereinbarungen bleiben unberührt.
       </div>
     </main>

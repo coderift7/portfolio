@@ -46,6 +46,15 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Startseite", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Website-Check" },
+  ],
+};
+
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -113,6 +122,12 @@ export default function WebsiteCheck() {
     <>
       <main id="main">
         {/* JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -5,7 +5,6 @@ export const siteUrl = "https://hoeger.dev";
 
 export const siteConfig = {
   name: "Michael Höger",
-  url: siteUrl,
   role: "Webdesign & Digitale Lösungen",
   email: "michael@hoeger.dev",
   phone: "+49 162 9255254",
