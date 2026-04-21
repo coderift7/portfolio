@@ -34,7 +34,7 @@ export default function WhatsAppButton() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`${basePath}/images/michael-hero.webp`}
-        alt=""
+        alt="Portrait von Michael Höger"
         className="h-10 w-10 rounded-full border-2 border-white/30 object-cover object-top"
       />
     </a>
