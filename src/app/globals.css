@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Dark-Mode class-basiert — respektiert den ThemeToggle, nicht das OS */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   /* CI — Primary: Teal */
   --primary: #0D9488;
