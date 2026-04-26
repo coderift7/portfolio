@@ -9,6 +9,7 @@ export const siteConfig = {
   email: "michael@hoeger.dev",
   phone: "+49 162 9255254",
   location: "Deutschland",
+  briefingUrl: "https://briefing.hoeger.dev",
   facebook: "https://www.facebook.com/profile.php?id=61575586966779",
   instagram: "https://www.instagram.com/hoeger_dev/",
 
@@ -24,7 +25,7 @@ export const siteConfig = {
     subheadline:
       "Die Frage ist nur: Finden sie Sie — oder Ihre Konkurrenz? Ich baue Webseiten, die bei Google und sogar bei ChatGPT gefunden werden — als Webdesign im Abo, ohne Überraschungen. Damit Anfragen kommen, ohne dass Sie etwas dafür tun müssen.",
     cta: "Kostenlos beraten lassen",
-    ctaSecondary: "Beispiele ansehen",
+    ctaSecondary: "Briefing starten",
   },
 
   uspBanner: {

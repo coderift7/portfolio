@@ -10,7 +10,7 @@ export default function About() {
   const { about } = siteConfig;
 
   return (
-    <section id="ueber-mich" className="bg-card py-24 lg:py-32">
+    <section id="ueber-mich" className="overflow-hidden bg-card py-24 lg:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <div className="grid items-center gap-14 lg:grid-cols-2">
           {/* Text */}

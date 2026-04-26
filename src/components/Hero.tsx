@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowRight, ArrowDown, ClipboardList } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
@@ -53,9 +53,12 @@ export default function Hero() {
                 <ArrowRight className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5" />
               </a>
               <a
-                href="#projekte"
+                href={siteConfig.briefingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl glass shadow-depth glow-hover px-7 py-3.5 text-sm font-semibold text-foreground transition-all duration-150 hover:bg-muted"
               >
+                <ClipboardList className="h-4 w-4 text-primary" />
                 {hero.ctaSecondary}
               </a>
             </div>

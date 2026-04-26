@@ -142,7 +142,7 @@ export default function Datenschutz() {
           <div>
             <h2 className="text-lg font-semibold text-foreground">6. Google Fonts (lokal eingebunden)</h2>
             <p className="mt-2">
-              Diese Webseite nutzt die Schriftarten „Inter" und „JetBrains Mono" von Google Fonts. Die Schriften werden <strong className="text-foreground">lokal über den Hosting-Server ausgeliefert</strong> und nicht von Google-Servern nachgeladen. Es findet daher <strong className="text-foreground">keine Datenübertragung an Google</strong> statt.
+              Diese Webseite nutzt die Schriftarten „Inter“ und „JetBrains Mono“ von Google Fonts. Die Schriften werden <strong className="text-foreground">lokal über den Hosting-Server ausgeliefert</strong> und nicht von Google-Servern nachgeladen. Es findet daher <strong className="text-foreground">keine Datenübertragung an Google</strong> statt.
             </p>
           </div>
 
@@ -181,7 +181,7 @@ export default function Datenschutz() {
             </p>
 
             <p className="mt-2 text-sm">
-              <strong className="text-foreground">Widerruf:</strong> Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie im Footer auf „Cookie-Einstellungen" klicken und die Einwilligung zurücksetzen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt unberührt.
+              <strong className="text-foreground">Widerruf:</strong> Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie im Footer auf „Cookie-Einstellungen“ klicken und die Einwilligung zurücksetzen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt unberührt.
             </p>
 
             <p className="mt-2 text-sm">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle2, Mail, MapPin, Phone } from "lucide-react";
+import { Send, CheckCircle2, Mail, MapPin, Phone, ClipboardList } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
@@ -52,7 +52,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="kontakt" className="bg-background py-24 lg:py-32">
+    <section id="kontakt" className="overflow-hidden bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <div className="grid items-start gap-14 lg:grid-cols-2">
           {/* Left */}
@@ -110,6 +110,24 @@ export default function Contact() {
               </div>
 
               <CalBookingButton />
+
+              <div className="mt-4 rounded-2xl border border-border bg-card/70 p-5 shadow-depth">
+                <p className="mb-3 text-sm font-medium text-foreground">
+                  Lieber vorbereitet starten?
+                </p>
+                <a
+                  href={siteConfig.briefingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-primary/30 bg-background px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-150 hover:border-primary hover:bg-primary/[0.06]"
+                >
+                  <ClipboardList className="h-4 w-4 text-primary" />
+                  Briefing starten
+                </a>
+                <p className="mt-2 text-center text-xs text-muted-foreground">
+                  Projektinfos einmal sauber erfassen
+                </p>
+              </div>
             </div>
           </Reveal>
 

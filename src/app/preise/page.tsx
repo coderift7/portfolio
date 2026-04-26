@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { siteUrl } from "@/config/site";
+import { siteConfig, siteUrl } from "@/config/site";
 
 const kontaktLink = "/#kontakt";
+const briefingLink = siteConfig.briefingUrl;
 
 export const metadata: Metadata = {
   title: "Leistungen & Preise — Website + Betreuung kombinieren | Michael Höger",
@@ -336,7 +337,7 @@ export default function PreisePage() {
                 <div className="text-xs text-slate-400 text-center">Lieferzeit: {p.lieferzeit}</div>
               </div>
 
-              <div className="px-6 pb-6 pt-2">
+              <div className="space-y-2 px-6 pb-6 pt-2">
                 <a
                   href={kontaktLink}
                   className={`block w-full py-3 text-center rounded-lg text-sm font-semibold transition-all duration-200 ${
@@ -346,6 +347,14 @@ export default function PreisePage() {
                   }`}
                 >
                   Jetzt anfragen
+                </a>
+                <a
+                  href={briefingLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full rounded-lg border border-teal-600/30 px-4 py-3 text-center text-sm font-semibold text-teal-700 transition-all duration-200 hover:border-teal-600 hover:bg-teal-50 dark:text-teal-300 dark:hover:bg-teal-900/20"
+                >
+                  Direkt Briefing ausfüllen
                 </a>
               </div>
             </div>
@@ -503,12 +512,22 @@ export default function PreisePage() {
             In einem kurzen Gespräch finden wir heraus, welches Paket und welche Betreuungsstufe
             am besten zu Ihnen passt — kostenlos und unverbindlich.
           </p>
-          <a
-            href={kontaktLink}
-            className="btn-brand inline-block px-9 py-3.5 rounded-lg text-[15px] font-semibold"
-          >
-            Unverbindlich anfragen
-          </a>
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={kontaktLink}
+              className="btn-brand inline-block w-full px-9 py-3.5 rounded-lg text-[15px] font-semibold sm:w-auto"
+            >
+              Unverbindlich anfragen
+            </a>
+            <a
+              href={briefingLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block w-full rounded-lg border border-white/20 px-9 py-3.5 text-[15px] font-semibold text-white transition-all duration-200 hover:border-cyan-400/70 hover:bg-white/10 sm:w-auto"
+            >
+              Direkt Briefing ausfüllen
+            </a>
+          </div>
         </div>
       </div>
 

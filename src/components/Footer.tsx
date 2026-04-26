@@ -39,7 +39,15 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        <div className="flex gap-6 text-sm text-muted-foreground">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
+          <a
+            href={siteConfig.briefingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-primary"
+          >
+            Briefing
+          </a>
           <Link href="/website-check/" className="transition-colors hover:text-primary">
             Website-Check
           </Link>
