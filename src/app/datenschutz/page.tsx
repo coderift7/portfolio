@@ -72,6 +72,7 @@ export default function Datenschutz() {
             <p className="mt-3 font-medium text-foreground">Empfänger / Kategorien von Empfängern:</p>
             <ul className="mt-1 list-disc space-y-1 pl-5 text-sm">
               <li><strong className="text-foreground">GitHub Inc.</strong> — als Hosting-Anbieter (Auftragsverarbeiter, siehe Abschnitt 4)</li>
+              <li><strong className="text-foreground">Tally Forms BV</strong> — als Anbieter des Briefing-Formulars (Auftragsverarbeiter, siehe Abschnitt 11)</li>
             </ul>
           </div>
 
@@ -236,9 +237,52 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 11. Beschwerderecht */}
+          {/* 11. Briefing-Formular (Tally) */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">11. Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)</h2>
+            <h2 className="text-lg font-semibold text-foreground">11. Briefing-Formular (Tally)</h2>
+            <p className="mt-2">
+              Auf dieser Webseite wird unter <a href="https://briefing.hoeger.dev" target="_blank" rel="noopener noreferrer">briefing.hoeger.dev</a> ein Online-Briefing-Formular bereitgestellt. Das Formular wird über den Dienst <strong className="text-foreground">Tally</strong> der Tally Forms BV, Antwerpen, Belgien, ausgeliefert. Tally fungiert als <strong className="text-foreground">Auftragsverarbeiter</strong> gemäß Art. 28 DSGVO; ein entsprechender Auftragsverarbeitungsvertrag (AVV) wurde abgeschlossen.
+            </p>
+
+            <p className="mt-3 font-medium text-foreground">Verarbeitete Daten:</p>
+            <ul className="mt-1 list-disc space-y-1 pl-5 text-sm">
+              <li><strong className="text-foreground">Kontaktdaten</strong> (Name, Firma, E-Mail-Adresse, optional Telefon, optional Website-URL)</li>
+              <li><strong className="text-foreground">Projektangaben</strong> (Branche, Angebotsbeschreibung, Ziele der Webseite, Zielgruppe, gewünschter Stil, Budget, Zeitrahmen, sonstige Anmerkungen)</li>
+              <li><strong className="text-foreground">Optionale Datei-Uploads</strong> (z.&thinsp;B. Logo)</li>
+              <li><strong className="text-foreground">Technische Daten</strong> (IP-Adresse, Browsertyp, Zeitstempel) zur Spam-Abwehr und Funktionsfähigkeit des Formulars</li>
+            </ul>
+
+            <p className="mt-3 font-medium text-foreground">Zweck:</p>
+            <p className="mt-1 text-sm">
+              Erfassung von Projektinformationen zur Anbahnung und Vorbereitung einer geschäftlichen Zusammenarbeit (vorvertragliche Maßnahme).
+            </p>
+
+            <p className="mt-3 font-medium text-foreground">Rechtsgrundlage:</p>
+            <ul className="mt-1 list-disc space-y-2 pl-5 text-sm">
+              <li><strong className="text-foreground">Art. 6 Abs. 1 S. 1 lit. b DSGVO</strong> — Durchführung vorvertraglicher Maßnahmen auf Anfrage der betroffenen Person.</li>
+              <li><strong className="text-foreground">Art. 6 Abs. 1 S. 1 lit. a DSGVO</strong> — Einwilligung in die Verarbeitung der Briefing-Angaben über die Datenschutz-Checkbox am Ende des Formulars.</li>
+              <li><strong className="text-foreground">Art. 6 Abs. 1 S. 1 lit. f DSGVO</strong> — Berechtigtes Interesse an einem funktionsfähigen, sicheren Briefing-Prozess (technische Daten zur Spam-Abwehr).</li>
+            </ul>
+
+            <p className="mt-3 font-medium text-foreground">Hosting und Datenstandort:</p>
+            <p className="mt-1 text-sm">
+              Tally Forms BV hat ihren Sitz in Belgien (EU). Die Verarbeitung der Formulardaten erfolgt nach Angaben des Anbieters auf Servern innerhalb der EU. Sollten im Rahmen des Betriebs einzelne Sub-Auftragsverarbeiter eingesetzt werden, sind diese vertraglich zur Einhaltung der DSGVO verpflichtet. Weitere Informationen: <a href="https://tally.so/help/privacy-policy" target="_blank" rel="noopener noreferrer">Tally Privacy Policy</a>.
+            </p>
+
+            <p className="mt-3 font-medium text-foreground">Speicherdauer:</p>
+            <p className="mt-1 text-sm">
+              Die im Briefing-Formular eingegebenen Daten werden nach abschließender Bearbeitung Ihrer Anfrage bzw. nach Beendigung des hieraus entstehenden Vertragsverhältnisses gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen (z.&thinsp;B. steuerrechtliche Aufbewahrungspflichten von 6 bzw. 10 Jahren gemäß § 147 AO, § 257 HGB). Datei-Uploads werden nach Projektabschluss gelöscht oder in den Projektordner überführt und dort nach den gleichen Fristen behandelt.
+            </p>
+
+            <p className="mt-3 font-medium text-foreground">Widerruf:</p>
+            <p className="mt-1 text-sm">
+              Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie eine formlose E-Mail an <a href="mailto:michael@hoeger.dev">michael@hoeger.dev</a> senden. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt unberührt.
+            </p>
+          </div>
+
+          {/* 12. Beschwerderecht */}
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">12. Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)</h2>
             <p className="mt-2">
               Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt, haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren — insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.
             </p>
@@ -252,9 +296,9 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 12. Aktualität */}
+          {/* 13. Aktualität */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">12. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
+            <h2 className="text-lg font-semibold text-foreground">13. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
             <p className="mt-2 text-sm">
               Diese Datenschutzerklärung ist aktuell gültig und hat den Stand April 2026. Durch die Weiterentwicklung der Webseite oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen. Die jeweils aktuelle Fassung kann jederzeit auf dieser Seite abgerufen werden.
             </p>
