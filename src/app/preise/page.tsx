@@ -33,6 +33,7 @@ const pakete = [
     name: "Paket 1",
     title: "Sichtbar werden",
     claim: "Kunden finden Sie online — nicht die Konkurrenz.",
+    fit: "Passt, wenn Sie eine seriöse Visitenkarte im Netz brauchen — solide, gefunden werden, Vertrauen ausstrahlen.",
     price: "990",
     sub: "oder ab 0 € mit Betreuung",
     features: [
@@ -52,6 +53,7 @@ const pakete = [
     name: "Paket 2",
     title: "Anfragen auf Autopilot",
     claim: "Besucher werden zu Anfragen — automatisch.",
+    fit: "Passt, wenn aus Besuchern aktiv Kunden werden sollen — durchdachtes Design, klare Botschaft, messbare Leads.",
     price: "1.990",
     sub: "oder ab 0 € mit Betreuung",
     features: [
@@ -75,6 +77,7 @@ const pakete = [
     name: "Paket 3",
     title: "Ihr digitaler Mitarbeiter",
     claim: "24/7 für Sie da — für weniger als ein Minijobber.",
+    fit: "Passt, wenn Anfragen, Termine und Standard-Fragen automatisch laufen sollen — Sie sparen Zeit, Kunden bekommen sofort Antworten.",
     price: "3.490",
     sub: "oder ab 990 € mit Betreuung",
     features: [
@@ -275,6 +278,66 @@ export default function PreisePage() {
 
       <div className="max-w-[960px] mx-auto px-6 py-14">
 
+        {/* ── Passt das zu Ihnen? ── */}
+        <section className="mb-16" aria-labelledby="fit-heading">
+          <h2 id="fit-heading" className="text-center text-2xl font-bold tracking-tight mb-2">
+            Passt das zu Ihnen?
+          </h2>
+          <p className="text-center text-sm text-slate-500 dark:text-slate-400 mb-8 max-w-[560px] mx-auto">
+            Damit Sie nicht erst im Gespräch merken, ob wir zusammenpassen — hier offen, für wen meine Pakete gemacht sind.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            {/* Spalte 1: Sie sind */}
+            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+              <div className="text-[11px] font-bold text-teal-600 uppercase tracking-wider mb-3">Sie sind …</div>
+              <ul className="space-y-2 text-[13px] text-slate-700 dark:text-slate-300">
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                  Kleinunternehmen oder Selbständig (1–20 Mitarbeitende)
+                </li>
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                  Etabliert und lokal/regional in DACH aktiv
+                </li>
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                  z.&nbsp;B. Arztpraxis, Therapeut, Handwerker, Landwirt, Coach, Berater oder vergleichbarer lokaler Dienstleister
+                </li>
+              </ul>
+            </div>
+
+            {/* Spalte 2: Sie wollen */}
+            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+              <div className="text-[11px] font-bold text-teal-600 uppercase tracking-wider mb-3">Sie wollen …</div>
+              <ul className="space-y-2 text-[13px] text-slate-700 dark:text-slate-300">
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                  Eine Website <strong>einmal richtig</strong> gemacht — und dann nicht mehr drüber nachdenken
+                </li>
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                  Pflege und Betrieb an einen festen Ansprechpartner abgeben
+                </li>
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                  Qualität und persönliche Beziehung statt billigster Lösung
+                </li>
+              </ul>
+            </div>
+
+            {/* Spalte 3: So läuft's */}
+            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+              <div className="text-[11px] font-bold text-teal-600 uppercase tracking-wider mb-3">So läuft die Zusammenarbeit</div>
+              <ul className="space-y-2 text-[13px] text-slate-700 dark:text-slate-300">
+                <li>
+                  <strong className="text-slate-900 dark:text-white">Sie liefern:</strong> Inhalte (Texte, Logo, Bilder) und Feedback in den Korrekturschleifen.
+                </li>
+                <li>
+                  <strong className="text-slate-900 dark:text-white">Ich liefere:</strong> Konzept, Design, Umsetzung, Hosting &amp; laufende Betreuung.
+                </li>
+                <li className="text-slate-500 dark:text-slate-400 text-[12px] pt-1 border-t border-slate-100 dark:border-slate-700">
+                  Keine eigenen Texte oder Fotos? Kein Problem — <a href="/texterstellung/" className="text-teal-700 dark:text-teal-400 underline underline-offset-2">Texterstellung</a> als Add-on, Fotografie über Kooperationspartner.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         {/* ── Website-Pakete ── */}
         <h2 className="text-center text-2xl font-bold tracking-tight mb-2">Drei Pakete. Ein Ziel: Ihr Erfolg.</h2>
         <p className="text-center text-sm text-slate-500 dark:text-slate-400 mb-10">
@@ -300,7 +363,10 @@ export default function PreisePage() {
               <div className="pt-7 pb-5 px-6 text-center">
                 <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">{p.name}</div>
                 <div className="text-xl font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">{p.title}</div>
-                <div className="text-xs text-slate-500 italic">{p.claim}</div>
+                <div className="text-xs text-slate-500 italic mb-2.5">{p.claim}</div>
+                <div className="text-[12px] text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-2.5 px-1">
+                  {p.fit}
+                </div>
               </div>
 
               <div className="px-6 pb-5 text-center">
@@ -504,6 +570,42 @@ export default function PreisePage() {
             </div>
           ))}
         </div>
+
+        {/* ── Off-Ramp: Nicht das Richtige? ── */}
+        <section className="mb-16" aria-labelledby="offramp-heading">
+          <h2 id="offramp-heading" className="text-2xl font-bold tracking-tight mb-2">
+            Nicht das Richtige?
+          </h2>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+            Lieber jetzt offen sagen als im Erstgespräch: Drei Fälle, in denen Sie woanders besser aufgehoben sind.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5">
+              <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Online-Shop / E-Commerce</div>
+              <p className="text-[13px] text-slate-600 dark:text-slate-300 leading-relaxed">
+                Mache ich nicht — das ist eine eigene Welt mit eigenen Anforderungen.
+                Auf Wunsch vermittle ich an einen vertrauensvollen Partner.
+              </p>
+            </div>
+
+            <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5">
+              <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Notfall in 5 Tagen</div>
+              <p className="text-[13px] text-slate-600 dark:text-slate-300 leading-relaxed">
+                Eine Website, die wirken soll, braucht 2–5 Wochen.
+                Wenn’s extrem eilt, bin ich nicht der richtige Partner — Qualität würde leiden.
+              </p>
+            </div>
+
+            <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-5">
+              <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Budget unter 500&nbsp;€</div>
+              <p className="text-[13px] text-slate-600 dark:text-slate-300 leading-relaxed">
+                Daran arbeite ich gerade — ein schlankes Einsteiger-Paket mit Vorlage und schnellem Selbst-Service.
+                Schreiben Sie mir, ich melde mich beim Launch.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* ── CTA ── */}
         <div className="text-center py-14 px-6 bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl">
