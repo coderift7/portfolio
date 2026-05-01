@@ -6,29 +6,31 @@ import { X } from "lucide-react";
 
 const STORAGE_KEY = "announcement-dismissed";
 
-export default function AnnouncementBanner() {
-  const [visible, setVisible] = useState(true);
-  const pathname = usePathname();
+function isBannerExcluded(pathname: string) {
+  return (
+    pathname === "/gruendungsangebot" ||
+    pathname === "/gruendungsangebot/" ||
+    pathname === "/ki-sichtbarkeit-q" ||
+    pathname === "/ki-sichtbarkeit-q/" ||
+    /^\/(agb|impressum|datenschutz)(\/.*)?$/.test(pathname)
+  );
+}
 
-  useEffect(() => {
-    if (pathname === "/gruendungsangebot" || pathname === "/gruendungsangebot/") {
-      setVisible(false);
-      return;
-    }
-    // Legal pages: no marketing banner
-    if (/^\/(agb|impressum|datenschutz)(\/.*)?$/.test(pathname)) {
-      setVisible(false);
-      return;
-    }
-    const dismissed = localStorage.getItem(STORAGE_KEY);
-    setVisible(!dismissed);
-  }, [pathname]);
+function getStoredDismissal() {
+  if (typeof window === "undefined") return false;
+  return localStorage.getItem(STORAGE_KEY) === "1";
+}
+
+export default function AnnouncementBanner() {
+  const [dismissed, setDismissed] = useState(getStoredDismissal);
+  const pathname = usePathname();
+  const visible = !isBannerExcluded(pathname) && !dismissed;
 
   if (!visible) return null;
 
   const dismiss = () => {
-    setVisible(false);
     localStorage.setItem(STORAGE_KEY, "1");
+    setDismissed(true);
   };
 
   return (
@@ -54,29 +56,16 @@ export default function AnnouncementBanner() {
 }
 
 export function useAnnouncementVisible() {
-  const [visible, setVisible] = useState(true);
+  const [dismissed, setDismissed] = useState(getStoredDismissal);
   const pathname = usePathname();
 
   useEffect(() => {
-    const isExcludedPage =
-      pathname === "/gruendungsangebot" ||
-      pathname === "/gruendungsangebot/" ||
-      /^\/(agb|impressum|datenschutz)(\/.*)?$/.test(pathname);
-
-    if (isExcludedPage) {
-      setVisible(false);
-      return;
-    }
-    const dismissed = localStorage.getItem(STORAGE_KEY);
-    setVisible(!dismissed);
-
     const check = () => {
-      const d = localStorage.getItem(STORAGE_KEY);
-      setVisible(!d);
+      setDismissed(getStoredDismissal());
     };
     window.addEventListener("storage", check);
     return () => window.removeEventListener("storage", check);
-  }, [pathname]);
+  }, []);
 
-  return visible;
+  return !isBannerExcluded(pathname) && !dismissed;
 }
