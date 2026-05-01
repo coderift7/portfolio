@@ -16,14 +16,14 @@ export const siteConfig = {
   meta: {
     title: "Michael Höger – Webseiten, die Ihnen Kunden bringen",
     description:
-      "Webseiten für kleine Unternehmen, die bei Google und KI-Assistenten wie ChatGPT gefunden werden. Kostenlose Erstberatung.",
+      "Webseiten für Arztpraxen, Therapeuten, Handwerker, Landwirte, Coaches und Berater — gefunden bei Google und ChatGPT. Kostenlose Erstberatung.",
   },
 
   hero: {
     greeting: "Hallo, ich bin Michael",
     headline: "Ihre nächsten Kunden\nsuchen Sie gerade.",
     subheadline:
-      "Die Frage ist nur: Finden sie Sie — oder Ihre Konkurrenz? Ich baue Webseiten, die bei Google und sogar bei ChatGPT gefunden werden — als Webdesign im Abo, ohne Überraschungen. Damit Anfragen kommen, ohne dass Sie etwas dafür tun müssen.",
+      "Die Frage ist nur: Finden sie Sie — oder Ihre Konkurrenz? Ich baue Webseiten für Arztpraxen, Handwerker, Landwirte, Coaches und Berater, die bei Google und sogar bei ChatGPT gefunden werden — als Webdesign im Abo, ohne Überraschungen. Damit Anfragen kommen, ohne dass Sie etwas dafür tun müssen.",
     cta: "Kostenlos beraten lassen",
     ctaSecondary: "Briefing starten",
   },
@@ -95,7 +95,7 @@ export const siteConfig = {
 
   about: {
     headline: "Kein Agentur-Sprech.\nKeine Warteschleife.",
-    text: "Ich bin Michael — Ihr persönlicher Ansprechpartner für alles Digitale. Wenn Sie eine Frage haben, schreiben Sie mir. Wenn etwas geändert werden soll, erledige ich das. Keine Tickets, keine Abteilungen, kein Warten. Und das Beste: Ich sorge dafür, dass Ihre Webseite nicht nur bei Google gefunden wird, sondern auch von KI-Assistenten wie ChatGPT empfohlen wird. Das bieten die wenigsten — und genau das ist Ihr Vorsprung.",
+    text: "Ich bin Michael — Ihr persönlicher Ansprechpartner für alles Digitale. Meine Kunden sind Arztpraxen und Therapeuten, Handwerksbetriebe, Landwirte, Coaches und Berater — Menschen, die für ihr Handwerk brennen, aber keine Lust auf Technik haben. Wenn Sie eine Frage haben, schreiben Sie mir. Wenn etwas geändert werden soll, erledige ich das. Keine Tickets, keine Abteilungen, kein Warten. Und das Beste: Ich sorge dafür, dass Ihre Webseite nicht nur bei Google gefunden wird, sondern auch von KI-Assistenten wie ChatGPT empfohlen wird. Das bieten die wenigsten — und genau das ist Ihr Vorsprung.",
     stats: [
       { value: "14", label: "Tage bis Ihre Seite online ist" },
       { value: "100%", label: "Festpreis — keine versteckten Kosten" },
