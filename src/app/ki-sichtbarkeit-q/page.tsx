@@ -173,7 +173,7 @@ export default function KiSichtbarkeitQPage() {
 
             <div className="mt-8 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
               {[
-                ["490 EUR", "Launchpreis für die ersten 5 Checks"],
+                ["490 €", "Launchpreis für die ersten 5 Checks"],
                 ["3 Werktage", "Report nach Zahlung und Website-Link"],
                 ["30 Min.", "Auswertung direkt mit Michael"],
               ].map(([value, label]) => (
@@ -257,7 +257,7 @@ export default function KiSichtbarkeitQPage() {
               Angebot
             </span>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-              490 EUR für eine Entscheidung, die Sie sonst monatelang vertagen.
+              490 € für eine Entscheidung, die Sie sonst monatelang vertagen.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
               Der Check ist kein Beratungsabo. Er beantwortet eine einfache Frage:
@@ -270,7 +270,7 @@ export default function KiSichtbarkeitQPage() {
               <div className="rounded-2xl bg-primary/10 p-4">
                 <Euro className="h-5 w-5 text-primary" aria-hidden="true" />
                 <div className="mt-4 text-2xl font-extrabold text-foreground">
-                  490 EUR
+                  490 €
                 </div>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Launchpreis
@@ -378,7 +378,7 @@ export default function KiSichtbarkeitQPage() {
               href={mailHref}
               className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-teal-400 px-5 py-3 text-sm font-extrabold text-slate-950 transition duration-200 hover:-translate-y-0.5 hover:bg-teal-300"
             >
-              Check für 490 EUR anfragen
+              Check für 490 € anfragen
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
             <a
