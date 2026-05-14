@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import CookieBanner from "@/components/CookieBanner";
 import MetaPixel from "@/components/MetaPixel";
 import Analytics from "@/components/Analytics";
+import ScrollTrackerLoader from "@/components/ScrollTrackerLoader";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -102,6 +103,7 @@ export default function RootLayout({
         <CookieBanner />
         <MetaPixel />
         <Analytics />
+        <ScrollTrackerLoader />
       </body>
     </html>
   );
