@@ -1,7 +1,11 @@
 {
   "ci": {
     "collect": {
-      "url": ["https://hoeger.dev/"],
+      "url": [
+        "https://hoeger.dev/",
+        "https://hoeger.dev/preise/",
+        "https://hoeger.dev/website-check/"
+      ],
       "numberOfRuns": 3,
       "settings": {
         "emulatedFormFactor": "mobile"

@@ -13,4 +13,4 @@ Die Lighthouse-CI-Schwellen sind bewusst Floor-Werte: Sie schuetzen vor Regressi
 
 - Desktop basiert auf dem Live-Audit vom 14.05.2026: Performance 0.73, Accessibility 0.96, Best Practices 1.00, SEO 1.00, LCP 5.2s, CLS 0.
 - Mobile wurde am 14.05.2026 mit drei Lighthouse-Runs auf `https://hoeger.dev/` gemessen: Performance 0.78, Accessibility 0.96, Best Practices 1.00, SEO 1.00, LCP 5.2-5.3s, CLS 0.
-- Die CI prueft die konfigurierten LHCI-URLs fuer Desktop und Mobile.
+- Die CI prueft `https://hoeger.dev/`, `https://hoeger.dev/preise/` und `https://hoeger.dev/website-check/` fuer Desktop und Mobile.
