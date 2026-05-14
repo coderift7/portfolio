@@ -43,28 +43,28 @@ jobs:
       - name: Lighthouse audit
         run: |
           npm install -g @lhci/cli
-          mkdir -p lighthouse-reports
-          lhci collect \
-            --url=https://hoeger.dev/ \
-            --numberOfRuns=3 \
-            --settings.preset=desktop
-          lhci collect \
-            --url=https://hoeger.dev/ \
-            --numberOfRuns=3 \
-            --settings.preset=perf \
-            --settings.emulatedFormFactor=mobile
-          cp -r .lighthouseci/*.html lighthouse-reports/ 2>/dev/null || true
-          cp -r .lighthouseci/*.json lighthouse-reports/ 2>/dev/null || true
+          rm -rf .lighthouseci .lighthouseci-desktop .lighthouseci-mobile lighthouse-reports
+          mkdir -p .lighthouseci-desktop .lighthouseci-mobile lighthouse-reports/desktop lighthouse-reports/mobile
+
+          lhci collect --config=./lighthouserc.json
+          cp -r .lighthouseci/. .lighthouseci-desktop/
+          cp -r .lighthouseci/. lighthouse-reports/desktop/
+
+          rm -rf .lighthouseci
+          lhci collect --config=./lighthouserc.mobile.json
+          cp -r .lighthouseci/. .lighthouseci-mobile/
+          cp -r .lighthouseci/. lighthouse-reports/mobile/
 
       - name: Lighthouse budget assertions
         if: always()
         run: |
-          lhci assert \
-            --preset=lighthouse:recommended \
-            --assert.performance=0.85 \
-            --assert.accessibility=0.9 \
-            --assert.best-practices=0.9 \
-            --assert.seo=0.9 || true
+          rm -rf .lighthouseci
+          cp -r .lighthouseci-desktop .lighthouseci
+          lhci assert --config=./lighthouserc.json
+
+          rm -rf .lighthouseci
+          cp -r .lighthouseci-mobile .lighthouseci
+          lhci assert --config=./lighthouserc.mobile.json
 
       - name: Upload Lighthouse reports
         if: always()
