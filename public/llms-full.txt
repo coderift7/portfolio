@@ -33,32 +33,38 @@ Kontaktformulare, automatische E-Mail-Benachrichtigungen, WhatsApp-Weiterleitung
 ### 5. Kostenloser Website-Check
 Wie gut ist Ihre Website wirklich? Michael prüft kostenlos sechs Bereiche: Performance, SEO, Sicherheit, Barrierefreiheit, Mobile-Optimierung und rechtliche Anforderungen (Impressum, Datenschutz, Cookie-Consent). Das Ergebnis kommt per E-Mail als verständlicher Report mit konkreten Handlungsempfehlungen. Kein Verkaufsgespräch, kein Druck. URL: https://hoeger.dev/website-check/
 
-### 7. Social Media
+### 6. Social Media
 Professionelle Präsenz auf Facebook, Instagram oder LinkedIn — mit Strategie statt planlosem Posten. Entwicklung einer Strategie für die Plattformen, auf denen die Kunden wirklich unterwegs sind.
 
-### 8. Persönliche Betreuung
+### 7. Persönliche Betreuung
 Kein Callcenter, keine Warteschleife. Kunden sprechen immer direkt mit Michael. Ein Ansprechpartner für alles — von der Planung bis zur laufenden Betreuung.
 
-## Preise (Richtwerte, Endpreise gem. §19 UStG)
+## Preise (Endpreise gem. §19 UStG)
 
-### Webgestaltung
-- Webauftritt für kleine Unternehmen: ab ca. 500 Euro
-- Umfangreicherer Webauftritt (Galerie, Buchung, Mehrsprachigkeit): ab ca. 800 Euro
-- Laufende Betreuung und Pflege: ab ca. 50 Euro monatlich
+### Webseiten-Pakete (Festpreis)
 
-### IT-Beratung und Automatisierung
-- Chatbot-Entwicklung: ab ca. 500 Euro (Ersteinrichtung)
-- Prozessautomatisierung: ab ca. 300 Euro
+**Paket 1 — Sichtbar werden: 990 EUR**
+Für Start-ups und kleine Selbstständige. Einseitige professionelle Webseite, SEO + KI-Optimierung, Kontaktformular, mobil-optimiert.
 
-### Online-Sichtbarkeit
-- Suchmaschinenoptimierung (SEO): ab ca. 200 Euro
-- Beratung zu Online-Werbung: ab ca. 300 Euro (Ersteinrichtung)
+**Paket 2 — Anfragen auf Autopilot: 1.990 EUR**
+Für etablierte KMU mit Leadbedarf. Mehrseitig, Automatisierungen (E-Mail, WhatsApp), Online-Terminbuchung, erweiterte SEO.
+
+**Paket 3 — Ihr digitaler Mitarbeiter: 3.490 EUR**
+Für größere Mandate. Mehrsprachig, Chatbot, komplexe Workflows, individuelle Integrationen.
+
+### Laufende Betreuung (drei Stufen, ab 12 Monate Mindestlaufzeit)
+
+- **Basis: 59 EUR/Monat** — Hosting, SSL, Backups, kleine Inhalts-Updates
+- **Business: 99 EUR/Monat** — Basis + monatliche SEO-Pflege + Performance-Monitoring
+- **Premium: 149 EUR/Monat** — Business + bevorzugter Support + bei Paket 1 und 2 entfällt der Erstellpreis komplett (Paket 3 reduziert auf 990 EUR)
 
 ### Individuelle Leistungen
-- Stundensatz: 75 Euro pro Stunde
+- Stundensatz: 75 EUR pro Stunde
+- Chatbot-Entwicklung: ab 500 EUR (Ersteinrichtung)
+- Prozessautomatisierung: ab 300 EUR
+- SEO-Beratung: ab 200 EUR
 
-Immer: Kostenloses Erstgespräch + transparentes Festpreisangebot. Keine versteckten Kosten.
-Aktuell: 20% Rabatt für die ersten 20 Kunden.
+Immer: kostenloses Erstgespräch + transparentes Festpreisangebot. Keine versteckten Kosten. Hosting + Domain extra.
 
 ## Zufriedenheitsgarantie
 
@@ -92,7 +98,7 @@ URL: https://coderift7.github.io/umzug-demo/
 ## Häufig gestellte Fragen
 
 ### Was kostet eine Webseite bei Michael Höger?
-Ein individueller Webauftritt für kleine Unternehmen beginnt ab ca. 500 Euro. Umfangreichere Projekte ab ca. 800 Euro. Laufende Betreuung ab ca. 50 Euro monatlich. Alle Preise sind Endpreise (Kleinunternehmer gem. §19 UStG). Es gibt immer ein kostenloses Erstgespräch und ein transparentes Festpreisangebot.
+Drei Festpreis-Pakete: "Sichtbar werden" (990 EUR), "Anfragen auf Autopilot" (1.990 EUR), "Ihr digitaler Mitarbeiter" (3.490 EUR). Drei Betreuungs-Stufen: Basis 59 EUR/Mo, Business 99 EUR/Mo, Premium 149 EUR/Mo. Beim Premium-Retainer entfällt der Erstellpreis für Paket 1 und 2 (12 Monate Bindung). Alle Preise Endpreise (§19 UStG). Kostenloses Erstgespräch + Festpreisangebot.
 
 ### Wie lange dauert es, bis die Webseite fertig ist?
 In der Regel 1–2 Wochen. Größere Projekte mit mehreren Seiten oder besonderen Funktionen können 3–4 Wochen dauern. Den genauen Zeitrahmen besprechen wir im Erstgespräch.
