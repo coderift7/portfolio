@@ -40,7 +40,7 @@ export default function AnnouncementBanner() {
         className="flex items-center gap-2 hover:underline underline-offset-2"
       >
         <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
-        <span className="hidden sm:inline">Gründungsangebot: Website zum halben Preis — noch 4 von 5 Plätzen im April</span>
+        <span className="hidden sm:inline">Gründungsangebot: Website zum halben Preis — noch 4 von 5 Plätzen bis 30.06.</span>
         <span className="sm:hidden">Website zum halben Preis — noch 4 Plätze</span>
         <span className="font-bold">→ Mehr erfahren</span>
       </a>
