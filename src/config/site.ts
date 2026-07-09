@@ -127,7 +127,6 @@ export const siteConfig = {
         { label: "Website-Check", href: "/website-check/" },
         { label: "Texterstellung", href: "/texterstellung/" },
         { label: "Farbpsychologie", href: "/farbpsychologie/" },
-        { label: "Gründungsangebot", href: "/gruendungsangebot/" },
       ],
     },
     { label: "Projekte", href: "/#projekte" },
