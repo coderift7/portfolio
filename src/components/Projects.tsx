@@ -1,12 +1,17 @@
 "use client";
 
+import type { ComponentType } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Reveal, StaggerContainer, StaggerItem } from "./Motion";
-import { SchaeferhofMockup, MoverProMockup } from "./BrowserMockup";
+import { BodyProcessMockup, SchaeferhofMockup } from "./BrowserMockup";
 
-const mockups = [SchaeferhofMockup, MoverProMockup];
+// Mockup per project title, so reordering content/projects.json cannot mismatch images
+const mockups: Record<string, ComponentType> = {
+  "Body Process": BodyProcessMockup,
+  "Auf'm Schäferhof": SchaeferhofMockup,
+};
 
 export default function Projects() {
   return (
@@ -21,15 +26,15 @@ export default function Projects() {
               Projekte, die Ergebnisse liefern
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Echte Kundenprojekte und Demos — individuell auf die jeweilige
-              Branche zugeschnitten.
+              Echte Kundenprojekte — individuell auf die jeweilige Branche
+              zugeschnitten.
             </p>
           </div>
         </Reveal>
 
         <StaggerContainer className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-2" staggerDelay={0.12}>
-          {siteConfig.projects.map((project, i) => {
-            const Mockup = mockups[i];
+          {siteConfig.projects.map((project) => {
+            const Mockup = mockups[project.title];
             const hasUrl = project.url && project.url.length > 0;
             const Wrapper = hasUrl ? "a" : "div";
             const wrapperProps = hasUrl
@@ -37,7 +42,7 @@ export default function Projects() {
               : {};
 
             return (
-              <StaggerItem key={i}>
+              <StaggerItem key={project.title}>
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.2 }}

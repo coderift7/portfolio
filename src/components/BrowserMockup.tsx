@@ -62,6 +62,17 @@ function DeviceMockup({
   );
 }
 
+export function BodyProcessMockup() {
+  return (
+    <DeviceMockup
+      desktopSrc="/images/body-process-desktop.webp"
+      mobileSrc="/images/body-process-mobile.webp"
+      desktopAlt="Body Process — Desktop-Ansicht"
+      mobileAlt="Body Process — Mobile-Ansicht"
+    />
+  );
+}
+
 export function SchaeferhofMockup() {
   return (
     <DeviceMockup
@@ -69,17 +80,6 @@ export function SchaeferhofMockup() {
       mobileSrc="/images/schaeferhof-mobile.webp"
       desktopAlt="Auf'm Schäferhof — Desktop-Ansicht"
       mobileAlt="Auf'm Schäferhof — Mobile-Ansicht"
-    />
-  );
-}
-
-export function MoverProMockup() {
-  return (
-    <DeviceMockup
-      desktopSrc="/images/moverpro-desktop.webp"
-      mobileSrc="/images/moverpro-mobile.webp"
-      desktopAlt="MoverPro Umzüge — Desktop-Ansicht"
-      mobileAlt="MoverPro Umzüge — Mobile-Ansicht"
     />
   );
 }

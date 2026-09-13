@@ -87,13 +87,13 @@ Michael Höger erstellt Webseiten für alle, die eine professionelle Online-Prä
 
 ## Referenzen
 
+### Body Process (Live-Projekt)
+Website für Fitness- und Ernährungscoaching mit klar strukturierten Leistungen, Modulen und Preisen – mobil optimiert und mit direkter Kontaktmöglichkeit.
+URL: https://body-process.de/
+
 ### Auf'm Schäferhof (Live-Projekt)
 Website für eine Guteschaf-Hobbyzucht im Oldenburger Münsterland. Von Null auf bei Google sichtbar — mit Kontaktformular, das Anfragen direkt aufs Handy schickt.
 URL: https://aufmschaeferhof.de
-
-### MoverPro Umzüge (Demo)
-Beispiel-Website für ein Umzugsunternehmen: Bei Google auf Seite 1 — und sogar von ChatGPT empfohlen.
-URL: https://coderift7.github.io/umzug-demo/
 
 ## Häufig gestellte Fragen
 

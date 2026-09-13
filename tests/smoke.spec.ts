@@ -14,8 +14,8 @@ const sections = ['leistungen', 'projekte', 'ueber-mich', 'kontakt'];
 // All images expected on homepage with their src patterns
 const expectedImages = [
   { pattern: /michael-hero\.webp/, description: 'Hero portrait' },
+  { pattern: /body-process-desktop\.webp/, description: 'Body Process mockup' },
   { pattern: /schaeferhof-desktop\.webp/, description: 'Schäferhof mockup' },
-  { pattern: /moverpro-desktop\.webp/, description: 'MoverPro mockup' },
   { pattern: /michael-working\.webp/, description: 'About photo' },
   { pattern: /michael-casual\.webp/, description: 'Contact photo' },
 ];
@@ -139,6 +139,52 @@ test('all images become visible on scroll (mobile)', async ({ page, browserName 
     });
     expect(isHidden, `Image ${i} should not be hidden`).toBe(false);
   }
+});
+
+// ── Projects section ─────────────────────────────────────────
+
+const bodyProcessUrl = 'https://body-process.de/';
+
+test('projects section lists Body Process first, then Schäferhof, without demo cards', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  const section = page.locator('#projekte');
+  await section.scrollIntoViewIfNeeded();
+  await expect(section.locator('h3')).toHaveText(['Body Process', "Auf'm Schäferhof"]);
+  await expect(section).not.toContainText('MoverPro');
+  await expect(section.locator('span', { hasText: /^Demo$/ })).toHaveCount(0);
+  await expect(section.locator('span', { hasText: /^Live$/ })).toHaveCount(2);
+});
+
+test('Body Process card links to the live site in a new tab', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  const links = page.locator(`#projekte a[href="${bodyProcessUrl}"]`);
+  const count = await links.count();
+  expect(count).toBeGreaterThan(0);
+  for (let i = 0; i < count; i++) {
+    await expect(links.nth(i)).toHaveAttribute('target', '_blank');
+    await expect(links.nth(i)).toHaveAttribute('rel', /noopener/);
+  }
+  await expect(links.filter({ hasText: 'Live ansehen' })).toHaveCount(1);
+});
+
+test('Body Process mockup images have descriptive alt texts', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  await expect(page.locator('#projekte img[alt="Body Process — Desktop-Ansicht"]')).toHaveCount(1);
+  await expect(page.locator('#projekte img[alt="Body Process — Mobile-Ansicht"]')).toHaveCount(1);
+});
+
+test('Body Process link is keyboard reachable with a visible focus ring', async ({ page, browserName }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  const mockupLink = page.locator(`#projekte a[href="${bodyProcessUrl}"]`).first();
+  const textLink = page.locator(`#projekte a[href="${bodyProcessUrl}"]`, { hasText: 'Live ansehen' });
+  await mockupLink.scrollIntoViewIfNeeded();
+  await mockupLink.focus();
+  // Real keyboard navigation triggers :focus-visible styling.
+  // WebKit only tabs through links with Option (Alt) held, like Safari's default.
+  await page.keyboard.press(browserName === 'webkit' ? 'Alt+Tab' : 'Tab');
+  await expect(textLink).toBeFocused();
+  const boxShadow = await textLink.evaluate((el) => getComputedStyle(el).boxShadow);
+  expect(boxShadow).not.toBe('none');
 });
 
 // ── Contact form ─────────────────────────────────────────────
@@ -266,10 +312,10 @@ test('homepage loads within 5 seconds', async ({ page }) => {
 test('all image URLs return 200', async ({ page }) => {
   const imagePaths = [
     '/images/michael-hero.webp',
+    '/images/body-process-desktop.webp',
+    '/images/body-process-mobile.webp',
     '/images/schaeferhof-desktop.webp',
     '/images/schaeferhof-mobile.webp',
-    '/images/moverpro-desktop.webp',
-    '/images/moverpro-mobile.webp',
     '/images/michael-working.webp',
     '/images/michael-casual.webp',
     '/images/og-image.png',
