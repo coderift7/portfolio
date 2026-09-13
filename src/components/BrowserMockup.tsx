@@ -62,24 +62,14 @@ function DeviceMockup({
   );
 }
 
-export function BodyProcessMockup() {
+/** Device mockup for a portfolio project; expects /images/<image>-desktop.webp and -mobile.webp */
+export function ProjectMockup({ image, title }: { image: string; title: string }) {
   return (
     <DeviceMockup
-      desktopSrc="/images/body-process-desktop.webp"
-      mobileSrc="/images/body-process-mobile.webp"
-      desktopAlt="Body Process — Desktop-Ansicht"
-      mobileAlt="Body Process — Mobile-Ansicht"
-    />
-  );
-}
-
-export function SchaeferhofMockup() {
-  return (
-    <DeviceMockup
-      desktopSrc="/images/schaeferhof-desktop.webp"
-      mobileSrc="/images/schaeferhof-mobile.webp"
-      desktopAlt="Auf'm Schäferhof — Desktop-Ansicht"
-      mobileAlt="Auf'm Schäferhof — Mobile-Ansicht"
+      desktopSrc={`/images/${image}-desktop.webp`}
+      mobileSrc={`/images/${image}-mobile.webp`}
+      desktopAlt={`${title} — Desktop-Ansicht`}
+      mobileAlt={`${title} — Mobile-Ansicht`}
     />
   );
 }

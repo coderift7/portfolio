@@ -45,6 +45,7 @@ collections:
             widget: list
             fields:
               - { label: "Titel", name: title, widget: string }
+              - { label: "Bild-Slug", name: image, widget: string, required: false, hint: "Dateiname ohne Endung — erwartet /images/<slug>-desktop.webp und /images/<slug>-mobile.webp; leer = kein Mockup" }
               - { label: "Kategorie", name: category, widget: string, hint: "z.B. Kundenprojekt · Webseite + SEO" }
               - { label: "Beschreibung", name: description, widget: text }
               - { label: "Tags", name: tags, widget: list, allow_add: true }

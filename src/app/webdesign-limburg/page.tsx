@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight, MapPin, Clock, Shield, Star, CheckCircle2, Phone, Mail } from "lucide-react";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { SchaeferhofMockup } from "@/components/BrowserMockup";
+import { ProjectMockup } from "@/components/BrowserMockup";
 import { siteConfig, siteUrl } from "@/config/site";
 
 
@@ -261,7 +261,7 @@ export default function WebdesignLimburg() {
                 </a>
               </div>
               <div>
-                <SchaeferhofMockup />
+                <ProjectMockup image="schaeferhof" title="Auf'm Schäferhof" />
               </div>
             </div>
           </div>

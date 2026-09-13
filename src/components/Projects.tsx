@@ -1,19 +1,15 @@
 "use client";
 
-import type { ComponentType } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Reveal, StaggerContainer, StaggerItem } from "./Motion";
-import { BodyProcessMockup, SchaeferhofMockup } from "./BrowserMockup";
-
-// Mockup per project title, so reordering content/projects.json cannot mismatch images
-const mockups: Record<string, ComponentType> = {
-  "Body Process": BodyProcessMockup,
-  "Auf'm Schäferhof": SchaeferhofMockup,
-};
+import { ProjectMockup } from "./BrowserMockup";
 
 export default function Projects() {
+  // Intro copy follows the data: only mention demos when a demo card is actually shown
+  const hasDemo = siteConfig.projects.some((project) => !project.isReal);
+
   return (
     <section id="projekte" className="bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
@@ -26,15 +22,15 @@ export default function Projects() {
               Projekte, die Ergebnisse liefern
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Echte Kundenprojekte — individuell auf die jeweilige Branche
-              zugeschnitten.
+              {`Echte Kundenprojekte${hasDemo ? " und Demos" : ""} — individuell auf die jeweilige Branche zugeschnitten.`}
             </p>
           </div>
         </Reveal>
 
         <StaggerContainer className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-2" staggerDelay={0.12}>
           {siteConfig.projects.map((project) => {
-            const Mockup = mockups[project.title];
+            // Image slug comes from content/projects.json (CMS field "Bild-Slug")
+            const hasImage = Boolean(project.image);
             const hasUrl = project.url && project.url.length > 0;
             const Wrapper = hasUrl ? "a" : "div";
             const wrapperProps = hasUrl
@@ -48,10 +44,12 @@ export default function Projects() {
                   transition={{ duration: 0.2 }}
                   className="group flex h-full flex-col overflow-hidden rounded-2xl glass shadow-depth glow-hover border-white/20 dark:border-white/5 transition-all duration-300"
                 >
-                  {/* Browser Mockup */}
-                  <Wrapper {...wrapperProps} className={hasUrl ? "block p-4 pb-0" : "p-4 pb-0"}>
-                    {Mockup && <Mockup />}
-                  </Wrapper>
+                  {/* Browser Mockup — skipped entirely without an image, so no empty link is rendered */}
+                  {hasImage && (
+                    <Wrapper {...wrapperProps} className={hasUrl ? "block p-4 pb-0" : "p-4 pb-0"}>
+                      <ProjectMockup image={project.image} title={project.title} />
+                    </Wrapper>
+                  )}
 
                   <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-center gap-2">

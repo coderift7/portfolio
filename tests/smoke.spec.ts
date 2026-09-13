@@ -153,6 +153,24 @@ test('projects section lists Body Process first, then Schäferhof, without demo 
   await expect(section).not.toContainText('MoverPro');
   await expect(section.locator('span', { hasText: /^Demo$/ })).toHaveCount(0);
   await expect(section.locator('span', { hasText: /^Live$/ })).toHaveCount(2);
+  // Intro copy is data-driven: no demo card → no "und Demos"
+  await expect(section).toContainText('Echte Kundenprojekte —');
+  await expect(section).not.toContainText('und Demos');
+});
+
+test('every project card link has an accessible name (text or image alt)', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  const links = page.locator('#projekte a');
+  const count = await links.count();
+  expect(count).toBeGreaterThan(0);
+  for (let i = 0; i < count; i++) {
+    const name = await links.nth(i).evaluate((el) => {
+      const text = (el.textContent || '').trim();
+      const alts = Array.from(el.querySelectorAll('img')).map((img) => img.getAttribute('alt') || '').join(' ').trim();
+      return text || alts;
+    });
+    expect(name, `link ${i} in #projekte needs text or an image alt`).not.toBe('');
+  }
 });
 
 test('Body Process card links to the live site in a new tab', async ({ page }) => {

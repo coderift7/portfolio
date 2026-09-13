@@ -2,6 +2,7 @@
   "items": [
     {
       "title": "Body Process",
+      "image": "body-process",
       "category": "Kundenprojekt · Webseite + SEO",
       "description": "Website für Fitness- und Ernährungscoaching mit klar strukturierten Leistungen, Modulen und Preisen – mobil optimiert und mit direkter Kontaktmöglichkeit.",
       "tags": ["Webseite", "Google SEO", "Kontaktformular", "Mobil optimiert"],
@@ -11,6 +12,7 @@
     },
     {
       "title": "Auf'm Schäferhof",
+      "image": "schaeferhof",
       "category": "Kundenprojekt · Webseite + SEO",
       "description": "Eine Webseite für eine Guteschaf-Hobbyzucht im Oldenburger Münsterland. Von Null auf bei Google sichtbar — mit Kontaktformular, das Anfragen direkt aufs Handy schickt.",
       "tags": ["Webseite", "Google SEO", "Kontaktformular"],
