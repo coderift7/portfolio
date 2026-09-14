@@ -15,14 +15,18 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-inter",
-  display: "swap",
+  // "optional": a font that misses the first paint is never swapped in, so a
+  // late-arriving font cannot reflow the page (CLS). With "swap", clients without
+  // a local Arial (Ubuntu CI runners, Android) get no metric-adjusted fallback
+  // from next/font and the swap shifted /preise/ by CLS 0.25 (CI, 2026-09-13).
+  display: "optional",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-jetbrains",
-  display: "swap",
+  display: "optional", // same reasoning as Inter above
 });
 
 

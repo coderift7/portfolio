@@ -27,20 +27,10 @@ jobs:
           NEXT_PUBLIC_META_PIXEL_ID: ${{ secrets.NEXT_PUBLIC_META_PIXEL_ID }}
       - run: npm test
 
-      - name: Deploy to VPS
-        env:
-          SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_KEY" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H 65.108.211.21 >> ~/.ssh/known_hosts 2>/dev/null
-          rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key" \
-            out/ michael@65.108.211.21:/var/www/hoeger.dev/
-          rm ~/.ssh/deploy_key
-
+      # Lighthouse runs against the local production build in out/ (see
+      # staticDistDir in lighthouserc*.json), so budgets gate the deploy.
       - name: Lighthouse audit
+        id: lighthouse-audit
         run: |
           npm install -g @lhci/cli
           rm -rf .lighthouseci .lighthouseci-desktop .lighthouseci-mobile lighthouse-reports
@@ -55,13 +45,20 @@ jobs:
           cp -r .lighthouseci/. .lighthouseci-mobile/
           cp -r .lighthouseci/. lighthouse-reports/mobile/
 
-      - name: Lighthouse budget assertions
-        if: always()
+      # Desktop and mobile are asserted in separate steps so that a failing
+      # desktop budget cannot skip the mobile assertions (the step shell runs
+      # with `bash -e`). Both steps run when the audit step succeeded, even if
+      # the other assertion step failed; any failing step still fails the job.
+      - name: Lighthouse budget assertions (desktop)
+        if: ${{ !cancelled() && steps.lighthouse-audit.outcome == 'success' }}
         run: |
           rm -rf .lighthouseci
           cp -r .lighthouseci-desktop .lighthouseci
           lhci assert --config=./lighthouserc.json
 
+      - name: Lighthouse budget assertions (mobile)
+        if: ${{ !cancelled() && steps.lighthouse-audit.outcome == 'success' }}
+        run: |
           rm -rf .lighthouseci
           cp -r .lighthouseci-mobile .lighthouseci
           lhci assert --config=./lighthouserc.mobile.json
@@ -73,3 +70,19 @@ jobs:
           name: lighthouse-reports-${{ github.sha }}
           path: lighthouse-reports/
           retention-days: 90
+
+      # Last step on purpose: runs only when every previous step (build,
+      # Playwright, Lighthouse collect, both assertions, report upload) succeeded.
+      - name: Deploy to VPS
+        if: ${{ success() }}
+        env:
+          SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H 65.108.211.21 >> ~/.ssh/known_hosts 2>/dev/null
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key" \
+            out/ michael@65.108.211.21:/var/www/hoeger.dev/
+          rm ~/.ssh/deploy_key
