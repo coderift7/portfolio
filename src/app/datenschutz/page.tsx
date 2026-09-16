@@ -40,7 +40,7 @@ export default function Datenschutz() {
       <div className="legal-container px-5 pt-28 pb-24">
         <Link href="/" className="legal-back">← Zurück zur Startseite</Link>
         <h1>Datenschutzerklärung</h1>
-        <p className="legal-meta">Stand: April 2026</p>
+        <p className="legal-meta">Stand: September 2026</p>
         <div className="mt-6 space-y-8">
 
           {/* 1. Verantwortlicher */}
@@ -72,7 +72,8 @@ export default function Datenschutz() {
             <p className="mt-3 font-medium text-foreground">Empfänger / Kategorien von Empfängern:</p>
             <ul className="mt-1 list-disc space-y-1 pl-5 text-sm">
               <li><strong className="text-foreground">GitHub Inc.</strong> — als Hosting-Anbieter (Auftragsverarbeiter, siehe Abschnitt 4)</li>
-              <li><strong className="text-foreground">Tally Forms BV</strong> — als Anbieter des Briefing-Formulars (Auftragsverarbeiter, siehe Abschnitt 11)</li>
+              <li><strong className="text-foreground">Expert Systems AG (ProvenExpert)</strong> — erst nach Ihrer aktiven Zustimmung zum Laden des Bewertungssiegels (siehe Abschnitt 9)</li>
+              <li><strong className="text-foreground">Tally Forms BV</strong> — als Anbieter des Briefing-Formulars (Auftragsverarbeiter, siehe Abschnitt 12)</li>
             </ul>
           </div>
 
@@ -193,9 +194,32 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 9. Betroffenenrechte */}
+          {/* 9. ProvenExpert */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">9. Ihre Rechte als betroffene Person</h2>
+            <h2 className="text-lg font-semibold text-foreground">9. ProvenExpert-Bewertungssiegel (erst nach Zustimmung)</h2>
+            <p className="mt-2">
+              Auf der Startseite kann ein Bewertungssiegel des Dienstes <strong className="text-foreground">ProvenExpert</strong> der Expert Systems AG, Quedlinburger Straße 1, 10589 Berlin, geladen werden. Beim bloßen Seitenaufruf wird noch keine Verbindung zu ProvenExpert aufgebaut. Zunächst sehen Sie nur einen lokal erzeugten Hinweis und einen normalen Link zum öffentlichen Bewertungsprofil.
+            </p>
+            <p className="mt-2 text-sm">
+              Erst wenn Sie auf „ProvenExpert-Siegel laden“ klicken, wird das externe Skript von <code className="text-xs">s.provenexpert.net</code> geladen und eine Verbindung zu ProvenExpert hergestellt. Dabei können insbesondere IP-Adresse, Browserinformationen, die aufgerufene Seite und der Zeitpunkt des Abrufs an ProvenExpert übertragen werden. Das Skript ruft die aktuellen Siegeldaten von <code className="text-xs">d.provenexpert.net</code> ab und kann sie für die laufende Browser-Sitzung im Session Storage zwischenspeichern.
+            </p>
+            <p className="mt-2 text-sm">
+              <strong className="text-foreground">Zweck:</strong> Anzeige der aktuellen Kundenbewertung und Nachweis ihrer Herkunft.
+            </p>
+            <p className="mt-2 text-sm">
+              <strong className="text-foreground">Rechtsgrundlage:</strong> Ihre Einwilligung durch den aktiven Klick auf die Ladeschaltfläche (Art. 6 Abs. 1 S. 1 lit. a DSGVO). Ohne diesen Klick bleibt das externe Skript deaktiviert; das öffentliche Profil ist weiterhin über den normalen Link erreichbar.
+            </p>
+            <p className="mt-2 text-sm">
+              <strong className="text-foreground">Möglicher Drittlandtransfer:</strong> ProvenExpert weist darauf hin, dass Daten auch in Länder außerhalb der EU oder des EWR übermittelt werden können. Nach Angaben von ProvenExpert soll in diesem Fall durch entsprechende Vereinbarungen ein der DSGVO entsprechendes Mindestdatenschutzniveau sichergestellt werden.
+            </p>
+            <p className="mt-2 text-sm">
+              Weitere Informationen: <a href="https://www.provenexpert.com/de-de/datenschutzbestimmungen/" target="_blank" rel="noopener noreferrer">Datenschutzbestimmungen von ProvenExpert</a>.
+            </p>
+          </div>
+
+          {/* 10. Betroffenenrechte */}
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">10. Ihre Rechte als betroffene Person</h2>
             <p className="mt-2">Ihnen stehen nach der DSGVO folgende Rechte zu:</p>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
               <li><strong className="text-foreground">Auskunftsrecht</strong> (Art. 15 DSGVO) — Sie können Auskunft über Ihre verarbeiteten personenbezogenen Daten verlangen.</li>
@@ -211,9 +235,9 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 10. Website-Check / Website-Analyse */}
+          {/* 11. Website-Check / Website-Analyse */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">10. Website-Check (Website-Analyse)</h2>
+            <h2 className="text-lg font-semibold text-foreground">11. Website-Check (Website-Analyse)</h2>
             <p className="mt-2">
               Wir bieten einen kostenlosen Website-Check an, bei dem Ihre Webseite automatisiert auf Performance, SEO, Sicherheit und Barrierefreiheit geprüft wird. Ein PDF-Report wird erstellt und Ihnen per E-Mail zugesendet.
             </p>
@@ -237,9 +261,9 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 11. Briefing-Formular (Tally) */}
+          {/* 12. Briefing-Formular (Tally) */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">11. Briefing-Formular (Tally)</h2>
+            <h2 className="text-lg font-semibold text-foreground">12. Briefing-Formular (Tally)</h2>
             <p className="mt-2">
               Auf dieser Webseite wird unter <a href="https://briefing.hoeger.dev" target="_blank" rel="noopener noreferrer">briefing.hoeger.dev</a> ein Online-Briefing-Formular bereitgestellt. Das Formular wird über den Dienst <strong className="text-foreground">Tally</strong> der Tally Forms BV, Antwerpen, Belgien, ausgeliefert. Tally fungiert als <strong className="text-foreground">Auftragsverarbeiter</strong> gemäß Art. 28 DSGVO; ein entsprechender Auftragsverarbeitungsvertrag (AVV) wurde abgeschlossen.
             </p>
@@ -280,9 +304,9 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 12. Beschwerderecht */}
+          {/* 13. Beschwerderecht */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">12. Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)</h2>
+            <h2 className="text-lg font-semibold text-foreground">13. Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)</h2>
             <p className="mt-2">
               Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt, haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren — insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.
             </p>
@@ -296,11 +320,11 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 13. Aktualität */}
+          {/* 14. Aktualität */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">13. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
+            <h2 className="text-lg font-semibold text-foreground">14. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
             <p className="mt-2 text-sm">
-              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand April 2026. Durch die Weiterentwicklung der Webseite oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen. Die jeweils aktuelle Fassung kann jederzeit auf dieser Seite abgerufen werden.
+              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand September 2026. Durch die Weiterentwicklung der Webseite oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen. Die jeweils aktuelle Fassung kann jederzeit auf dieser Seite abgerufen werden.
             </p>
           </div>
 

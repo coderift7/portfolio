@@ -6,6 +6,7 @@ import { siteConfig, siteUrl } from "@/config/site";
 
 const Process = dynamic(() => import("@/components/Process"));
 const Projects = dynamic(() => import("@/components/Projects"));
+const ProvenExpertSeal = dynamic(() => import("@/components/ProvenExpertSeal"));
 const WebsiteCheckTeaser = dynamic(() => import("@/components/WebsiteCheckTeaser"));
 const About = dynamic(() => import("@/components/About"));
 const Guarantee = dynamic(() => import("@/components/Guarantee"));
@@ -31,7 +32,12 @@ export default function Home() {
             email: siteConfig.email,
             telephone: siteConfig.phone,
             image: `${siteUrl}/images/michael-hero.webp`,
-            sameAs: ["https://hoeger.dev", siteConfig.facebook, siteConfig.instagram],
+            sameAs: [
+              "https://hoeger.dev",
+              siteConfig.facebook,
+              siteConfig.instagram,
+              "https://www.provenexpert.com/de-de/michael-hoeger-it-beratung-webdesign/",
+            ],
             knowsAbout: [
               "Webdesign",
               "Webentwicklung",
@@ -127,6 +133,7 @@ export default function Home() {
         <Services />
         <Process />
         <Projects />
+        <ProvenExpertSeal />
         <WebsiteCheckTeaser />
         <About />
         <Guarantee />
