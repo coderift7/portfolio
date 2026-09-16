@@ -2,11 +2,11 @@ import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import UspBanner from "@/components/UspBanner";
 import Services from "@/components/Services";
+import ProvenExpertSeal from "@/components/ProvenExpertSeal";
 import { siteConfig, siteUrl } from "@/config/site";
 
 const Process = dynamic(() => import("@/components/Process"));
 const Projects = dynamic(() => import("@/components/Projects"));
-const ProvenExpertSeal = dynamic(() => import("@/components/ProvenExpertSeal"));
 const WebsiteCheckTeaser = dynamic(() => import("@/components/WebsiteCheckTeaser"));
 const About = dynamic(() => import("@/components/About"));
 const Guarantee = dynamic(() => import("@/components/Guarantee"));
