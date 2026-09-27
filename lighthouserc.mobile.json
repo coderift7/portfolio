@@ -5,7 +5,8 @@
       "url": [
         "http://localhost/",
         "http://localhost/preise/",
-        "http://localhost/website-check/"
+        "http://localhost/website-check/",
+        "http://localhost/fuer-fitness/"
       ],
       "numberOfRuns": 3,
       "settings": {
