@@ -44,6 +44,23 @@ test.describe('/website-check', () => {
     await expect(page.locator('h3:has-text("SEO")').first()).toBeVisible();
     await expect(page.locator('h3:has-text("Sichere Verbindung")').first()).toBeVisible();
   });
+
+  // The check does not test legal pages, security headers or full WCAG/BFSG
+  // conformance, so neither the page nor the home teaser may promise it.
+  for (const path of ['/website-check', '/']) {
+    test(`does not promise unchecked areas on ${path}`, async ({ page }) => {
+      await page.goto(path);
+      const labels = path === '/'
+        ? page.locator('section', { hasText: 'Wie gut ist Ihre Website wirklich?' }).locator('span')
+        : page.locator('h3');
+      const texts = (await labels.allTextContents()).map((t) => t.trim());
+      for (const forbidden of ['Recht', 'Sicherheit', 'Barrierefreiheit']) {
+        expect(texts).not.toContain(forbidden);
+      }
+      await expect(page.locator('body')).not.toContainText('DSGVO-konform — Ihre Daten sind sicher');
+      await expect(page.locator('body')).not.toContainText('Impressum, Datenschutz, Cookie-Consent');
+    });
+  }
 });
 
 // ── /website-check/danke confirmation page ──────────────────

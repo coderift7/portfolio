@@ -1,12 +1,12 @@
-import { ArrowRight, Gauge, Search, ShieldCheck, Accessibility, Smartphone, Scale } from "lucide-react";
+import { ArrowRight, Gauge, Search, ShieldCheck, Accessibility, Smartphone, Link2 } from "lucide-react";
 
 const categories = [
   { icon: Gauge, label: "Performance" },
   { icon: Search, label: "SEO" },
-  { icon: ShieldCheck, label: "Sicherheit" },
-  { icon: Accessibility, label: "Barrierefreiheit" },
+  { icon: ShieldCheck, label: "Sichere Verbindung" },
+  { icon: Accessibility, label: "Nutzbarkeit" },
   { icon: Smartphone, label: "Mobile" },
-  { icon: Scale, label: "Recht" },
+  { icon: Link2, label: "Links und Bilder" },
 ];
 
 export default function WebsiteCheckTeaser() {
@@ -27,7 +27,7 @@ export default function WebsiteCheckTeaser() {
           Wie gut ist Ihre Website wirklich?
         </h2>
         <p className="mt-4 mx-auto max-w-2xl text-lg text-slate-300">
-          Kostenloser Check in 6 Bereichen — Ergebnis per E-Mail in wenigen Minuten.
+          Kostenloser technischer Check in 6 Bereichen — Ergebnis per E-Mail in wenigen Minuten.
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4 sm:gap-6">

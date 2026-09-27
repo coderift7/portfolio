@@ -80,7 +80,7 @@ const checkCategories = [
   {
     icon: Gauge,
     title: "Performance",
-    text: "Ladezeit, Core Web Vitals und Geschwindigkeitsoptimierung — langsame Seiten verlieren Besucher.",
+    text: "Ladezeit und Lighthouse-Messwerte wie LCP und CLS im Labortest — langsame Seiten verlieren Besucher.",
   },
   {
     icon: Search,
@@ -100,7 +100,7 @@ const checkCategories = [
   {
     icon: Smartphone,
     title: "Mobile",
-    text: "Responsive Design und Touch-Optimierung — über 60% Ihrer Besucher kommen vom Handy.",
+    text: "Messung in Smartphone-Simulation und Prüfung des Viewport-Tags — so erleben die meisten Besucher Ihre Seite.",
   },
   {
     icon: Link2,
