@@ -120,7 +120,7 @@ const schritte = [
 const faqs = [
   {
     q: "Kann ich die Texte auch ohne Website bei Ihnen buchen?",
-    a: "Ja. Ich schreibe Texte auch für bestehende Websites. Sie bekommen die fertigen Texte als Dokument und können sie selbst einpflegen — oder ich übernehme das für 75 €/Stunde.",
+    a: "Ja. Ich schreibe Texte auch für bestehende Websites. Sie bekommen die fertigen Texte als Dokument und können sie selbst einpflegen — oder ich übernehme das für 99 €/Stunde.",
   },
   {
     q: "Woher wissen Sie, was meine Kunden anspricht?",

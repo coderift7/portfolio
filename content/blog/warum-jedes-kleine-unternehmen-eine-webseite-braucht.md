@@ -17,9 +17,9 @@ tags: ["Webdesign", "Kleine Unternehmen"]
 
 Viele denken bei "Webseite" an fünfstellige Beträge. Die Realität ist bodenständiger — und Sie haben die Wahl, wie Sie zahlen.
 
-**Der einfachste Weg: Webseite + laufende Betreuung.** Sie bekommen die Erstellung besonders günstig, teils sogar kostenlos. Dafür übernehme ich dauerhaft Hosting, Sicherheit, Aktualisierungen und kleine Änderungen. Die Betreuung kostet zwischen 20 und 149 Euro pro Monat — je nachdem, wie viel Sie abgeben möchten.
+**Webseite + laufende Betreuung.** Sie bekommen eine feste Website zum klaren Endpreis und können Hosting, Sicherheit, Aktualisierungen und Änderungen dauerhaft abgeben. Bei zwölf Monaten Betreuung reduziert sich der einmalige Website-Preis je nach Stufe. Die Betreuung kostet zwischen 49 und 399 Euro pro Monat — je nachdem, wie viel Sie abgeben möchten.
 
-**Der klassische Weg: einmalig zahlen, selbst weitermachen.** Je nach Umfang liegt die Erstellung zwischen 990 und 3.490 Euro. Für Hosting und Domain müssen Sie sich danach selbst kümmern oder jemanden damit beauftragen.
+**Der klassische Weg: einmalig zahlen, selbst weitermachen.** Je nach Umfang liegt die Erstellung zwischen 1.890 und 5.990 Euro. Für Hosting und Domain müssen Sie sich danach selbst kümmern oder jemanden damit beauftragen.
 
 Was sich für Sie lohnt, besprechen wir im Erstgespräch — kostenlos, ohne Verpflichtung.
 

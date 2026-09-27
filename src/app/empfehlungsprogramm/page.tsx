@@ -22,7 +22,7 @@ const whatsappLink = `https://wa.me/${WHATSAPP_NUMMER}?text=Hi%20Michael%2C%20ic
 export const metadata: Metadata = {
   title: "Empfehlungsprogramm — hoeger.dev | Website-Freelancer",
   description:
-    "Empfiehl mich weiter und sag mir selbst, wie du dich bedanken lassen willst: Cash, Retainer-Gutschrift oder Projekt-Gutschrift. Bis zu 400 Euro.",
+    "Empfiehl mich weiter und sag mir selbst, wie du dich bedanken lassen willst: Cash, Betreuungs-Gutschrift oder Projekt-Gutschrift. Bis zu 400 Euro.",
   alternates: { canonical: "/empfehlungsprogramm/" },
   openGraph: {
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: `${siteUrl}/empfehlungsprogramm/`,
     title: "Empfehlungsprogramm — Michael Höger",
     description:
-      "Empfiehl mich weiter — such dir dein Dankeschön selbst aus. Cash, Retainer-Gutschrift oder Projekt-Gutschrift. Bis zu 400 Euro.",
+      "Empfiehl mich weiter — such dir dein Dankeschön selbst aus. Cash, Betreuungs-Gutschrift oder Projekt-Gutschrift. Bis zu 400 Euro.",
     images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
   },
   twitter: {
@@ -70,7 +70,7 @@ const optionen = [
     headline: "Geld auf dein Konto.",
     wert: "10 % vom Erstauftrag",
     spanne: "min. 150 Euro, max. 400 Euro",
-    text: "Zehn Prozent vom Netto-Gesamtvolumen des Erstauftrags (Website-Paket plus mitgebuchte Zusatzleistungen) — direkt überwiesen, sobald die Anzahlung des Neukunden bei mir ist.",
+    text: "Zehn Prozent vom Gesamtvolumen des Erstauftrags (Website-Paket plus mitgebuchte Zusatzleistungen, jeweils Endpreis) — direkt überwiesen, sobald die Anzahlung des Neukunden bei mir ist.",
     idealFuer: "Alle, die sich einfach freuen wollen — ohne Gegenleistung, ohne Bindung.",
     featured: false,
   },
@@ -78,9 +78,9 @@ const optionen = [
     key: "retainer",
     label: "Option B",
     headline: "Zwei Monate Betreuung gratis.",
-    wert: "2 Monate Retainer geschenkt",
-    spanne: null,
-    text: "Wenn du bereits Kunde bei mir bist, schreibe ich dir zwei Monatsbeiträge deines Retainers gut — Updates, Backups, kleine Änderungen laufen einfach weiter.",
+    wert: "2 Monate Betreuung geschenkt",
+    spanne: "max. 400 Euro Gegenwert",
+    text: "Wenn du bereits Kunde bei mir bist, schreibe ich dir zwei Monatsbeiträge deiner Betreuung gut — bis zu einem Gegenwert von 400 Euro. Updates, Backups und kleine Änderungen laufen einfach weiter.",
     idealFuer: "Bestandskunden, die sowieso monatlich bezahlen und entspannt was zurückbekommen wollen.",
     featured: true,
   },
@@ -103,15 +103,15 @@ const spielregeln = [
   },
   {
     bold: "Cash-Variante: einmal pro Kalenderjahr und Empfehler.",
-    rest: "Wer mehrfach im selben Jahr erfolgreich empfiehlt, wählt ab der zweiten Empfehlung zwischen Retainer-Gutschrift oder Leistungs-Gutschrift (steuerlich-administrativer Grund).",
+    rest: "Wer mehrfach im selben Jahr erfolgreich empfiehlt, wählt ab der zweiten Empfehlung zwischen Betreuungs-Gutschrift oder Leistungs-Gutschrift (steuerlich-administrativer Grund).",
   },
   {
     bold: "Heilberufe-Regel.",
-    rest: "Ärztinnen, Ärzte, Zahnärzte, Psychotherapeut:innen und andere Angehörige der Heilberufe sind von der Cash-Variante ausgeschlossen — berufsrechtliche Vorgaben (Zuweiserpauschalen-Verbot). Retainer- und Leistungs-Gutschrift bleiben möglich, solange sie nicht an konkrete Patienten-Zuweisungen gekoppelt sind.",
+    rest: "Ärztinnen, Ärzte, Zahnärzte, Psychotherapeut:innen und andere Angehörige der Heilberufe sind von der Cash-Variante ausgeschlossen — berufsrechtliche Vorgaben (Zuweiserpauschalen-Verbot). Betreuungs- und Leistungs-Gutschrift bleiben möglich, solange sie nicht an konkrete Patienten-Zuweisungen gekoppelt sind.",
   },
   {
     bold: "Gutschriften sind 24 Monate gültig.",
-    rest: "Retainer-Gutschrift und Leistungs-Gutschrift verfallen 24 Monate nach Ausstellung. Das reicht entspannt für ein Folgeprojekt.",
+    rest: "Betreuungs-Gutschrift und Leistungs-Gutschrift verfallen 24 Monate nach Ausstellung. Das reicht entspannt für ein Folgeprojekt.",
   },
   {
     bold: "Selbst-Empfehlungen zählen nicht.",
@@ -126,12 +126,8 @@ const spielregeln = [
     rest: "Bei Rücktritt innerhalb der 14-Tage-Widerrufsfrist (B2C) bzw. bei Stornierung vor Projektstart entfällt die Zahlung — ist aber bei abgeschlossener Anzahlung der Regelfall nicht.",
   },
   {
-    bold: "Kombi mit dem Gründungsangebot: Beträge halbiert.",
-    rest: "Wenn dein Kontakt das Gründungsangebot mitnimmt, halbieren sich alle Prämien-Beträge auf beiden Seiten. Das Gründungsangebot ist selbst schon ein spürbarer Preisnachlass — eine volle Zusatzprämie wäre wirtschaftlich nicht tragbar.",
-  },
-  {
     bold: "Zusatzleistungen zählen mit — 30-Tage-Fenster.",
-    rest: "Die Provision (10 % bzw. 5 % bei Kombi) berechnet sich vom Gesamtvolumen des Erstauftrags: Website-Paket plus alle mitgebuchten Zusatzleistungen (Texterstellung, Logo-Reinzeichnung, Zusatzmodule, einmaliges Setup). Was dein Kontakt innerhalb von 30 Tagen nach Vertragsabschluss noch dazu bucht, zählt ebenfalls mit. Obergrenze 400 Euro (bzw. 200 Euro bei Kombi) bleibt. Nicht eingerechnet: laufende Betreuung (dafür gibt es Option B), Hosting (Durchlaufposten), Zukäufe nach den 30 Tagen.",
+    rest: "Die Provision von 10 % berechnet sich vom Gesamtvolumen des Erstauftrags: Website-Paket plus alle mitgebuchten Zusatzleistungen (Texterstellung, Logo-Reinzeichnung, Zusatzmodule, einmaliges Setup). Was dein Kontakt innerhalb von 30 Tagen nach Vertragsabschluss noch dazu bucht, zählt ebenfalls mit. Die Obergrenze von 400 Euro bleibt. Nicht eingerechnet: laufende Betreuung (dafür gibt es Option B), Hosting & Wartung, Zukäufe nach den 30 Tagen.",
   },
 ];
 
@@ -142,7 +138,7 @@ const faqs = [
   },
   {
     q: "Wie wird ausgezahlt?",
-    a: "Cash geht innerhalb von sieben Tagen nach Eingang der Anzahlung per Überweisung auf dein Konto. Die Retainer-Gutschrift wird mit deiner nächsten Rechnung verrechnet. Die Leistungs-Gutschrift bekommst du als PDF und ich hinterlege sie in deinem Kundenkonto.",
+    a: "Cash geht innerhalb von sieben Tagen nach Eingang der Anzahlung per Überweisung auf dein Konto. Die Betreuungs-Gutschrift wird mit deiner nächsten Rechnung verrechnet. Die Leistungs-Gutschrift bekommst du als PDF und ich hinterlege sie in deinem Kundenkonto.",
   },
   {
     q: "Was ist, wenn der Neukunde vom Projekt wieder abspringt?",
@@ -150,19 +146,19 @@ const faqs = [
   },
   {
     q: "Kann ich mehrfach empfehlen?",
-    a: "Sehr gerne, ja. Cash-Auszahlung ist auf eine pro Kalenderjahr begrenzt — ab der zweiten erfolgreichen Empfehlung im selben Jahr wählst du zwischen Retainer-Gutschrift oder Leistungs-Gutschrift. Die Höhe bleibt gleich.",
+    a: "Sehr gerne, ja. Cash-Auszahlung ist auf eine pro Kalenderjahr begrenzt — ab der zweiten erfolgreichen Empfehlung im selben Jahr wählst du zwischen Betreuungs-Gutschrift oder Leistungs-Gutschrift. Die Höhe bleibt gleich.",
   },
   {
-    q: "Kombinierbar mit dem Gründungsangebot oder anderen Rabatten?",
-    a: "Ja, grundsätzlich kombinierbar — aber: Bei Kombi mit dem Gründungsangebot halbieren sich alle Prämien-Beträge auf beiden Seiten. Option A wird zu 5 % (min. 75 Euro / max. 200 Euro), Option B zu einem Monat Betreuung gratis, Option C zu 150 Euro Gutschrift. Der Neukunden-Bonus reduziert sich auf 50 Euro Rabatt oder einen halben Monat Retainer. Grund: Das Gründungsangebot ist selbst schon ein substanzieller Preisnachlass — eine volle Zusatzprämie obendrauf wäre wirtschaftlich nicht tragbar. Dein Kontakt spart dafür am Paketpreis deutlich mehr. Mit anderen Aktionsrabatten wird nicht kombiniert — es gilt dann der jeweils günstigere Rabatt für den Neukunden.",
+    q: "Ist der Willkommensrabatt mit anderen Preisvorteilen kombinierbar?",
+    a: "Ja, mit dem Preisvorteil für die Buchung mit Betreuung: Die 100 Euro Willkommensrabatt kommen zusätzlich auf den einmaligen Website-Preis, der auf der Preisseite schon gilt. Mit zeitlich begrenzten Aktionsrabatten wird nicht kombiniert — dann gilt der jeweils günstigere Rabatt für den Neukunden. Alle Beträge sind Endpreise; als Kleinunternehmer weise ich keine Umsatzsteuer aus (§ 19 UStG).",
   },
   {
     q: "Zählen Zusatzleistungen (Texte, Logo, Module) mit?",
-    a: "Ja. Die Provision berechnet sich vom Gesamtvolumen des Erstauftrags — also Website-Paket plus alle im Erstauftrag gebuchten Zusatzleistungen (Texterstellung, Logo-Reinzeichnung, Zusatzmodule, einmaliges Setup). Auch was dein Kontakt innerhalb von 30 Tagen nach Vertragsabschluss noch dazu bucht, zählt mit. Beispiel: Paket 2 (1.990 Euro) plus Texterstellung (690 Euro) = Basis 2.680 Euro → 268 Euro Provision (bei Kombi mit Gründungsangebot: 134 Euro). Die Obergrenze 400 Euro (bzw. 200 Euro bei Kombi) bleibt bestehen. Nicht eingerechnet: laufende Betreuung (dafür gibt es Option B), Hosting (Durchlaufposten), Zukäufe nach den 30 Tagen.",
+    a: "Ja. Die Provision berechnet sich vom Gesamtvolumen des Erstauftrags — also Website-Paket plus alle im Erstauftrag gebuchten Zusatzleistungen (Texterstellung, Logo-Reinzeichnung, Zusatzmodule, einmaliges Setup). Auch was dein Kontakt innerhalb von 30 Tagen nach Vertragsabschluss noch dazu bucht, zählt mit. Beispiel: „Anfragen gewinnen“ (3.490 Euro) plus Texterstellung Business (650 Euro) = 4.140 Euro → 10 % wären 414 Euro, ausgezahlt wird die Obergrenze von 400 Euro. Nicht eingerechnet: laufende Betreuung (dafür gibt es Option B), Hosting & Wartung, Zukäufe nach den 30 Tagen.",
   },
   {
     q: "Muss ich die Auszahlung versteuern?",
-    a: "Die Cash-Auszahlung ist für Privatpersonen bis zu 256 Euro pro Jahr steuerfrei (§22 Nr. 3 EStG — „sonstige Einkünfte“, Freigrenze). Darüber hinausgehende Beträge sind in der Einkommensteuererklärung anzugeben. Retainer- und Leistungs-Gutschriften sind Rabatte und werden nicht als Einkommen gewertet. Im Zweifel: kurz mit deinem Steuerberater abstimmen — ich darf dir das rechtlich nicht verbindlich sagen.",
+    a: "Die Cash-Auszahlung ist für Privatpersonen bis zu 256 Euro pro Jahr steuerfrei (§22 Nr. 3 EStG — „sonstige Einkünfte“, Freigrenze). Darüber hinausgehende Beträge sind in der Einkommensteuererklärung anzugeben. Betreuungs- und Leistungs-Gutschriften sind Rabatte und werden nicht als Einkommen gewertet. Im Zweifel: kurz mit deinem Steuerberater abstimmen — ich darf dir das rechtlich nicht verbindlich sagen.",
   },
 ];
 
@@ -304,7 +300,7 @@ export default function EmpfehlungsprogrammPage() {
 
                 <article className="flex flex-col h-full">
                   <div className="pt-7 pb-5 px-6 text-center">
-                    <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                    <div className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">
                       <span className="sr-only">Dankeschön-Option: </span>
                       {o.label}
                     </div>
@@ -339,98 +335,6 @@ export default function EmpfehlungsprogrammPage() {
               </li>
             ))}
           </ul>
-          <p className="text-center text-xs text-slate-500 dark:text-slate-400 mt-6">
-            <a href="#kombi-h2" className="underline underline-offset-2 hover:text-teal-700 dark:hover:text-teal-300">
-              *halbiert bei Kombination mit dem Gründungsangebot
-            </a>
-          </p>
-        </section>
-
-        {/* ── Kombi mit Gründungsangebot — Info-Box ── */}
-        <section
-          aria-labelledby="kombi-h2"
-          className="rounded-2xl border-l-4 border-teal-600 bg-teal-50 dark:bg-teal-900/20 p-6 md:p-8 mb-8"
-        >
-          <h2
-            id="kombi-h2"
-            className="text-lg font-bold tracking-tight mb-3 text-slate-900 dark:text-white"
-          >
-            Kombi mit dem Gründungsangebot: Beträge halbiert.
-          </h2>
-          <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-5 max-w-[720px]">
-            Wenn dein Kontakt das aktuelle Gründungsangebot mitnimmt, halbieren sich alle
-            Prämien-Beträge auf beiden Seiten. Das Gründungsangebot ist selbst schon ein
-            spürbarer Preisnachlass — eine volle Zusatzprämie obendrauf wäre wirtschaftlich
-            nicht tragbar. Dein Kontakt spart dafür am Paketpreis deutlich mehr.
-          </p>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <caption className="sr-only">
-                Vergleich Standard-Prämien und halbierte Prämien bei Kombination mit dem
-                Gründungsangebot
-              </caption>
-              <thead>
-                <tr className="border-b border-teal-200 dark:border-teal-800">
-                  <th scope="col" className="text-left py-2 pr-3 font-semibold text-slate-700 dark:text-slate-200">
-                    &nbsp;
-                  </th>
-                  <th scope="col" className="text-left py-2 px-3 font-semibold text-slate-700 dark:text-slate-200">
-                    Standard
-                  </th>
-                  <th scope="col" className="text-left py-2 px-3 font-semibold text-slate-700 dark:text-slate-200">
-                    Mit Gründungsangebot
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-teal-100 dark:divide-teal-900/40">
-                <tr>
-                  <th scope="row" className="text-left py-2 pr-3 font-normal text-slate-600 dark:text-slate-400">
-                    Option A — Cash
-                  </th>
-                  <td className="py-2 px-3 font-mono text-slate-900 dark:text-slate-100">
-                    10 %, 150–400 €
-                  </td>
-                  <td className="py-2 px-3 font-mono text-teal-700 dark:text-teal-300">
-                    5 %, 75–200 €
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" className="text-left py-2 pr-3 font-normal text-slate-600 dark:text-slate-400">
-                    Option B — Betreuung
-                  </th>
-                  <td className="py-2 px-3 font-mono text-slate-900 dark:text-slate-100">
-                    2 Monate gratis
-                  </td>
-                  <td className="py-2 px-3 font-mono text-teal-700 dark:text-teal-300">
-                    1 Monat gratis
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" className="text-left py-2 pr-3 font-normal text-slate-600 dark:text-slate-400">
-                    Option C — Gutschrift
-                  </th>
-                  <td className="py-2 px-3 font-mono text-slate-900 dark:text-slate-100">
-                    300 €
-                  </td>
-                  <td className="py-2 px-3 font-mono text-teal-700 dark:text-teal-300">
-                    150 €
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" className="text-left py-2 pr-3 font-normal text-slate-600 dark:text-slate-400">
-                    Neukunden-Bonus
-                  </th>
-                  <td className="py-2 px-3 font-mono text-slate-900 dark:text-slate-100">
-                    100 € oder 1 Monat
-                  </td>
-                  <td className="py-2 px-3 font-mono text-teal-700 dark:text-teal-300">
-                    50 € oder ½ Monat
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </section>
 
         {/* ── Für den Neukunden auch ── */}
@@ -443,11 +347,9 @@ export default function EmpfehlungsprogrammPage() {
           </h2>
           <p className="text-white/90 text-sm leading-relaxed max-w-[620px]">
             Eine Empfehlung ist keine Einbahnstraße. Wer auf dein Zureden hin bei mir bucht,
-            wählt selbst zwischen{" "}
-            <strong className="font-semibold">100 Euro Willkommensrabatt</strong> auf das
-            Website-Paket oder{" "}
-            <strong className="font-semibold">einem Monat Retainer-Betreuung gratis</strong>{" "}
-            nach dem Go-Live.
+            bekommt <strong className="font-semibold">100 Euro Willkommensrabatt</strong> auf
+            den einmaligen Website-Preis — zusätzlich zum Preisvorteil, den es bei Buchung mit
+            Betreuung ohnehin gibt.
           </p>
         </section>
 
@@ -460,18 +362,18 @@ export default function EmpfehlungsprogrammPage() {
             Beispiel-Rechnung
           </h2>
           <p className="text-center text-sm text-slate-500 dark:text-slate-400 mb-10">
-            Zwei konkrete Szenarien — so sieht das in der Praxis aus.
+            Drei konkrete Beispiele — alle Beträge sind Endpreise nach § 19 UStG.
           </p>
 
           {/* Szenario 1 */}
           <article className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 md:p-8 mb-6">
-            <div className="text-[11px] font-semibold text-teal-600 dark:text-teal-400 uppercase tracking-wider mb-2">
+            <div className="text-[11px] font-semibold text-teal-700 dark:text-teal-400 uppercase tracking-wider mb-2">
               Szenario 1 — Cash-Auszahlung
             </div>
             <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-5">
               Du empfiehlst einen befreundeten Handwerksbetrieb. Der bucht bei mir das{" "}
               <strong className="font-semibold">
-                Paket 2 (Anfragen auf Autopilot, 1.990 Euro netto)
+                Paket „Anfragen gewinnen“ (3.490 Euro)
               </strong>
               .
             </p>
@@ -488,10 +390,10 @@ export default function EmpfehlungsprogrammPage() {
                       scope="row"
                       className="text-left py-2.5 font-normal text-slate-600 dark:text-slate-400"
                     >
-                      Auftragswert Paket 2
+                      Auftragswert „Anfragen gewinnen“
                     </th>
                     <td className="py-2.5 text-right font-mono text-slate-900 dark:text-slate-100">
-                      1.990 Euro netto
+                      3.490 Euro
                     </td>
                   </tr>
                   <tr>
@@ -502,7 +404,7 @@ export default function EmpfehlungsprogrammPage() {
                       10 % Empfehlungsdankeschön
                     </th>
                     <td className="py-2.5 text-right font-mono text-slate-900 dark:text-slate-100">
-                      199 Euro
+                      349 Euro
                     </td>
                   </tr>
                   <tr className="bg-teal-50 dark:bg-teal-900/20">
@@ -513,17 +415,17 @@ export default function EmpfehlungsprogrammPage() {
                       Dein Auszahlungsbetrag (Cash)
                     </th>
                     <td className="py-3 px-3 text-right font-mono font-bold text-teal-700 dark:text-teal-300">
-                      199 Euro
+                      349 Euro
                     </td>
                   </tr>
                   <tr>
                     <th
                       scope="row"
-                      className="text-left py-2.5 font-normal text-slate-500 dark:text-slate-500 text-xs italic"
+                      className="text-left py-2.5 font-normal text-slate-500 dark:text-slate-400 text-xs italic"
                     >
                       Willkommensrabatt für den Neukunden
                     </th>
-                    <td className="py-2.5 text-right font-mono text-slate-500 dark:text-slate-500 text-xs italic">
+                    <td className="py-2.5 text-right font-mono text-slate-500 dark:text-slate-400 text-xs italic">
                       100 Euro
                     </td>
                   </tr>
@@ -533,9 +435,9 @@ export default function EmpfehlungsprogrammPage() {
 
             <dl className="md:hidden space-y-3 text-sm">
               <div className="flex justify-between gap-4">
-                <dt className="text-slate-600 dark:text-slate-400">Auftragswert Paket 2</dt>
+                <dt className="text-slate-600 dark:text-slate-400">Auftragswert „Anfragen gewinnen“</dt>
                 <dd className="font-mono text-slate-900 dark:text-slate-100 text-right">
-                  1.990 Euro netto
+                  3.490 Euro
                 </dd>
               </div>
               <div className="flex justify-between gap-4">
@@ -543,7 +445,7 @@ export default function EmpfehlungsprogrammPage() {
                   10 % Empfehlungsdankeschön
                 </dt>
                 <dd className="font-mono text-slate-900 dark:text-slate-100 text-right">
-                  199 Euro
+                  349 Euro
                 </dd>
               </div>
               <div className="flex justify-between gap-4 bg-teal-50 dark:bg-teal-900/20 -mx-3 px-3 py-2.5 rounded">
@@ -551,10 +453,10 @@ export default function EmpfehlungsprogrammPage() {
                   Dein Auszahlungsbetrag (Cash)
                 </dt>
                 <dd className="font-mono font-bold text-teal-700 dark:text-teal-300 text-right">
-                  199 Euro
+                  349 Euro
                 </dd>
               </div>
-              <div className="flex justify-between gap-4 text-xs italic text-slate-500 dark:text-slate-500">
+              <div className="flex justify-between gap-4 text-xs italic text-slate-500 dark:text-slate-400">
                 <dt>Willkommensrabatt für den Neukunden</dt>
                 <dd className="font-mono text-right">100 Euro</dd>
               </div>
@@ -568,12 +470,14 @@ export default function EmpfehlungsprogrammPage() {
 
           {/* Szenario 1b — Zusatzleistungen */}
           <article className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 md:p-8 mb-6">
-            <div className="text-[11px] font-semibold text-teal-600 dark:text-teal-400 uppercase tracking-wider mb-2">
+            <div className="text-[11px] font-semibold text-teal-700 dark:text-teal-400 uppercase tracking-wider mb-2">
               Szenario 1b — Mit Zusatzleistung im Erstauftrag
             </div>
             <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-5">
               Gleicher Fall, aber dein Kontakt bucht{" "}
-              <strong className="font-semibold">Paket 2 plus Texterstellung</strong>{" "}
+              <strong className="font-semibold">
+                „Anfragen gewinnen“ plus Texterstellung Business
+              </strong>{" "}
               im Erstauftrag.
             </p>
 
@@ -588,10 +492,10 @@ export default function EmpfehlungsprogrammPage() {
                       scope="row"
                       className="text-left py-2.5 font-normal text-slate-600 dark:text-slate-400"
                     >
-                      Paket 2
+                      „Anfragen gewinnen“
                     </th>
                     <td className="py-2.5 text-right font-mono text-slate-900 dark:text-slate-100">
-                      1.990 Euro netto
+                      3.490 Euro
                     </td>
                   </tr>
                   <tr>
@@ -599,10 +503,10 @@ export default function EmpfehlungsprogrammPage() {
                       scope="row"
                       className="text-left py-2.5 font-normal text-slate-600 dark:text-slate-400"
                     >
-                      Texterstellung (Zusatzleistung)
+                      Texterstellung Business (Zusatzleistung)
                     </th>
                     <td className="py-2.5 text-right font-mono text-slate-900 dark:text-slate-100">
-                      690 Euro netto
+                      650 Euro
                     </td>
                   </tr>
                   <tr>
@@ -613,7 +517,7 @@ export default function EmpfehlungsprogrammPage() {
                       Gesamtvolumen Erstauftrag
                     </th>
                     <td className="py-2.5 text-right font-mono font-semibold text-slate-900 dark:text-slate-100">
-                      2.680 Euro netto
+                      4.140 Euro
                     </td>
                   </tr>
                   <tr>
@@ -624,7 +528,7 @@ export default function EmpfehlungsprogrammPage() {
                       10 % Empfehlungsdankeschön
                     </th>
                     <td className="py-2.5 text-right font-mono text-slate-900 dark:text-slate-100">
-                      268 Euro
+                      414 Euro
                     </td>
                   </tr>
                   <tr className="bg-teal-50 dark:bg-teal-900/20">
@@ -632,10 +536,10 @@ export default function EmpfehlungsprogrammPage() {
                       scope="row"
                       className="text-left py-3 px-3 font-bold text-slate-900 dark:text-white"
                     >
-                      Dein Auszahlungsbetrag (Cash)
+                      Dein Auszahlungsbetrag (Cash, Obergrenze)
                     </th>
                     <td className="py-3 px-3 text-right font-mono font-bold text-teal-700 dark:text-teal-300">
-                      268 Euro
+                      400 Euro
                     </td>
                   </tr>
                 </tbody>
@@ -644,9 +548,9 @@ export default function EmpfehlungsprogrammPage() {
 
             <dl className="md:hidden space-y-3 text-sm">
               <div className="flex justify-between gap-4">
-                <dt className="text-slate-600 dark:text-slate-400">Paket 2</dt>
+                <dt className="text-slate-600 dark:text-slate-400">„Anfragen gewinnen“</dt>
                 <dd className="font-mono text-slate-900 dark:text-slate-100 text-right">
-                  1.990 Euro netto
+                  3.490 Euro
                 </dd>
               </div>
               <div className="flex justify-between gap-4">
@@ -654,7 +558,7 @@ export default function EmpfehlungsprogrammPage() {
                   Texterstellung (Zusatz)
                 </dt>
                 <dd className="font-mono text-slate-900 dark:text-slate-100 text-right">
-                  690 Euro netto
+                  650 Euro
                 </dd>
               </div>
               <div className="flex justify-between gap-4 border-t border-slate-200 dark:border-slate-700 pt-2">
@@ -662,7 +566,7 @@ export default function EmpfehlungsprogrammPage() {
                   Gesamtvolumen
                 </dt>
                 <dd className="font-mono font-semibold text-slate-900 dark:text-slate-100 text-right">
-                  2.680 Euro netto
+                  4.140 Euro
                 </dd>
               </div>
               <div className="flex justify-between gap-4">
@@ -670,15 +574,15 @@ export default function EmpfehlungsprogrammPage() {
                   10 % Empfehlungsdankeschön
                 </dt>
                 <dd className="font-mono text-slate-900 dark:text-slate-100 text-right">
-                  268 Euro
+                  414 Euro
                 </dd>
               </div>
               <div className="flex justify-between gap-4 bg-teal-50 dark:bg-teal-900/20 -mx-3 px-3 py-2.5 rounded">
                 <dt className="font-bold text-slate-900 dark:text-white">
-                  Dein Auszahlungsbetrag (Cash)
+                  Dein Auszahlungsbetrag (Cash, Obergrenze)
                 </dt>
                 <dd className="font-mono font-bold text-teal-700 dark:text-teal-300 text-right">
-                  268 Euro
+                  400 Euro
                 </dd>
               </div>
             </dl>
@@ -688,22 +592,22 @@ export default function EmpfehlungsprogrammPage() {
                 Hinweis:
               </span>{" "}
               Was dein Kontakt innerhalb von 30 Tagen nach Vertragsabschluss noch dazu bucht,
-              zählt ebenfalls mit — bis maximal 400 Euro. Laufender Retainer und Hosting sind
-              ausgenommen.
+              zählt ebenfalls mit — bis maximal 400 Euro. Laufende Betreuung sowie Hosting &
+              Wartung sind ausgenommen.
             </p>
           </article>
 
           {/* Szenario 2 */}
           <article className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 md:p-8">
-            <div className="text-[11px] font-semibold text-teal-600 dark:text-teal-400 uppercase tracking-wider mb-2">
-              Szenario 2 — Retainer-Gutschrift für Bestandskunden
+            <div className="text-[11px] font-semibold text-teal-700 dark:text-teal-400 uppercase tracking-wider mb-2">
+              Szenario 2 — Betreuungs-Gutschrift für Bestandskunden
             </div>
             <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-5">
               Du bist bereits Kunde bei mir mit einem{" "}
-              <strong className="font-semibold">Retainer über 89 Euro/Monat</strong>. Du
+              <strong className="font-semibold">Betreuung „Basis“ über 99 Euro/Monat</strong>. Du
               empfiehlst einen Geschäftskontakt, der{" "}
               <strong className="font-semibold">
-                Paket 3 (Ihr digitaler Mitarbeiter, 3.490 Euro netto)
+                Paket „Ihr digitaler Mitarbeiter“ (5.990 Euro)
               </strong>{" "}
               bucht.
             </p>
@@ -711,7 +615,7 @@ export default function EmpfehlungsprogrammPage() {
             <div className="hidden md:block">
               <table className="w-full text-sm">
                 <caption className="sr-only">
-                  Beispielrechnung Szenario 2 — Retainer-Gutschrift
+                  Beispielrechnung Szenario 2 — Betreuungs-Gutschrift
                 </caption>
                 <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
                   <tr>
@@ -719,10 +623,10 @@ export default function EmpfehlungsprogrammPage() {
                       scope="row"
                       className="text-left py-2.5 font-normal text-slate-600 dark:text-slate-400"
                     >
-                      Auftragswert Paket 3
+                      Auftragswert „Ihr digitaler Mitarbeiter“
                     </th>
                     <td className="py-2.5 text-right font-mono text-slate-900 dark:text-slate-100">
-                      3.490 Euro netto
+                      5.990 Euro
                     </td>
                   </tr>
                   <tr>
@@ -733,7 +637,7 @@ export default function EmpfehlungsprogrammPage() {
                       Alternative Cash-Variante wäre
                     </th>
                     <td className="py-2.5 text-right font-mono text-slate-900 dark:text-slate-100">
-                      349 Euro
+                      400 Euro (Obergrenze)
                     </td>
                   </tr>
                   <tr className="bg-teal-50 dark:bg-teal-900/20">
@@ -741,10 +645,10 @@ export default function EmpfehlungsprogrammPage() {
                       scope="row"
                       className="text-left py-3 px-3 font-bold text-slate-900 dark:text-white"
                     >
-                      Du wählst: Retainer-Gutschrift
+                      Du wählst: Betreuungs-Gutschrift
                     </th>
                     <td className="py-3 px-3 text-right font-mono font-bold text-teal-700 dark:text-teal-300">
-                      2 Monate gratis = 178 Euro Vorteil
+                      2 Monate gratis = 198 Euro Vorteil
                     </td>
                   </tr>
                   <tr>
@@ -755,7 +659,7 @@ export default function EmpfehlungsprogrammPage() {
                       Statt Monats-Abbuchung pausiere ich 2 Monate
                     </th>
                     <td className="py-2.5 text-right text-slate-600 dark:text-slate-400 text-xs">
-                      Retainer läuft nahtlos weiter
+                      Betreuung läuft nahtlos weiter
                     </td>
                   </tr>
                 </tbody>
@@ -764,9 +668,9 @@ export default function EmpfehlungsprogrammPage() {
 
             <dl className="md:hidden space-y-3 text-sm">
               <div className="flex justify-between gap-4">
-                <dt className="text-slate-600 dark:text-slate-400">Auftragswert Paket 3</dt>
+                <dt className="text-slate-600 dark:text-slate-400">Auftragswert „Ihr digitaler Mitarbeiter“</dt>
                 <dd className="font-mono text-slate-900 dark:text-slate-100 text-right">
-                  3.490 Euro netto
+                  5.990 Euro
                 </dd>
               </div>
               <div className="flex justify-between gap-4">
@@ -774,138 +678,32 @@ export default function EmpfehlungsprogrammPage() {
                   Alternative Cash-Variante wäre
                 </dt>
                 <dd className="font-mono text-slate-900 dark:text-slate-100 text-right">
-                  349 Euro
+                  400 Euro (Obergrenze)
                 </dd>
               </div>
               <div className="flex justify-between gap-4 bg-teal-50 dark:bg-teal-900/20 -mx-3 px-3 py-2.5 rounded">
                 <dt className="font-bold text-slate-900 dark:text-white">
-                  Du wählst: Retainer-Gutschrift
+                  Du wählst: Betreuungs-Gutschrift
                 </dt>
                 <dd className="font-mono font-bold text-teal-700 dark:text-teal-300 text-right">
-                  2 Monate gratis = 178 Euro Vorteil
+                  2 Monate gratis = 198 Euro Vorteil
                 </dd>
               </div>
               <div className="flex justify-between gap-4 text-xs text-slate-600 dark:text-slate-400">
                 <dt>Statt Monats-Abbuchung pausiere ich 2 Monate</dt>
-                <dd className="text-right italic">Retainer läuft nahtlos weiter</dd>
+                <dd className="text-right italic">Betreuung läuft nahtlos weiter</dd>
               </div>
             </dl>
 
             <p className="text-xs text-slate-600 dark:text-slate-400 mt-5 leading-relaxed">
               <span className="font-semibold text-slate-700 dark:text-slate-200">Ablauf:</span>{" "}
-              Nächste zwei Retainer-Rechnungen werden nicht gestellt. Du bekommst eine kurze
+              Die nächsten zwei Betreuungs-Rechnungen werden nicht gestellt. Du bekommst eine kurze
               Mail als Bestätigung.
             </p>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-3 leading-relaxed italic">
               <span className="font-semibold not-italic">Hinweis:</span> Cash wäre hier
-              mathematisch höher — die Retainer-Variante ist vor allem dann sinnvoll, wenn
+              mathematisch höher — die Betreuungs-Variante ist vor allem dann sinnvoll, wenn
               du sowieso monatlich bezahlst und entspannte Kontinuität bevorzugst.
-            </p>
-          </article>
-
-          {/* Szenario 3 — Kombi mit Gründungsangebot */}
-          <article className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 md:p-8 mt-6">
-            <div className="text-[11px] font-semibold text-teal-600 dark:text-teal-400 uppercase tracking-wider mb-2">
-              Szenario 3 — Kombi mit Gründungsangebot
-            </div>
-            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-5">
-              Du empfiehlst einen Selbstständigen, der ebenfalls gerade startet. Er bucht{" "}
-              <strong className="font-semibold">
-                Paket 2 (1.990 Euro netto) mit dem Gründungsangebot
-              </strong>
-              .
-            </p>
-
-            <div className="hidden md:block">
-              <table className="w-full text-sm">
-                <caption className="sr-only">
-                  Beispielrechnung Szenario 3 — Kombi mit Gründungsangebot (Beträge halbiert)
-                </caption>
-                <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
-                  <tr>
-                    <th
-                      scope="row"
-                      className="text-left py-2.5 font-normal text-slate-600 dark:text-slate-400"
-                    >
-                      Auftragswert Paket 2
-                    </th>
-                    <td className="py-2.5 text-right font-mono text-slate-900 dark:text-slate-100">
-                      1.990 Euro netto
-                    </td>
-                  </tr>
-                  <tr>
-                    <th
-                      scope="row"
-                      className="text-left py-2.5 font-normal text-slate-600 dark:text-slate-400"
-                    >
-                      5 % Empfehlungsdankeschön (halbiert)
-                    </th>
-                    <td className="py-2.5 text-right font-mono text-slate-900 dark:text-slate-100">
-                      99 Euro
-                    </td>
-                  </tr>
-                  <tr className="bg-teal-50 dark:bg-teal-900/20">
-                    <th
-                      scope="row"
-                      className="text-left py-3 px-3 font-bold text-slate-900 dark:text-white"
-                    >
-                      Dein Auszahlungsbetrag (Cash)
-                    </th>
-                    <td className="py-3 px-3 text-right font-mono font-bold text-teal-700 dark:text-teal-300">
-                      99 Euro
-                    </td>
-                  </tr>
-                  <tr>
-                    <th
-                      scope="row"
-                      className="text-left py-2.5 font-normal text-slate-500 dark:text-slate-500 text-xs italic"
-                    >
-                      Willkommensrabatt für den Neukunden (halbiert)
-                    </th>
-                    <td className="py-2.5 text-right font-mono text-slate-500 dark:text-slate-500 text-xs italic">
-                      50 Euro
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <dl className="md:hidden space-y-3 text-sm">
-              <div className="flex justify-between gap-4">
-                <dt className="text-slate-600 dark:text-slate-400">Auftragswert Paket 2</dt>
-                <dd className="font-mono text-slate-900 dark:text-slate-100 text-right">
-                  1.990 Euro netto
-                </dd>
-              </div>
-              <div className="flex justify-between gap-4">
-                <dt className="text-slate-600 dark:text-slate-400">
-                  5 % Empfehlungsdankeschön (halbiert)
-                </dt>
-                <dd className="font-mono text-slate-900 dark:text-slate-100 text-right">
-                  99 Euro
-                </dd>
-              </div>
-              <div className="flex justify-between gap-4 bg-teal-50 dark:bg-teal-900/20 -mx-3 px-3 py-2.5 rounded">
-                <dt className="font-bold text-slate-900 dark:text-white">
-                  Dein Auszahlungsbetrag (Cash)
-                </dt>
-                <dd className="font-mono font-bold text-teal-700 dark:text-teal-300 text-right">
-                  99 Euro
-                </dd>
-              </div>
-              <div className="flex justify-between gap-4 text-xs italic text-slate-500 dark:text-slate-500">
-                <dt>Willkommensrabatt für den Neukunden (halbiert)</dt>
-                <dd className="font-mono text-right">50 Euro</dd>
-              </div>
-            </dl>
-
-            <p className="text-xs text-slate-600 dark:text-slate-400 mt-5 leading-relaxed">
-              <span className="font-semibold text-slate-700 dark:text-slate-200">
-                Warum halbiert:
-              </span>{" "}
-              Das Gründungsangebot ist selbst schon ein deutlicher Preisnachlass — eine volle
-              Zusatzprämie obendrauf wäre wirtschaftlich nicht tragbar. Dein Kontakt spart
-              dafür am Paketpreis deutlich mehr.
             </p>
           </article>
         </section>
@@ -1015,7 +813,7 @@ export default function EmpfehlungsprogrammPage() {
                   <path d="m3 7 9 6 9-6" />
                 </svg>
               </div>
-              <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
+              <div className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
                 E-Mail
               </div>
               <a
@@ -1046,7 +844,7 @@ export default function EmpfehlungsprogrammPage() {
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
               </div>
-              <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
+              <div className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
                 WhatsApp
               </div>
               <a
@@ -1080,7 +878,7 @@ export default function EmpfehlungsprogrammPage() {
                   <path d="M8 8h8M8 12h8M8 16h5" />
                 </svg>
               </div>
-              <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
+              <div className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
                 Formular
               </div>
               <a
@@ -1111,7 +909,7 @@ export default function EmpfehlungsprogrammPage() {
             Steuererklärung angeben — eine Klärung mit dem eigenen Steuerberater wird
             empfohlen. Angehörige der Heilberufe (Ärzte, Zahnärzte, Psychotherapeut:innen
             u. a.) sind von der Cash-Variante ausgeschlossen, da berufsrechtliche Vorgaben
-            (u. a. Musterberufsordnung) monetäre Zuweisungspauschalen untersagen; Retainer-
+            (u. a. Musterberufsordnung) monetäre Zuweisungspauschalen untersagen; Betreuungs-
             und Leistungs-Gutschrift bleiben möglich, sofern sie nicht an konkrete
             Patienten-Zuweisungen geknüpft sind. Es gelten ergänzend meine{" "}
             <a

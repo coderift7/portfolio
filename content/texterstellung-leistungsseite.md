@@ -142,7 +142,7 @@ Wenn ich Ihre Website baue, kenne ich Ihr Geschäft bereits. Die Texte entstehen
 ## FAQ
 
 **Kann ich die Texte auch ohne Website bei Ihnen buchen?**
-Ja. Ich schreibe Texte auch für bestehende Websites. Sie bekommen die fertigen Texte als Dokument und können sie selbst einpflegen — oder ich übernehme das für 75 €/Stunde.
+Ja. Ich schreibe Texte auch für bestehende Websites. Sie bekommen die fertigen Texte als Dokument und können sie selbst einpflegen — oder ich übernehme das für 99 €/Stunde.
 
 **Woher wissen Sie, was meine Kunden anspricht?**
 Wir sprechen darüber in unserem Erstgespräch. Außerdem analysiere ich Ihre Branche, Ihre Wettbewerber und die Suchbegriffe, die Ihre Kunden verwenden. Ich schreibe nicht ins Blaue.

@@ -7,7 +7,7 @@ const briefingLink = siteConfig.briefingUrl;
 export const metadata: Metadata = {
   title: "Leistungen & Preise — Website + Betreuung kombinieren | Michael Höger",
   description:
-    "Professionelle Website ab 0 € — wenn Sie in die laufende Betreuung investieren, sinkt Ihr Erstellungspreis. Drei Pakete, faire Preise, persönlicher Ansprechpartner.",
+    "Drei Website-Pakete und vier Betreuungsstufen mit klaren Endpreisen. Persönliche Umsetzung, Hosting und laufende Pflege aus einer Hand.",
   alternates: { canonical: "/preise/" },
   openGraph: {
     type: "website",
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     url: `${siteUrl}/preise/`,
     title: "Leistungen & Preise — Michael Höger",
     description:
-      "Website + Betreuung kombinieren: Je höher die Betreuungsstufe, desto weniger zahlen Sie für die Erstellung.",
+      "Website und Betreuung klar kombinieren: feste Endpreise, transparente Leistungen und ein persönlicher Ansprechpartner.",
     images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Leistungen & Preise — Michael Höger",
     description:
-      "Website + Betreuung kombinieren: Je höher die Betreuungsstufe, desto weniger zahlen Sie für die Erstellung.",
+      "Website und Betreuung klar kombinieren: feste Endpreise, transparente Leistungen und ein persönlicher Ansprechpartner.",
     images: [`${siteUrl}/images/og-image.png`],
   },
   robots: { index: true, follow: true },
@@ -34,8 +34,8 @@ const pakete = [
     title: "Sichtbar werden",
     claim: "Kunden finden Sie online — nicht die Konkurrenz.",
     fit: "Passt, wenn Sie eine seriöse Visitenkarte im Netz brauchen — solide, gefunden werden, Vertrauen ausstrahlen.",
-    price: "990",
-    sub: "oder ab 0 € mit Betreuung",
+    price: "1.890",
+    sub: "mit 12 Monaten Betreuung ab 1.590 €",
     features: [
       "Bis zu 6 Seiten",
       "Optimiert für alle Geräte",
@@ -51,11 +51,11 @@ const pakete = [
   },
   {
     name: "Paket 2",
-    title: "Anfragen auf Autopilot",
+    title: "Anfragen gewinnen",
     claim: "Besucher werden zu Anfragen — automatisch.",
     fit: "Passt, wenn aus Besuchern aktiv Kunden werden sollen — durchdachtes Design, klare Botschaft, messbare Leads.",
-    price: "1.990",
-    sub: "oder ab 0 € mit Betreuung",
+    price: "3.490",
+    sub: "mit 12 Monaten Betreuung ab 2.990 €",
     features: [
       "Alles aus Paket 1",
       "Bis zu 8 Seiten",
@@ -78,8 +78,8 @@ const pakete = [
     title: "Ihr digitaler Mitarbeiter",
     claim: "24/7 für Sie da — für weniger als ein Minijobber.",
     fit: "Passt, wenn Anfragen, Termine und Standard-Fragen automatisch laufen sollen — Sie sparen Zeit, Kunden bekommen sofort Antworten.",
-    price: "3.490",
-    sub: "oder ab 990 € mit Betreuung",
+    price: "5.990",
+    sub: "mit 12 Monaten Betreuung ab 5.090 €",
     features: [
       "Alles aus Paket 2",
       "Logo-Neuerstellung inklusive",
@@ -89,7 +89,6 @@ const pakete = [
       "Mehrsprachigkeit (2 Sprachen)",
       "Barrierefreiheit",
       "3 Korrekturschleifen",
-      "1 Monat Betreuung inklusive",
     ],
     lieferzeit: "ca. 4–5 Wochen",
     featured: false,
@@ -97,33 +96,38 @@ const pakete = [
 ];
 
 const matrix = {
-  headers: ["Ohne Betreuung", "Basis · 59 €/Mo.", "Business · 99 €/Mo.", "Premium · 149 €/Mo."],
+  headers: [
+    "Ohne Betreuung",
+    "Basis · 99 €/Monat",
+    "Business · 199 €/Monat",
+    "Premium · 399 €/Monat",
+  ],
   rows: [
     {
       paket: "Sichtbar werden",
       cells: [
-        { price: "990 €", original: null, badge: null, free: false },
-        { price: "690 €", original: "990 €", badge: "-30 %", free: false },
-        { price: "490 €", original: "990 €", badge: "-50 %", free: false },
-        { price: "0 €", original: null, badge: null, free: true },
+        { price: "1.890 €" },
+        { price: "1.790 €" },
+        { price: "1.690 €" },
+        { price: "1.590 €" },
       ],
     },
     {
-      paket: "Anfragen auf Autopilot",
+      paket: "Anfragen gewinnen",
       cells: [
-        { price: "1.990 €", original: null, badge: null, free: false },
-        { price: "1.490 €", original: "1.990 €", badge: "-25 %", free: false },
-        { price: "990 €", original: "1.990 €", badge: "-50 %", free: false },
-        { price: "0 €", original: null, badge: null, free: true },
+        { price: "3.490 €" },
+        { price: "3.290 €" },
+        { price: "3.140 €" },
+        { price: "2.990 €" },
       ],
     },
     {
       paket: "Ihr digitaler Mitarbeiter",
       cells: [
-        { price: "3.490 €", original: null, badge: null, free: false },
-        { price: "2.990 €", original: "3.490 €", badge: "-15 %", free: false },
-        { price: "1.990 €", original: "3.490 €", badge: "-43 %", free: false },
-        { price: "990 €", original: "3.490 €", badge: "-71 %", free: false },
+        { price: "5.990 €" },
+        { price: "5.690 €" },
+        { price: "5.390 €" },
+        { price: "5.090 €" },
       ],
     },
   ],
@@ -132,27 +136,27 @@ const matrix = {
 const betreuung = [
   {
     name: "Hosting & Wartung",
-    desc: "Webhosting, SSL, Backups, Uptime-Monitoring, Sicherheitsupdates, Domain-Verwaltung. Keine inhaltlichen Änderungen.",
-    price: "20",
-    unit: "monatlich",
+    desc: "Hosting, SSL, Backups, Monitoring und technische Wartung. Keine Inhaltsänderungen.",
+    price: "49",
+    unit: "pro Monat",
   },
   {
-    name: "Basis-Betreuung",
-    desc: "Hosting & Wartung plus 1 kleine Änderung pro Monat (Text oder Bild, bis 30 Min.).",
-    price: "59",
-    unit: "monatlich",
-  },
-  {
-    name: "Business-Betreuung",
-    desc: "Alles aus Basis, plus: bis zu 3 Änderungen pro Monat, Google-Sichtbarkeit prüfen, Ladezeiten-Checks, Google Unternehmensprofil pflegen.",
+    name: "Basis",
+    desc: "Alles aus Hosting & Wartung plus 30 Minuten Änderungen pro Monat.",
     price: "99",
-    unit: "monatlich",
+    unit: "pro Monat",
   },
   {
-    name: "Premium-Betreuung",
-    desc: "Alles aus Business, plus: bis zu 5 Änderungen pro Monat, Chatbot-Pflege, monatlicher Google-Report, Quartals-Strategiegespräch, bevorzugter Support.",
-    price: "149",
-    unit: "monatlich",
+    name: "Business",
+    desc: "Alles aus Basis plus 60 Minuten Änderungen pro Monat sowie ein klar begrenzter monatlicher Sichtbarkeits- und Performance-Check.",
+    price: "199",
+    unit: "pro Monat",
+  },
+  {
+    name: "Premium",
+    desc: "Alles aus Business plus 120 Minuten Änderungen pro Monat, Automations- und Chatbot-Monitoring, kurzer Monatsreport, maximal 30 Minuten Strategiegespräch pro Quartal und bevorzugte Einplanung.",
+    price: "399",
+    unit: "pro Monat",
   },
 ];
 
@@ -163,7 +167,7 @@ const addons = [
   { name: "Prozessautomatisierung", desc: "Wiederkehrende Abläufe automatisieren — E-Mail-Verarbeitung, Benachrichtigungen, Datenübernahme.", price: "ab 300 €", unit: "je nach Aufwand" },
   { name: "Zusätzliche Sprache", desc: "Übersetzung und Einrichtung einer weiteren Sprachversion Ihrer Website.", price: "200 €", unit: "pro Sprache" },
   { name: "Texterstellung", desc: "Professionelle Webtexte, die aus Besuchern Kunden machen. 3 Pakete für jede Unternehmensgröße.", price: "ab 350 €", unit: "pauschal", href: "/texterstellung/" },
-  { name: "Stundensatz", desc: "Beratung, Schulung oder individuelle Aufgaben. Auch für Leistungen über den Retainer hinaus.", price: "75 €", unit: "pro Stunde" },
+  { name: "Zusätzliche Arbeit", desc: "Beratung, Schulung oder individuelle Aufgaben außerhalb des gebuchten Umfangs.", price: "99 €", unit: "pro Stunde" },
 ];
 
 const breadcrumbSchema = {
@@ -178,7 +182,7 @@ const breadcrumbSchema = {
 const faq = [
   {
     q: "Wie funktionieren Ihre Preise?",
-    a: "Alle Beträge sind Endpreise. Gemäß §19 UStG wird keine Umsatzsteuer berechnet. Kosten für externe Dienste (z.B. Google Workspace) sind nicht enthalten.",
+    a: "Alle Beträge sind Endpreise. Gemäß §19 UStG wird keine Umsatzsteuer berechnet. Fremd-, Lizenz-, API- und Werbekosten sind nicht enthalten.",
   },
   {
     q: "Wo wird meine Website gehostet?",
@@ -220,7 +224,6 @@ const offerCatalogSchema = {
       "@type": "PriceSpecification",
       price: p.price.replace(/[^\d]/g, ""),
       priceCurrency: "EUR",
-      valueAddedTaxIncluded: false,
       description: p.sub,
     },
     availability: "https://schema.org/InStock",
@@ -261,9 +264,9 @@ export default function PreisePage() {
             Die Betreuung macht den Unterschied.
           </span>
         </h1>
-        <p className="text-slate-400 text-base max-w-[540px] mx-auto leading-relaxed">
-          Je mehr Sie in die laufende Partnerschaft investieren,
-          desto weniger zahlen Sie für die Erstellung — bis hin zu 0 €.
+        <p className="text-slate-300 text-base max-w-[540px] mx-auto leading-relaxed">
+          Drei feste Website-Pakete und vier Betreuungsstufen.
+          Sie sehen vorab, was enthalten ist und was es kostet.
         </p>
       </div>
 
@@ -271,7 +274,7 @@ export default function PreisePage() {
       <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 py-4 px-6 flex justify-center gap-10 flex-wrap">
         {["Persönlicher Ansprechpartner", "Hosting auf eigener Infrastruktur", "DSGVO-konform", "Keine versteckten Kosten", "Jederzeit erreichbar"].map((t) => (
           <span key={t} className="text-xs text-slate-500 flex items-center gap-1.5">
-            <span className="text-teal-600 font-bold">✓</span> {t}
+            <span className="text-teal-700 font-bold">✓</span> {t}
           </span>
         ))}
       </div>
@@ -290,15 +293,15 @@ export default function PreisePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             {/* Spalte 1: Sie sind */}
             <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
-              <div className="text-[11px] font-bold text-teal-600 uppercase tracking-wider mb-3">Sie sind …</div>
+              <div className="text-[11px] font-bold text-teal-700 dark:text-teal-300 uppercase tracking-wider mb-3">Sie sind …</div>
               <ul className="space-y-2 text-[13px] text-slate-700 dark:text-slate-300">
-                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-700 before:font-bold dark:before:text-teal-300">
                   Kleinunternehmen oder Selbständig (1–20 Mitarbeitende)
                 </li>
-                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-700 before:font-bold dark:before:text-teal-300">
                   Etabliert und lokal/regional in DACH aktiv
                 </li>
-                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-700 before:font-bold dark:before:text-teal-300">
                   z.&nbsp;B. Arztpraxis, Therapeut, Handwerker, Landwirt, Coach, Berater oder vergleichbarer lokaler Dienstleister
                 </li>
               </ul>
@@ -306,15 +309,15 @@ export default function PreisePage() {
 
             {/* Spalte 2: Sie wollen */}
             <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
-              <div className="text-[11px] font-bold text-teal-600 uppercase tracking-wider mb-3">Sie wollen …</div>
+              <div className="text-[11px] font-bold text-teal-700 dark:text-teal-300 uppercase tracking-wider mb-3">Sie wollen …</div>
               <ul className="space-y-2 text-[13px] text-slate-700 dark:text-slate-300">
-                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-700 before:font-bold dark:before:text-teal-300">
                   Eine Website <strong>einmal richtig</strong> gemacht — und dann nicht mehr drüber nachdenken
                 </li>
-                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-700 before:font-bold dark:before:text-teal-300">
                   Pflege und Betrieb an einen festen Ansprechpartner abgeben
                 </li>
-                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold">
+                <li className="pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-700 before:font-bold dark:before:text-teal-300">
                   Qualität und persönliche Beziehung statt billigster Lösung
                 </li>
               </ul>
@@ -322,7 +325,7 @@ export default function PreisePage() {
 
             {/* Spalte 3: So läuft's */}
             <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
-              <div className="text-[11px] font-bold text-teal-600 uppercase tracking-wider mb-3">So läuft die Zusammenarbeit</div>
+              <div className="text-[11px] font-bold text-teal-700 dark:text-teal-300 uppercase tracking-wider mb-3">So läuft die Zusammenarbeit</div>
               <ul className="space-y-2 text-[13px] text-slate-700 dark:text-slate-300">
                 <li>
                   <strong className="text-slate-900 dark:text-white">Sie liefern:</strong> Inhalte (Texte, Logo, Bilder) und Feedback in den Korrekturschleifen.
@@ -341,7 +344,7 @@ export default function PreisePage() {
         {/* ── Website-Pakete ── */}
         <h2 className="text-center text-2xl font-bold tracking-tight mb-2">Drei Pakete. Ein Ziel: Ihr Erfolg.</h2>
         <p className="text-center text-sm text-slate-500 dark:text-slate-400 mb-10">
-          Wählen Sie das passende Paket — und kombinieren Sie es mit einer Betreuungsstufe für maximalen Rabatt.
+          Wählen Sie das passende Paket. Mit 12 Monaten Betreuung reduziert sich der einmalige Website-Preis je nach Stufe.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
@@ -361,7 +364,7 @@ export default function PreisePage() {
               )}
 
               <div className="pt-7 pb-5 px-6 text-center">
-                <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">{p.name}</div>
+                <div className="text-[11px] font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-1">{p.name}</div>
                 <div className="text-xl font-bold text-slate-900 dark:text-white mb-1.5 tracking-tight">{p.title}</div>
                 <div className="text-xs text-slate-500 italic mb-2.5">{p.claim}</div>
                 <div className="text-[12px] text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-2.5 px-1">
@@ -373,8 +376,8 @@ export default function PreisePage() {
                 <div className="font-mono text-[32px] font-bold text-slate-900 dark:text-white tracking-tight leading-none">
                   {p.price} €
                 </div>
-                <div className="text-xs text-slate-400 mt-1">einmalig · Endpreis</div>
-                <span className="inline-block bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 text-[11px] font-semibold px-2.5 py-0.5 rounded-full mt-2">
+                <div className="text-xs text-slate-600 dark:text-slate-300 mt-1">einmalig · Endpreis</div>
+                <span className="inline-block bg-teal-50 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300 text-[11px] font-semibold px-2.5 py-0.5 rounded-full mt-2">
                   {p.sub}
                 </span>
               </div>
@@ -385,7 +388,7 @@ export default function PreisePage() {
                     const isLink = typeof f === "object";
                     const label = isLink ? f.label : f;
                     return (
-                      <li key={`${p.name}-${i}`} className="text-[12.5px] text-slate-700 dark:text-slate-300 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-600 before:font-bold before:text-xs">
+                      <li key={`${p.name}-${i}`} className="text-[12.5px] text-slate-700 dark:text-slate-300 pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-teal-700 before:font-bold before:text-xs dark:before:text-teal-300">
                         {isLink ? (
                           <a href={f.href} className="underline underline-offset-2 decoration-teal-600/40 hover:decoration-teal-600 hover:text-teal-700 dark:hover:text-teal-400 transition-colors">
                             {label}
@@ -400,7 +403,7 @@ export default function PreisePage() {
               </div>
 
               <div className="px-6 pb-4 pt-2">
-                <div className="text-xs text-slate-400 text-center">Lieferzeit: {p.lieferzeit}</div>
+                <div className="text-xs text-slate-600 dark:text-slate-300 text-center">Lieferzeit: {p.lieferzeit}</div>
               </div>
 
               <div className="space-y-2 px-6 pb-6 pt-2">
@@ -427,20 +430,25 @@ export default function PreisePage() {
           ))}
         </div>
 
-        {/* ── Rabatt-Matrix ── */}
+        {/* ── Kombinationsmatrix ── */}
         <div className="rounded-2xl overflow-hidden border-2 border-teal-600 shadow-[0_8px_32px_rgba(13,148,136,0.12)] mb-16">
           <div className="bg-gradient-to-r from-teal-600 to-cyan-600 px-8 pt-7 pb-2">
             <h2 className="text-white text-xl font-bold tracking-tight">
-              Ihr Vorteil: Website + Betreuung kombinieren
+              Website + Betreuung kombinieren
             </h2>
             <p className="text-white/80 text-sm italic mb-5">
-              Je höher Ihre Betreuungsstufe, desto weniger zahlen Sie für die Erstellung.
+              Alle Beträge sind einmalige Websitepreise. Basis, Business oder Premium werden monatlich zusätzlich berechnet.
             </p>
           </div>
 
           <div className="relative">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+            <div
+              className="overflow-x-auto rounded-b-2xl outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-teal-700 dark:focus-visible:ring-teal-300"
+              role="region"
+              tabIndex={0}
+              aria-label="Kombinationsmatrix für Website-Pakete und Betreuung. Auf kleinen Bildschirmen horizontal wischen oder mit den Pfeiltasten scrollen."
+            >
+              <table className="w-full min-w-[720px] text-sm">
                 <thead>
                   <tr className="bg-slate-50 dark:bg-slate-800">
                     <th className="text-left font-semibold text-slate-600 dark:text-slate-300 px-6 py-4 text-xs uppercase tracking-wider">
@@ -461,23 +469,9 @@ export default function PreisePage() {
                       </td>
                       {row.cells.map((cell, i) => (
                         <td key={i} className="px-4 py-5 text-center">
-                          {cell.free ? (
-                            <span className="inline-block bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg">
-                              0 € inklusive
-                            </span>
-                          ) : (
-                            <div>
-                              {cell.original && (
-                                <span className="block text-slate-400 text-xs line-through font-mono">{cell.original}</span>
-                              )}
-                              <span className={`font-mono font-bold text-[14px] ${cell.original ? "text-teal-600" : "text-slate-900 dark:text-white"}`}>
-                                {cell.price}
-                              </span>
-                              {cell.badge && (
-                                <span className="block text-teal-600 text-[10px] font-semibold mt-0.5">{cell.badge}</span>
-                              )}
-                            </div>
-                          )}
+                          <span className="font-mono text-[14px] font-bold text-slate-900 dark:text-white">
+                            {cell.price}
+                          </span>
                         </td>
                       ))}
                     </tr>
@@ -487,13 +481,12 @@ export default function PreisePage() {
             </div>
             {/* Scroll-Hinweis: Fade + Text, nur auf Mobile */}
             <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white dark:from-slate-900 to-transparent pointer-events-none md:hidden" />
-            <p className="text-center text-xs text-slate-400 mt-2 md:hidden">Tabelle wischen →</p>
+            <p className="mt-2 text-center text-xs text-slate-600 dark:text-slate-300 md:hidden">Tabelle wischen →</p>
           </div>
 
           <div className="bg-teal-50 dark:bg-teal-900/20 px-8 py-4 text-center">
             <p className="text-sm text-slate-600 dark:text-slate-300">
-              Mindestlaufzeit 12 Monate, danach monatlich kündbar.
-              Nach 12 Monaten läuft Ihre Betreuung weiter — <strong className="text-teal-600">die Website haben Sie bereits.</strong>
+              Mindestlaufzeit 12 Monate, danach monatlich kündbar. Hosting &amp; Wartung kann separat ergänzt werden und reduziert den einmaligen Websitepreis nicht.
             </p>
           </div>
         </div>
@@ -517,11 +510,32 @@ export default function PreisePage() {
               </div>
               <div className="text-right shrink-0">
                 <span className="font-mono text-xl font-bold text-slate-900 dark:text-white">{b.price} €</span>
-                <span className="block text-xs text-slate-400 tracking-wide">{b.unit}</span>
+                <span className="block text-xs text-slate-600 dark:text-slate-300 tracking-wide">{b.unit}</span>
               </div>
             </div>
           ))}
         </div>
+
+        <section className="mb-16" aria-labelledby="betreuung-hinweise">
+          <h3 id="betreuung-hinweise" className="text-lg font-bold tracking-tight mb-4">
+            Klar geregelt bei der Betreuung
+          </h3>
+          <ul className="grid grid-cols-1 gap-3 text-sm text-slate-600 dark:text-slate-300 md:grid-cols-2">
+            {[
+              "Mindestlaufzeit: 12 Monate, danach monatlich kündbar.",
+              "Nicht verbrauchte Änderungszeit verfällt am Monatsende. Sämtliche manuelle Arbeit zählt gegen das jeweilige Zeitkontingent.",
+              "Checks und Reports enthalten die Analyse; Umsetzungen verbrauchen Änderungszeit.",
+              "Automations- und Chatbot-Pflege umfasst Monitoring und kleine Korrekturen, keine Neuentwicklung.",
+              "Fremd-, Lizenz-, API- und Werbekosten sind nicht enthalten.",
+              "Zusätzliche Arbeit: 99 € pro Stunde, in 15-Minuten-Schritten.",
+              "Bevorzugte Einplanung bedeutet keinen Notdienst und keine sofortige Lösung.",
+            ].map((hinweis) => (
+              <li key={hinweis} className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 leading-relaxed dark:border-slate-700 dark:bg-slate-800/50">
+                {hinweis}
+              </li>
+            ))}
+          </ul>
+        </section>
 
         {/* ── Add-ons ── */}
         <h2 className="text-2xl font-bold tracking-tight mb-2">Einzelleistungen &amp; Add-ons</h2>
@@ -542,13 +556,13 @@ export default function PreisePage() {
                 <div>
                   <h3 className="font-semibold text-slate-900 dark:text-white text-[14px]">
                     {a.name}
-                    {a.href && <span className="ml-2 text-teal-600 text-xs font-normal group-hover:underline">Details →</span>}
+                    {a.href && <span className="ml-2 text-teal-700 dark:text-teal-300 text-xs font-normal group-hover:underline">Details →</span>}
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400">{a.desc}</p>
                 </div>
                 <div className="text-right shrink-0">
                   <span className="font-mono text-lg font-bold text-slate-900 dark:text-white">{a.price}</span>
-                  <span className="block text-xs text-slate-400 tracking-wide">{a.unit}</span>
+                  <span className="block text-xs text-slate-600 dark:text-slate-300 tracking-wide">{a.unit}</span>
                 </div>
               </Wrapper>
             );
@@ -558,7 +572,7 @@ export default function PreisePage() {
         {/* ── Hinweise ── */}
         <div className="space-y-3 mb-16">
           {[
-            { label: "Preise", text: "Alle Beträge sind Endpreise. Gemäß §19 UStG wird keine Umsatzsteuer berechnet. Kosten für externe Dienste (z.B. Google Workspace) sind nicht enthalten." },
+            { label: "Preise", text: "Alle Beträge sind Endpreise. Gemäß §19 UStG wird keine Umsatzsteuer berechnet. Fremd-, Lizenz-, API- und Werbekosten sind nicht enthalten." },
             { label: "Hosting", text: "Alle Websites werden auf meiner professionellen Infrastruktur gehostet. So kann ich Sicherheit, Geschwindigkeit und Verfügbarkeit garantieren." },
             { label: "Support", text: "Erreichbarkeit Mo–Fr 18–21 Uhr, Sa 10–16 Uhr. Reaktionszeit innerhalb von 24 Stunden. Automatische Überwachung rund um die Uhr." },
             { label: "Preisanpassung", text: "Die vereinbarten Preise gelten für die ersten 12 Monate. Danach ist eine jährliche Anpassung um maximal 5 % möglich. Anpassungen werden mindestens 4 Wochen vorher schriftlich angekündigt." },
@@ -610,7 +624,7 @@ export default function PreisePage() {
         {/* ── CTA ── */}
         <div className="text-center py-14 px-6 bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl">
           <h2 className="text-white text-2xl font-bold mb-2">Bereit? Lassen Sie uns sprechen.</h2>
-          <p className="text-slate-400 text-sm mb-7 max-w-[440px] mx-auto">
+          <p className="text-slate-300 text-sm mb-7 max-w-[440px] mx-auto">
             In einem kurzen Gespräch finden wir heraus, welches Paket und welche Betreuungsstufe
             am besten zu Ihnen passt — kostenlos und unverbindlich.
           </p>
@@ -634,8 +648,8 @@ export default function PreisePage() {
       </div>
 
       {/* ── Footer-Hinweis ── */}
-      <div className="text-center py-8 text-xs text-slate-400">
-        Stand: April 2026. Preisanpassungen vorbehalten — laufende Vereinbarungen bleiben unberührt.
+      <div className="text-center py-8 text-xs text-slate-600 dark:text-slate-300">
+        Stand: September 2026. Preisanpassungen vorbehalten — laufende Vereinbarungen bleiben unberührt.
       </div>
     </main>
   );

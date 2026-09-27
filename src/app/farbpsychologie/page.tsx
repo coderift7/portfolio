@@ -147,7 +147,7 @@ const faq = [
   },
   {
     q: "Ist das Teil eines Webseiten-Pakets?",
-    a: "Ja. In Paket 2 und Paket 3 meines Gründungsangebots ist die Farbpsychologie-Beratung inklusive. Das Color-Briefing führen wir dann gemeinsam durch — kein Fragebogen per E-Mail.",
+    a: "Ja. In den Paketen „Anfragen gewinnen“ und „Ihr digitaler Mitarbeiter“ ist die Farbpsychologie-Beratung inklusive. Das Color-Briefing führen wir dann gemeinsam durch — kein Fragebogen per E-Mail.",
   },
 ];
 

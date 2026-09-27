@@ -9,7 +9,7 @@ export const siteConfig = {
   email: "michael@hoeger.dev",
   phone: "+49 162 9255254",
   location: "Deutschland",
-  briefingUrl: "https://briefing.hoeger.dev",
+  briefingUrl: "https://tally.so/r/ODjJE7",
   facebook: "https://www.facebook.com/profile.php?id=61575586966779",
   instagram: "https://www.instagram.com/hoeger_dev/",
 
@@ -45,7 +45,7 @@ export const siteConfig = {
       },
       {
         icon: "Zap",
-        title: "Anfragen auf Autopilot",
+        title: "Anfragen gewinnen",
         description:
           "Kundenanfragen landen direkt in Ihrem Postfach oder auf Ihrem Handy. Sie müssen nichts tun.",
       },
