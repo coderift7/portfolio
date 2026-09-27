@@ -124,7 +124,12 @@ test.describe("/fuer-fitness/", () => {
     }
     expect(text).not.toMatch(/garantier/i);
     // The e-mail series is not live yet, so the page must not offer it.
-    expect(text).not.toMatch(/drei hilfreiche E-Mails|Impuls/i);
+    // textContent also covers collapsed FAQ answers.
+    const allText = (await page.locator("main").textContent()) ?? "";
+    expect(allText).not.toMatch(/drei hilfreiche E-Mails|Impuls/i);
+    await expect(page.locator('#check input[type="checkbox"]')).toHaveCount(1);
+    // The check measures speed, readability and links, not contact paths or offers.
+    expect(allText).not.toMatch(/macht der Website-Check sichtbar/);
   });
 
   test("only measurable check points are promised", async ({ page }) => {

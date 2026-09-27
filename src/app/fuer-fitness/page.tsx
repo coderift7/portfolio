@@ -88,7 +88,7 @@ const checkPoints = [
   {
     icon: Accessibility,
     title: "Für alle nutzbar",
-    text: "Ob Kontraste, Schriftgrößen und Bildbeschreibungen Besuchern das Lesen leicht machen.",
+    text: "Automatische Hinweise zur Lesbarkeit und ob Bilder eine Beschreibung haben.",
   },
   {
     icon: Search,
@@ -98,7 +98,7 @@ const checkPoints = [
   {
     icon: ShieldCheck,
     title: "Sichere Verbindung und kaputte Links",
-    text: "Ob Ihr Zertifikat gültig ist, Besucher automatisch auf die sichere Version kommen und ob Links ins Leere führen.",
+    text: "Ob Ihr Zertifikat gültig ist, Besucher automatisch auf die sichere Version kommen und ob bis zu 20 Links auf Ihrer Seite ins Leere führen.",
   },
 ];
 
@@ -288,8 +288,9 @@ export default function FuerFitness() {
             </div>
 
             <p className="mx-auto mt-10 max-w-2xl text-center text-lg text-muted-foreground">
-              Genau solche Punkte macht der Website-Check sichtbar — mit
-              Messwerten, nicht mit Bauchgefühl.
+              Ladezeit und Lesbarkeit misst der Website-Check mit echten
+              Messwerten. Kontaktweg und Angebot schauen Sie sich am besten
+              selbst einmal mit den Augen eines Interessenten an.
             </p>
           </div>
         </section>
