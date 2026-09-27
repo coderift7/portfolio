@@ -15,7 +15,33 @@ test.describe("Cookie Consent Banner", () => {
     await page.goto("/");
     const banner = page.getByRole("dialog", { name: "Cookie-Einstellungen" });
     await expect(banner).toBeVisible();
+    await expect(banner).toContainText("Umami");
     await expect(banner).toContainText("Meta Pixel");
+  });
+
+  test("accept button meets WCAG AA contrast in light and dark mode", async ({ page }) => {
+    for (const colorScheme of ["light", "dark"] as const) {
+      await page.emulateMedia({ colorScheme });
+      await page.goto("/");
+      await page.evaluate((dark) => document.documentElement.classList.toggle("dark", dark), colorScheme === "dark");
+      const button = page
+        .getByRole("dialog", { name: "Cookie-Einstellungen" })
+        .getByRole("button", { name: "Akzeptieren" });
+      const ratio = await button.evaluate((el) => {
+        const toRgb = (value: string) => value.match(/\d+(\.\d+)?/g)!.slice(0, 3).map(Number);
+        const luminance = (rgb: number[]) => {
+          const [r, g, b] = rgb.map((c) => {
+            const s = c / 255;
+            return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+          });
+          return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+        };
+        const style = getComputedStyle(el);
+        const [dark, light] = [luminance(toRgb(style.color)), luminance(toRgb(style.backgroundColor))].sort((a, b) => a - b);
+        return (light + 0.05) / (dark + 0.05);
+      });
+      expect(ratio, `contrast in ${colorScheme} mode`).toBeGreaterThanOrEqual(4.5);
+    }
   });
 
   test("hides banner after accepting", async ({ page }, testInfo) => {

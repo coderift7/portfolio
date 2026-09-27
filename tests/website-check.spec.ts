@@ -42,7 +42,7 @@ test.describe('/website-check', () => {
     await page.goto('/website-check');
     await expect(page.locator('h3:has-text("Performance")').first()).toBeVisible();
     await expect(page.locator('h3:has-text("SEO")').first()).toBeVisible();
-    await expect(page.locator('h3:has-text("Sicherheit")').first()).toBeVisible();
+    await expect(page.locator('h3:has-text("Sichere Verbindung")').first()).toBeVisible();
   });
 });
 

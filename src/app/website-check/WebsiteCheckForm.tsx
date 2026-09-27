@@ -131,7 +131,7 @@ export default function WebsiteCheckForm() {
           />
           <span className="text-xs text-muted-foreground">
             Ich stimme der{" "}
-            <Link href="/datenschutz/" className="text-primary underline">
+            <Link href="/datenschutz/#website-check" className="text-primary underline">
               Datenschutzerklärung
             </Link>{" "}
             zu. *

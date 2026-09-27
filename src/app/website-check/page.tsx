@@ -5,7 +5,7 @@ import {
   ShieldCheck,
   Accessibility,
   Smartphone,
-  Scale,
+  Link2,
   CheckCircle2,
 } from "lucide-react";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -16,7 +16,7 @@ import WebsiteCheckForm from "./WebsiteCheckForm";
 export const metadata: Metadata = {
   title: "Kostenloser Website-Check | Michael Höger",
   description:
-    "Wie gut ist Ihre Website wirklich? Kostenloser Check für Performance, SEO, Sicherheit, Barrierefreiheit und mehr. Ergebnis per E-Mail in wenigen Minuten.",
+    "Kostenloser technischer Website-Check für Ladezeit, Auffindbarkeit, Nutzbarkeit, sichere Verbindung und kaputte Links. Ergebnis per E-Mail.",
   alternates: { canonical: "/website-check/" },
   openGraph: {
     type: "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: "Kostenloser Website-Check",
     description:
-      "Wie gut ist Ihre Website wirklich? Kostenloser Check für Performance, SEO, Sicherheit und mehr.",
+      "Kostenloser technischer Check für Ladezeit, Auffindbarkeit, Nutzbarkeit, sichere Verbindung und kaputte Links.",
     images: [
       {
         url: `${siteUrl}/images/og-image.png`,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kostenloser Website-Check",
     description:
-      "Wie gut ist Ihre Website wirklich? Kostenloser Check für Performance, SEO, Sicherheit und mehr.",
+      "Kostenloser technischer Check für Ladezeit, Auffindbarkeit, Nutzbarkeit, sichere Verbindung und kaputte Links.",
     images: [`${siteUrl}/images/og-image.png`],
   },
   robots: { index: true, follow: true },
@@ -60,7 +60,7 @@ const webAppSchema = {
   "@type": "WebApplication",
   name: "Kostenloser Website-Check",
   description:
-    "Kostenloser Website-Check für Performance, SEO, Sicherheit, Barrierefreiheit, Mobile-Optimierung und rechtliche Anforderungen.",
+    "Kostenloser technischer Website-Check für Lighthouse-Messwerte, Metadaten, sichere HTTPS-Verbindung und kaputte Links.",
   url: `${siteUrl}/website-check/`,
   applicationCategory: "UtilityApplication",
   operatingSystem: "All",
@@ -85,17 +85,17 @@ const checkCategories = [
   {
     icon: Search,
     title: "SEO",
-    text: "Meta-Tags, Überschriften-Struktur, indexierbare Inhalte — werden Sie bei Google gefunden?",
+    text: "Seitentitel, Beschreibung und weitere technische Signale — kann Google Ihre Seite sinnvoll einordnen?",
   },
   {
     icon: ShieldCheck,
-    title: "Sicherheit",
-    text: "SSL-Zertifikat, Security-Header und bekannte Schwachstellen — schützen Sie Ihre Besucher.",
+    title: "Sichere Verbindung",
+    text: "Gültiges HTTPS-Zertifikat und automatische Weiterleitung auf HTTPS — kein Schwachstellen- oder Security-Header-Scan.",
   },
   {
     icon: Accessibility,
-    title: "Barrierefreiheit",
-    text: "WCAG-Konformität und BFSG-Anforderungen — seit 2025 für viele Webseiten Pflicht.",
+    title: "Nutzbarkeit",
+    text: "Automatische Lighthouse-Hinweise zu Kontrasten, Beschriftungen und Bedienbarkeit — keine vollständige WCAG- oder BFSG-Prüfung.",
   },
   {
     icon: Smartphone,
@@ -103,9 +103,9 @@ const checkCategories = [
     text: "Responsive Design und Touch-Optimierung — über 60% Ihrer Besucher kommen vom Handy.",
   },
   {
-    icon: Scale,
-    title: "Recht",
-    text: "Impressum, Datenschutz, Cookie-Consent — rechtliche Pflichtangaben auf einen Blick.",
+    icon: Link2,
+    title: "Links und Bilder",
+    text: "Bis zu 20 interne Links auf Fehler sowie Bilder auf fehlende Beschreibungen — ohne inhaltliche oder rechtliche Bewertung.",
   },
 ];
 
@@ -114,7 +114,7 @@ const trustPoints = [
   "Ergebnis per E-Mail in wenigen Minuten",
   "Konkrete Handlungsempfehlungen statt Fachchinesisch",
   "Kein Verkaufsgespräch, kein Druck",
-  "DSGVO-konform — Ihre Daten sind sicher",
+  "Datensparsam — erfolgreiche Aufträge werden direkt aus der Warteschlange entfernt",
 ];
 
 export default function WebsiteCheck() {
@@ -166,7 +166,7 @@ export default function WebsiteCheck() {
 
               <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
                 Finden Sie in wenigen Minuten heraus, wie Ihre Website bei
-                Performance, SEO, Sicherheit und Barrierefreiheit abschneidet
+                Ladezeit, Auffindbarkeit, Nutzbarkeit und technischer Qualität abschneidet
                 — kostenlos und unverbindlich.
               </p>
             </div>
@@ -191,8 +191,8 @@ export default function WebsiteCheck() {
                 Was wir prüfen
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                Ihr Report deckt die sechs wichtigsten Bereiche ab — mit
-                konkreten Empfehlungen, die Sie sofort umsetzen können.
+                Ihr Report deckt sechs automatisch messbare Bereiche ab — mit
+                konkreten technischen Hinweisen statt einer Rechtsberatung.
               </p>
             </div>
 

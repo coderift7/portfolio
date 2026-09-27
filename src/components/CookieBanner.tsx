@@ -1,25 +1,27 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { getConsent, setConsent } from "@/lib/consent";
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    if (getConsent() === null) setVisible(true);
-  }, []);
+  const consent = useSyncExternalStore(
+    (onStoreChange) => {
+      window.addEventListener("consent-change", onStoreChange);
+      return () => window.removeEventListener("consent-change", onStoreChange);
+    },
+    getConsent,
+    () => null
+  );
+  const visible = consent === null;
 
   function handleAccept() {
     setConsent("granted");
-    setVisible(false);
   }
 
   function handleDecline() {
     setConsent("denied");
-    setVisible(false);
   }
 
   return (
@@ -36,7 +38,8 @@ export default function CookieBanner() {
         >
           <div className="mx-auto flex max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="pointer-events-none text-sm text-slate-200">
-              Wir nutzen Meta Pixel zur Messung unserer Werbeanzeigen.{" "}
+              Mit Ihrer Einwilligung laden wir selbst betriebenes Umami für
+              Reichweitenmessung und Meta Pixel für Werbemessung.{" "}
               <Link
                 href="/datenschutz/"
                 className="pointer-events-auto underline underline-offset-2 transition-colors hover:text-primary"
@@ -53,7 +56,7 @@ export default function CookieBanner() {
               </button>
               <button
                 onClick={handleAccept}
-                className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
+                className="rounded-lg bg-[#0F766E] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#115E59]"
               >
                 Akzeptieren
               </button>

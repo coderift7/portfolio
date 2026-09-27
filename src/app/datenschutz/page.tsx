@@ -40,7 +40,7 @@ export default function Datenschutz() {
       <div className="legal-container px-5 pt-28 pb-24">
         <Link href="/" className="legal-back">← Zurück zur Startseite</Link>
         <h1>Datenschutzerklärung</h1>
-        <p className="legal-meta">Stand: April 2026</p>
+        <p className="legal-meta">Stand: September 2026</p>
         <div className="mt-6 space-y-8">
 
           {/* 1. Verantwortlicher */}
@@ -63,16 +63,19 @@ export default function Datenschutz() {
 
             <p className="mt-3 font-medium text-foreground">Arten der verarbeiteten Daten:</p>
             <ul className="mt-1 list-disc space-y-1 pl-5 text-sm">
-              <li><strong className="text-foreground">Kontaktdaten</strong> (Name, E-Mail-Adresse) — bei Nutzung des Kontaktformulars</li>
+              <li><strong className="text-foreground">Kontaktdaten</strong> (Name, E-Mail-Adresse) — bei Kontaktaufnahme und Website-Check</li>
               <li><strong className="text-foreground">Inhaltsdaten</strong> (Betreff, Nachrichtentext) — bei Nutzung des Kontaktformulars</li>
+              <li><strong className="text-foreground">Prüfdaten</strong> (Website-Adresse und technische Messergebnisse) — beim Website-Check</li>
               <li><strong className="text-foreground">Nutzungsdaten</strong> (aufgerufene Seiten, Zugriffszeit) — automatisch beim Seitenaufruf durch den Hosting-Anbieter</li>
               <li><strong className="text-foreground">Meta-/Kommunikationsdaten</strong> (IP-Adresse, Browsertyp, Betriebssystem) — automatisch beim Seitenaufruf durch den Hosting-Anbieter</li>
             </ul>
 
             <p className="mt-3 font-medium text-foreground">Empfänger / Kategorien von Empfängern:</p>
             <ul className="mt-1 list-disc space-y-1 pl-5 text-sm">
-              <li><strong className="text-foreground">GitHub Inc.</strong> — als Hosting-Anbieter (Auftragsverarbeiter, siehe Abschnitt 4)</li>
-              <li><strong className="text-foreground">Tally Forms BV</strong> — als Anbieter des Briefing-Formulars (Auftragsverarbeiter, siehe Abschnitt 11)</li>
+              <li><strong className="text-foreground">Hetzner Online GmbH</strong> — Infrastruktur für Webseite, Website-Check und selbst betriebenes Umami (siehe Abschnitte 4 und 8)</li>
+              <li><strong className="text-foreground">Brevo / Sendinblue SAS</strong> — Versand des Website-Reports (siehe Abschnitt 11)</li>
+              <li><strong className="text-foreground">Meta Platforms Ireland Limited</strong> — Werbemessung nur nach Einwilligung (siehe Abschnitt 9)</li>
+              <li><strong className="text-foreground">Tally Forms BV</strong> — Anbieter des Briefing-Formulars (siehe Abschnitt 12)</li>
             </ul>
           </div>
 
@@ -90,35 +93,25 @@ export default function Datenschutz() {
                 <strong className="text-foreground">Berechtigte Interessen</strong> (Art. 6 Abs. 1 S. 1 lit. f DSGVO) — Die Verarbeitung technischer Daten beim Seitenaufruf erfolgt auf Basis meines berechtigten Interesses an der technisch fehlerfreien und sicheren Bereitstellung dieser Webseite. Mein Interesse besteht konkret darin, die Erreichbarkeit der Seite sicherzustellen, Fehler zu erkennen und Missbrauch zu verhindern. Eine Auswertung dieser Daten zu Marketingzwecken findet nicht statt. Die Interessen der Besucher werden gewahrt, da keine Profilbildung oder Weitergabe an Dritte zu Werbezwecken erfolgt.
               </li>
               <li>
-                <strong className="text-foreground">Einwilligung</strong> (Art. 6 Abs. 1 S. 1 lit. a DSGVO) — Sofern Sie in die Verarbeitung einwilligen (z.&thinsp;B. Checkbox im Kontaktformular). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie mir eine E-Mail an <a href="mailto:michael@hoeger.dev">michael@hoeger.dev</a> senden.
+                <strong className="text-foreground">Einwilligung</strong> (Art. 6 Abs. 1 S. 1 lit. a DSGVO) — Sofern Sie in die Verarbeitung einwilligen (z.&thinsp;B. Website-Check oder Analyse-/Werbedienste). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.
               </li>
             </ul>
           </div>
 
-          {/* 4. Hosting + Drittlandtransfer */}
+          {/* 4. Hosting */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">4. Hosting und Übermittlung in Drittländer</h2>
+            <h2 className="text-lg font-semibold text-foreground">4. Hosting</h2>
             <p className="mt-2">
-              Diese Webseite wird über <strong className="text-foreground">GitHub Pages</strong> gehostet, einen Dienst der GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA (Muttergesellschaft: Microsoft Corporation).
+              Diese Webseite sowie der Website-Check und das selbst betriebene Analysesystem Umami laufen auf einem eigenen virtuellen Server bei der <strong className="text-foreground">Hetzner Online GmbH</strong> in Deutschland.
             </p>
             <p className="mt-2">
-              Beim Aufruf dieser Webseite werden automatisch technische Daten (IP-Adresse, Browsertyp, Betriebssystem, Zugriffszeit, aufgerufene Seite) durch GitHub erfasst und in Server-Logfiles gespeichert. GitHub fungiert hierbei als <strong className="text-foreground">Auftragsverarbeiter</strong> gemäß Art. 28 DSGVO.
-            </p>
-
-            <p className="mt-3 font-medium text-foreground">Drittlandtransfer (Art. 44–49 DSGVO):</p>
-            <p className="mt-1 text-sm">
-              Da GitHub Inc. ihren Sitz in den USA hat, werden Ihre Daten in ein Drittland außerhalb der EU/des EWR übermittelt. Die Übermittlung erfolgt auf Grundlage des <strong className="text-foreground">EU-U.S. Data Privacy Framework</strong> (Angemessenheitsbeschluss der EU-Kommission gemäß Art. 45 DSGVO vom 10. Juli 2023). GitHub Inc. / Microsoft Corporation ist unter dem Data Privacy Framework zertifiziert. Zusätzlich hat GitHub <strong className="text-foreground">Standardvertragsklauseln (SCCs)</strong> gemäß Art. 46 Abs. 2 lit. c DSGVO als ergänzende Schutzmaßnahme implementiert.
+              Beim Aufruf verarbeitet der Webserver technisch erforderliche Verbindungsdaten, insbesondere IP-Adresse, Zeitpunkt, aufgerufene Adresse, übertragene Datenmenge, Referrer sowie Browser- und Betriebssystemangaben. Dies dient der Auslieferung der Seite, der Betriebssicherheit, der Fehleranalyse und der Abwehr von Missbrauch.
             </p>
             <p className="mt-2 text-sm">
-              Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>
+              Rechtsgrundlage: Berechtigtes Interesse (Art. 6 Abs. 1 S. 1 lit. f DSGVO) an einer sicheren, stabilen und performanten Bereitstellung. Server-Logdaten werden gelöscht, sobald sie für Betriebssicherheit und Fehleranalyse nicht mehr erforderlich sind; bei einem konkreten Sicherheitsvorfall können betroffene Daten bis zur Klärung aufbewahrt werden.
             </p>
             <p className="mt-2 text-sm">
-              Rechtsgrundlage: Berechtigtes Interesse (Art. 6 Abs. 1 S. 1 lit. f DSGVO) an der technisch sicheren, stabilen und performanten Bereitstellung dieser Webseite über einen zuverlässigen Hosting-Dienst.
-            </p>
-
-            <p className="mt-3 font-medium text-foreground">Speicherdauer:</p>
-            <p className="mt-1 text-sm">
-              Server-Logfiles werden von GitHub gemäß deren Datenschutzerklärung gespeichert. Der Verantwortliche hat keinen direkten Zugriff auf diese Logfiles und wertet diese nicht aus.
+              Weitere Informationen: <a href="https://www.hetzner.com/de/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Hetzner</a>.
             </p>
           </div>
 
@@ -150,16 +143,30 @@ export default function Datenschutz() {
           <div>
             <h2 className="text-lg font-semibold text-foreground">7. Cookies</h2>
             <p className="mt-2">
-              Diese Webseite verwendet ein technisch notwendiges Cookie (<code className="text-xs">cookie_consent</code>) zur Speicherung Ihrer Cookie-Einstellungen. Dieses Cookie wird ausschließlich lokal in Ihrem Browser gespeichert (localStorage) und nicht an Server übermittelt.
+              Ihre Auswahl im Einwilligungsbanner wird unter dem Schlüssel <code className="text-xs">cookie_consent</code> ausschließlich im lokalen Speicher Ihres Browsers (localStorage) abgelegt und nicht an den Server übermittelt.
             </p>
             <p className="mt-2">
-              Darüber hinaus wird das Meta Pixel (siehe Abschnitt 8) <strong className="text-foreground">nur nach Ihrer ausdrücklichen Einwilligung</strong> geladen. Ohne Ihre Zustimmung werden keine Tracking-Cookies gesetzt.
+              Umami (siehe Abschnitt 8) und das Meta Pixel (siehe Abschnitt 9) werden <strong className="text-foreground">nur nach Ihrer ausdrücklichen Einwilligung</strong> geladen. Ohne Ihre Zustimmung werden diese Dienste nicht geladen.
             </p>
           </div>
 
-          {/* 8. Meta Pixel */}
+          {/* 8. Umami */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">8. Meta Pixel (nur mit Einwilligung)</h2>
+            <h2 className="text-lg font-semibold text-foreground">8. Umami-Reichweitenmessung (nur mit Einwilligung)</h2>
+            <p className="mt-2">
+              Nach Ihrer Einwilligung wird das selbst betriebene Analysesystem <strong className="text-foreground">Umami</strong> von <code className="text-xs">analytics.hoeger.dev</code> geladen. Es hilft zu verstehen, welche Seiten genutzt werden und ob die Webseite technisch funktioniert. Umami setzt dabei keine eigenen Tracking-Cookies und erstellt kein seitenübergreifendes Werbeprofil.
+            </p>
+            <p className="mt-2 text-sm">
+              Verarbeitet werden aufgerufene Seite, Referrer, Zeitpunkt, Browser- und Geräteinformationen sowie technische Verbindungsdaten. Die IP-Adresse und der User-Agent werden technisch verarbeitet, um einen pseudonymen Besucherbezug zu bilden; die Analyse läuft auf der in Abschnitt 4 genannten eigenen Server-Infrastruktur.
+            </p>
+            <p className="mt-2 text-sm">
+              Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 S. 1 lit. a DSGVO). Sie können sie jederzeit über „Cookie-Einstellungen“ im Footer mit Wirkung für die Zukunft widerrufen. Bereits geladene Skripte werden spätestens beim nächsten Seitenaufruf nicht erneut geladen.
+            </p>
+          </div>
+
+          {/* 9. Meta Pixel */}
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">9. Meta Pixel (nur mit Einwilligung)</h2>
             <p className="mt-2">
               Nach Ihrer ausdrücklichen Einwilligung setzen wir das <strong className="text-foreground">Meta Pixel</strong> ein, einen Analysedienst der Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland.
             </p>
@@ -193,9 +200,9 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 9. Betroffenenrechte */}
+          {/* 10. Betroffenenrechte */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">9. Ihre Rechte als betroffene Person</h2>
+            <h2 className="text-lg font-semibold text-foreground">10. Ihre Rechte als betroffene Person</h2>
             <p className="mt-2">Ihnen stehen nach der DSGVO folgende Rechte zu:</p>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
               <li><strong className="text-foreground">Auskunftsrecht</strong> (Art. 15 DSGVO) — Sie können Auskunft über Ihre verarbeiteten personenbezogenen Daten verlangen.</li>
@@ -211,11 +218,11 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 10. Website-Check / Website-Analyse */}
-          <div>
-            <h2 className="text-lg font-semibold text-foreground">10. Website-Check (Website-Analyse)</h2>
+          {/* 11. Website-Check / Website-Analyse */}
+          <div id="website-check" className="scroll-mt-24">
+            <h2 className="text-lg font-semibold text-foreground">11. Website-Check (Website-Analyse)</h2>
             <p className="mt-2">
-              Wir bieten einen kostenlosen Website-Check an, bei dem Ihre Webseite automatisiert auf Performance, SEO, Sicherheit und Barrierefreiheit geprüft wird. Ein PDF-Report wird erstellt und Ihnen per E-Mail zugesendet.
+              Beim kostenlosen Website-Check werden automatisierte Lighthouse-Werte für Performance, Nutzbarkeit, Suchmaschinen-Grundlagen und technische Qualität erhoben. Zusätzlich werden das HTTPS-Zertifikat und die HTTPS-Weiterleitung, Metadaten, fehlende Bildbeschreibungen sowie bis zu 20 interne Links auf Fehler geprüft. Der Check ist keine Rechtsberatung, keine vollständige WCAG-/BFSG-Prüfung und kein Scan auf Schwachstellen oder Security-Header. Ein PDF-Report wird erstellt und per E-Mail zugesendet.
             </p>
             <p className="mt-2 text-sm">
               <strong>Verarbeitete Daten:</strong> URL der zu prüfenden Webseite, E-Mail-Adresse, optional Ihr Name.
@@ -227,19 +234,19 @@ export default function Datenschutz() {
               <strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie durch Absenden des Formulars und Bestätigung der Datenschutz-Checkbox erteilen.
             </p>
             <p className="mt-2 text-sm">
-              <strong>Speicherdauer:</strong> Ihre Daten werden ausschließlich für die Erstellung und Zustellung des Reports verwendet. Der generierte Report wird nach der Zustellung gelöscht. Ihre E-Mail-Adresse und die eingegebene URL werden nicht dauerhaft gespeichert.
+              <strong>Speicherdauer:</strong> Erfolgreich abgeschlossene Aufträge werden unmittelbar aus der technischen Warteschlange entfernt. Fehlgeschlagene Aufträge mit Website-Adresse, E-Mail-Adresse und optionalem Namen bleiben zur Fehleranalyse höchstens sieben Tage in der Warteschlange. Die erzeugte PDF-Datei wird nach dem Versandversuch gelöscht, auch wenn der Versand fehlschlägt.
             </p>
             <p className="mt-2 text-sm">
               <strong>E-Mail-Versand:</strong> Der Report wird über den Dienst Brevo (Sendinblue SAS, Paris, Frankreich) versendet. Brevo verarbeitet Ihre E-Mail-Adresse als Auftragsverarbeiter. Weitere Informationen: <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">Brevo Datenschutzerklärung</a>.
             </p>
             <p className="mt-2 text-sm">
-              Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie uns unter <a href="mailto:michael@hoeger.dev">michael@hoeger.dev</a> kontaktieren.
+              Zusätzlich zum Versand an die von Ihnen angegebene Adresse erhalte ich eine interne Kopie des Reports in meinem geschäftlichen E-Mail-Postfach. Diese Kopie wird spätestens nach drei Monaten gelöscht. Kommt aufgrund des Checks ein Auftrag zustande, darf sie darüber hinaus nur so lange aufbewahrt werden, wie sie im Zusammenhang mit diesem Auftrag erforderlich ist. Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie mich unter <a href="mailto:michael@hoeger.dev">michael@hoeger.dev</a> kontaktieren.
             </p>
           </div>
 
-          {/* 11. Briefing-Formular (Tally) */}
+          {/* 12. Briefing-Formular (Tally) */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">11. Briefing-Formular (Tally)</h2>
+            <h2 className="text-lg font-semibold text-foreground">12. Briefing-Formular (Tally)</h2>
             <p className="mt-2">
               Auf dieser Webseite wird unter <a href="https://briefing.hoeger.dev" target="_blank" rel="noopener noreferrer">briefing.hoeger.dev</a> ein Online-Briefing-Formular bereitgestellt. Das Formular wird über den Dienst <strong className="text-foreground">Tally</strong> der Tally Forms BV, Antwerpen, Belgien, ausgeliefert. Tally fungiert als <strong className="text-foreground">Auftragsverarbeiter</strong> gemäß Art. 28 DSGVO; ein entsprechender Auftragsverarbeitungsvertrag (AVV) wurde abgeschlossen.
             </p>
@@ -280,9 +287,9 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 12. Beschwerderecht */}
+          {/* 13. Beschwerderecht */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">12. Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)</h2>
+            <h2 className="text-lg font-semibold text-foreground">13. Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)</h2>
             <p className="mt-2">
               Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt, haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren — insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.
             </p>
@@ -296,11 +303,11 @@ export default function Datenschutz() {
             </p>
           </div>
 
-          {/* 13. Aktualität */}
+          {/* 14. Aktualität */}
           <div>
-            <h2 className="text-lg font-semibold text-foreground">13. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
+            <h2 className="text-lg font-semibold text-foreground">14. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
             <p className="mt-2 text-sm">
-              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand April 2026. Durch die Weiterentwicklung der Webseite oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen. Die jeweils aktuelle Fassung kann jederzeit auf dieser Seite abgerufen werden.
+              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand September 2026. Durch die Weiterentwicklung der Webseite oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen. Die jeweils aktuelle Fassung kann jederzeit auf dieser Seite abgerufen werden.
             </p>
           </div>
 
