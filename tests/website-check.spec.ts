@@ -48,8 +48,9 @@ test.describe('/website-check', () => {
     await expect(legal).toContainText("ohne rechtliche Prüfung der Inhalte");
   });
 
-  // The check does not test legal pages, security headers or full WCAG/BFSG
-  // conformance, so neither the page nor the home teaser may promise it.
+  // The check only detects legal-page links and a cookie notice; it does not
+  // review their content, security headers or full WCAG/BFSG conformance,
+  // so neither the page nor the home teaser may promise it.
   for (const path of ['/website-check', '/']) {
     test(`does not promise unchecked areas on ${path}`, async ({ page }) => {
       await page.goto(path);

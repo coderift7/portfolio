@@ -78,7 +78,8 @@ const situations = [
 ];
 
 // Only what the check actually measures (Lighthouse, certificate, meta data,
-// broken links). No legal review, no security scan, no manual assessment.
+// broken links, whether legal-page links and a cookie notice are detectable).
+// No legal review of content, no security scan, no manual assessment.
 const checkPoints = [
   {
     icon: Gauge,
@@ -103,7 +104,7 @@ const checkPoints = [
   {
     icon: FileCheck,
     title: "Pflichtangaben auffindbar",
-    text: "Ob Besucher Ihr Impressum, Ihre Datenschutzerklärung und einen Cookie-Hinweis finden. Den Inhalt prüfen wir nicht rechtlich.",
+    text: "Ob Links zu Impressum und Datenschutzerklärung sowie ein Cookie-Hinweis erkennbar sind. Den Inhalt prüfen wir nicht rechtlich.",
   },
 ];
 

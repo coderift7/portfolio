@@ -31,7 +31,7 @@ Damit die Webseite bei Google erscheint, wenn Kunden nach dem Angebot suchen. Lo
 Kontaktformulare, automatische E-Mail-Benachrichtigungen, WhatsApp-Weiterleitung, Online-Terminbuchung — damit weniger Arbeit anfällt und keine Anfrage verloren geht.
 
 ### 5. Kostenloser Website-Check
-Wie gut ist Ihre Website wirklich? Der kostenlose technische Check misst Ladezeit, Nutzbarkeit, Suchmaschinen-Grundlagen und technische Qualität. Zusätzlich prüft er HTTPS-Zertifikat und -Weiterleitung, Metadaten, fehlende Bildbeschreibungen sowie bis zu 20 interne Links und ob Impressum, Datenschutzerklärung und ein Cookie-Hinweis auffindbar sind. Er ist keine inhaltliche Rechts-, WCAG-/BFSG- oder Schwachstellenprüfung. Das Ergebnis kommt per E-Mail als verständlicher Report mit konkreten Handlungsempfehlungen. Kein Verkaufsgespräch, kein Druck. URL: https://hoeger.dev/website-check/
+Wie gut ist Ihre Website wirklich? Der kostenlose technische Check misst Ladezeit, Nutzbarkeit, Suchmaschinen-Grundlagen und technische Qualität. Zusätzlich prüft er HTTPS-Zertifikat und -Weiterleitung, Metadaten, fehlende Bildbeschreibungen sowie bis zu 20 interne Links und ob Impressum, Datenschutzerklärung und ein Cookie-Hinweis auffindbar sind. Er prüft die Inhalte dieser Seiten nicht rechtlich und ist keine WCAG-/BFSG- oder Schwachstellenprüfung. Das Ergebnis kommt per E-Mail als verständlicher Report mit konkreten Handlungsempfehlungen. Kein Verkaufsgespräch, kein Druck. URL: https://hoeger.dev/website-check/
 
 ### 6. Social Media
 Professionelle Präsenz auf Facebook, Instagram oder LinkedIn — mit Strategie statt planlosem Posten. Entwicklung einer Strategie für die Plattformen, auf denen die Kunden wirklich unterwegs sind.
