@@ -140,7 +140,9 @@ test.describe("/fuer-fitness/", () => {
       "Für alle nutzbar",
       "Bei Google gefunden werden",
       "Sichere Verbindung und kaputte Links",
+      "Pflichtangaben auffindbar",
     ]);
+    await expect(section).toContainText("Den Inhalt prüfen wir nicht rechtlich.");
     await expect(section).toContainText("Was der Check nicht ist");
     await expect(section).toContainText("keine Rechtsprüfung");
   });
@@ -298,6 +300,8 @@ test.describe("lead machine privacy contract", () => {
     await expect(check).toContainText("bis zu 20 interne Links");
     await expect(check).toContainText("keine vollständige WCAG-/BFSG-Prüfung");
     await expect(check).toContainText("kein Scan auf Schwachstellen oder Security-Header");
+    await expect(check).toContainText("ob Links zu Impressum und Datenschutzerklärung sowie ein Cookie-Hinweis erkennbar sind");
+    await expect(check).toContainText("Deren Inhalt wird nicht geprüft.");
     await expect(check).toContainText("interne Kopie des Reports");
     await expect(check).toContainText("spätestens nach drei Monaten gelöscht");
     await expect(check).toContainText("im Zusammenhang mit diesem Auftrag erforderlich");

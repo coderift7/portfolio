@@ -1,11 +1,11 @@
-import { ArrowRight, Gauge, Search, ShieldCheck, Accessibility, Smartphone, Link2 } from "lucide-react";
+import { ArrowRight, Gauge, Search, ShieldCheck, Accessibility, FileCheck, Link2 } from "lucide-react";
 
 const categories = [
   { icon: Gauge, label: "Performance" },
   { icon: Search, label: "SEO" },
   { icon: ShieldCheck, label: "Sichere Verbindung" },
   { icon: Accessibility, label: "Nutzbarkeit" },
-  { icon: Smartphone, label: "Mobile" },
+  { icon: FileCheck, label: "Pflichtangaben" },
   { icon: Link2, label: "Links und Bilder" },
 ];
 

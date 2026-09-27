@@ -4,7 +4,7 @@ import {
   Search,
   ShieldCheck,
   Accessibility,
-  Smartphone,
+  FileCheck,
   Link2,
   CheckCircle2,
 } from "lucide-react";
@@ -80,12 +80,12 @@ const checkCategories = [
   {
     icon: Gauge,
     title: "Performance",
-    text: "Ladezeit und Lighthouse-Messwerte wie LCP und CLS im Labortest — langsame Seiten verlieren Besucher.",
+    text: "Ladezeit und Lighthouse-Messwerte wie LCP und CLS, gemessen wie auf einem Smartphone — langsame Seiten verlieren Besucher.",
   },
   {
     icon: Search,
     title: "SEO",
-    text: "Seitentitel, Beschreibung und weitere technische Signale — kann Google Ihre Seite sinnvoll einordnen?",
+    text: "Seitentitel, Beschreibung, Hauptüberschrift und weitere technische Signale — kann Google Ihre Seite sinnvoll einordnen?",
   },
   {
     icon: ShieldCheck,
@@ -98,14 +98,14 @@ const checkCategories = [
     text: "Automatische Lighthouse-Hinweise zu Kontrasten, Beschriftungen und Bedienbarkeit — keine vollständige WCAG- oder BFSG-Prüfung.",
   },
   {
-    icon: Smartphone,
-    title: "Mobile",
-    text: "Messung in Smartphone-Simulation und Prüfung des Viewport-Tags — so erleben die meisten Besucher Ihre Seite.",
+    icon: FileCheck,
+    title: "Pflichtangaben auffindbar",
+    text: "Ob Impressum, Datenschutzerklärung und ein Cookie-Hinweis verlinkt beziehungsweise erkennbar sind — ohne rechtliche Prüfung der Inhalte.",
   },
   {
     icon: Link2,
     title: "Links und Bilder",
-    text: "Bis zu 20 interne Links auf Fehler sowie Bilder auf fehlende Beschreibungen — ohne inhaltliche oder rechtliche Bewertung.",
+    text: "Bis zu 20 interne Links auf Fehler sowie Bilder auf fehlende Beschreibungen.",
   },
 ];
 

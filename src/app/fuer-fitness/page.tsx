@@ -100,6 +100,11 @@ const checkPoints = [
     title: "Sichere Verbindung und kaputte Links",
     text: "Ob Ihr Zertifikat gültig ist, Besucher automatisch auf die sichere Version kommen und ob bis zu 20 Links auf Ihrer Seite ins Leere führen.",
   },
+  {
+    icon: FileCheck,
+    title: "Pflichtangaben auffindbar",
+    text: "Ob Besucher Ihr Impressum, Ihre Datenschutzerklärung und einen Cookie-Hinweis finden. Den Inhalt prüfen wir nicht rechtlich.",
+  },
 ];
 
 const steps = [
@@ -159,7 +164,7 @@ const faqItems: FaqItem[] = [
   {
     question: "Was prüft der Check nicht?",
     answer:
-      "Rechtliche Fragen, Ihre Texte inhaltlich und Ihre Angebote. Er misst Technik und Nutzbarkeit — den Rest besprechen wir nur, wenn Sie das wollen.",
+      "Ob Impressum und Datenschutzerklärung inhaltlich stimmen, Ihre Texte und Ihre Angebote. Er misst Technik und Nutzbarkeit — den Rest besprechen wir nur, wenn Sie das wollen.",
   },
   {
     question: "Was passiert mit meinen Daten?",
@@ -312,10 +317,10 @@ export default function FuerFitness() {
             </div>
 
             <div className="mt-14 grid gap-6 sm:grid-cols-2">
-              {checkPoints.map((c) => (
+              {checkPoints.map((c, i) => (
                 <div
                   key={c.title}
-                  className="group relative overflow-hidden rounded-2xl border border-border glass shadow-depth bg-background p-7 transition-all duration-300 hover:shadow-lg"
+                  className={`${i === checkPoints.length - 1 && checkPoints.length % 2 === 1 ? "sm:col-span-2 " : ""}group relative overflow-hidden rounded-2xl border border-border glass shadow-depth bg-background p-7 transition-all duration-300 hover:shadow-lg`}
                 >
                   <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-primary to-secondary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/[0.07]">
@@ -332,7 +337,7 @@ export default function FuerFitness() {
             <div className="mx-auto mt-10 max-w-3xl rounded-2xl glass shadow-depth px-6 py-5">
               <p className="text-[15px] leading-relaxed text-muted-foreground">
                 <strong className="text-foreground">Was der Check nicht ist:</strong>{" "}
-                keine Rechtsprüfung, keine Sichtung Ihrer Texte, keine Beratung.
+                keine Rechtsprüfung der Inhalte, keine Sichtung Ihrer Texte, keine Beratung.
                 Er misst, was messbar ist. Alles Weitere besprechen wir nur, wenn
                 Sie das möchten.
               </p>

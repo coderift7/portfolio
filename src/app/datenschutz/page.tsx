@@ -222,7 +222,7 @@ export default function Datenschutz() {
           <div id="website-check" className="scroll-mt-24">
             <h2 className="text-lg font-semibold text-foreground">11. Website-Check (Website-Analyse)</h2>
             <p className="mt-2">
-              Beim kostenlosen Website-Check werden automatisierte Lighthouse-Werte für Performance, Nutzbarkeit, Suchmaschinen-Grundlagen und technische Qualität erhoben. Zusätzlich werden das HTTPS-Zertifikat und die HTTPS-Weiterleitung, Metadaten, fehlende Bildbeschreibungen sowie bis zu 20 interne Links auf Fehler geprüft. Der Check ist keine Rechtsberatung, keine vollständige WCAG-/BFSG-Prüfung und kein Scan auf Schwachstellen oder Security-Header. Ein PDF-Report wird erstellt und per E-Mail zugesendet.
+              Beim kostenlosen Website-Check werden automatisierte Lighthouse-Werte für Performance, Nutzbarkeit, Suchmaschinen-Grundlagen und technische Qualität erhoben. Zusätzlich werden das HTTPS-Zertifikat und die HTTPS-Weiterleitung, Metadaten, fehlende Bildbeschreibungen sowie bis zu 20 interne Links auf Fehler geprüft. Außerdem wird festgestellt, ob Links zu Impressum und Datenschutzerklärung sowie ein Cookie-Hinweis erkennbar sind; dafür kann die Startseite zusätzlich in einem Browser geladen werden. Deren Inhalt wird nicht geprüft. Der Check ist keine Rechtsberatung, keine vollständige WCAG-/BFSG-Prüfung und kein Scan auf Schwachstellen oder Security-Header. Ein PDF-Report wird erstellt und per E-Mail zugesendet.
             </p>
             <p className="mt-2 text-sm">
               <strong>Verarbeitete Daten:</strong> URL der zu prüfenden Webseite, E-Mail-Adresse, optional Ihr Name.

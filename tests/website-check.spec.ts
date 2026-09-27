@@ -43,6 +43,9 @@ test.describe('/website-check', () => {
     await expect(page.locator('h3:has-text("Performance")').first()).toBeVisible();
     await expect(page.locator('h3:has-text("SEO")').first()).toBeVisible();
     await expect(page.locator('h3:has-text("Sichere Verbindung")').first()).toBeVisible();
+    // Legal pages are checked for presence only, and the page says so.
+    const legal = page.locator('div', { has: page.locator('h3', { hasText: "Pflichtangaben auffindbar" }) }).last();
+    await expect(legal).toContainText("ohne rechtliche Prüfung der Inhalte");
   });
 
   // The check does not test legal pages, security headers or full WCAG/BFSG
