@@ -207,7 +207,7 @@ export default function FuerFitness() {
         />
 
         {/* Hero — same pattern as /website-check/ */}
-        <section className="relative flex min-h-[70dvh] items-center overflow-hidden bg-background">
+        <section className="relative flex items-center overflow-hidden bg-background sm:min-h-[70dvh]">
           <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
@@ -219,7 +219,7 @@ export default function FuerFitness() {
           <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/[0.06] blur-[100px]" />
           <div className="absolute -left-32 bottom-1/4 h-[400px] w-[400px] rounded-full bg-secondary/[0.08] blur-[80px]" />
 
-          <div className="relative z-10 mx-auto max-w-6xl px-5 py-24 sm:px-6">
+          <div className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 sm:py-24">
             <div className="mx-auto max-w-3xl text-center">
               <div className="mb-6 inline-flex items-center rounded-full bg-primary/[0.07] glass shadow-depth px-4 py-1.5">
                 <Smartphone className="mr-2 h-3.5 w-3.5 text-primary" aria-hidden="true" />
@@ -228,7 +228,7 @@ export default function FuerFitness() {
                 </span>
               </div>
 
-              <h1 className="text-[2.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+              <h1 className="text-[2rem] font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
                 Ihre Website soll{" "}
                 <span className="text-gradient-brand">Vertrauen schaffen</span>{" "}
                 — nicht Interessenten verlieren.
@@ -241,7 +241,7 @@ export default function FuerFitness() {
                 erleben — und was Sie leicht verbessern können.
               </p>
 
-              <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row sm:items-center">
+              <div className="mt-8 flex flex-col justify-center gap-3 sm:mt-10 sm:flex-row sm:items-center">
                 <a
                   href="#check"
                   className="btn-brand group inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold"
@@ -260,6 +260,14 @@ export default function FuerFitness() {
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Formular — directly below the hero: ad visitors on mobile did not
+            scroll ~10 screens to reach it (0 checks from 110 visits, 30.09.2026) */}
+        <section id="check" className="scroll-mt-24 border-t border-border bg-card py-12 sm:py-20">
+          <div className="mx-auto max-w-2xl px-5 sm:px-6">
+            <FitnessCheckForm />
           </div>
         </section>
 
@@ -448,13 +456,6 @@ export default function FuerFitness() {
                 </li>
               ))}
             </ul>
-          </div>
-        </section>
-
-        {/* Formular */}
-        <section id="check" className="scroll-mt-24 border-t border-border bg-card py-20">
-          <div className="mx-auto max-w-2xl px-5 sm:px-6">
-            <FitnessCheckForm />
           </div>
         </section>
 
