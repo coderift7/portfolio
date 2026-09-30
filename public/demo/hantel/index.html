@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HEBELWERK – Personal Training (Konzept-Demo)</title>
+<meta name="description" content="Konzept-Demo von Michael Höger: fiktive Personal-Training-Marke, Scroll-Erlebnis „Scheibe für Scheibe“.">
+<meta name="robots" content="noindex">
+<link rel="preload" href="fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --graphit: #141518;
+    --kreide: #ECE9E3;
+    --silber: #A9ADB3;
+    --stahl: #8A8F96;
+    --glut: #E8622C;
+    --display: "Bricolage Grotesque", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--graphit);
+    color: var(--kreide);
+    font-family: var(--display);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--glut); outline-offset: 4px; border-radius: 4px; }
+
+  .top {
+    position: fixed; inset: 0 0 auto 0; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px clamp(16px, 4vw, 48px) 28px;
+    background: linear-gradient(var(--graphit) 55%, rgba(20,21,24,0));
+  }
+  .brand { font-weight: 800; letter-spacing: .14em; font-size: 15px; text-decoration: none; }
+  .brand span { color: var(--glut); }
+  .counter { font-family: var(--mono); font-size: 14px; color: var(--silber); display: flex; align-items: baseline; gap: 8px; }
+  .counter b { color: var(--kreide); font-weight: 500; font-size: 22px; min-width: 3ch; text-align: right; display: inline-block; font-variant-numeric: tabular-nums; }
+
+  /* Scroll story: canvas fills the sticky stage, text sits on top */
+  .story { position: relative; height: 600vh; }
+  .stage { position: sticky; top: 0; height: 100vh; height: 100dvh; overflow: hidden; }
+  .stage::before { /* warm studio light behind the bar */
+    content: ""; position: absolute; right: -10vw; top: 10vh; width: 80vw; height: 80vh;
+    background: radial-gradient(ellipse at center, rgba(232,98,44,.07), rgba(169,173,179,.05) 35%, transparent 65%);
+    pointer-events: none;
+  }
+  #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 1s ease; }
+  #gl.ready { opacity: 1; }
+  .texts {
+    position: absolute; z-index: 2; left: clamp(16px, 4vw, 48px); top: 0; bottom: 0;
+    width: min(46vw, 640px);
+  }
+  .step {
+    position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center;
+    opacity: 0; transform: translateY(24px); filter: blur(8px);
+    transition: opacity .6s ease, transform .6s ease, filter .6s ease;
+    pointer-events: none;
+  }
+  .step.on { opacity: 1; transform: none; filter: none; pointer-events: auto; }
+  .kicker { font-family: var(--mono); font-size: 13px; color: var(--glut); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
+  h1, h2 { font-weight: 800; line-height: .92; letter-spacing: -.035em; }
+  h1 { font-size: clamp(56px, 8.4vw, 150px); }
+  h2 { font-size: clamp(44px, 6vw, 104px); }
+  .step p { margin-top: 24px; max-width: 30ch; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.5; color: var(--silber); }
+
+  .cta {
+    display: inline-flex; align-items: center; gap: 12px; margin-top: 36px; align-self: flex-start;
+    background: var(--glut); color: var(--graphit); text-decoration: none;
+    font-weight: 600; font-size: 17px; padding: 18px 28px; border-radius: 999px;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -10px rgba(232,98,44,.6); }
+  .cta svg { transition: transform .2s ease; }
+  .cta:hover svg { transform: translateX(4px); }
+
+  .progress { position: absolute; z-index: 2; left: clamp(16px, 4vw, 48px); bottom: 32px; display: flex; gap: 8px; }
+  .progress i { width: 28px; height: 3px; background: rgba(236,233,227,.18); border-radius: 2px; transition: background .4s; }
+  .progress i.on { background: var(--glut); }
+  .hint { position: absolute; z-index: 2; right: clamp(16px, 4vw, 48px); bottom: 28px; font-family: var(--mono); font-size: 12px; color: var(--stahl); }
+
+
+
+  /* Trainer badge (hero + CTA) */
+  .badge { display: inline-flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  .badge img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; filter: grayscale(1) contrast(1.08); box-shadow: 0 0 0 2px var(--graphit), 0 0 0 3px rgba(232,98,44,.8); }
+  .badge span { font-size: 15px; line-height: 1.35; color: var(--silber); }
+  .badge b { display: block; color: var(--kreide); font-weight: 600; font-size: 17px; }
+  .cta-row { display: flex; align-items: center; gap: 18px; margin-top: 36px; flex-wrap: wrap; }
+  .cta-row .cta { margin-top: 0; }
+  .cta-row .badge { margin: 0; gap: 10px; }
+  .cta-row .badge img { width: 44px; height: 44px; }
+  .cta-row .badge span { font-size: 14px; }
+
+  /* Trainer */
+  .trainer { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 96px); align-items: center; max-width: 1200px; margin: 0 auto; padding: 16vh clamp(16px, 4vw, 48px) 0; }
+  .portrait { position: relative; aspect-ratio: 4 / 5; border-radius: 4px; overflow: hidden; background: linear-gradient(160deg, #26282d, #141518); }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.08) brightness(.95); display: block; }
+  .portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(232,98,44,.28), transparent 45%); mix-blend-mode: soft-light; pointer-events: none; }
+  .portrait .ph { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 800; font-size: clamp(64px, 10vw, 140px); color: rgba(236,233,227,.08); letter-spacing: -.04em; }
+  .portrait figcaption { position: absolute; left: 16px; bottom: 14px; font-family: var(--mono); font-size: 11px; color: rgba(236,233,227,.7); }
+  .trainer h2 { font-size: clamp(40px, 5vw, 80px); }
+  .trainer p.bio { margin-top: 24px; max-width: 34ch; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55; color: var(--silber); }
+  .facts { display: flex; gap: clamp(20px, 3vw, 48px); margin-top: 40px; flex-wrap: wrap; }
+  .facts div { font-family: var(--mono); font-size: 12px; color: var(--stahl); text-transform: uppercase; letter-spacing: .06em; }
+  .facts b { display: block; font-family: var(--display); font-size: clamp(32px, 3.4vw, 48px); font-weight: 800; color: var(--kreide); letter-spacing: -.02em; text-transform: none; margin-bottom: 4px; }
+  @media (max-width: 800px) { .trainer { grid-template-columns: 1fr; } .portrait { max-width: 420px; } }
+
+  .after { padding: 18vh clamp(16px, 4vw, 48px); max-width: 1200px; margin: 0 auto; }
+  .after h2 { font-size: clamp(40px, 5vw, 80px); max-width: 16ch; }
+  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3vw, 48px); margin-top: 72px; }
+  .quotes blockquote { border-top: 1px solid rgba(236,233,227,.15); padding-top: 24px; font-size: 20px; line-height: 1.45; }
+  .quotes cite { display: block; margin-top: 16px; font-family: var(--mono); font-size: 13px; font-style: normal; color: var(--stahl); }
+  footer {
+    padding: 32px clamp(16px, 4vw, 48px); border-top: 1px solid rgba(236,233,227,.1);
+    font-family: var(--mono); font-size: 12px; color: var(--stahl); line-height: 1.7;
+  }
+
+  @media (max-width: 800px) {
+    .texts { width: auto; right: clamp(16px, 4vw, 48px); top: 44%; }
+    h1 { font-size: clamp(44px, 12vw, 64px); }
+    h2 { font-size: clamp(38px, 10.5vw, 56px); }
+    .step p { margin-top: 16px; }
+    .badge { margin-bottom: 18px; }
+    .badge img { width: 48px; height: 48px; }
+    .cta-row { margin-top: 24px; }
+    .cta-row .badge, .progress { display: none; }
+    .step { justify-content: flex-start; padding-top: 8px; }
+    .quotes { grid-template-columns: 1fr; }
+    .hint { display: none; }
+  }
+
+  /* No motion: loaded bar as still image, texts stacked below */
+  @media (prefers-reduced-motion: reduce) {
+    .story { height: auto; }
+    .stage { position: relative; height: auto; }
+    #gl { position: relative; height: 60vh; }
+    .texts { position: relative; width: auto; left: 0; padding: 0 clamp(16px, 4vw, 48px); top: 0; }
+    .step { position: relative; opacity: 1; transform: none; filter: none; margin-bottom: 64px; transition: none; pointer-events: auto; }
+    .progress, .hint { display: none; }
+  }
+</style>
+<script type="importmap">
+  { "imports": {
+      "three": "./vendor/three.module.min.js",
+      "three/addons/": "./vendor/"
+  } }
+</script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#start" aria-label="HEBELWERK, zum Anfang">HEBEL<span>WERK</span></a>
+  <div class="counter" aria-hidden="true"><b id="kg">20</b>kg</div>
+</header>
+
+<main id="start">
+  <section class="story" id="story" aria-label="Scheibe für Scheibe: so läuft das Training ab">
+    <div class="stage" id="stage">
+      <canvas id="gl" aria-hidden="true"></canvas>
+      <div class="texts">
+        <div class="step on">
+          <div class="badge">
+            <img src="trainer.jpg" alt="" width="64" height="64">
+            <span><b>Jonas Brandt</b>Dein Personal Trainer</span>
+          </div>
+          <h1>Stark wird man nicht an einem Tag.</h1>
+          <p>Sondern Scheibe für Scheibe.</p>
+        </div>
+        <div class="step">
+          <p class="kicker">01 · Kennenlernen</p>
+          <h2>Wo stehst du?</h2>
+          <p>Im Erstgespräch klären wir, wo du startest und wo du hinwillst. Ehrlich, ohne Verkaufsdruck.</p>
+        </div>
+        <div class="step">
+          <p class="kicker">02 · Plan</p>
+          <h2>Ein Plan, der zu dir passt.</h2>
+          <p>Kein Programm von der Stange. Dein Training richtet sich nach deinem Alltag, nicht umgekehrt.</p>
+        </div>
+        <div class="step">
+          <p class="kicker">03 · Training &amp; Ernährung</p>
+          <h2>Was zusammen&shy;gehört.</h2>
+          <p>Training und Ernährung greifen ineinander. Deshalb bleiben die Ergebnisse auch.</p>
+        </div>
+        <div class="step">
+          <p class="kicker">04 · Ergebnis</p>
+          <h2>Messbar. Sichtbar. Deins.</h2>
+          <p>Aus 20 Kilo wurden 100. Nicht über Nacht, sondern Woche für Woche.</p>
+          <div class="cta-row">
+            <a class="cta" href="https://hoeger.dev/fuer-fitness/">
+              Probetraining anfragen
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <div class="badge">
+              <img src="trainer.jpg" alt="" width="44" height="44">
+              <span>Jonas antwortet<br>meist am selben Tag</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="progress" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="hint" aria-hidden="true">scrollen ↓</div>
+    </div>
+  </section>
+
+  <section class="trainer" aria-labelledby="trainer-h">
+    <figure class="portrait">
+      <div class="ph" aria-hidden="true">JB</div>
+      <img src="trainer.jpg" alt="Jonas Brandt, fiktiver Personal Trainer, im Studio" width="800" height="1000" loading="lazy" onerror="this.remove()">
+      <figcaption>Fiktive Person · Konzept-Demo</figcaption>
+    </figure>
+    <div>
+      <p class="kicker">Dein Trainer</p>
+      <h2 id="trainer-h">Jonas Brandt zählt mit. Jede Scheibe.</h2>
+      <p class="bio">Ich trainiere Menschen, die wenig Zeit haben und trotzdem stärker werden wollen. Ohne Drill, ohne Trends, mit einem Plan, der hält.</p>
+      <div class="facts">
+        <div><b>12</b>Jahre Erfahrung</div>
+        <div><b>1:1</b>Betreuung</div>
+        <div><b>45</b>Minuten pro Einheit</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="after" aria-labelledby="stimmen">
+    <p class="kicker">Stimmen (fiktiv)</p>
+    <h2 id="stimmen">Fortschritt, den man spürt.</h2>
+    <div class="quotes">
+      <blockquote>„Zum ersten Mal ein Plan, den ich wirklich durchhalte.“<cite>— Beispielkundin, 34</cite></blockquote>
+      <blockquote>„Nach zwölf Wochen: zehn Kilo leichter, zwanzig Kilo mehr auf der Stange.“<cite>— Beispielkunde, 41</cite></blockquote>
+      <blockquote>„Ehrlich, fordernd und trotzdem entspannt.“<cite>— Beispielkundin, 29</cite></blockquote>
+    </div>
+    <a class="cta" href="https://hoeger.dev/fuer-fitness/">
+      Probetraining anfragen
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </section>
+</main>
+
+<footer>
+  Konzept-Demo von Michael Höger · HEBELWERK ist eine fiktive Marke, alle Personen, Stimmen und Angebote sind erfunden.<br>
+  Sie möchten so eine Website? <a href="https://hoeger.dev/">hoeger.dev</a> · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a>
+</footer>
+
+<!-- Step logic works without WebGL; the 3D scene is an enhancement. -->
+<script>
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const steps = [...document.querySelectorAll(".step")];
+  const bars = [...document.querySelectorAll(".progress i")];
+  const kg = document.getElementById("kg");
+  const story = document.getElementById("story");
+  let current = -1, shown = 20, raf = 0;
+
+  function countTo(target) {
+    cancelAnimationFrame(raf);
+    const from = shown, t0 = performance.now(), dur = 700;
+    const tick = (t) => {
+      const p = Math.min(1, (t - t0) / dur);
+      shown = Math.round(from + (target - from) * (1 - Math.pow(1 - p, 3)));
+      kg.textContent = shown;
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+  }
+
+  function setStep(n) {
+    if (n === current) return;
+    current = n;
+    steps.forEach((s, i) => s.classList.toggle("on", i === n));
+    bars.forEach((b, i) => b.classList.toggle("on", i < n));
+    countTo(20 + n * 20);
+    window.dispatchEvent(new CustomEvent("hantel:step", { detail: n }));
+  }
+
+  window.hantel = { reduce, progress: 0, get step() { return current; } };
+
+  if (reduce) { kg.textContent = 100; current = 4; return; }
+
+  function onScroll() {
+    const r = story.getBoundingClientRect();
+    const total = story.offsetHeight - innerHeight;
+    const p = Math.min(1, Math.max(0, -r.top / total));
+    window.hantel.progress = p;
+    setStep(Math.min(4, Math.floor(p * 5.2)));
+  }
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", onScroll);
+  onScroll();
+})();
+</script>
+
+<script type="module">
+import * as THREE from "three";
+import { RoomEnvironment } from "three/addons/RoomEnvironment.js";
+
+// Let the text paint first; build the 3D scene when the browser is idle
+await new Promise((r) => ("requestIdleCallback" in window ? requestIdleCallback(r, { timeout: 1200 }) : setTimeout(r, 300)));
+
+const canvas = document.getElementById("gl");
+const stage = document.getElementById("stage");
+const H = window.hantel;
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
+} catch (e) {
+  canvas.remove(); // text-only fallback
+  throw e;
+}
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 0.9;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+const scene = new THREE.Scene();
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.03).texture;
+
+const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+
+// Lights: key for shadow, warm brand rim from behind
+const key = new THREE.DirectionalLight(0xffffff, 1.4);
+key.position.set(3, 8, 5);
+key.castShadow = true;
+key.shadow.mapSize.set(1024, 1024);
+Object.assign(key.shadow.camera, { left: -6, right: 6, top: 4, bottom: -4, near: 1, far: 20 });
+key.shadow.radius = 6;
+scene.add(key);
+const rim = new THREE.DirectionalLight(0xe8622c, 2.2);
+rim.position.set(-6, 2, -5);
+scene.add(rim);
+
+// Materials
+const chrome = new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 1, roughness: 0.06, clearcoat: 1, clearcoatRoughness: 0.04 });
+const brushed = new THREE.MeshStandardMaterial({ color: 0xd8dadd, metalness: 1, roughness: 0.32 });
+const plateMat = new THREE.MeshPhysicalMaterial({ color: 0xaeb3ba, metalness: 1, roughness: 0.1, clearcoat: 1, clearcoatRoughness: 0.05, envMapIntensity: 0.85 });
+const glowMat = new THREE.MeshBasicMaterial({ color: 0xe8622c, transparent: true, opacity: 0, toneMapped: false });
+
+const rig = new THREE.Group();   // bump + sway
+const bar = new THREE.Group();   // the barbell (yaw)
+const roller = new THREE.Group(); // roll around the bar axis
+bar.add(roller);
+rig.add(bar);
+scene.add(rig);
+
+const alongX = (geo) => { geo.rotateZ(Math.PI / 2); return geo; };
+const cyl = (r, len, mat, x = 0, seg = 64) => {
+  const m = new THREE.Mesh(alongX(new THREE.CylinderGeometry(r, r, len, seg)), mat);
+  m.position.x = x; m.castShadow = true; roller.add(m); return m;
+};
+
+// Shaft (brushed grip in the middle, chrome between grip and collars)
+cyl(0.07, 3.0, brushed);
+cyl(0.07, 0.5, chrome, -1.72); cyl(0.07, 0.5, chrome, 1.72);
+// Collars
+for (const s of [-1, 1]) {
+  cyl(0.19, 0.12, chrome, s * 2.02);
+  cyl(0.15, 0.06, chrome, s * 2.11);
+  // Sleeves
+  cyl(0.115, 1.75, chrome, s * 3.0);
+  const cap = cyl(0.125, 0.05, chrome, s * 3.88);
+}
+
+// Plates: solid extruded rings (rim, face, hub) with bevels, so every face is closed
+function ringGeo(outer, inner, depth, bevel) {
+  const shape = new THREE.Shape().absarc(0, 0, outer, 0, Math.PI * 2, false);
+  shape.holes.push(new THREE.Path().absarc(0, 0, inner, 0, Math.PI * 2, true));
+  const g = new THREE.ExtrudeGeometry(shape, {
+    depth, curveSegments: 128, bevelEnabled: true,
+    bevelSize: bevel, bevelThickness: bevel, bevelSegments: 4,
+  });
+  g.translate(0, 0, -depth / 2);
+  g.rotateY(Math.PI / 2); // plate axis along the bar (x)
+  return g;
+}
+
+// Machined face: fine concentric grooves + engraved lettering around the ring
+function faceTextures(R) {
+  const N = 1024, c = N / 2, px = N / (2 * R);
+  const make = (grooves) => {
+    const cv = document.createElement("canvas");
+    cv.width = cv.height = N;
+    const x = cv.getContext("2d");
+    x.fillStyle = grooves ? "#808080" : "#ffffff";
+    x.fillRect(0, 0, N, N);
+    if (grooves) {
+      for (let r = 0.3 * px; r < R * px; r += 2.2) {
+        x.strokeStyle = Math.random() > 0.5 ? "#8c8c8c" : "#747474";
+        x.lineWidth = 1.1;
+        x.beginPath(); x.arc(c, c, r, 0, Math.PI * 2); x.stroke();
+      }
+    }
+    const text = "HEBELWERK · 10 KG · HEBELWERK · 10 KG · ";
+    const rr = (R - 0.27) * px;
+    x.font = `600 ${Math.round(0.13 * px)}px "JetBrains Mono", monospace`;
+    x.fillStyle = grooves ? "#2a2a2a" : "#8f959c";
+    x.textAlign = "center"; x.textBaseline = "middle";
+    const step = (Math.PI * 2) / text.length;
+    for (let i = 0; i < text.length; i++) {
+      const a = i * step - Math.PI / 2;
+      x.save();
+      x.translate(c + Math.cos(a) * rr, c + Math.sin(a) * rr);
+      x.rotate(a + Math.PI / 2);
+      x.fillText(text[i], 0, 0);
+      x.restore();
+    }
+    const t = new THREE.CanvasTexture(cv);
+    t.repeat.set(1 / (2 * R), 1 / (2 * R));
+    t.offset.set(0.5, 0.5);
+    t.anisotropy = 8;
+    if (!grooves) t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  };
+  return { map: make(false), bump: make(true) };
+}
+
+function plateParts(R) {
+  const tex = faceTextures(R);
+  const faceMat = new THREE.MeshPhysicalMaterial({
+    color: 0xc9cdd3, metalness: 1, roughness: 0.16, clearcoat: 1, clearcoatRoughness: 0.06,
+    map: tex.map, bumpMap: tex.bump, bumpScale: 1.2,
+  });
+  return [
+    [ringGeo(R - 0.035, R - 0.16, 0.2, 0.03), plateMat], // raised rim
+    [ringGeo(R - 0.15, 0.34, 0.13, 0.012), faceMat],     // recessed machined face
+    [ringGeo(0.335, 0.13, 0.2, 0.03), plateMat],         // raised hub
+  ];
+}
+const PLATE_W = 0.3;
+const radii = [1.2, 1.2, 0.98, 0.98];
+const plates = [];
+for (let i = 0; i < 4; i++) {
+  const parts = plateParts(radii[i]);
+  const ring = new THREE.TorusGeometry(radii[i] - 0.005, 0.012, 8, 160);
+  ring.rotateY(Math.PI / 2);
+  for (const s of [-1, 1]) {
+    const g = new THREE.Group();
+    for (const [geo, mat] of parts) {
+      const m = new THREE.Mesh(geo, mat);
+      m.castShadow = true;
+      g.add(m);
+    }
+    const r = new THREE.Mesh(ring, glowMat);
+    r.position.x = s * 0.13; g.add(r); // outer face only
+    const target = s * (2.33 + i * PLATE_W);
+    const out = s * (7.5 + i * 0.6);
+    g.position.x = out;
+    g.visible = false;
+    roller.add(g);
+    plates.push({ g, s, step: i + 1, target, out, from: out, to: out, t0: 0, landed: false });
+  }
+}
+
+// Floor that only shows the shadow
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.ShadowMaterial({ opacity: 0.45 }));
+floor.rotation.x = -Math.PI / 2;
+floor.position.y = -1.24;
+floor.receiveShadow = true;
+scene.add(floor);
+
+// Layout: where the bar sits on screen and how big it is
+let W = 1, Hh = 1;
+function layout() {
+  W = stage.clientWidth; Hh = canvas.clientHeight || stage.clientHeight;
+  renderer.setSize(W, Hh, false);
+  const mobile = W <= 800;
+  const cx = mobile ? W * 0.5 : W * 0.71;
+  const cy = mobile ? Hh * 0.28 : Hh * 0.52;
+  const frac = mobile ? 0.92 : 0.5;       // share of screen width the bar spans
+  const tan = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+  const barLen = 8.2;
+  let d = (barLen * Hh) / (2 * tan * frac * W);
+  d = Math.max(d, 2.6 / (2 * tan * (mobile ? 0.36 : 0.5)));
+  camera.aspect = W / Hh;
+  camera.position.set(0, d * 0.2, d);
+  camera.lookAt(0, 0, 0);
+  camera.setViewOffset(W, Hh, W / 2 - cx, Hh / 2 - cy, W, Hh);
+  camera.updateProjectionMatrix();
+}
+addEventListener("resize", layout);
+layout();
+
+// Animation
+const easeOutBack = (x) => 1 + 2.2 * Math.pow(x - 1, 3) + 1.2 * Math.pow(x - 1, 2);
+const easeIn = (x) => x * x * x;
+const DUR = 900;
+let bumpAt = -1e9, glow = 0, glowTarget = 0;
+
+function applyStep(n, instant) {
+  const now = performance.now();
+  for (const p of plates) {
+    const load = p.step <= n;
+    const dest = load ? p.target : p.out;
+    if (p.to === dest) continue;
+    p.from = p.g.position.x; p.to = dest; p.landed = !load;
+    p.t0 = now + (load ? (p.s > 0 ? 90 : 0) : 0);
+    p.g.visible = true;
+    if (instant) { p.g.position.x = dest; p.t0 = now - DUR; p.landed = true; p.g.visible = load; }
+  }
+  glowTarget = n === 4 ? 1 : 0;
+  if (instant) glow = glowTarget;
+}
+addEventListener("hantel:step", (e) => applyStep(e.detail, false));
+applyStep(H.reduce ? 4 : Math.max(0, H.step), true);
+
+let visible = true;
+new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(stage);
+
+let sway = 0, roll = 0;
+function frame(now) {
+  requestAnimationFrame(frame);
+  if (!visible && !H.reduce) return;
+
+  for (const p of plates) {
+    const k = Math.min(1, Math.max(0, (now - p.t0) / DUR));
+    const loading = p.to === p.target;
+    const e = loading ? easeOutBack(k) : easeIn(k);
+    p.g.position.x = p.from + (p.to - p.from) * e;
+    p.g.rotation.x = (1 - k) * (loading ? 2.2 : -2.2) * p.s; // spins while sliding
+    if (loading && k === 1 && !p.landed) { p.landed = true; bumpAt = now; }
+    if (!loading && k === 1) p.g.visible = false;
+  }
+
+  // landing bump: short damped drop + wobble
+  const tb = (now - bumpAt) / 1000;
+  const bump = tb < 1.2 ? Math.exp(-tb * 7) * Math.cos(tb * 28) : 0;
+  rig.position.y = -0.05 * bump;
+  rig.rotation.z = 0.012 * bump;
+
+  // scroll turns the bar so reflections travel across the chrome
+  const targetYaw = H.reduce ? 0.3 : 0.9 - H.progress * 0.6;
+  sway += (targetYaw - sway) * 0.08;
+  bar.rotation.y = sway + (H.reduce ? 0 : Math.sin(now / 2600) * 0.025);
+  bar.rotation.x = 0.06;
+  // the bar rolls with the scroll, the lettering on the plates makes it visible
+  roll += ((H.reduce ? 0 : H.progress * Math.PI * 1.5) - roll) * 0.08;
+  roller.rotation.x = roll;
+
+  glow += (glowTarget - glow) * 0.06;
+  glowMat.opacity = glow;
+  rim.intensity = 2.2 + glow * 2.5;
+
+  renderer.render(scene, camera);
+}
+requestAnimationFrame(frame);
+requestAnimationFrame(() => canvas.classList.add("ready"));
+</script>
+</body>
+</html>
