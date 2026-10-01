@@ -1,4 +1,7 @@
 import { test, expect } from '@playwright/test';
+import { createHash } from 'node:crypto';
+
+const ogImagePath = '/images/og-image-20261001.png';
 
 // Dismiss cookie banner for all smoke tests so it doesn't overlay page elements
 test.beforeEach(async ({ page }) => {
@@ -258,10 +261,23 @@ test('homepage has essential meta tags', async ({ page }) => {
   await expect(page.locator('meta[name="viewport"]')).toHaveAttribute('content', /.+/);
 });
 
-test('og:image points to og-image.png', async ({ page }) => {
+test('OG and Twitter reference the approved corrected social preview', async ({ page, request }) => {
   await page.goto('/');
-  const ogImage = page.locator('meta[property="og:image"]');
-  await expect(ogImage).toHaveAttribute('content', /og-image\.png/);
+  const expectedUrl = `https://hoeger.dev${ogImagePath}`;
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', expectedUrl);
+  await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute('content', expectedUrl);
+
+  // Fetch from the local build, never the production URL in the metadata.
+  const response = await request.get(ogImagePath);
+  expect(response.status()).toBe(200);
+  expect(response.headers()['content-type']).toMatch(/^image\/png(?:;|$)/);
+  const image = await response.body();
+  expect([...image.subarray(0, 8)]).toEqual([137, 80, 78, 71, 13, 10, 26, 10]);
+  expect(image.readUInt32BE(16)).toBe(1200);
+  expect(image.readUInt32BE(20)).toBe(630);
+  expect(createHash('sha256').update(image).digest('hex')).toBe(
+    'acde4e858be83812187fe76b2a7935ea4c0c89bd8518e6d0fb3bfcd39b1fb618'
+  );
 });
 
 test('legal pages have robots meta tag', async ({ page }) => {
@@ -336,7 +352,7 @@ test('all image URLs return 200', async ({ page }) => {
     '/images/schaeferhof-mobile.webp',
     '/images/michael-working.webp',
     '/images/michael-casual.webp',
-    '/images/og-image.png',
+    ogImagePath,
   ];
 
   for (const path of imagePaths) {
