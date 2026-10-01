@@ -125,6 +125,7 @@ export const siteConfig = {
       href: "/preise/",
       children: [
         { label: "Website-Check", href: "/website-check/" },
+        { label: "Zeitfresser-Check", href: "/zeitfresser-check/" },
         { label: "Texterstellung", href: "/texterstellung/" },
         { label: "Farbpsychologie", href: "/farbpsychologie/" },
       ],

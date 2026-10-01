@@ -64,3 +64,10 @@ test.describe("/zeitfresser-check/", () => {
     expect(serious.map((v) => `${v.id} (${v.nodes.length})`)).toEqual([]);
   });
 });
+
+test("navigation links to /zeitfresser-check/", async ({ page }) => {
+  // Home loads the Cal.com embed, which the network gate blocks; any page
+  // with the shared header proves the nav entry.
+  await page.goto("/fuer-fitness/");
+  await expect(page.locator('header a[href="/zeitfresser-check/"]').first()).toBeAttached();
+});
