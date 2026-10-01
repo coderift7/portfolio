@@ -51,7 +51,7 @@ export const metadata: Metadata = {
       "Ein kompakter Check für Unternehmen, die auch bei KI-Assistenten sichtbar werden wollen.",
     images: [
       {
-        url: `${siteUrl}/images/og-image.png`,
+        url: `${siteUrl}/images/og-image-20261001.png`,
         width: 1200,
         height: 630,
         alt: "Michael Höger – KI-Sichtbarkeits-Check",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     title: `${offerName} | Michael Höger`,
     description:
       "Klarer Check: Wird Ihr Unternehmen von KI-Assistenten gefunden und empfohlen?",
-    images: [`${siteUrl}/images/og-image.png`],
+    images: [`${siteUrl}/images/og-image-20261001.png`],
   },
   robots: {
     index: false,

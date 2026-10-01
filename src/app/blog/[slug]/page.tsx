@@ -20,7 +20,7 @@ export async function generateMetadata({
   const post = await getPostBySlug(slug);
   if (!post) return {};
 
-  const twitterImage = post.image ?? `${siteUrl}/images/og-image.png`;
+  const twitterImage = post.image ?? `${siteUrl}/images/og-image-20261001.png`;
 
   return {
     title: `${post.title} – ${siteConfig.name}`,

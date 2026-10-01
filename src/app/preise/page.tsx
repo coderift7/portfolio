@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     title: "Leistungen & Preise — Michael Höger",
     description:
       "Website und Betreuung klar kombinieren: feste Endpreise, transparente Leistungen und ein persönlicher Ansprechpartner.",
-    images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
+    images: [{ url: `${siteUrl}/images/og-image-20261001.png`, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Leistungen & Preise — Michael Höger",
     description:
       "Website und Betreuung klar kombinieren: feste Endpreise, transparente Leistungen und ein persönlicher Ansprechpartner.",
-    images: [`${siteUrl}/images/og-image.png`],
+    images: [`${siteUrl}/images/og-image-20261001.png`],
   },
   robots: { index: true, follow: true },
 };

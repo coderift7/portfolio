@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Kostenloser technischer Check für Ladezeit, Auffindbarkeit, Nutzbarkeit, sichere Verbindung und kaputte Links.",
     images: [
       {
-        url: `${siteUrl}/images/og-image.png`,
+        url: `${siteUrl}/images/og-image-20261001.png`,
         width: 1200,
         height: 630,
         alt: "Kostenloser Website-Check von Michael Höger",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Kostenloser Website-Check",
     description:
       "Kostenloser technischer Check für Ladezeit, Auffindbarkeit, Nutzbarkeit, sichere Verbindung und kaputte Links.",
-    images: [`${siteUrl}/images/og-image.png`],
+    images: [`${siteUrl}/images/og-image-20261001.png`],
   },
   robots: { index: true, follow: true },
 };

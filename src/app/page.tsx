@@ -65,7 +65,7 @@ export default function Home() {
             url: siteUrl,
             email: siteConfig.email,
             telephone: siteConfig.phone,
-            image: `${siteUrl}/images/og-image.png`,
+            image: `${siteUrl}/images/og-image-20261001.png`,
             priceRange: "€€",
             address: {
               "@type": "PostalAddress",

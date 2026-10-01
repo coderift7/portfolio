@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     title: `AGB – ${siteConfig.name}`,
     description:
       "Allgemeine Geschäftsbedingungen von Michael Höger – rechtsverbindliche Fassung und Klartext-Version nebeneinander.",
-    images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
+    images: [{ url: `${siteUrl}/images/og-image-20261001.png`, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: `AGB – ${siteConfig.name}`,
     description:
       "Allgemeine Geschäftsbedingungen von Michael Höger – rechtsverbindliche Fassung und Klartext-Version.",
-    images: [`${siteUrl}/images/og-image.png`],
+    images: [`${siteUrl}/images/og-image-20261001.png`],
   },
   robots: { index: true, follow: true },
 };

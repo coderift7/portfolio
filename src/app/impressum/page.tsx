@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `Impressum – ${siteConfig.name}`,
     description: "Impressum und Angaben gemäß § 5 TMG von Michael Höger.",
-    images: [{ url: `${siteUrl}/images/og-image.png`, width: 1200, height: 630 }],
+    images: [{ url: `${siteUrl}/images/og-image-20261001.png`, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: `Impressum – ${siteConfig.name}`,
     description: "Angaben gemäß § 5 TMG.",
-    images: [`${siteUrl}/images/og-image.png`],
+    images: [`${siteUrl}/images/og-image-20261001.png`],
   },
   robots: { index: true, follow: true },
 };

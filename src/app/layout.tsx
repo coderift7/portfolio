@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description: siteConfig.meta.description,
     images: [
       {
-        url: `${siteUrl}/images/og-image.png`,
+        url: `${siteUrl}/images/og-image-20261001.png`,
         width: 1200,
         height: 630,
         alt: "Michael Höger – Webseiten, die Ihnen Kunden bringen",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.meta.title,
     description: siteConfig.meta.description,
-    images: [`${siteUrl}/images/og-image.png`],
+    images: [`${siteUrl}/images/og-image-20261001.png`],
   },
   keywords: [
     "Webdesign",

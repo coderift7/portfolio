@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "Professionelles Webdesign in Limburg an der Lahn. Google-optimiert, in 14 Tagen online. Kostenlose Erstberatung.",
     images: [
       {
-        url: `${siteUrl}/images/og-image.png`,
+        url: `${siteUrl}/images/og-image-20261001.png`,
         width: 1200,
         height: 630,
         alt: "Michael Höger – Webdesign in Limburg",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Webdesign Limburg – Webseiten für kleine Unternehmen",
     description:
       "Professionelles Webdesign in Limburg an der Lahn. Google-optimiert, in 14 Tagen online.",
-    images: [`${siteUrl}/images/og-image.png`],
+    images: [`${siteUrl}/images/og-image-20261001.png`],
   },
   keywords: [
     "Webdesign Limburg",
@@ -58,7 +58,7 @@ const localBusinessSchema = {
   url: `${siteUrl}/webdesign-limburg/`,
   email: siteConfig.email,
   telephone: siteConfig.phone,
-  image: `${siteUrl}/images/og-image.png`,
+  image: `${siteUrl}/images/og-image-20261001.png`,
   priceRange: "€€",
   address: {
     "@type": "PostalAddress",
