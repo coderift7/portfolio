@@ -88,7 +88,7 @@ export default function Projects() {
                           rel="noopener noreferrer"
                           className="ml-auto inline-flex items-center gap-1 text-xs font-semibold text-primary transition-colors hover:text-secondary"
                         >
-                          Live ansehen <ArrowUpRight className="h-3.5 w-3.5" />
+                          {project.isReal ? "Live ansehen" : "Demo ansehen"} <ArrowUpRight className="h-3.5 w-3.5" />
                         </a>
                       )}
                     </div>

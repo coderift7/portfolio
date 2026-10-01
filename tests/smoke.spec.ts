@@ -148,17 +148,17 @@ test('all images become visible on scroll (mobile)', async ({ page, browserName 
 
 const bodyProcessUrl = 'https://body-process.de/';
 
-test('projects section lists Body Process first, then Schäferhof, without demo cards', async ({ page }) => {
+test('projects section lists Body Process, Schäferhof, then the barbell demo', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
   const section = page.locator('#projekte');
   await section.scrollIntoViewIfNeeded();
-  await expect(section.locator('h3')).toHaveText(['Body Process', "Auf'm Schäferhof"]);
+  await expect(section.locator('h3')).toHaveText(['Body Process', "Auf'm Schäferhof", 'HEBELWERK – Personal Trainer']);
   await expect(section).not.toContainText('MoverPro');
-  await expect(section.locator('span', { hasText: /^Demo$/ })).toHaveCount(0);
+  // The fictional brand must always be labelled as a demo, never as live.
+  await expect(section.locator('span', { hasText: /^Demo$/ })).toHaveCount(1);
   await expect(section.locator('span', { hasText: /^Live$/ })).toHaveCount(2);
-  // Intro copy is data-driven: no demo card → no "und Demos"
-  await expect(section).toContainText('Echte Kundenprojekte —');
-  await expect(section).not.toContainText('und Demos');
+  // Intro copy is data-driven: demo card shown → "und Demos"
+  await expect(section).toContainText('Echte Kundenprojekte und Demos —');
 });
 
 test('every project card link has an accessible name (text or image alt)', async ({ page }) => {

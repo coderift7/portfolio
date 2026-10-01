@@ -71,3 +71,14 @@ test("navigation links to /zeitfresser-check/", async ({ page }) => {
   await page.goto("/fuer-fitness/");
   await expect(page.locator('header a[href="/zeitfresser-check/"]').first()).toBeAttached();
 });
+
+test("home shows the barbell demo as a labelled demo card", async ({ page }) => {
+  // Home loads the Cal.com embed; answer it locally so the gate stays clean.
+  await page.route("https://cal.hoeger.dev/**", (r) =>
+    r.fulfill({ status: 200, contentType: "text/javascript", body: "" })
+  );
+  await page.goto("/");
+  const card = page.locator("#projekte").getByText("HEBELWERK – Personal Trainer");
+  await expect(card).toBeVisible();
+  await expect(page.locator('#projekte a[href="/demo/hantel/"]').first()).toBeAttached();
+});
